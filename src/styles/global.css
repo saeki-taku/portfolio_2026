@@ -82,3 +82,20 @@ body:not(.scene-page) { min-height: 100svh; background: #fff; }
   .scene-nav a { flex: 1 1 40%; font-size: 1rem; }
   .scene-nav a::before { display: none; }
 }
+
+/* Preserve the complete painting; decorative wall/floor absorb extra height. */
+.scene-page { display: block; padding: 0; }
+.scene { width: 100%; aspect-ratio: auto; min-height: max(100svh, 600px); display: flex; flex-direction: column; }
+.scene-core { position: relative; width: 100%; aspect-ratio: 1672 / 941; flex: none; }
+.scene-extension { flex: 1 0 0; background-size: 100% 100%; }
+.scene-wall { background-image: var(--desktop-wall); }
+.scene-floor { background-image: var(--desktop-floor); }
+@media (max-aspect-ratio: 1/1) {
+  .scene { min-height: max(100svh, 680px); }
+  .scene-core { aspect-ratio: 2 / 3; }
+  .scene-wall { background-image: var(--mobile-wall); }
+  .scene-floor { background-image: var(--mobile-floor); }
+}
+@media (max-width: 18rem), (max-height: 18rem) {
+  .scene-core { aspect-ratio: auto; display: flex; flex-direction: column; }
+}

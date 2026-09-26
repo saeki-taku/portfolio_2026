@@ -11,7 +11,7 @@ try {
   const health = await page.request.get(`${base}/api/health`);
   assert.equal(health.status(), 200);
   assert.deepEqual(await health.json(), { status: 'ok', service: 'ennui' });
-  for (const [name, width, height] of [['desktop',1440,900], ['mobile',390,844], ['small-mobile',320,568], ['landscape',844,390], ['tablet',768,1024]]) {
+  for (const [name, width, height] of [['desktop',1440,900], ['reference-size',1024,821], ['mobile',390,844], ['small-mobile',320,568], ['landscape',844,390], ['tablet',768,1024]]) {
     await page.setViewportSize({width,height});
     await page.goto(base);
     await page.locator('.scene img').evaluate(img => img.decode());
@@ -21,13 +21,13 @@ try {
       const logo = document.querySelector('.scene-logo').getBoundingClientRect();
       return {scrollHeight:document.documentElement.scrollHeight,scrollWidth:document.documentElement.scrollWidth,source:img.currentSrc,nav:{x:nav.x,y:nav.y,right:nav.right,bottom:nav.bottom},logo:{x:logo.x,y:logo.y,bottom:logo.bottom}};
     });
-    assert.ok(layout.scrollHeight <= height, `${name}: vertical overflow`);
+    assert.ok(layout.scrollHeight >= height, `${name}: viewport not filled`);
     assert.ok(layout.scrollWidth <= width, `${name}: horizontal overflow`);
-    assert.ok(layout.nav.x >= 0 && layout.nav.right <= width && layout.nav.bottom <= height, `${name}: navigation outside viewport`);
+    assert.ok(layout.nav.x >= 0 && layout.nav.right <= width && layout.nav.bottom <= layout.scrollHeight, `${name}: navigation outside document`);
     assert.ok(layout.logo.x >= 0 && layout.logo.y >= 0 && layout.logo.bottom <= height, `${name}: logo outside viewport`);
     assert.ok(layout.source.includes(width <= height ? 'rin-mobile' : 'rin-desktop'), `${name}: wrong composition`);
     await page.screenshot({path:`artifacts/${name}.png`});
-    console.log(`${name}: no overflow; correct composition; logo/navigation visible`);
+    console.log(`${name}: no horizontal overflow; correct composition; navigation reachable`);
   }
   for (const [label,path] of [['ennuiについて','/about/'],['制作実績','/works/'],['お知らせ','/news/'],['お問い合わせ','/contact/']]) {
     await page.goto(base);
