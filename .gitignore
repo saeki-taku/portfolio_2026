@@ -21,3 +21,6 @@ scripts/restore-mobile-background.mjs
 .dev.vars.*
 *.pem
 *.key
+
+!src/assets/scenes/rin-desktop-display-20260926.png
+!src/assets/scenes/rin-mobile-approved-20260926.png

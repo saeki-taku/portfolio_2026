@@ -42,6 +42,26 @@ try {
   await page.goto(base);
   await page.keyboard.press('Tab');
   assert.equal(await page.locator(':focus').getAttribute('aria-label'),'ennui ホーム');
+  // Effective CSS viewport at 400% zoom on a 960px-wide window.
+  await page.setViewportSize({width:240,height:220});
+  await page.goto(base);
+  for (const link of await page.locator('.scene-nav a').all()) {
+    await link.scrollIntoViewIfNeeded();
+    await link.click({trial:true});
+  }
+  assert.ok(await page.evaluate(()=>document.documentElement.scrollWidth <= innerWidth));
+  await page.screenshot({path:'artifacts/zoom-reflow.png',fullPage:true});
+  // Simulated 200% text enlargement; not a substitute for real browser zoom QA.
+  await page.setViewportSize({width:390,height:844});
+  await page.goto(base);
+  await page.addStyleTag({content:'html { font-size: 200%; }'});
+  for (const link of await page.locator('.scene-nav a').all()) await link.click({trial:true});
+  // Failed painting load must leave HTML identity and navigation usable.
+  await page.route('**/_astro/*.webp',route=>route.abort());
+  await page.goto(base);
+  assert.equal(await page.locator('.scene img').evaluate(img=>img.naturalWidth),0);
+  await page.getByRole('link',{name:'お問い合わせ',exact:true}).click();
+  await page.getByRole('heading',{name:'お問い合わせ',exact:true}).waitFor();
   assert.deepEqual(errors,[]);
   console.log('Workers health, navigation, 404 and keyboard focus: passed');
 } finally { await browser.close(); }

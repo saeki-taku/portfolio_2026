@@ -1,8 +1,8 @@
 ---
 import { getImage } from 'astro:assets';
 import Base from '../layouts/Base.astro';
-import desktop from '../assets/scenes/rin-desktop-skin-local-v5.png';
-import mobile from '../assets/scenes/rin-mobile-color-matched-v7.png';
+import desktop from '../assets/scenes/rin-desktop-display-20260926.png';
+import mobile from '../assets/scenes/rin-mobile-approved-20260926.png';
 const desktopWidths = [960, 1440, 1672];
 const mobileWidths = [480, 800, 1024];
 const desktopImages = await Promise.all(desktopWidths.map(width => getImage({src: desktop, width, format:'webp', quality:85})));
