@@ -83,21 +83,18 @@ body:not(.scene-page) { min-height: 100svh; background: #fff; }
   .scene-nav a::before { display: none; }
 }
 
-/* Preserve the complete painting; decorative wall/floor absorb extra height. */
+/* One raster scales uniformly; only the outer wall/floor may leave the viewport. */
 .scene-page { display: block; padding: 0; }
-.scene { width: 100%; aspect-ratio: auto; min-height: max(100svh, 600px); display: flex; flex-direction: column; }
-.scene-core { position: relative; width: 100%; aspect-ratio: 1672 / 941; flex: none; }
-.scene-extension { flex: 1 0 0; background-size: 100% 100%; }
-.scene-wall { background-image: var(--desktop-wall); }
-.scene-floor { background-image: var(--desktop-floor); }
+.scene { width: 100%; aspect-ratio: auto; height: max(100svh, 600px, 56.28vw); display: block; }
+.scene picture { position: absolute; inset: 0; width: 100%; height: 100%; }
+.scene img { width: 100%; height: 100%; object-fit: cover; object-position: center; }
+.scene-logo { top: max(24px, calc(50% - 20.26vw)); }
 @media (max-aspect-ratio: 1/1) {
-  .scene { min-height: max(100svh, 680px); }
-  .scene-core { aspect-ratio: 2 / 3; }
-  .scene-wall { background-image: var(--mobile-wall); }
-  .scene-floor { background-image: var(--mobile-floor); }
+  .scene { height: max(100svh, 680px, 150vw); }
+  .scene-logo { top: max(24px, calc(50% - 69vw)); }
 }
 @media (max-width: 18rem), (max-height: 18rem) {
-  .scene-core { aspect-ratio: auto; display: flex; flex-direction: column; }
+  .scene-logo { position: absolute; padding: 0; }
 }
 
 /* Keep the menu anchored to the viewport while the room scrolls. */
@@ -113,5 +110,4 @@ body:not(.scene-page) { min-height: 100svh; background: #fff; }
 }
 @media (max-width: 18rem), (max-height: 18rem) {
   .scene-nav { left: 3%; right: 3%; bottom: max(8px, env(safe-area-inset-bottom)); margin: 0; }
-  .scene-core { padding-bottom: 140px; }
 }

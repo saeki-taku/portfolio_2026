@@ -2,28 +2,20 @@
 import { getImage } from 'astro:assets';
 import Base from '../layouts/Base.astro';
 import Navigation from '../components/Navigation.astro';
-import desktop from '../assets/scenes/rin-desktop-wood-floor-20260926.png';
-import mobile from '../assets/scenes/rin-mobile-approved-20260926.png';
-import desktopWall from '../assets/scenes/desktop-wall-soft-20260927.webp';
-import desktopFloor from '../assets/scenes/desktop-floor-extension.webp';
-import mobileWall from '../assets/scenes/mobile-wall-extension.webp';
-import mobileFloor from '../assets/scenes/mobile-floor-extension.webp';
+import desktop from '../assets/scenes/rin-desktop-room-unified-20260927.png';
+import mobile from '../assets/scenes/rin-mobile-room-unified-20260927.png';
 const desktopWidths = [960, 1440, 1672];
 const mobileWidths = [480, 800, 1024];
 const desktopImages = await Promise.all(desktopWidths.map(width => getImage({src: desktop, width, format:'webp', quality:85})));
 const mobileImages = await Promise.all(mobileWidths.map(width => getImage({src: mobile, width, format:'webp', quality:85})));
 ---
 <Base scene>
-  <main class="scene" aria-label="ennuiの窓辺" style={{"--desktop-wall": `url(${desktopWall.src})`, "--desktop-floor": `url(${desktopFloor.src})`, "--mobile-wall": `url(${mobileWall.src})`, "--mobile-floor": `url(${mobileFloor.src})`}}>
-    <div class="scene-extension scene-wall" aria-hidden="true"></div>
-    <div class="scene-core">
+  <main class="scene" aria-label="ennuiの窓辺">
     <picture>
       <source media="(max-aspect-ratio: 1/1)" srcset={mobileImages.map((img,i)=>`${img.src} ${mobileWidths[i]}w`).join(', ')} sizes="100vw" width={mobile.width} height={mobile.height} />
       <img src={desktopImages[1].src} srcset={desktopImages.map((img,i)=>`${img.src} ${desktopWidths[i]}w`).join(', ')} sizes="100vw" width={desktop.width} height={desktop.height} alt="春の街を見下ろす高い窓辺で、凛が静かにスケッチをしている油絵。" fetchpriority="high" decoding="async" />
     </picture>
     <h1 class="scene-logo"><a href="/" aria-label="ennui ホーム">ennui</a></h1>
     <Navigation scene />
-    </div>
-    <div class="scene-extension scene-floor" aria-hidden="true"></div>
   </main>
 </Base>
