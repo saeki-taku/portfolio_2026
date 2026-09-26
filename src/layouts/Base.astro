@@ -1,0 +1,15 @@
+---
+import '../styles/global.css';
+interface Props { title?: string; scene?: boolean }
+const { title = 'ennui', scene = false } = Astro.props;
+---
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="description" content="ennui — 窓辺の情景と、制作の記録。" />
+    <title>{title === 'ennui' ? title : `${title} — ennui`}</title>
+  </head>
+  <body class:list={[{ 'scene-page': scene }]}><slot /></body>
+</html>

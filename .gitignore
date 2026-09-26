@@ -1,0 +1,23 @@
+node_modules/
+dist/
+.astro/
+.wrangler/
+.env
+.env.*
+!.env.example
+.dev.vars
+.DS_Store
+
+artifacts/
+
+# Local image experiments; only the currently referenced snapshot is shared.
+src/assets/scenes/*.png
+!src/assets/scenes/rin-desktop-skin-local-v5.png
+!src/assets/scenes/rin-mobile-color-matched-v7.png
+scripts/composite-hands.mjs
+scripts/composite-skin.mjs
+scripts/match-mobile-color.mjs
+scripts/restore-mobile-background.mjs
+.dev.vars.*
+*.pem
+*.key
