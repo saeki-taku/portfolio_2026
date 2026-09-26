@@ -1,0 +1,13 @@
+---
+interface Props { scene?: boolean }
+const { scene = false } = Astro.props;
+const links = [
+  { href: '/about/', label: '…について', accessible: 'ennuiについて' },
+  { href: '/works/', label: '制作実績' },
+  { href: '/news/', label: 'お知らせ' },
+  { href: '/contact/', label: 'お問い合わせ' },
+];
+---
+<nav class:list={[scene ? 'scene-nav' : 'interior-nav']} aria-label="メインナビゲーション">
+  {links.map(link => <a href={link.href} aria-label={link.accessible} aria-current={Astro.url.pathname.replace(/\/$/, '') === link.href.replace(/\/$/, '') ? 'page' : undefined}><span>{link.label}</span></a>)}
+</nav>

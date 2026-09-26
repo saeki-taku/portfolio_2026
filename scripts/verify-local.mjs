@@ -29,11 +29,11 @@ try {
     await page.screenshot({path:`artifacts/${name}.png`});
     console.log(`${name}: no overflow; correct composition; logo/navigation visible`);
   }
-  for (const [label,path] of [['実績','/works/'],['お知らせ','/news/'],['お問い合わせ','/contact/']]) {
+  for (const [label,path] of [['ennuiについて','/about/'],['制作実績','/works/'],['お知らせ','/news/'],['お問い合わせ','/contact/']]) {
     await page.goto(base);
     await page.getByRole('link',{name:label,exact:true}).click();
     assert.equal(new URL(page.url()).pathname.replace(/\/$/,''), path.replace(/\/$/,''));
-    await page.getByRole('heading',{name:label,exact:true}).waitFor();
+    await page.getByRole('heading',{name:label === 'ennuiについて' ? '…について' : label,exact:true}).waitFor();
   }
   const missing = await page.request.get(`${base}/not-a-page`);
   assert.equal(missing.status(),404);

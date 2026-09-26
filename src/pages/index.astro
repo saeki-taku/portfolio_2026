@@ -1,6 +1,7 @@
 ---
 import { getImage } from 'astro:assets';
 import Base from '../layouts/Base.astro';
+import Navigation from '../components/Navigation.astro';
 import desktop from '../assets/scenes/rin-desktop-display-20260926.png';
 import mobile from '../assets/scenes/rin-mobile-approved-20260926.png';
 const desktopWidths = [960, 1440, 1672];
@@ -15,10 +16,6 @@ const mobileImages = await Promise.all(mobileWidths.map(width => getImage({src: 
       <img src={desktopImages[1].src} srcset={desktopImages.map((img,i)=>`${img.src} ${desktopWidths[i]}w`).join(', ')} sizes="min(100vw, 178svh)" width={desktop.width} height={desktop.height} alt="春の街を見下ろす高い窓辺で、凛が静かにスケッチをしている油絵。" fetchpriority="high" decoding="async" />
     </picture>
     <h1 class="scene-logo"><a href="/" aria-label="ennui ホーム">ennui</a></h1>
-    <nav class="scene-nav" aria-label="メインナビゲーション">
-      <a href="/works/">実績<span aria-hidden="true">↗</span></a>
-      <a href="/news/">お知らせ<span aria-hidden="true">↗</span></a>
-      <a href="/contact/">お問い合わせ<span aria-hidden="true">↗</span></a>
-    </nav>
+    <Navigation scene />
   </main>
 </Base>
