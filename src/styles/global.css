@@ -46,8 +46,8 @@ a:focus-visible { outline: 2px solid #345646; outline-offset: 5px; border-radius
 .scene-nav {
   gap: 0;
   padding: .2rem .45rem;
-  background: #f1eee5;
-  background-image: url('/menu-grain.svg'), linear-gradient(165deg, #f8f6ed, #e8e5dc);
+  background: rgb(241 238 229 / 58%);
+  background-image: url('/menu-grain.svg'), linear-gradient(165deg, rgb(248 246 237 / 20%), rgb(232 229 220 / 12%));
   border: 1px solid rgb(95 100 83 / 18%);
   border-radius: 2px 5px 3px 4px;
   box-shadow: 0 2px 7px rgb(61 57 44 / 8%), inset 0 1px 0 rgb(255 255 255 / 65%);
