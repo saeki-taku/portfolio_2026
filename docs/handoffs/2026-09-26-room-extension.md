@@ -32,3 +32,7 @@ b23691e957373d320909ed1884bd7c801cc54486b77cc4acdad94ebc31fd5a9e  src/assets/sce
 8060530c689f95c314d62cb55295e5ef79ba8bb9a555fe11998801c78d360306  src/assets/scenes/desktop-wall-extension.webp
 f60c7945a8a773333d053ee2994c8a4588b88f538bb842f7db52c06fce84385c  src/assets/scenes/mobile-floor-extension.webp
 23ccebb847f0af019e91f81054b026097e1977c89cd75850dfe72abde47a3f71  src/assets/scenes/mobile-wall-extension.webp
+
+## 2026-09-27：左上の角の方向を修正
+
+ユーザー指定に従い、ほぼ垂直だった角を窓の左上から左斜め上に伸びる陰影へ変更。imagegen出力 exec-6d6b3fd7-4612-4eec-b257-effe8ab5d634.png の余白を除去し、壁延長の左500pxだけ合成（右端100pxをフェザー）。desktop-wall-diagonal-20260927.webpとして別保存。人物・窓・床・SPのファイルは変更なし。build、test:local（6サイズと導線）成功、1024x821で目視確認。本番公開なし。
