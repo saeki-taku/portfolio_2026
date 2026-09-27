@@ -6,7 +6,7 @@ AstroでHTMLを事前生成し、Cloudflare Workersで静的配信とAPIを一�
 ## 現在の状態（2026-09-27）
 
 [共通指示書](docs/claude-code-handoff.md) と [段階2引き継ぎ](docs/handoffs/2026-09-26-stage2-baseline.md) を読むこと。
-PC v8 / SP v3の採用原本を無加工で反映済み。[最新反映記録](docs/handoffs/2026-09-27-approved-art-implementation.md)を優先。縦長画面の背景余白は残課題。
+PC v8 / SP v3の元画角を保持した上下拡張版v1を反映済み。[拡張版表示仕様](docs/handoffs/2026-09-27-vertical-extension.md)を参照。[最新反映記録](docs/handoffs/2026-09-27-approved-art-implementation.md)を優先。縦長画面の背景余白は残課題。
 Codexが表示実装、Claudeが読み取りレビュー・受入確認を担当。具体的な編集可能範囲は引き継ぎ参照。
 過去の共有開始状態は [共有記録](docs/handoffs/2026-09-26-sharing-baseline.md) に保持。
 画像加工の中間素材は共有しない。新しい素材を採用する際は `.gitignore` の画像許可リストも更新する。

@@ -2,15 +2,21 @@
 import { getImage } from 'astro:assets';
 import Base from '../layouts/Base.astro';
 import Navigation from '../components/Navigation.astro';
-import desktop from '../assets/scenes/rin-desktop-approved-v8-20260927.png';
-import mobile from '../assets/scenes/rin-mobile-approved-v3-20260927.png';
+import desktop from '../assets/scenes/rin-desktop-vertical-extended-v1.png';
+import mobile from '../assets/scenes/rin-mobile-vertical-extended-v1.png';
+import coordinates from '../assets/scenes/vertical-extension-v1.json';
+const geometry = Object.fromEntries(coordinates.flatMap(item => {
+  const prefix = item.variant;
+  const vw = (pixels: number) => `${pixels / item.sourceRect.width * 100}vw`;
+  return [[`--${prefix}-base-height`, vw(item.sourceRect.height)], [`--${prefix}-canvas-height`, vw(item.canvas.height)], [`--${prefix}-top-padding`, vw(item.sourceRect.y)], [`--${prefix}-top-share`, item.padding.top / (item.padding.top + item.padding.bottom)]];
+}));
 const desktopWidths = [960, 1440, 1533];
 const mobileWidths = [480, 800, 1024];
 const desktopImages = await Promise.all(desktopWidths.map(width => getImage({src: desktop, width, format:'webp', quality:85})));
 const mobileImages = await Promise.all(mobileWidths.map(width => getImage({src: mobile, width, format:'webp', quality:85})));
 ---
 <Base scene>
-  <main class="scene" aria-label="ennuiの窓辺">
+  <main class="scene" aria-label="ennuiの窓辺" style={geometry}>
     <picture>
       <source media="(max-aspect-ratio: 1/1)" srcset={mobileImages.map((img,i)=>`${img.src} ${mobileWidths[i]}w`).join(', ')} sizes="100vw" width={mobile.width} height={mobile.height} />
       <img src={desktopImages[1].src} srcset={desktopImages.map((img,i)=>`${img.src} ${desktopWidths[i]}w`).join(', ')} sizes="100vw" width={desktop.width} height={desktop.height} alt="春の街を見下ろす高い窓辺で、凛が静かにスケッチをしている油絵。" fetchpriority="high" decoding="async" />

@@ -118,3 +118,32 @@ body:not(.scene-page) { min-height: 100svh; background: #fff; }
   .scene img { object-position: center top; }
   .scene-logo { top: max(16px, 4vw); }
 }
+
+/* Scale from sourceRect width, revealing padding only when the frame grows. */
+.scene {
+  --base-height: var(--pc-base-height);
+  --canvas-height: var(--pc-canvas-height);
+  --top-padding: var(--pc-top-padding);
+  --top-share: var(--pc-top-share);
+  --revealed-top: clamp(0px, calc((100% - var(--base-height)) * var(--top-share)), var(--top-padding));
+  height: max(100svh, 600px, var(--base-height));
+  overflow: clip;
+  background: #e5dcd0;
+}
+.scene picture {
+  inset: auto 0 auto;
+  top: calc(var(--revealed-top) - var(--top-padding));
+  height: var(--canvas-height);
+}
+.scene img { width: 100%; height: 100%; object-fit: fill; }
+.scene-logo { top: calc(var(--revealed-top) + max(24px, 12vw)); }
+@media (max-aspect-ratio: 1/1) {
+  .scene {
+    --base-height: var(--sp-base-height);
+    --canvas-height: var(--sp-canvas-height);
+    --top-padding: var(--sp-top-padding);
+    --top-share: var(--sp-top-share);
+    height: max(100svh, 680px, var(--base-height));
+  }
+  .scene-logo { top: calc(var(--revealed-top) + max(16px, 4vw)); }
+}

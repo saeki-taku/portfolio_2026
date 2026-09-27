@@ -1,0 +1,58 @@
+[
+  {
+    "variant": "pc",
+    "source": "b-spring-rin-pc-interior-unified-v8.png",
+    "output": "b-spring-rin-pc-vertical-extended-v1.png",
+    "canvas": {
+      "width": 1533,
+      "height": 1334
+    },
+    "sourceRect": {
+      "x": 0,
+      "y": 103,
+      "width": 1533,
+      "height": 1026
+    },
+    "padding": {
+      "top": 103,
+      "bottom": 205,
+      "left": 0,
+      "right": 0
+    },
+    "sourceRectNormalized": {
+      "x": 0,
+      "y": 0.07721139430284858,
+      "width": 1,
+      "height": 0.7691154422788605
+    },
+    "originalPixelsIdentical": true
+  },
+  {
+    "variant": "sp",
+    "source": "b-spring-rin-mobile-interior-unified-v3.png",
+    "output": "b-spring-rin-mobile-vertical-extended-v1.png",
+    "canvas": {
+      "width": 1024,
+      "height": 1997
+    },
+    "sourceRect": {
+      "x": 0,
+      "y": 154,
+      "width": 1024,
+      "height": 1536
+    },
+    "padding": {
+      "top": 154,
+      "bottom": 307,
+      "left": 0,
+      "right": 0
+    },
+    "sourceRectNormalized": {
+      "x": 0,
+      "y": 0.0771156735102654,
+      "width": 1,
+      "height": 0.7691537305958939
+    },
+    "originalPixelsIdentical": true
+  }
+]

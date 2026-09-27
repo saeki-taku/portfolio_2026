@@ -201,3 +201,7 @@ Notionに接続できない場合、この資料とローカル原本で進め�
 PC v8 / SP v3が最新。2026-09-26の素材や実装側の延長合成画像は履歴としてのみ保持。
 実装要件原文：docs/handoffs/2026-09-27-approved-art-source.md。
 反映結果と未完了の余白問題：docs/handoffs/2026-09-27-approved-art-implementation.md。
+
+## 2026-09-27 上下拡張版v1
+
+最新表示素材はPC/SPのvertical-extended-v1。元画角座標を基準に表示倍率を固定する。詳細と検証はdocs/handoffs/2026-09-27-vertical-extension.md。全体contain/coverへ戻さない。
