@@ -11,7 +11,7 @@ try {
   const health = await page.request.get(`${base}/api/health`);
   assert.equal(health.status(), 200);
   assert.deepEqual(await health.json(), { status: 'ok', service: 'ennui' });
-  for (const [name, width, height] of [['desktop',1440,900], ['reference-size',1024,821], ['mobile',390,844], ['small-mobile',320,568], ['landscape',844,390], ['tablet',768,1024]]) {
+  for (const [name, width, height] of [['desktop',1440,900], ['reference-size',1024,821], ['mobile',390,844], ['tall-mobile',430,932], ['iphone-se',375,667], ['small-mobile',320,568], ['landscape',844,390], ['tablet',768,1024]]) {
     await page.setViewportSize({width,height});
     await page.goto(base);
     await page.locator('.scene img').evaluate(img => img.decode());

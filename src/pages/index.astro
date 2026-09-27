@@ -2,9 +2,9 @@
 import { getImage } from 'astro:assets';
 import Base from '../layouts/Base.astro';
 import Navigation from '../components/Navigation.astro';
-import desktop from '../assets/scenes/rin-desktop-room-unified-20260927.png';
-import mobile from '../assets/scenes/rin-mobile-room-unified-20260927.png';
-const desktopWidths = [960, 1440, 1672];
+import desktop from '../assets/scenes/rin-desktop-approved-v8-20260927.png';
+import mobile from '../assets/scenes/rin-mobile-approved-v3-20260927.png';
+const desktopWidths = [960, 1440, 1533];
 const mobileWidths = [480, 800, 1024];
 const desktopImages = await Promise.all(desktopWidths.map(width => getImage({src: desktop, width, format:'webp', quality:85})));
 const mobileImages = await Promise.all(mobileWidths.map(width => getImage({src: mobile, width, format:'webp', quality:85})));
