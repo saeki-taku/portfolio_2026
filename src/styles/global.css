@@ -111,3 +111,10 @@ body:not(.scene-page) { min-height: 100svh; background: #fff; }
 @media (max-width: 18rem), (max-height: 18rem) {
   .scene-nav { left: 3%; right: 3%; bottom: max(8px, env(safe-area-inset-bottom)); margin: 0; }
 }
+
+/* Portrait: keep the full painting at the top, with floor-colored space below. */
+@media (max-aspect-ratio: 1/1) {
+  .scene { background: #e5dcd0; }
+  .scene img { object-position: center top; }
+  .scene-logo { top: max(16px, 4vw); }
+}
