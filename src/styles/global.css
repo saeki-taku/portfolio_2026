@@ -119,31 +119,34 @@ body:not(.scene-page) { min-height: 100svh; background: #fff; }
   .scene-logo { top: max(16px, 4vw); }
 }
 
-/* Scale from sourceRect width, revealing padding only when the frame grows. */
+/* PC framing measured on corner-soft-v4: (0,150,1345,756.5625). */
 .scene {
-  --base-height: var(--pc-base-height);
-  --canvas-height: var(--pc-canvas-height);
-  --top-padding: var(--pc-top-padding);
-  --top-share: var(--pc-top-share);
-  --revealed-top: clamp(0px, calc((100% - var(--base-height)) * var(--top-share)), var(--top-padding));
-  height: max(100svh, 600px, var(--base-height));
+  --pc-base-height: calc(100vw * 756.5625 / 1345);
+  --pc-top-padding: calc(100vw * 150 / 1345);
+  --pc-reveal: clamp(0px, calc((100% - var(--pc-base-height)) * 150 / 413.4375), var(--pc-top-padding));
+  --pc-render-width: 100vw;
+  height: max(100svh, var(--pc-base-height));
   overflow: clip;
   background: #e5dcd0;
 }
 .scene picture {
-  inset: auto 0 auto;
-  top: calc(var(--revealed-top) - var(--top-padding));
-  height: var(--canvas-height);
+  inset: auto;
+  top: calc(var(--pc-reveal) - var(--pc-top-padding));
+  left: calc((100% - var(--pc-render-width)) / 2);
+  width: var(--pc-render-width);
+  height: calc(var(--pc-render-width) / var(--pc-aspect));
 }
-.scene img { width: 100%; height: 100%; object-fit: fill; }
-.scene-logo { top: calc(var(--revealed-top) + max(24px, 12vw)); }
+.scene img { width: 100%; height: 100%; object-fit: contain; }
+.scene-logo {
+  left: calc((100% - var(--pc-render-width)) / 2 + var(--pc-render-width) * .031);
+  top: calc(var(--pc-reveal) + max(24px, calc(var(--pc-render-width) * .12)));
+  font-size: clamp(26px, calc(var(--pc-render-width) * .038), 64px);
+}
 @media (max-aspect-ratio: 1/1) {
   .scene {
-    --base-height: var(--sp-base-height);
-    --canvas-height: var(--sp-canvas-height);
-    --top-padding: var(--sp-top-padding);
-    --top-share: var(--sp-top-share);
-    height: max(100svh, 680px, var(--base-height));
+    --revealed-top: clamp(0px, calc((100% - var(--sp-base-height)) * var(--sp-top-share)), var(--sp-top-padding));
+    height: max(100svh, 680px, var(--sp-base-height));
   }
-  .scene-logo { top: calc(var(--revealed-top) + max(16px, 4vw)); }
+  .scene picture { left: 0; width: 100%; top: calc(var(--revealed-top) - var(--sp-top-padding)); height: var(--sp-canvas-height); }
+  .scene-logo { left: 5.5%; top: calc(var(--revealed-top) + max(16px, 4vw)); font-size: clamp(26px, 7.8vw, 48px); }
 }
