@@ -25,3 +25,35 @@ const mobileImages = await Promise.all(mobileWidths.map(width => getImage({src: 
     <Navigation scene />
   </main>
 </Base>
+
+<script>
+  // Bounds include the outer window/sill, measured on the active original PNGs.
+  const scene = document.querySelector<HTMLElement>('.scene');
+  if (scene) {
+    const portrait = matchMedia('(max-aspect-ratio: 1/1)');
+    const layout = () => {
+      const w = document.documentElement.clientWidth;
+      const sp = portrait.matches;
+      const g = sp
+        ? { width: 1024, height: 1997, top: 154, base: 1536, padding: 461, right: 990, bottom: 1530 }
+        : { width: 1345, height: 1170, top: 150, base: 756.5625, padding: 413.4375, right: 1305, bottom: 850 };
+      // Reserve 20 CSS pixels beyond the right frame even on smaller screens.
+      const scale = Math.min(w / g.width, Math.max(1, w - 20) / g.right);
+      const base = g.base * scale;
+      const reveal = (h: number) => Math.min(g.top * scale, Math.max(0, h - base) * g.top / g.padding);
+      let h = Math.max(document.documentElement.clientHeight, base, sp ? 680 : 0);
+      for (let i = 0; i < 20; i++) {
+        h = Math.max(h, (g.bottom - g.top) * scale + reveal(h) + 60);
+      }
+      const y = reveal(h) - g.top * scale;
+      scene.style.setProperty('--layout-height', `${Math.ceil(h)}px`);
+      scene.style.setProperty('--layout-width', `${g.width * scale}px`);
+      scene.style.setProperty('--layout-image-height', `${g.height * scale}px`);
+      scene.style.setProperty('--layout-top', `${y}px`);
+      scene.style.setProperty('--layout-logo-top', `${reveal(h) + Math.max(sp ? 16 : 24, g.width * scale * (sp ? .04 : .12))}px`);
+    };
+    layout();
+    window.addEventListener('resize', layout);
+    portrait.addEventListener('change', layout);
+  }
+</script>

@@ -150,3 +150,13 @@ body:not(.scene-page) { min-height: 100svh; background: #fff; }
   .scene picture { left: 0; width: 100%; top: calc(var(--revealed-top) - var(--sp-top-padding)); height: var(--sp-canvas-height); }
   .scene-logo { left: 5.5%; top: calc(var(--revealed-top) + max(16px, 4vw)); font-size: clamp(26px, 7.8vw, 48px); }
 }
+
+/* Reserve actual CSS-pixel clearance beyond the window on both orientations. */
+.scene[style*="--layout-height"] { height: var(--layout-height); }
+.scene[style*="--layout-height"] picture {
+  left: 0;
+  top: var(--layout-top);
+  width: var(--layout-width);
+  height: var(--layout-image-height);
+}
+.scene[style*="--layout-height"] .scene-logo { top: var(--layout-logo-top); }
