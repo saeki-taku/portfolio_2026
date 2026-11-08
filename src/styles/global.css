@@ -169,3 +169,13 @@ body:not(.scene-page) { min-height: 100svh; background: #fff; }
     bottom: auto;
   }
 }
+
+/* Mobile floor-menu trial: no separate neutral area beneath the painting. */
+@media (max-aspect-ratio: 1/1) {
+  .scene[data-menu-placement="floor"] .scene-nav {
+    position: absolute;
+    top: auto;
+    bottom: max(16px, env(safe-area-inset-bottom));
+    background-color: rgb(241 238 229 / 82%);
+  }
+}

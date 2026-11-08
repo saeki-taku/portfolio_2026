@@ -1,6 +1,9 @@
+import springRainOverrides from '../assets/validation/spring-rin-approved-feet-v1/rain-overrides.json';
+const springMaskFiles = import.meta.glob<string>('../assets/validation/spring-rin-approved-feet-v1/*.png', {eager:true, query:'?url', import:'default'});
 const maskFiles = import.meta.glob<string>('../assets/validation/*/rain-visibility-alpha-*.png', { eager: true, query: '?url', import: 'default' });
 const mask = (folder: string, state: string) => {
-  const url = maskFiles[`../assets/validation/${folder}/rain-visibility-alpha-${state}.png`];
+  const override = (springRainOverrides as Record<string,string>)[`${folder}/rain-visibility-alpha-${state}.png`];
+  const url = (override ? springMaskFiles[`../assets/validation/spring-rin-approved-feet-v1/${override}`] : undefined) ?? maskFiles[`../assets/validation/${folder}/rain-visibility-alpha-${state}.png`];
   if (!url) throw new Error(`Rain visibility mask missing: ${folder}/${state}`);
   return url;
 };

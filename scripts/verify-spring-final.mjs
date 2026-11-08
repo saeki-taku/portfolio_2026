@@ -64,7 +64,7 @@ try {
       if (id === 'spring-evening-cloudy') {
         await page.locator(control).uncheck();
         assert.equal(await page.locator(`${art} img[data-scene="${id}"][${group}="rin"]:not([hidden])`).count(), 0);
-        assert.ok(await page.locator(`${art} img[data-scene="${id}"][data-layer*="cup-foreground"]:not([hidden])`).count() > 0);
+        assert.ok(await page.locator(`${art} img[data-scene="${id}"][data-layer^="05-cup-"]:not([hidden])`).count() > 0);
         await summary.evaluate(element => { if (element instanceof HTMLElement) element.click(); });
         await page.screenshot({ path: join(output, `${id}-${viewport}-no-rin.png`), fullPage: true });
         await summary.evaluate(element => { if (element instanceof HTMLElement) element.click(); });

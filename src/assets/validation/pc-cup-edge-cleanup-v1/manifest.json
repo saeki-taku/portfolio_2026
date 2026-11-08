@@ -28,5 +28,79 @@
     "removedAlphaPixels": 70,
     "reducedAlphaPixels": 1376,
     "method": "min(originalAlpha, imagegenAlpha resized to 80x80); original RGB unchanged; origin 1040,710"
+  },
+  "pc-day-redraw-v1": {
+    "filename": "cup-clean--1ab8308867eb.png",
+    "season": "spring"
+  },
+  "pc-spring-dawn-layers-v1": {
+    "filename": "cup-clean--7a28f19b6f83.png",
+    "season": "spring",
+    "underlay": "cup-underlay--4452e1331dee.png"
+  },
+  "pc-spring-dawn-cloudy-layers-v1": {
+    "filename": "cup-clean--11217b58b36a.png",
+    "season": "spring",
+    "underlay": "cup-underlay--79e6e406f30e.png"
+  },
+  "pc-spring-day-cloudy-layers-v1": {
+    "filename": "cup-clean--916f58c0e696.png",
+    "season": "spring",
+    "underlay": "cup-underlay--62303dbfe7a2.png"
+  },
+  "pc-spring-day-rain-layers-v2": {
+    "filename": "cup-clean--916f58c0e696.png",
+    "season": "spring",
+    "underlay": "cup-underlay--62303dbfe7a2.png"
+  },
+  "pc-spring-evening-pose-layers-v2": {
+    "filename": "cup-clean--1fecbfcb4731.png",
+    "season": "spring",
+    "underlay": "cup-underlay--46aebbf5abb9.png"
+  },
+  "pc-spring-evening-cloudy-layers-v2": {
+    "filename": "cup-clean--417d15fd2bda.png",
+    "season": "spring",
+    "underlay": "cup-underlay--ec6382df7673.png"
+  },
+  "pc-spring-dawn-rain-layers-v1": {
+    "filename": "cup-clean--11217b58b36a.png",
+    "season": "spring",
+    "underlay": "cup-underlay--79e6e406f30e.png"
+  },
+  "pc-spring-evening-rain-layers-v1": {
+    "filename": "cup-clean--417d15fd2bda.png",
+    "season": "spring",
+    "underlay": "cup-underlay--ec6382df7673.png"
+  },
+  "pc-spring-night-awake-pose-layers-v2": {
+    "filename": "cup-clean--71e91817c455.png",
+    "season": "spring",
+    "underlay": "cup-underlay--8440f9eef8d3.png"
+  },
+  "pc-spring-night-awake-cloudy-layers-v1": {
+    "filename": "cup-clean--f2ea5e59223f.png",
+    "season": "spring",
+    "underlay": "cup-underlay--71fc302417ef.png"
+  },
+  "pc-spring-night-asleep-layers-v1": {
+    "filename": "cup-clean--deeeba3a4f07.png",
+    "season": "spring",
+    "underlay": "cup-underlay--da04fa361298.png"
+  },
+  "pc-spring-night-asleep-cloudy-layers-v1": {
+    "filename": "cup-clean--eac7131e4ae4.png",
+    "season": "spring",
+    "underlay": "cup-underlay--b936de25f1fc.png"
+  },
+  "pc-spring-night-awake-rain-layers-v1": {
+    "filename": "cup-clean--f2ea5e59223f.png",
+    "season": "spring",
+    "underlay": "cup-underlay--71fc302417ef.png"
+  },
+  "pc-spring-night-asleep-rain-layers-v1": {
+    "filename": "cup-clean--eac7131e4ae4.png",
+    "season": "spring",
+    "underlay": "cup-underlay--b936de25f1fc.png"
   }
 }

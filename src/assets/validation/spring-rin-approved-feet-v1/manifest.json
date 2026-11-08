@@ -1,0 +1,66 @@
+{
+  "pc-spring-day-cloudy-layers-v1": {
+    "filename": "pc-day-cloudy--3226f14286f3.png",
+    "group": "day-cloudy"
+  },
+  "sp-day-cloudy-tall-layers-v1": {
+    "filename": "sp-day-cloudy--b8c04275c131.png",
+    "group": "day-cloudy"
+  },
+  "pc-spring-day-rain-layers-v2": {
+    "filename": "pc-day-cloudy--3226f14286f3.png",
+    "group": "day-cloudy"
+  },
+  "sp-spring-day-rain-tall-layers-v1": {
+    "filename": "sp-day-cloudy--b8c04275c131.png",
+    "group": "day-cloudy"
+  },
+  "pc-spring-evening-pose-layers-v2": {
+    "filename": "pc-evening-sunny--b2db490c1edf.png",
+    "group": "evening-sunny"
+  },
+  "sp-evening-tall-layers-v1": {
+    "filename": "sp-evening-sunny--42666f522e7c.png",
+    "group": "evening-sunny"
+  },
+  "pc-spring-evening-cloudy-layers-v2": {
+    "filename": "pc-evening-cloudy--06d836e38b71.png",
+    "group": "evening-cloudy"
+  },
+  "sp-spring-evening-cloudy-tall-layers-v2": {
+    "filename": "sp-evening-cloudy--d5ac7788f6ec.png",
+    "group": "evening-cloudy"
+  },
+  "pc-spring-evening-rain-layers-v1": {
+    "filename": "pc-evening-cloudy--06d836e38b71.png",
+    "group": "evening-cloudy"
+  },
+  "sp-spring-evening-rain-tall-layers-v1": {
+    "filename": "sp-evening-cloudy--d5ac7788f6ec.png",
+    "group": "evening-cloudy"
+  },
+  "pc-spring-night-awake-pose-layers-v2": {
+    "filename": "pc-night-sunny--99e6158f6621.png",
+    "group": "night-sunny"
+  },
+  "sp-night-awake-tall-layers-v1": {
+    "filename": "sp-night-sunny--fcf52494ee6f.png",
+    "group": "night-sunny"
+  },
+  "pc-spring-night-awake-cloudy-layers-v1": {
+    "filename": "pc-night-cloudy--407dd3c83f93.png",
+    "group": "night-cloudy"
+  },
+  "sp-spring-night-awake-cloudy-tall-layers-v1": {
+    "filename": "sp-night-cloudy--27a5e54ef6bd.png",
+    "group": "night-cloudy"
+  },
+  "pc-spring-night-awake-rain-layers-v1": {
+    "filename": "pc-night-cloudy--407dd3c83f93.png",
+    "group": "night-cloudy"
+  },
+  "sp-spring-night-awake-rain-tall-layers-v1": {
+    "filename": "sp-night-cloudy--27a5e54ef6bd.png",
+    "group": "night-cloudy"
+  }
+}

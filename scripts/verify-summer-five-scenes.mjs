@@ -78,7 +78,7 @@ try {
           0, `${name} ${scene}: person layers remain`);
         if (!sp) {
           assert.equal(await page.locator(`${art} img[data-scene="${scene}"][data-control="cup"]:not([hidden])`).count(),
-            3, `${name} ${scene}: cup must stay visible when person is off`);
+            2, `${name} ${scene}: cup must stay visible when person is off`);
           assert.equal(await page.locator(`${art} img[data-scene="${scene}"][data-requires-rin="true"]:not([hidden])`).count(),
             0, `${name} ${scene}: person/cup overlap remains when person is off`);
         }
@@ -97,21 +97,18 @@ try {
       }
       const repaint = page.locator(`${art} img[data-scene="${scene}"][data-layer="10-cup-off-repaint.png"]`);
       const refinement = page.locator(`${art} img[data-scene="${scene}"][data-layer="11-cup-off-sp-refine.png"]`);
-      if (!sp) assert.equal(await refinement.count(), hasRin ? 1 : 0,
+      if (!sp) assert.equal(await refinement.count(), 0,
         `${name} ${scene}: PC cloth refinement availability`);
-      assert.equal(await repaint.count(), hasRin ? 1 : 0,
+      assert.equal(await repaint.count(), 0,
         `${name} ${scene}: cup-off repaint availability`);
-      if (hasRin) assert.equal(await repaint.isHidden(), true,
-        `${name} ${scene}: repaint must stay hidden with cup on`);
+
       if (sp) {
         const cup = page.locator('[data-sp-toggle="cup"]');
         await cup.uncheck();
-        if (hasRin) assert.equal(await repaint.isHidden(), false,
-          `${name} ${scene}: cup-off repaint must show`);
+
         if (hasRin) {
           await rin.uncheck();
-          assert.equal(await repaint.isHidden(), true,
-            `${name} ${scene}: repaint remains after person off`);
+
           await rin.check();
         }
         await cup.check();
@@ -127,22 +124,20 @@ try {
         const cup = page.locator('[data-layer-toggle="cup"]');
         assert.equal(await cup.isDisabled(), false, `${name} ${scene}: cup control disabled`);
         const cupLayers = page.locator(`${art} img[data-scene="${scene}"][data-control="cup"]`);
-        assert.equal(await cupLayers.count(), hasRin ? 3 : 2,
-          `${name} ${scene}: cup body, shadow and foreground must be switchable`);
+        assert.equal(await cupLayers.count(), hasRin ? 2 : 1,
+          `${name} ${scene}: clean cup and existing contact shadow must be switchable`);
         const overlap = page.locator(`${art} img[data-scene="${scene}"][data-requires-rin="true"][data-requires-cup="true"]`);
         const visibleOverlap = page.locator(`${art} img[data-scene="${scene}"][data-requires-rin="true"][data-requires-cup="true"]:not([hidden])`);
-        assert.equal(await overlap.count(), hasRin ? 1 : 0,
+        assert.equal(await overlap.count(), 0,
           `${name} ${scene}: person/cup overlap restoration`);
-        assert.equal(await visibleOverlap.count(), hasRin ? 1 : 0,
+        assert.equal(await visibleOverlap.count(), 0,
           `${name} ${scene}: person/cup overlap must show only when both controls are on`);
         assert.equal(await page.locator('[data-pc-cup-label]').textContent(), 'カップと連動下地',
           `${name} ${scene}: cup control label`);
         await cup.uncheck();
         if (hasRin) {
-          assert.equal(await repaint.isHidden(), false,
-            `${name} ${scene}: cup-off repaint must show`);
-          assert.equal(await refinement.isHidden(), false,
-            `${name} ${scene}: PC cloth refinement must show`);
+
+
         }
         assert.equal(await page.locator(`${art} img[data-scene="${scene}"][data-control="cup"]:not([hidden])`).count(),
           0, `${name} ${scene}: cup body or foreground remains`);
@@ -153,10 +148,8 @@ try {
         await summary.evaluate(element => { if (element instanceof HTMLElement) element.click(); });
         if (hasRin) {
           await rin.uncheck();
-          assert.equal(await repaint.isHidden(), true,
-            `${name} ${scene}: repaint remains after person off`);
-          assert.equal(await refinement.isHidden(), true,
-            `${name} ${scene}: PC cloth refinement remains after person off`);
+
+
           assert.equal(await visibleOverlap.count(), 0,
             `${name} ${scene}: person/cup overlap remains with person off`);
           await summary.evaluate(element => { if (element instanceof HTMLElement) element.click(); });
