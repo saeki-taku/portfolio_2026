@@ -1,0 +1,65 @@
+{
+  "dimensions": [
+    1345,
+    1170
+  ],
+  "sourceLayerHashes": {
+    "01-exterior.png": "101d3bc6655aa964569d250fbfae4fc6d777c7016ca37e1d00484a28fe72f471",
+    "02-interior.png": "4d8c1e2cd9d9b9ca3b80924a00994e933552ff736df563bc7aefea615efd9d6c",
+    "05-cup-foreground.png": "1f50a46eaea528fb4d08187c1080e0d7b94978640f993e2544347c673e27cab4"
+  },
+  "layerMetadata": {
+    "01-exterior.png": {
+      "width": 1345,
+      "height": 1170,
+      "alpha": true
+    },
+    "02-interior.png": {
+      "width": 1345,
+      "height": 1170,
+      "alpha": true
+    },
+    "05-cup-foreground.png": {
+      "width": 1345,
+      "height": 1170,
+      "alpha": true
+    }
+  },
+  "alphaDifferences": {
+    "01-exterior.png": 0,
+    "02-interior.png": 0,
+    "05-cup-foreground.png": 0
+  },
+  "glassMaskByteIdentical": true,
+  "personPresent": false,
+  "previews": {
+    "preview-composite.png": {
+      "recompositionExact": true,
+      "transparentHoles": 0
+    },
+    "preview-no-rin.png": {
+      "recompositionExact": true,
+      "transparentHoles": 0
+    },
+    "preview-no-cup.png": {
+      "recompositionExact": true,
+      "transparentHoles": 0
+    }
+  },
+  "method": "Built-in image_gen lighting guide; per-channel low-pass illumination ratio applied to original RGB, original alpha/coordinates retained. Night adds separately extracted city lights.",
+  "limitations": [
+    "Original texture and fine shading retained; lighting is illustrative, not physical simulation.",
+    "Static material QA only; website integration and device checks pending."
+  ],
+  "finalChecks": {
+    "manifestReferencesValid": true,
+    "sourceFilesUnchanged": true,
+    "maskByteIdentical": true
+  },
+  "visualReview": {
+    "wholeComposition": "Inspected for summer foliage, light state, window/sill/floor alignment and obvious alpha seams.",
+    "personOff": "Inspected; no visible person/notebook residue. Predawn and asleep omit every Rin-linked layer.",
+    "nightDetail": null,
+    "limitation": "Some fine inherited painted shadows remain; no physical light simulation, device rendering or website tests."
+  }
+}

@@ -1,0 +1,56 @@
+{
+  "status": "review-candidate",
+  "scene": "ennui-rin-spring-dawn-sp-v1",
+  "width": 1024,
+  "height": 2400,
+  "origin": "top-left",
+  "registration": {
+    "x": 0,
+    "y": 0
+  },
+  "root": "/Users/saekitakuya/Documents/ChatGPT/ポートフォリオ/design-proposals/sp-spring-dawn-tall-layers-v1",
+  "sourceLayers": "/Users/saekitakuya/Documents/ChatGPT/ポートフォリオ/design-proposals/sp-night-asleep-tall-layers-v1",
+  "dayLightingReference": "/Users/saekitakuya/Documents/ChatGPT/ポートフォリオ/design-proposals/sp-day-tall-layers-v1",
+  "paintGuide": "inputs/dawn-paint-guide.png",
+  "suggestedTimeJST": "05:00-05:59 (provisional)",
+  "layersBottomToTop": [
+    "01-exterior.png",
+    "01a-city-lights.png",
+    "02-interior-window.png",
+    "03-plant-scene-underpaint.png",
+    "04-indoor-plant.png",
+    "05-cup-contact-underpaint.png",
+    "06-cup-body-underpaint.png",
+    "09-cup-foreground.png"
+  ],
+  "toggleGroups": {
+    "cup": [
+      "05-cup-contact-underpaint.png",
+      "06-cup-body-underpaint.png",
+      "09-cup-foreground.png"
+    ],
+    "plant": [
+      "03-plant-scene-underpaint.png",
+      "04-indoor-plant.png"
+    ]
+  },
+  "glassMask": "glass-mask.png",
+  "glassMaskMode": "luminance",
+  "previews": {
+    "all": "preview-composite.png",
+    "cityLightsOff": "preview-city-lights-off.png",
+    "comparison": "compare-night-dawn-day.png",
+    "skyDetail": "inspection-sky.png",
+    "sillDetail": "inspection-sill.png",
+    "withoutCup": "preview-no-cup.png",
+    "withoutPlantCup": "preview-no-plant-cup.png",
+    "plantDetail": "inspection-plant.png"
+  },
+  "constraints": [
+    "No person or indoor reading lamp. Existing window/city/room/plant/cup shapes and alpha are preserved.",
+    "This is a static dawn candidate, not a change to existing night/day artwork or site timing logic.",
+    "SP plant and cup underpaints must stay with their toggle groups."
+  ],
+  "verification": "verification.json",
+  "build": "node ../build-spring-dawn-layer-sets-v1.cjs"
+}

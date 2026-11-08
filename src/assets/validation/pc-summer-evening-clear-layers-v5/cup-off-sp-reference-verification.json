@@ -1,0 +1,71 @@
+{
+  "source": "/Users/saekitakuya/Documents/ChatGPT/ポートフォリオ/design-proposals/pc-summer-evening-clear-layers-v4",
+  "bounds": {
+    "left": 1009,
+    "right": 1248,
+    "top": 604,
+    "bottom": 805
+  },
+  "allOn": {
+    "changedPixels": 0,
+    "changedOutsideRepair": 0,
+    "maxChannelDifference": 0,
+    "alphaHoles": 0
+  },
+  "cupOff": {
+    "changedPixels": 33691,
+    "changedOutsideRepair": 0,
+    "maxChannelDifference": 124,
+    "alphaHoles": 0
+  },
+  "combinations": {
+    "rin-on_cup-on_plant-on": {
+      "changedPixels": 0,
+      "changedOutsideRepair": 0,
+      "maxChannelDifference": 0,
+      "alphaHoles": 0
+    },
+    "rin-on_cup-on_plant-off": {
+      "changedPixels": 0,
+      "changedOutsideRepair": 0,
+      "maxChannelDifference": 0,
+      "alphaHoles": 0
+    },
+    "rin-on_cup-off_plant-on": {
+      "changedPixels": 33691,
+      "changedOutsideRepair": 0,
+      "maxChannelDifference": 124,
+      "alphaHoles": 0
+    },
+    "rin-on_cup-off_plant-off": {
+      "changedPixels": 33691,
+      "changedOutsideRepair": 0,
+      "maxChannelDifference": 124,
+      "alphaHoles": 0
+    },
+    "rin-off_cup-on_plant-on": {
+      "changedPixels": 0,
+      "changedOutsideRepair": 0,
+      "maxChannelDifference": 0,
+      "alphaHoles": 0
+    },
+    "rin-off_cup-on_plant-off": {
+      "changedPixels": 0,
+      "changedOutsideRepair": 0,
+      "maxChannelDifference": 0,
+      "alphaHoles": 0
+    },
+    "rin-off_cup-off_plant-on": {
+      "changedPixels": 0,
+      "changedOutsideRepair": 0,
+      "maxChannelDifference": 0,
+      "alphaHoles": 0
+    },
+    "rin-off_cup-off_plant-off": {
+      "changedPixels": 0,
+      "changedOutsideRepair": 0,
+      "maxChannelDifference": 0,
+      "alphaHoles": 0
+    }
+  }
+}

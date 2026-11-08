@@ -1,0 +1,55 @@
+{
+  "status": "review-candidate",
+  "scene": "ennui-rin-spring-day-sunny-pc-cup-off-sill-v2",
+  "width": 1345,
+  "height": 1170,
+  "origin": "top-left",
+  "registration": {
+    "x": 0,
+    "y": 0
+  },
+  "layersBottomToTop": [
+    "01-exterior.png",
+    "02-interior.png",
+    "02a-cup-off-sill-clean.png",
+    "03-rin.png",
+    "05-cup-foreground.png",
+    "10-cup-off-sp-refine.png"
+  ],
+  "toggleGroups": {
+    "rin": [
+      "03-rin.png"
+    ],
+    "cup": [
+      "05-cup-foreground.png"
+    ],
+    "plant": []
+  },
+  "conditionalLayers": {
+    "10-cup-off-sp-refine.png": {
+      "rin": true,
+      "cup": false
+    },
+    "02a-cup-off-sill-clean.png": {
+      "cup": false
+    }
+  },
+  "previews": {
+    "all": "preview-composite.png",
+    "cupOff": "preview-cup-off.png",
+    "cupOffDetail": "inspection-cup-off.png",
+    "noRinNoCup": "preview-rin-off_cup-off.png",
+    "beforeAfterNoRin": "compare-rin-off-cup-off-before-after.png",
+    "beforeAfterRin": "compare-rin-on-cup-off-before-after.png",
+    "combinations": {
+      "rin-on_cup-on": "preview-rin-on_cup-on.png",
+      "rin-on_cup-off": "preview-rin-on_cup-off.png",
+      "rin-off_cup-on": "preview-rin-off_cup-on.png",
+      "rin-off_cup-off": "preview-rin-off_cup-off.png"
+    }
+  },
+  "build": "node ../pc-spring-cup-off-sill-v2/build.cjs",
+  "verification": "cup-off-sill-verification.json",
+  "note": "Spring plant is baked into the interior source and was not separately toggleable in the adopted PC scene.",
+  "sourceSet": "/Users/saekitakuya/Documents/ChatGPT/ポートフォリオ/design-proposals/pc-spring-day-sunny-cup-off-layers-v1"
+}

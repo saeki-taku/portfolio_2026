@@ -1,0 +1,34 @@
+{
+  "source": "/Users/saekitakuya/Documents/ChatGPT/ポートフォリオ/design-proposals/rin-10deg-hem-cleanup/rin-hem-cleaned-transparent.png",
+  "hashes": {
+    "rin-hem-cleaned-transparent.png": "74eeac8ab1254a5bb8af55d95fe03f0287f219318cdeb334f7d2ea8f1056746d",
+    "rin-pc-hem-cleaned.png": "35357306293d93e5561b42adfc5beda0bfe57edaeab6e1d2d59e514c6885230b",
+    "rin-sp-hem-cleaned.png": "3fb6f826a3d8f824b151f5e6a59787a5fa9515102b199aa2960ec36c25c66a8c"
+  },
+  "transforms": [
+    {
+      "variant": "pc",
+      "canvas": [
+        1345,
+        1170
+      ],
+      "resizeWidth": 418,
+      "left": 892,
+      "top": 405,
+      "cssShiftY": 8
+    },
+    {
+      "variant": "sp",
+      "canvas": [
+        1024,
+        2400
+      ],
+      "resizeWidth": 557,
+      "left": 464,
+      "top": 1177,
+      "cssShiftY": 11
+    }
+  ],
+  "derivation": "Sharp width-only aspect-preserving Lanczos3 resize, transparent canvas composite; no redrawing, rotation, mask changes, or local anatomy edits.",
+  "verifiedPixelDifference": 0
+}

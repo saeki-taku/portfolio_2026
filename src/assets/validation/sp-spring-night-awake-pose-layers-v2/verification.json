@@ -1,0 +1,91 @@
+{
+  "width": 1024,
+  "height": 1997,
+  "figureAlphaBounds": [
+    525,
+    986,
+    1004,
+    1402
+  ],
+  "backgroundLayersByteIdentical": {
+    "01-exterior.png": true,
+    "01a-city-lights.png": true,
+    "02-interior-window.png": true,
+    "03-plant-scene-underpaint.png": true,
+    "04-indoor-plant.png": true,
+    "05-cup-contact-underpaint.png": true,
+    "06-cup-body-underpaint.png": true,
+    "09-cup-foreground.png": true
+  },
+  "noRinMaxChannelDifference": 1,
+  "originalAssetsOverwritten": false,
+  "generatedSource": "exec-61cabf39-51ae-4d36-af88-3fda98384e1b.png",
+  "registration": {
+    "left": 500,
+    "top": 960,
+    "width": 510,
+    "height": 460
+  },
+  "contactShadow": "New low-opacity contact mask derived from current figure bottom silhouette; not old person/contact RGB. Optical accuracy remains review-candidate.",
+  "layerMetadata": {
+    "01-exterior.png": {
+      "width": 1024,
+      "height": 1997,
+      "hasAlpha": true
+    },
+    "01a-city-lights.png": {
+      "width": 1024,
+      "height": 1997,
+      "hasAlpha": true
+    },
+    "02-interior-window.png": {
+      "width": 1024,
+      "height": 1997,
+      "hasAlpha": true
+    },
+    "03-plant-scene-underpaint.png": {
+      "width": 1024,
+      "height": 1997,
+      "hasAlpha": true
+    },
+    "04-indoor-plant.png": {
+      "width": 1024,
+      "height": 1997,
+      "hasAlpha": true
+    },
+    "05-cup-contact-underpaint.png": {
+      "width": 1024,
+      "height": 1997,
+      "hasAlpha": true
+    },
+    "06-cup-body-underpaint.png": {
+      "width": 1024,
+      "height": 1997,
+      "hasAlpha": true
+    },
+    "rin-contact-shadow.png": {
+      "width": 1024,
+      "height": 1997,
+      "hasAlpha": true
+    },
+    "rin.png": {
+      "width": 1024,
+      "height": 1997,
+      "hasAlpha": true
+    },
+    "09-cup-foreground.png": {
+      "width": 1024,
+      "height": 1997,
+      "hasAlpha": true
+    }
+  },
+  "manifestRecompositionExact": true,
+  "toggleGroupsValid": true,
+  "visualReview": {
+    "pose": "Open book held in both hands, gaze on pages, blue-gray loungewear, no pen.",
+    "anatomy": "No conspicuous torso/pelvis/knee/ankle discontinuity in inspected composites.",
+    "alpha": "No visible scenery fragments in isolated figure review.",
+    "eveningRim": null,
+    "residual": "Minor generated silhouette and brushwork variation from daytime reference. Contact shadow is an approximate silhouette-derived mask, requiring final aesthetic review."
+  }
+}

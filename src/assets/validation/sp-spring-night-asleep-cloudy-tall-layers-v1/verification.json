@@ -1,0 +1,45 @@
+{
+  "dimensions": [
+    1024,
+    2400
+  ],
+  "alphaDifferencesWhenUsingDayStructure": {
+    "01-exterior.png": 0,
+    "02-interior-window.png": 0,
+    "03-plant-scene-underpaint.png": 0,
+    "04-indoor-plant.png": 0,
+    "05-cup-contact-underpaint.png": 0,
+    "06-cup-body-underpaint.png": 0,
+    "09-cup-foreground.png": 0
+  },
+  "outputAlphaDifferences": {
+    "01-exterior.png": 0,
+    "01a-city-lights.png": 0,
+    "02-interior-window.png": 0,
+    "03-plant-scene-underpaint.png": 0,
+    "04-indoor-plant.png": 0,
+    "05-cup-contact-underpaint.png": 0,
+    "06-cup-body-underpaint.png": 0,
+    "09-cup-foreground.png": 0
+  },
+  "glassMaskDifferences": 0,
+  "protectedLayerHashes": {
+    "01a-city-lights.png": {
+      "source": "98d3c7176ce3fa54ae16ee415f1825c05189d03087e097810beb5fdeab71dc13",
+      "output": "98d3c7176ce3fa54ae16ee415f1825c05189d03087e097810beb5fdeab71dc13"
+    }
+  },
+  "previewAlphaHoles": {
+    "preview-composite.png": 0,
+    "preview-city-lights-off.png": 0,
+    "preview-no-cup.png": 0,
+    "preview-no-plant-cup.png": 0
+  },
+  "luma": {
+    "sky": 21.28231614444464,
+    "city": 28.345852123076543,
+    "room": 26.816325839999596
+  },
+  "guideSha256": "f919c46a6be56065868699dcac1e931f9fd92aa7b148a069396f0c92258a1301",
+  "status": "mechanical-checks-passed; visual-review-required"
+}

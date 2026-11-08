@@ -1,0 +1,40 @@
+{
+  "status": "review-candidate",
+  "scene": "ennui-summer-dawn-clear-pc-v1",
+  "root": "/Users/saekitakuya/Documents/ChatGPT/ポートフォリオ/design-proposals/pc-summer-dawn-clear-layers-v1",
+  "width": 1345,
+  "height": 1170,
+  "origin": "top-left",
+  "registration": {
+    "x": 0,
+    "y": 0
+  },
+  "sourceLayers": "/Users/saekitakuya/Documents/ChatGPT/ポートフォリオ/design-proposals/pc-summer-day-clear-layers-v1",
+  "period": "dawn",
+  "personPresent": false,
+  "lighting": {
+    "indoorLamp": false,
+    "cityLights": "off"
+  },
+  "layersBottomToTop": [
+    "01-exterior.png",
+    "02-interior.png",
+    "05-cup-foreground.png"
+  ],
+  "toggleGroups": {
+    "rin": [],
+    "cup": [
+      "05-cup-foreground.png"
+    ]
+  },
+  "glassMask": "glass-mask.png",
+  "glassMaskMode": "luminance",
+  "previews": {
+    "all": "preview-composite.png",
+    "withoutRin": "preview-no-rin.png",
+    "withoutCup": "preview-no-cup.png"
+  },
+  "verification": "verification.json",
+  "build": "node ../build-summer-clear-periods-v1.cjs dawn",
+  "inputGuide": "inputs/lighting-guide.png"
+}

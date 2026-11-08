@@ -1,0 +1,97 @@
+{
+  "dimensions": [
+    1024,
+    2400
+  ],
+  "sourceLayerHashes": {
+    "01-exterior.png": "dba3803cf36a0e65018eaec212ad0729a7fd3a2a4fb48bd51b32381fb33ef8b0",
+    "02-interior-window.png": "96bb0c750fbadcfc911ac5545097186cfc55c918de06df27a1b4881644803796",
+    "03-plant-scene-underpaint.png": "b0cd518e26235dc6686eb05fec2d6173e4b621c883b9202a52cae3453e71754f",
+    "04-indoor-plant.png": "147370da18797e3d27303d8c926813b6c549df108ea2d5acd2d18c65ea6d0446",
+    "05-cup-contact-underpaint.png": "ab05c5fa847d5f351267f9eefb35668e80b3b0f5b039f8d0663b2820fed89a0a",
+    "06-cup-body-underpaint.png": "579e6368eeeef79ac547ea2b3b5214afa12e6ac285e308244e3ff8734c3ae954",
+    "09-cup-foreground.png": "9dadf54b1c8ab567639af0227aedcbb8a77eca637825cb613ff671f03431fc04"
+  },
+  "layerMetadata": {
+    "01-exterior.png": {
+      "width": 1024,
+      "height": 2400,
+      "alpha": true
+    },
+    "02-interior-window.png": {
+      "width": 1024,
+      "height": 2400,
+      "alpha": true
+    },
+    "03-plant-scene-underpaint.png": {
+      "width": 1024,
+      "height": 2400,
+      "alpha": true
+    },
+    "04-indoor-plant.png": {
+      "width": 1024,
+      "height": 2400,
+      "alpha": true
+    },
+    "05-cup-contact-underpaint.png": {
+      "width": 1024,
+      "height": 2400,
+      "alpha": true
+    },
+    "06-cup-body-underpaint.png": {
+      "width": 1024,
+      "height": 2400,
+      "alpha": true
+    },
+    "09-cup-foreground.png": {
+      "width": 1024,
+      "height": 2400,
+      "alpha": true
+    }
+  },
+  "alphaDifferences": {
+    "01-exterior.png": 0,
+    "02-interior-window.png": 0,
+    "03-plant-scene-underpaint.png": 0,
+    "04-indoor-plant.png": 0,
+    "05-cup-contact-underpaint.png": 0,
+    "06-cup-body-underpaint.png": 0,
+    "09-cup-foreground.png": 0
+  },
+  "glassMaskByteIdentical": true,
+  "personPresent": false,
+  "previews": {
+    "preview-composite.png": {
+      "recompositionExact": true,
+      "transparentHoles": 0
+    },
+    "preview-no-rin.png": {
+      "recompositionExact": true,
+      "transparentHoles": 0
+    },
+    "preview-no-cup.png": {
+      "recompositionExact": true,
+      "transparentHoles": 0
+    },
+    "preview-no-plant.png": {
+      "recompositionExact": true,
+      "transparentHoles": 0
+    }
+  },
+  "method": "Built-in image_gen lighting guide; per-channel low-pass illumination ratio applied to original RGB, original alpha/coordinates retained. Night adds separately extracted city lights.",
+  "limitations": [
+    "Original texture and fine shading retained; lighting is illustrative, not physical simulation.",
+    "Static material QA only; website integration and device checks pending."
+  ],
+  "finalChecks": {
+    "manifestReferencesValid": true,
+    "sourceFilesUnchanged": true,
+    "maskByteIdentical": true
+  },
+  "visualReview": {
+    "wholeComposition": "Inspected for summer foliage, light state, window/sill/floor alignment and obvious alpha seams.",
+    "personOff": "Inspected; no visible person/notebook residue. Predawn and asleep omit every Rin-linked layer.",
+    "nightDetail": null,
+    "limitation": "Some fine inherited painted shadows remain; no physical light simulation, device rendering or website tests."
+  }
+}

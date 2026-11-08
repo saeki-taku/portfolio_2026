@@ -1,0 +1,52 @@
+{
+  "status": "review-candidate",
+  "scene": "ennui-rin-spring-day-sunny-pc-cup-off-sp-reference-v1",
+  "width": 1345,
+  "height": 1170,
+  "origin": "top-left",
+  "registration": {
+    "x": 0,
+    "y": 0
+  },
+  "layersBottomToTop": [
+    "01-exterior.png",
+    "02-interior.png",
+    "03-rin.png",
+    "05-cup-foreground.png",
+    "10-cup-off-sp-refine.png"
+  ],
+  "toggleGroups": {
+    "rin": [
+      "03-rin.png"
+    ],
+    "cup": [
+      "05-cup-foreground.png"
+    ],
+    "plant": []
+  },
+  "conditionalLayers": {
+    "10-cup-off-sp-refine.png": {
+      "rin": true,
+      "cup": false
+    }
+  },
+  "previews": {
+    "all": "preview-composite.png",
+    "cupOff": "preview-cup-off.png",
+    "cupOffDetail": "inspection-cup-off.png",
+    "beforeAfter": "compare-cup-off-before-after.png",
+    "combinations": {
+      "rin-on_cup-on_plant-on": "preview-rin-on_cup-on_plant-on.png",
+      "rin-on_cup-on_plant-off": "preview-rin-on_cup-on_plant-off.png",
+      "rin-on_cup-off_plant-on": "preview-rin-on_cup-off_plant-on.png",
+      "rin-on_cup-off_plant-off": "preview-rin-on_cup-off_plant-off.png",
+      "rin-off_cup-on_plant-on": "preview-rin-off_cup-on_plant-on.png",
+      "rin-off_cup-on_plant-off": "preview-rin-off_cup-on_plant-off.png",
+      "rin-off_cup-off_plant-on": "preview-rin-off_cup-off_plant-on.png",
+      "rin-off_cup-off_plant-off": "preview-rin-off_cup-off_plant-off.png"
+    }
+  },
+  "build": "node ../pc-cup-off-sp-reference-v1/build.cjs",
+  "verification": "cup-off-sp-reference-verification.json",
+  "note": "Spring plant is baked into the interior source and was not separately toggleable in the adopted PC scene."
+}

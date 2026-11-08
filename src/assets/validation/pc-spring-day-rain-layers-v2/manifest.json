@@ -1,0 +1,60 @@
+{
+  "status": "review-candidate",
+  "scene": "ennui-spring-day-rain-pc-v2",
+  "width": 1345,
+  "height": 1170,
+  "origin": "top-left",
+  "registration": {
+    "x": 0,
+    "y": 0
+  },
+  "sourceCloudy": "/Users/saekitakuya/Documents/ChatGPT/ポートフォリオ/design-proposals/pc-spring-day-cloudy-layers-v1",
+  "sourceRainDraft": "/Users/saekitakuya/Documents/ChatGPT/ポートフォリオ/design-proposals/pc-spring-day-rain-layers-v1",
+  "layersBottomToTop": [
+    "01-exterior.png",
+    "02-interior.png",
+    "rin-contact-shadow.png",
+    "03-rin.png",
+    "05-cup-foreground.png",
+    "rain-outdoor-{rin-on|rin-off}.png",
+    "rain-glass-droplets-{rin-on|rin-off}.png"
+  ],
+  "toggleGroups": {
+    "rin": [
+      "rin-contact-shadow.png",
+      "03-rin.png"
+    ],
+    "plant": [],
+    "cup": []
+  },
+  "weatherEffect": {
+    "staticWeather": "rain",
+    "glassMask": "glass-mask.png",
+    "glassMaskMode": "luminance",
+    "alphaMasksByRinState": {
+      "on": "rain-visibility-alpha-rin-on.png",
+      "off": "rain-visibility-alpha-rin-off.png"
+    },
+    "outdoorRainByRinState": {
+      "on": "rain-outdoor-rin-on.png",
+      "off": "rain-outdoor-rin-off.png"
+    },
+    "glassDropletsByRinState": {
+      "on": "rain-glass-droplets-rin-on.png",
+      "off": "rain-glass-droplets-rin-off.png"
+    },
+    "placement": "Preclipped rain effects are composited last, but visibility is restricted to architectural glass minus actual plant/person silhouettes. The mixed underpaint is never an occluder.",
+    "animation": "Sample stills only; animate outdoor streaks separately from sparse glass droplets using the alpha visibility masks.",
+    "plantUnderpaintResolution": "Plant is baked into the opaque interior and excluded by the architectural glass opening."
+  },
+  "previews": {
+    "all": "preview-composite.png",
+    "withoutRin": "preview-no-rin.png",
+    "rainEffectOff": "preview-rain-effect-off.png",
+    "withoutRinEffectOff": "preview-no-rin-effect-off.png",
+    "compareCloudyRain": "compare-cloudy-rain.png",
+    "compareEffectOffOn": "compare-effect-off-on.png"
+  },
+  "verification": "verification.json",
+  "build": "node ../build-spring-day-rain-current.cjs"
+}

@@ -1,0 +1,87 @@
+{
+  "format": "pc",
+  "period": "day",
+  "dimensions": [
+    1345,
+    1170
+  ],
+  "oldAllOnSha256": "916fe6810e7c70c79ef953c26b65ece3547c5e70212b3bfa1d7dfd7ee8e5c325",
+  "newAllOnSha256": "916fe6810e7c70c79ef953c26b65ece3547c5e70212b3bfa1d7dfd7ee8e5c325",
+  "maxAllOnChannelDifference": 0,
+  "repair": {
+    "paintedPixels": 17883,
+    "bounds": {
+      "x0": 999,
+      "x1": 1155,
+      "y0": 672,
+      "y1": 790
+    },
+    "clothRatio": [
+      1,
+      1,
+      1
+    ],
+    "sillRatio": [
+      1,
+      1,
+      1
+    ]
+  },
+  "combinations": {
+    "rin-on_cup-on_plant-on": {
+      "changedPixels": 0,
+      "changedOutsideRepair": 0,
+      "maxChannelDifference": 0,
+      "alphaHoles": 0
+    },
+    "rin-on_cup-on_plant-off": {
+      "changedPixels": 0,
+      "changedOutsideRepair": 0,
+      "maxChannelDifference": 0,
+      "alphaHoles": 0
+    },
+    "rin-on_cup-off_plant-on": {
+      "changedPixels": 16965,
+      "changedOutsideRepair": 0,
+      "maxChannelDifference": 140,
+      "alphaHoles": 0
+    },
+    "rin-on_cup-off_plant-off": {
+      "changedPixels": 16965,
+      "changedOutsideRepair": 0,
+      "maxChannelDifference": 140,
+      "alphaHoles": 0
+    },
+    "rin-off_cup-on_plant-on": {
+      "changedPixels": 0,
+      "changedOutsideRepair": 0,
+      "maxChannelDifference": 0,
+      "alphaHoles": 0
+    },
+    "rin-off_cup-on_plant-off": {
+      "changedPixels": 0,
+      "changedOutsideRepair": 0,
+      "maxChannelDifference": 0,
+      "alphaHoles": 0
+    },
+    "rin-off_cup-off_plant-on": {
+      "changedPixels": 0,
+      "changedOutsideRepair": 0,
+      "maxChannelDifference": 0,
+      "alphaHoles": 0
+    },
+    "rin-off_cup-off_plant-off": {
+      "changedPixels": 0,
+      "changedOutsideRepair": 0,
+      "maxChannelDifference": 0,
+      "alphaHoles": 0
+    }
+  },
+  "conditions": {
+    "10-cup-off-repaint.png": {
+      "rin": true,
+      "cup": false
+    }
+  },
+  "sourceUntouched": true
+}

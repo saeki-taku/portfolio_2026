@@ -1,0 +1,28 @@
+{
+  "width": 1345,
+  "height": 1170,
+  "origin": [
+    0,
+    0
+  ],
+  "source": "/Users/saekitakuya/Documents/ChatGPT/ポートフォリオ/design-proposals/b-spring-rin-pc-corner-soft-v4.png",
+  "sourceSha256": "79ec80f40edaab8476d92ba78a0e0e6092cc64932f43d93fe63503e64f67905b",
+  "basedOn": "pc-day-layers-v3",
+  "order": [
+    "01-exterior.png",
+    "02-interior.png",
+    "04-contact-shadow.png",
+    "03-rin.png",
+    "05-cup-foreground.png",
+    "06-person-edge-restore.png"
+  ],
+  "hidePerson": [
+    "03-rin.png",
+    "04-contact-shadow.png",
+    "06-person-edge-restore.png"
+  ],
+  "completedTrouserPixels": 2784,
+  "compositeChangedPixels": 1406,
+  "meanAbsoluteChannelDifference": 0.007915567841218399,
+  "status": "review draft; trouser reconstructed behind cup, cup remains part of interior/cup layers"
+}

@@ -1,0 +1,87 @@
+{
+  "dimensions": [
+    1024,
+    1997
+  ],
+  "sourceSha256": "7e41533e3c422ad29be71ecb4ca3865d426a9d3e8273e2e528f9f3c9b883befb",
+  "generatedGuideSha256": "6cbd2c51ff0a9a25b519ad31f9d04eef525046e9bc28c1a17b817755b0adaff8",
+  "generatedEmptyRoomGuideSha256": "3784e642a2f33734f2c40924433ab746085bc28963b3488f4d3bd0cc2c91173c",
+  "generatedInteriorEditSha256": "bae368b5ed442c27b507959bf33247d04db54128d1d1990cb42fc4e4d0112c7b",
+  "layerDimensionsAndAlpha": {
+    "01-exterior.png": {
+      "width": 1024,
+      "height": 1997,
+      "alpha": true
+    },
+    "02-interior-window.png": {
+      "width": 1024,
+      "height": 1997,
+      "alpha": true
+    },
+    "03-plant-scene-underpaint.png": {
+      "width": 1024,
+      "height": 1997,
+      "alpha": true
+    },
+    "04-indoor-plant.png": {
+      "width": 1024,
+      "height": 1997,
+      "alpha": true
+    },
+    "05-cup-contact-underpaint.png": {
+      "width": 1024,
+      "height": 1997,
+      "alpha": true
+    },
+    "06-cup-body-underpaint.png": {
+      "width": 1024,
+      "height": 1997,
+      "alpha": true
+    },
+    "07-rin-occluded-underpaint.png": {
+      "width": 1024,
+      "height": 1997,
+      "alpha": true
+    },
+    "rin-contact-shadow.png": {
+      "width": 1024,
+      "height": 1997,
+      "alpha": true
+    },
+    "08-rin-notebook.png": {
+      "width": 1024,
+      "height": 1997,
+      "alpha": true
+    },
+    "09-cup-foreground.png": {
+      "width": 1024,
+      "height": 1997,
+      "alpha": true
+    }
+  },
+  "cityGeometry": "Original separated exterior pixels retained outside sky; their RGB is relit without resampling.",
+  "personGeometry": "SP v21 person alpha and pixel coordinates preserved.",
+  "visualApproval": "technical and visual QA completed; user adoption pending",
+  "recomposition": {
+    "preview-composite.png": "exact with documented per-layer 8-bit rounding",
+    "preview-no-rin.png": "exact with documented per-layer 8-bit rounding"
+  },
+  "personAlphaDifferences": 0,
+  "maskValidation": {
+    "file": "glass-mask-v2.png",
+    "method": "exterior alpha multiplied by one minus interior alpha; no scene repaint",
+    "width": 1024,
+    "height": 1997,
+    "opaqueInteriorLeakPixels": 0,
+    "nonzeroPixels": 812820,
+    "foreground": "Occluded by later manifest layers, not encoded into SP glass mask.",
+    "scope": "Validated for spring daytime cloudy only; other periods not yet verified.",
+    "effectOverlayReview": "FAIL for future rain: plant underpaint masks rectangular region near left lower glass. Glass/window mask itself excludes frames correctly; cloudy static unaffected."
+  },
+  "visualReview": {
+    "lighting": "Cloudy sky and diffuse interior/person light coherent. No conspicuous hard sun-cast floor/window shadows remain.",
+    "personOff": "No visible Rin/book/contact-shadow residue in inspected preview.",
+    "geometry": "Adopted figure alpha unchanged. No conspicuous city or framing displacement.",
+    "limitations": "Bright overcast rendering; exterior retains original painted building form shadows. No dynamic rain validation yet. SP effect ordering needs underpaint-aware compositing before rain."
+  }
+}

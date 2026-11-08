@@ -1,0 +1,77 @@
+{
+  "status": "implementation-candidate",
+  "scene": "ennui-spring-day-cloudy-sp-tall-v1",
+  "root": "/Users/saekitakuya/Documents/ChatGPT/ポートフォリオ/design-proposals/sp-day-cloudy-tall-layers-v1",
+  "width": 1024,
+  "height": 2400,
+  "origin": "top-left",
+  "registration": {
+    "x": 0,
+    "y": 0
+  },
+  "sourceLayers": "/Users/saekitakuya/Documents/ChatGPT/ポートフォリオ/design-proposals/sp-spring-day-cloudy-layers-v1",
+  "geometryReference": "/Users/saekitakuya/Documents/ChatGPT/ポートフォリオ/design-proposals/sp-day-tall-layers-v1",
+  "geometry": {
+    "sourceRows0to329": "same y",
+    "sourceRows350to549": "target y = source y - 20",
+    "newSky": "target y530..799",
+    "sourceRows550to1996": "target y = source y + 250",
+    "newFloor": "target y2247..2399",
+    "joinTreatment": "reference paint assigned to exterior/interior only at y290..889 and y2190..2399"
+  },
+  "layersBottomToTop": [
+    "01-exterior.png",
+    "02-interior-window.png",
+    "03-plant-scene-underpaint.png",
+    "04-indoor-plant.png",
+    "05-cup-contact-underpaint.png",
+    "06-cup-body-underpaint.png",
+    "07-rin-occluded-underpaint.png",
+    "rin-contact-shadow.png",
+    "08-rin-notebook.png",
+    "09-cup-foreground.png"
+  ],
+  "layerRoles": {
+    "01-exterior.png": "exterior",
+    "02-interior-window.png": "interior-window",
+    "03-plant-scene-underpaint.png": "foreground-or-dependent-underpaint",
+    "04-indoor-plant.png": "foreground-or-dependent-underpaint",
+    "05-cup-contact-underpaint.png": "foreground-or-dependent-underpaint",
+    "06-cup-body-underpaint.png": "foreground-or-dependent-underpaint",
+    "07-rin-occluded-underpaint.png": "person-or-dependent-underpaint",
+    "rin-contact-shadow.png": "person-contact-shadow",
+    "08-rin-notebook.png": "person-or-dependent-underpaint",
+    "09-cup-foreground.png": "foreground-or-dependent-underpaint"
+  },
+  "toggleGroups": {
+    "rin": [
+      "07-rin-occluded-underpaint.png",
+      "rin-contact-shadow.png",
+      "08-rin-notebook.png"
+    ],
+    "cup": [
+      "05-cup-contact-underpaint.png",
+      "06-cup-body-underpaint.png",
+      "09-cup-foreground.png"
+    ],
+    "plant": [
+      "03-plant-scene-underpaint.png",
+      "04-indoor-plant.png"
+    ]
+  },
+  "glassMask": "glass-mask.png",
+  "glassMaskMode": "luminance",
+  "previews": {
+    "all": "preview-composite.png",
+    "withoutRin": "preview-no-rin.png",
+    "withoutRinOrCup": "preview-no-rin-no-cup.png",
+    "bareRoom": "preview-bare-room.png"
+  },
+  "verification": "verification.json",
+  "build": "node ../build-sp-day-cloudy-tall-v1.cjs",
+  "weatherEffect": {
+    "staticWeather": "cloudy",
+    "rainAnimation": false,
+    "rainIntegrationStatus": "not-ready: foreground underpaint can occlude rectangular regions; implement underpaint-aware ordering and true object silhouettes before rain"
+  }
+}

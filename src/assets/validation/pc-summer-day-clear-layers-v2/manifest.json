@@ -1,0 +1,54 @@
+{
+  "status": "review-candidate",
+  "scene": "ennui-rin-summer-day-clear-pc-v2",
+  "width": 1345,
+  "height": 1170,
+  "origin": "top-left",
+  "registration": {
+    "x": 0,
+    "y": 0
+  },
+  "baseScene": "/Users/saekitakuya/Documents/ChatGPT/ポートフォリオ/design-proposals/pc-day-layers-v4/manifest.json",
+  "seasonCase": "C22 盛夏・昼・快晴",
+  "layersBottomToTop": [
+    "01-exterior.png",
+    "02-interior.png",
+    "02a-cup-body-contact.png",
+    "02b-cup-contact-shadow.png",
+    "04-contact-shadow.png",
+    "03-rin.png",
+    "03a-rin-cup-on-restore.png",
+    "05-cup-foreground.png"
+  ],
+  "toggleGroups": {
+    "rin": [
+      "04-contact-shadow.png",
+      "03-rin.png"
+    ],
+    "cup": [
+      "02a-cup-body-contact.png",
+      "02b-cup-contact-shadow.png",
+      "05-cup-foreground.png"
+    ]
+  },
+  "glassMask": "glass-mask.png",
+  "glassMaskMode": "luminance",
+  "previews": {
+    "all": "preview-composite.png",
+    "cupOff": "preview-cup-off.png",
+    "rinOffCupOn": "preview-rin-off-cup-on.png",
+    "rinOffCupOff": "preview-rin-off-cup-off.png"
+  },
+  "inputGuide": "inputs/summer-guide.png",
+  "futureMotion": "Trees/leaves may become an optional foliage animation layer later; base scene contains no falling petals or motion and Lottie adoption is undecided.",
+  "build": "node ../summer-pc-cup-toggle-v2/build.cjs",
+  "verification": "verification.json",
+  "root": "/Users/saekitakuya/Documents/ChatGPT/ポートフォリオ/design-proposals/pc-summer-day-clear-layers-v2",
+  "sourceSet": "/Users/saekitakuya/Documents/ChatGPT/ポートフォリオ/design-proposals/pc-summer-day-clear-layers-v1",
+  "conditionalLayers": {
+    "03a-rin-cup-on-restore.png": {
+      "rin": true,
+      "cup": true
+    }
+  }
+}

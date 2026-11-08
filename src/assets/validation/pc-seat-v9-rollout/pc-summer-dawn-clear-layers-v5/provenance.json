@@ -1,0 +1,7 @@
+{
+  "scene": "summer-dawn-sunny",
+  "input": "/Users/saekitakuya/Documents/ChatGPT/ポートフォリオ/design-proposals/pc-seat-v9-rollout-inputs/summer-dawn-sunny-background.png",
+  "output": "/Users/saekitakuya/Documents/ChatGPT/ポートフォリオ/design-proposals/pc-seat-v9-rollout-outputs/summer-dawn-sunny-background-v9.png",
+  "changedPixels": 61345,
+  "method": "Exact approved scene-specific background delta; existing object and figure layers remain separate."
+}

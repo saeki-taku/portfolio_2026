@@ -1,44 +1,285 @@
 ---
 import { getImage } from 'astro:assets';
+import type { ImageMetadata } from 'astro';
 import Base from '../layouts/Base.astro';
 import Navigation from '../components/Navigation.astro';
-import desktop from '../assets/scenes/rin-desktop-corner-soft-v4.png';
-import mobile from '../assets/scenes/rin-mobile-vertical-extended-v1.png';
+import SceneSettings from '../components/SceneSettings.astro';
+const showSceneSettings = import.meta.env.DEV || import.meta.env.ENNUI_SCENE_DEV === '1';
+import exterior from '../assets/validation/pc-day-redraw-v1/01-exterior.png';
+import interior from '../assets/validation/pc-day-redraw-v1/02-interior.png';
+import pcRinHemCleaned from '../assets/validation/rin-10deg-hem-cleanup/rin-pc-hem-cleaned.png';
+import spRinHemCleaned from '../assets/validation/rin-10deg-hem-cleanup/rin-sp-hem-cleaned.png';
+import pcRinShadowV6 from '../assets/validation/rin-shared-right-foot-v6/pc-contact-shadow.png';
+import springPcPlantOff from '../assets/validation/pc-spring-day-seat-v9/plant-off-repair-v9.png';
+import springPcSeatV9 from '../assets/validation/pc-spring-day-seat-v9/seat-v9-structure.png';
+import cup from '../assets/validation/pc-day-redraw-v1/05-cup-foreground.png';
+import springPcCupOffSill from '../assets/validation/pc-spring-day-seat-v9/cup-off-repair-v9-clean.png';
+import pcCloudyManifest from '../assets/validation/pc-spring-day-cloudy-layers-v1/manifest.json';
+import pcSummerDayManifest from '../assets/validation/pc-summer-day-clear-layers-v5/manifest.json';
+import spSummerDayManifest from '../assets/validation/sp-summer-day-clear-tall-layers-v2/manifest.json';
+import pcSummerDawnManifest from '../assets/validation/pc-summer-dawn-clear-layers-v5/manifest.json';
+import spSummerDawnManifest from '../assets/validation/sp-summer-dawn-clear-tall-layers-v2/manifest.json';
+import pcSummerEveningManifest from '../assets/validation/pc-summer-evening-clear-layers-v5/manifest.json';
+import spSummerEveningManifest from '../assets/validation/sp-summer-evening-clear-tall-layers-v2/manifest.json';
+import pcSummerNightAwakeManifest from '../assets/validation/pc-summer-night-awake-clear-layers-v5/manifest.json';
+import spSummerNightAwakeManifest from '../assets/validation/sp-summer-night-awake-clear-tall-layers-v2/manifest.json';
+import pcSummerNightAsleepManifest from '../assets/validation/pc-summer-night-asleep-clear-layers-v5/manifest.json';
+import spSummerNightAsleepManifest from '../assets/validation/sp-summer-night-asleep-clear-tall-layers-v2/manifest.json';
+import pcDawnManifest from '../assets/validation/pc-spring-dawn-layers-v1/manifest.json';
+import spDawnManifest from '../assets/validation/sp-spring-dawn-tall-layers-v1/manifest.json';
+import pcCloudyDawnManifest from '../assets/validation/pc-spring-dawn-cloudy-layers-v1/manifest.json';
+import spCloudyDawnManifest from '../assets/validation/sp-spring-dawn-cloudy-tall-layers-v1/manifest.json';
+import spCloudyTallManifest from '../assets/validation/sp-day-cloudy-tall-layers-v1/manifest.json';
+import pcRainManifest from '../assets/validation/pc-spring-day-rain-layers-v2/manifest.json';
+import spRainManifest from '../assets/validation/sp-spring-day-rain-tall-layers-v1/manifest.json';
+import pcDawnRainManifest from '../assets/validation/pc-spring-dawn-rain-layers-v1/manifest.json';
+import spDawnRainManifest from '../assets/validation/sp-spring-dawn-rain-tall-layers-v1/manifest.json';
+import pcEveningRainManifest from '../assets/validation/pc-spring-evening-rain-layers-v1/manifest.json';
+import spEveningRainManifest from '../assets/validation/sp-spring-evening-rain-tall-layers-v1/manifest.json';
+import pcNightAwakeRainManifest from '../assets/validation/pc-spring-night-awake-rain-layers-v1/manifest.json';
+import spNightAwakeRainManifest from '../assets/validation/sp-spring-night-awake-rain-tall-layers-v1/manifest.json';
+import pcNightAsleepRainManifest from '../assets/validation/pc-spring-night-asleep-rain-layers-v1/manifest.json';
+import spNightAsleepRainManifest from '../assets/validation/sp-spring-night-asleep-rain-tall-layers-v1/manifest.json';
+import pcEveningManifest from '../assets/validation/pc-spring-evening-pose-layers-v2/manifest.json';
+import pcEveningCloudyManifest from '../assets/validation/pc-spring-evening-cloudy-layers-v2/manifest.json';
+import pcNightAwakeManifest from '../assets/validation/pc-spring-night-awake-pose-layers-v2/manifest.json';
+import pcNightAwakeCloudyManifest from '../assets/validation/pc-spring-night-awake-cloudy-layers-v1/manifest.json';
+import pcNightAsleepManifest from '../assets/validation/pc-spring-night-asleep-layers-v1/manifest.json';
+import pcNightAsleepCloudyManifest from '../assets/validation/pc-spring-night-asleep-cloudy-layers-v1/manifest.json';
+import spTallDayManifest from '../assets/validation/sp-day-tall-layers-v1/manifest.json';
+import spTallEveningManifest from '../assets/validation/sp-evening-tall-layers-v1/manifest.json';
+import spTallEveningCloudyManifest from '../assets/validation/sp-spring-evening-cloudy-tall-layers-v2/manifest.json';
+import spTallNightAwakeManifest from '../assets/validation/sp-night-awake-tall-layers-v1/manifest.json';
+import spTallNightAwakeCloudyManifest from '../assets/validation/sp-spring-night-awake-cloudy-tall-layers-v1/manifest.json';
+import spTallNightAsleepManifest from '../assets/validation/sp-night-asleep-tall-layers-v1/manifest.json';
+import spTallNightAsleepCloudyManifest from '../assets/validation/sp-spring-night-asleep-cloudy-tall-layers-v1/manifest.json';
 import coordinates from '../assets/scenes/vertical-extension-v1.json';
 const geometry = Object.fromEntries(coordinates.filter(item => item.variant === 'sp').flatMap(item => {
   const prefix = item.variant;
   const vw = (pixels: number) => `${pixels / item.sourceRect.width * 100}vw`;
   return [[`--${prefix}-base-height`, vw(item.sourceRect.height)], [`--${prefix}-canvas-height`, vw(item.canvas.height)], [`--${prefix}-top-padding`, vw(item.sourceRect.y)], [`--${prefix}-top-share`, item.padding.top / (item.padding.top + item.padding.bottom)]];
 }));
-const desktopWidths = [960, desktop.width];
+const desktopWidths = [960, 1345];
 const mobileWidths = [480, 800, 1024];
-const desktopImages = await Promise.all(desktopWidths.map(width => getImage({src: desktop, width, format:'webp', quality:85})));
-const mobileImages = await Promise.all(mobileWidths.map(width => getImage({src: mobile, width, format:'webp', quality:85})));
+const desktopLayers = await Promise.all([exterior, interior, cup].map(src => Promise.all(desktopWidths.map(width => getImage({src, width, format:'webp', quality:85})))));
+const springPcSeatV9Images = await Promise.all(desktopWidths.map(width => getImage({src: springPcSeatV9, width, format:'webp', quality:90})));
+const rinImages = await Promise.all(desktopWidths.map(width => getImage({src: pcRinHemCleaned, width, format:'webp', quality:90})));
+const rinShadowImages = await Promise.all(desktopWidths.map(width => getImage({src: pcRinShadowV6, width, format:'webp', quality:90})));
+const springPcPlantOffImages = await Promise.all(desktopWidths.map(width => getImage({src: springPcPlantOff, width, format:'webp', quality:90})));
+const springPcCupOffSillImages = await Promise.all(desktopWidths.map(width => getImage({src: springPcCupOffSill, width, format:'webp', quality:85})));
+const pcCloudySources = import.meta.glob<{ default: ImageMetadata }>('../assets/validation/pc-spring-day-cloudy-layers-v1/*.png', { eager: true });
+const pcSummerDaySources = import.meta.glob<{ default: ImageMetadata }>('../assets/validation/pc-summer-day-clear-layers-v5/*.png', { eager: true });
+const spSummerDaySources = import.meta.glob<{ default: ImageMetadata }>('../assets/validation/sp-summer-day-clear-tall-layers-v2/*.png', { eager: true });
+const pcSummerDawnSources = import.meta.glob<{ default: ImageMetadata }>('../assets/validation/pc-summer-dawn-clear-layers-v5/*.png', { eager: true });
+const spSummerDawnSources = import.meta.glob<{ default: ImageMetadata }>('../assets/validation/sp-summer-dawn-clear-tall-layers-v2/*.png', { eager: true });
+const pcSummerEveningSources = import.meta.glob<{ default: ImageMetadata }>('../assets/validation/pc-summer-evening-clear-layers-v5/*.png', { eager: true });
+const spSummerEveningSources = import.meta.glob<{ default: ImageMetadata }>('../assets/validation/sp-summer-evening-clear-tall-layers-v2/*.png', { eager: true });
+const pcSummerNightAwakeSources = import.meta.glob<{ default: ImageMetadata }>('../assets/validation/pc-summer-night-awake-clear-layers-v5/*.png', { eager: true });
+const spSummerNightAwakeSources = import.meta.glob<{ default: ImageMetadata }>('../assets/validation/sp-summer-night-awake-clear-tall-layers-v2/*.png', { eager: true });
+const pcSummerNightAsleepSources = import.meta.glob<{ default: ImageMetadata }>('../assets/validation/pc-summer-night-asleep-clear-layers-v5/*.png', { eager: true });
+const spSummerNightAsleepSources = import.meta.glob<{ default: ImageMetadata }>('../assets/validation/sp-summer-night-asleep-clear-tall-layers-v2/*.png', { eager: true });
+const spCloudyTallSources = import.meta.glob<{ default: ImageMetadata }>('../assets/validation/sp-day-cloudy-tall-layers-v1/*.png', { eager: true });
+const pcRainSources = import.meta.glob<{ default: ImageMetadata }>('../assets/validation/pc-spring-day-rain-layers-v2/*.png', { eager: true });
+const spRainSources = import.meta.glob<{ default: ImageMetadata }>('../assets/validation/sp-spring-day-rain-tall-layers-v1/*.png', { eager: true });
+const pcDawnRainSources = import.meta.glob<{ default: ImageMetadata }>('../assets/validation/pc-spring-dawn-rain-layers-v1/*.png', { eager: true });
+const spDawnRainSources = import.meta.glob<{ default: ImageMetadata }>('../assets/validation/sp-spring-dawn-rain-tall-layers-v1/*.png', { eager: true });
+const pcEveningRainSources = import.meta.glob<{ default: ImageMetadata }>('../assets/validation/pc-spring-evening-rain-layers-v1/*.png', { eager: true });
+const spEveningRainSources = import.meta.glob<{ default: ImageMetadata }>('../assets/validation/sp-spring-evening-rain-tall-layers-v1/*.png', { eager: true });
+const pcNightAwakeRainSources = import.meta.glob<{ default: ImageMetadata }>('../assets/validation/pc-spring-night-awake-rain-layers-v1/*.png', { eager: true });
+const spNightAwakeRainSources = import.meta.glob<{ default: ImageMetadata }>('../assets/validation/sp-spring-night-awake-rain-tall-layers-v1/*.png', { eager: true });
+const pcNightAsleepRainSources = import.meta.glob<{ default: ImageMetadata }>('../assets/validation/pc-spring-night-asleep-rain-layers-v1/*.png', { eager: true });
+const spNightAsleepRainSources = import.meta.glob<{ default: ImageMetadata }>('../assets/validation/sp-spring-night-asleep-rain-tall-layers-v1/*.png', { eager: true });
+const pcDawnSources = import.meta.glob<{ default: ImageMetadata }>('../assets/validation/pc-spring-dawn-layers-v1/0*.png', { eager: true });
+const spDawnSources = import.meta.glob<{ default: ImageMetadata }>('../assets/validation/sp-spring-dawn-tall-layers-v1/0*.png', { eager: true });
+const pcCloudyDawnSources = import.meta.glob<{ default: ImageMetadata }>('../assets/validation/pc-spring-dawn-cloudy-layers-v1/0*.png', { eager: true });
+const spCloudyDawnSources = import.meta.glob<{ default: ImageMetadata }>('../assets/validation/sp-spring-dawn-cloudy-tall-layers-v1/0*.png', { eager: true });
+const spTallDaySources = { ...import.meta.glob<{ default: ImageMetadata }>('../assets/validation/sp-day-tall-layers-v1/0*.png', { eager: true }), '../assets/validation/sp-day-tall-layers-v1/08-rin-notebook.png': { default: spRinHemCleaned } };
+const spTallEveningSources = import.meta.glob<{ default: ImageMetadata }>('../assets/validation/sp-evening-tall-layers-v1/*.png', { eager: true });
+const spTallEveningCloudySources = import.meta.glob<{ default: ImageMetadata }>('../assets/validation/sp-spring-evening-cloudy-tall-layers-v2/0*.png', { eager: true });
+const spTallEveningCloudyRinSources = import.meta.glob<{ default: ImageMetadata }>('../assets/validation/sp-spring-evening-cloudy-tall-layers-v2/rin*.png', { eager: true });
+const spTallNightAwakeSources = import.meta.glob<{ default: ImageMetadata }>('../assets/validation/sp-night-awake-tall-layers-v1/*.png', { eager: true });
+const spTallNightAwakeCloudySources = import.meta.glob<{ default: ImageMetadata }>('../assets/validation/sp-spring-night-awake-cloudy-tall-layers-v1/*.png', { eager: true });
+const spTallNightAsleepSources = import.meta.glob<{ default: ImageMetadata }>('../assets/validation/sp-night-asleep-tall-layers-v1/0*.png', { eager: true });
+const spTallNightAsleepCloudySources = import.meta.glob<{ default: ImageMetadata }>('../assets/validation/sp-spring-night-asleep-cloudy-tall-layers-v1/0*.png', { eager: true });
+const pcEveningSources = import.meta.glob<{ default: ImageMetadata }>('../assets/validation/pc-spring-evening-pose-layers-v2/*.png', { eager: true });
+const pcEveningCloudySources = import.meta.glob<{ default: ImageMetadata }>('../assets/validation/pc-spring-evening-cloudy-layers-v2/*.png', { eager: true });
+const pcNightAwakeSources = import.meta.glob<{ default: ImageMetadata }>('../assets/validation/pc-spring-night-awake-pose-layers-v2/*.png', { eager: true });
+const pcNightAwakeCloudySources = import.meta.glob<{ default: ImageMetadata }>('../assets/validation/pc-spring-night-awake-cloudy-layers-v1/*.png', { eager: true });
+const pcNightAsleepSources = import.meta.glob<{ default: ImageMetadata }>('../assets/validation/pc-spring-night-asleep-layers-v1/0*.png', { eager: true });
+const pcNightAsleepCloudySources = import.meta.glob<{ default: ImageMetadata }>('../assets/validation/pc-spring-night-asleep-cloudy-layers-v1/0*.png', { eager: true });
+import pcSeatV9Versions from '../assets/validation/pc-seat-v9-rollout/versions.json';
+const pcSeatV9RolloutSources = import.meta.glob<{ default: ImageMetadata }>('../assets/validation/pc-seat-v9-rollout/*/*.png', { eager: true });
+import pcCupCleanupManifest from '../assets/validation/pc-cup-edge-cleanup-v1/manifest.json';
+const pcCupCleanupSources = import.meta.glob<{ default: ImageMetadata }>('../assets/validation/pc-cup-edge-cleanup-v1/*/*.png', { eager: true });
+const makeSceneLayers = async (manifest: { width: number; height: number; layersBottomToTop: string[]; toggleGroups: Record<string, string[]>; conditionalLayers?: Record<string, { rin?: boolean; cup?: boolean; plant?: boolean }> }, sources: Record<string, { default: ImageMetadata }>, folder: string, widths: number[], quality: number) => {
+  const cleanCup = (pcCupCleanupManifest as Record<string, { filename: string }>)[folder];
+  let filenames = [...manifest.layersBottomToTop, ...['seat-v9-cup-off-rin-on.png', 'seat-v9-cup-off-rin-off.png', 'seat-v9-cup-off-absent.png'].filter(filename => pcSeatV9RolloutSources[`../assets/validation/pc-seat-v9-rollout/${folder}/${filename}`])]
+    .flatMap(filename => filename === '02-interior.png' && pcSeatV9RolloutSources[`../assets/validation/pc-seat-v9-rollout/${folder}/02c-seat-v9-structure.png`] ? [filename, '02c-seat-v9-structure.png'] : [filename])
+    .filter(filename => !filename.includes('{'));
+  if (cleanCup) {
+    // Use the tested cup-free seat/person restoration as the common backing.
+    // Otherwise the old ceramic cup shows through the corrected handle hole.
+    filenames = filenames.filter(filename => !['02a-cup-body-contact.png', '02b-cup-contact-shadow.png', '03a-rin-cup-on-restore.png', '05-cup-foreground.png'].includes(filename));
+    if (manifest.layersBottomToTop.includes('02b-cup-contact-shadow.png')) filenames.push('02b-cup-contact-shadow.png');
+    filenames.push('05-cup-clean.png');
+  }
+  return Promise.all(filenames.map(async filename => {
+    const versionKey = `${folder}/${filename === '02c-seat-v9-structure.png' ? '02c-seat-v9-structure-final.png' : filename}`;
+    const versionedFilename = (pcSeatV9Versions as Record<string, string>)[versionKey];
+    const source = (filename === '05-cup-clean.png' ? pcCupCleanupSources[`../assets/validation/pc-cup-edge-cleanup-v1/${folder}/${cleanCup.filename}`]?.default : undefined)
+      ?? pcSeatV9RolloutSources[`../assets/validation/pc-seat-v9-rollout/${folder}/${versionedFilename}`]?.default
+      ?? (filename === '02c-seat-v9-structure.png' ? pcSeatV9RolloutSources[`../assets/validation/pc-seat-v9-rollout/${folder}/02c-seat-v9-structure-final.png`]?.default : undefined)
+      ?? pcSeatV9RolloutSources[`../assets/validation/pc-seat-v9-rollout/${folder}/${filename}`]?.default
+      ?? sources[`../assets/validation/${folder}/${filename}`]?.default;
+    if (!source) throw new Error(`Scene layer missing: ${folder}/${filename}`);
+    if (source.width !== manifest.width || source.height !== manifest.height) throw new Error(`Scene layer dimensions: ${folder}/${filename}`);
+    const group = filename === '05-cup-clean.png' ? 'cup' : Object.entries(manifest.toggleGroups).find(([, files]) => files.includes(filename))?.[0] ?? '';
+    let conditional: { rin?: boolean; cup?: boolean; plant?: boolean } | undefined = filename.startsWith('seat-v9-cup-off-') ? { cup: false, ...(filename.includes('rin-on') ? { rin: true } : filename.includes('rin-off') ? { rin: false } : {}) } : manifest.conditionalLayers?.[filename];
+    if (cleanCup && conditional?.cup === false) conditional = { ...conditional, cup: undefined };
+    const losslessLayer = filename === '05-cup-clean.png' || Boolean(pcSeatV9RolloutSources[`../assets/validation/pc-seat-v9-rollout/${folder}/${filename}`]);
+    return { filename, group, conditional, images: await Promise.all(widths.map(width => getImage({src: source, width, format: losslessLayer ? 'png' : 'webp', quality}))) };
+  }));
+};
+const phase4RainConfigs = [
+  { id: 'spring-dawn-rain', pc: { manifest: pcDawnRainManifest, sources: pcDawnRainSources, folder: 'pc-spring-dawn-rain-layers-v1' }, sp: { manifest: spDawnRainManifest, sources: spDawnRainSources, folder: 'sp-spring-dawn-rain-tall-layers-v1' } },
+  { id: 'spring-evening-rain', pc: { manifest: pcEveningRainManifest, sources: pcEveningRainSources, folder: 'pc-spring-evening-rain-layers-v1' }, sp: { manifest: spEveningRainManifest, sources: spEveningRainSources, folder: 'sp-spring-evening-rain-tall-layers-v1' } },
+  { id: 'spring-night-rain-awake', pc: { manifest: pcNightAwakeRainManifest, sources: pcNightAwakeRainSources, folder: 'pc-spring-night-awake-rain-layers-v1' }, sp: { manifest: spNightAwakeRainManifest, sources: spNightAwakeRainSources, folder: 'sp-spring-night-awake-rain-tall-layers-v1' } },
+  { id: 'spring-night-rain-asleep', pc: { manifest: pcNightAsleepRainManifest, sources: pcNightAsleepRainSources, folder: 'pc-spring-night-asleep-rain-layers-v1' }, sp: { manifest: spNightAsleepRainManifest, sources: spNightAsleepRainSources, folder: 'sp-spring-night-asleep-rain-tall-layers-v1' } },
+] as const;
+const makePhase4Rain = (viewport: 'pc' | 'sp') => Promise.all(phase4RainConfigs.map(async config => {
+  const { manifest, sources, folder } = config[viewport];
+  const groups: Record<string, string[]> = manifest.toggleGroups;
+  const widths = viewport === 'pc' ? desktopWidths : mobileWidths;
+  const quality = viewport === 'pc' ? 85 : 90;
+  const layers = await makeSceneLayers({ width: manifest.width, height: manifest.height, layersBottomToTop: manifest.staticLayersBottomToTop, toggleGroups: groups }, sources, folder, widths, quality);
+  const states = Object.entries(manifest.effectStates);
+  const filenames = states.flatMap(([, files]) => [files.outdoor, files.droplets]);
+  const renderedEffects = await makeSceneLayers({ width: manifest.width, height: manifest.height, layersBottomToTop: filenames, toggleGroups: {} }, sources, folder, widths, quality);
+  const effects = renderedEffects.map(layer => {
+    const [state, files] = states.find(([, files]) => files.outdoor === layer.filename || files.droplets === layer.filename)!;
+    return { ...layer, effect: files.outdoor === layer.filename ? 'outdoor' : 'glass', rin: groups.rin?.length && !state.includes('rin-off') ? 'on' : 'off', plant: state.includes('plant-off') ? 'off' : 'on' };
+  });
+  return { id: config.id, layers, effects };
+}));
+const pcPhase4RainScenes = await makePhase4Rain('pc');
+const spPhase4RainScenes = await makePhase4Rain('sp');
+const pcLayerScenes = await Promise.all([
+  { id: 'spring-dawn-sunny', manifest: pcDawnManifest, sources: pcDawnSources, folder: 'pc-spring-dawn-layers-v1' },
+  { id: 'spring-dawn-cloudy', manifest: pcCloudyDawnManifest, sources: pcCloudyDawnSources, folder: 'pc-spring-dawn-cloudy-layers-v1' },
+  { id: 'spring-day-cloudy', manifest: pcCloudyManifest, sources: pcCloudySources, folder: 'pc-spring-day-cloudy-layers-v1' },
+  { id: 'summer-day-sunny', manifest: pcSummerDayManifest, sources: pcSummerDaySources, folder: 'pc-summer-day-clear-layers-v5' },
+  { id: 'summer-dawn-sunny', manifest: pcSummerDawnManifest, sources: pcSummerDawnSources, folder: 'pc-summer-dawn-clear-layers-v5' },
+  { id: 'summer-evening-sunny', manifest: pcSummerEveningManifest, sources: pcSummerEveningSources, folder: 'pc-summer-evening-clear-layers-v5' },
+  { id: 'summer-night-sunny-awake', manifest: pcSummerNightAwakeManifest, sources: pcSummerNightAwakeSources, folder: 'pc-summer-night-awake-clear-layers-v5' },
+  { id: 'summer-night-sunny-asleep', manifest: pcSummerNightAsleepManifest, sources: pcSummerNightAsleepSources, folder: 'pc-summer-night-asleep-clear-layers-v5' },
+  { id: 'spring-day-rain', manifest: pcRainManifest, sources: pcRainSources, folder: 'pc-spring-day-rain-layers-v2' },
+  { id: 'spring-evening-sunny', manifest: pcEveningManifest, sources: pcEveningSources, folder: 'pc-spring-evening-pose-layers-v2' },
+  { id: 'spring-evening-cloudy', manifest: pcEveningCloudyManifest, sources: pcEveningCloudySources, folder: 'pc-spring-evening-cloudy-layers-v2' },
+  { id: 'spring-night-sunny-awake', manifest: pcNightAwakeManifest, sources: pcNightAwakeSources, folder: 'pc-spring-night-awake-pose-layers-v2' },
+  { id: 'spring-night-cloudy-awake', manifest: pcNightAwakeCloudyManifest, sources: pcNightAwakeCloudySources, folder: 'pc-spring-night-awake-cloudy-layers-v1' },
+  { id: 'spring-night-sunny-asleep', manifest: pcNightAsleepManifest, sources: pcNightAsleepSources, folder: 'pc-spring-night-asleep-layers-v1' },
+  { id: 'spring-night-cloudy-asleep', manifest: pcNightAsleepCloudyManifest, sources: pcNightAsleepCloudySources, folder: 'pc-spring-night-asleep-cloudy-layers-v1' },
+].map(async ({ id, manifest, sources, folder }) => ({ id, layers: await makeSceneLayers(manifest, sources, folder, desktopWidths, 85) })));
+const spDayLayers = await makeSceneLayers(spTallDayManifest, spTallDaySources, 'sp-day-tall-layers-v1', mobileWidths, 90);
+const spCloudyTallLayers = await makeSceneLayers(spCloudyTallManifest, spCloudyTallSources, 'sp-day-cloudy-tall-layers-v1', mobileWidths, 90);
+const spSummerDayLayers = await makeSceneLayers(spSummerDayManifest, spSummerDaySources, 'sp-summer-day-clear-tall-layers-v2', mobileWidths, 90);
+const spSummerDawnLayers = await makeSceneLayers(spSummerDawnManifest, spSummerDawnSources, 'sp-summer-dawn-clear-tall-layers-v2', mobileWidths, 90);
+const spSummerEveningLayers = await makeSceneLayers(spSummerEveningManifest, spSummerEveningSources, 'sp-summer-evening-clear-tall-layers-v2', mobileWidths, 90);
+const spSummerNightAwakeLayers = await makeSceneLayers(spSummerNightAwakeManifest, spSummerNightAwakeSources, 'sp-summer-night-awake-clear-tall-layers-v2', mobileWidths, 90);
+const spSummerNightAsleepLayers = await makeSceneLayers(spSummerNightAsleepManifest, spSummerNightAsleepSources, 'sp-summer-night-asleep-clear-tall-layers-v2', mobileWidths, 90);
+const spRainLayers = await makeSceneLayers(spRainManifest, spRainSources, 'sp-spring-day-rain-tall-layers-v1', mobileWidths, 90);
+const makeRainEffects = (manifest: typeof pcRainManifest | typeof spRainManifest, sources: Record<string, { default: ImageMetadata }>, folder: string, widths: number[], quality: number, plantStates: string[]) => {
+  const filenames = plantStates.flatMap(plant => ['on', 'off'].flatMap(rin => ['outdoor', 'glass-droplets'].map(effect => `rain-${effect}-${plant}rin-${rin}.png`)));
+  return makeSceneLayers({ width: manifest.width, height: manifest.height, layersBottomToTop: filenames, toggleGroups: {} }, sources, folder, widths, quality);
+};
+const pcRainEffects = await makeRainEffects(pcRainManifest, pcRainSources, 'pc-spring-day-rain-layers-v2', desktopWidths, 85, ['']);
+const spRainEffects = await makeRainEffects(spRainManifest, spRainSources, 'sp-spring-day-rain-tall-layers-v1', mobileWidths, 90, ['', 'plant-off-']);
+const spEveningLayers = await makeSceneLayers(spTallEveningManifest, spTallEveningSources, 'sp-evening-tall-layers-v1', mobileWidths, 90);
+const spEveningCloudyLayers = await makeSceneLayers(spTallEveningCloudyManifest, { ...spTallEveningCloudySources, ...spTallEveningCloudyRinSources }, 'sp-spring-evening-cloudy-tall-layers-v2', mobileWidths, 90);
+const spNightAwakeLayers = await makeSceneLayers(spTallNightAwakeManifest, spTallNightAwakeSources, 'sp-night-awake-tall-layers-v1', mobileWidths, 90);
+const spNightAwakeCloudyLayers = await makeSceneLayers(spTallNightAwakeCloudyManifest, spTallNightAwakeCloudySources, 'sp-spring-night-awake-cloudy-tall-layers-v1', mobileWidths, 90);
+const spNightAsleepLayers = await makeSceneLayers(spTallNightAsleepManifest, spTallNightAsleepSources, 'sp-night-asleep-tall-layers-v1', mobileWidths, 90);
+const spNightAsleepCloudyLayers = await makeSceneLayers(spTallNightAsleepCloudyManifest, spTallNightAsleepCloudySources, 'sp-spring-night-asleep-cloudy-tall-layers-v1', mobileWidths, 90);
+const spDawnLayers = await makeSceneLayers(spDawnManifest, spDawnSources, 'sp-spring-dawn-tall-layers-v1', mobileWidths, 90);
+const spCloudyDawnLayers = await makeSceneLayers(spCloudyDawnManifest, spCloudyDawnSources, 'sp-spring-dawn-cloudy-tall-layers-v1', mobileWidths, 90);
 ---
 <Base scene>
-  <main class="scene" aria-label="ennuiの窓辺" style={{...geometry, "--pc-aspect": desktop.width / desktop.height}}>
-    <picture>
-      <source media="(max-aspect-ratio: 1/1)" srcset={mobileImages.map((img,i)=>`${img.src} ${mobileWidths[i]}w`).join(', ')} sizes="100vw" width={mobile.width} height={mobile.height} />
-      <img src={desktopImages[1].src} srcset={desktopImages.map((img,i)=>`${img.src} ${desktopWidths[i]}w`).join(', ')} sizes="100vw" width={desktop.width} height={desktop.height} alt="春の街を見下ろす高い窓辺で、凛が静かにスケッチをしている油絵。" fetchpriority="high" decoding="async" />
-    </picture>
+  <main class="scene" aria-label="ennuiの窓辺" style={{...geometry, "--pc-aspect": 1345 / 1170}}>
+    <div class="pc-artwork" role="img" aria-label="春の街を見下ろす高い窓辺で、凛が静かにスケッチをしている油絵。">
+      {desktopLayers.slice(0, 2).map((images, index) => <img class="pc-layer" data-scene="spring-day-sunny" data-control={index === 0 ? 'exterior' : 'interior'} src={images[1].src} srcset={images.map((img,i)=>`${img.src} ${desktopWidths[i]}w`).join(', ')} sizes="100vw" width="1345" height="1170" alt="" fetchpriority={index === 0 ? 'high' : 'auto'} decoding="async" />)}
+      <img class="pc-scene-layer" data-scene="spring-day-sunny" data-layer="seat-v9-structure.png" data-control="interior" src={springPcSeatV9Images[1].src} srcset={springPcSeatV9Images.map((img,i)=>`${img.src} ${desktopWidths[i]}w`).join(', ')} sizes="100vw" width="1345" height="1170" alt="" decoding="async" />
+      <img class="pc-scene-layer" data-scene="spring-day-sunny" data-layer="plant-off-repair.png" data-requires-plant="false" src={springPcPlantOffImages[1].src} srcset={springPcPlantOffImages.map((img,i)=>`${img.src} ${desktopWidths[i]}w`).join(', ')} sizes="100vw" width="1345" height="1170" alt="" loading="lazy" decoding="async" hidden />
+      <img class="pc-scene-layer" data-scene="spring-day-sunny" data-layer="02a-cup-off-sill-clean.png" data-requires-cup="false" src={springPcCupOffSillImages[1].src} srcset={springPcCupOffSillImages.map((img,i)=>`${img.src} ${desktopWidths[i]}w`).join(', ')} sizes="100vw" width="1345" height="1170" alt="" loading="lazy" decoding="async" hidden />
+      <img class="pc-scene-layer" data-scene="spring-day-sunny" data-layer="pc-contact-shadow-v6.png" data-control="rin" src={rinShadowImages[1].src} srcset={rinShadowImages.map((img,i)=>`${img.src} ${desktopWidths[i]}w`).join(', ')} sizes="100vw" width="1345" height="1170" alt="" decoding="async" />
+      <img class="pc-scene-layer" data-scene="spring-day-sunny" data-layer="rin-pc-hem-cleaned.png" data-control="rin" src={rinImages[1].src} srcset={rinImages.map((img,i)=>`${img.src} ${desktopWidths[i]}w`).join(', ')} sizes="100vw" width="1345" height="1170" alt="" decoding="async" />
+      <img class="pc-cup" data-scene="spring-day-sunny" data-control="cup" src={desktopLayers[2][1].src} srcset={desktopLayers[2].map((img,i)=>`${img.src} ${desktopWidths[i]}w`).join(', ')} sizes="100vw" width="1345" height="1170" alt="" decoding="async" />
+      {pcLayerScenes.flatMap(({ id, layers }) => layers.map(({ filename, group, conditional, images }) => <img class="pc-scene-layer" data-scene={id} data-layer={filename} data-control={group || (filename.startsWith('01-') || filename.startsWith('01a-') ? 'exterior' : filename.startsWith('02-') ? 'interior' : '')} data-requires-rin={conditional?.rin === undefined ? undefined : String(conditional.rin)} data-requires-cup={conditional?.cup === undefined ? undefined : String(conditional.cup)} data-requires-plant={conditional?.plant === undefined ? undefined : String(conditional.plant)} src={images[1].src} srcset={images.map((img,i)=>`${img.src} ${desktopWidths[i]}w`).join(', ')} sizes="100vw" width="1345" height="1170" alt="" loading="lazy" decoding="async" hidden />))}
+      {pcPhase4RainScenes.flatMap(({ id, layers }) => layers.map(({ filename, group, images }) => <img class="pc-scene-layer" data-scene={id} data-layer={filename} data-control={group || (filename.startsWith('01-') || filename.startsWith('01a-') ? 'exterior' : filename.startsWith('02-') ? 'interior' : '')} src={images[1].src} srcset={images.map((img,i)=>`${img.src} ${desktopWidths[i]}w`).join(', ')} sizes="100vw" width="1345" height="1170" alt="" loading="lazy" decoding="async" hidden />))}
+      {pcRainEffects.map(({ filename, images }) => <img class="pc-scene-layer" data-scene="spring-day-rain" data-rain-effect={filename.includes('glass-droplets') ? 'glass' : 'outdoor'} data-rain-rin={filename.includes('rin-off') ? 'off' : 'on'} src={images[1].src} srcset={images.map((img,i)=>`${img.src} ${desktopWidths[i]}w`).join(', ')} sizes="100vw" width="1345" height="1170" alt="" loading="lazy" decoding="async" hidden />)}
+      {pcPhase4RainScenes.flatMap(({ id, effects }) => effects.map(({ effect, rin, images }) => <img class="pc-scene-layer" data-scene={id} data-rain-effect={effect} data-rain-rin={rin} src={images[1].src} srcset={images.map((img,i)=>`${img.src} ${desktopWidths[i]}w`).join(', ')} sizes="100vw" width="1345" height="1170" alt="" loading="lazy" decoding="async" hidden />))}
+      <canvas class="rain-motion" width="672" height="585" aria-hidden="true" hidden></canvas>
+    </div>
+    <div class="mobile-artwork" role="img" aria-label="春の街を見下ろす高い窓辺で、凛が静かにスケッチをしている油絵。">
+      {spDawnLayers.map(({ filename, group, images }) => <img data-scene="spring-dawn-sunny" data-layer={filename} data-sp-group={group} src={images[2].src} srcset={images.map((img,i)=>`${img.src} ${mobileWidths[i]}w`).join(', ')} sizes="100vw" width="1024" height="2400" alt="" loading="lazy" decoding="async" hidden />)}
+      {spCloudyDawnLayers.map(({ filename, group, images }) => <img data-scene="spring-dawn-cloudy" data-layer={filename} data-sp-group={group} src={images[2].src} srcset={images.map((img,i)=>`${img.src} ${mobileWidths[i]}w`).join(', ')} sizes="100vw" width="1024" height="2400" alt="" loading="lazy" decoding="async" hidden />)}
+      {spDayLayers.map(({ filename, group, conditional, images }, index) => <img data-scene="spring-day-sunny" data-layer={filename} data-sp-group={group} data-requires-rin={conditional?.rin === undefined ? undefined : String(conditional.rin)} data-requires-cup={conditional?.cup === undefined ? undefined : String(conditional.cup)} src={images[2].src} srcset={images.map((img,i)=>`${img.src} ${mobileWidths[i]}w`).join(', ')} sizes="100vw" width="1024" height="2400" alt="" loading="lazy" fetchpriority={index === 0 ? 'high' : 'auto'} decoding="async" />)}
+      {spCloudyTallLayers.map(({ filename, group, images }) => <img data-scene="spring-day-cloudy" data-layer={filename} data-sp-group={group} src={images[2].src} srcset={images.map((img,i)=>`${img.src} ${mobileWidths[i]}w`).join(', ')} sizes="100vw" width="1024" height="2400" alt="" loading="lazy" decoding="async" hidden />)}
+      {spSummerDayLayers.map(({ filename, group, conditional, images }) => <img data-scene="summer-day-sunny" data-layer={filename} data-sp-group={group} data-requires-rin={conditional?.rin === undefined ? undefined : String(conditional.rin)} data-requires-cup={conditional?.cup === undefined ? undefined : String(conditional.cup)} data-requires-plant={conditional?.plant === undefined ? undefined : String(conditional.plant)} src={images[2].src} srcset={images.map((img,i)=>`${img.src} ${mobileWidths[i]}w`).join(', ')} sizes="100vw" width="1024" height="2400" alt="" loading="lazy" decoding="async" hidden />)}
+      {spSummerDawnLayers.map(({ filename, group, conditional, images }) => <img data-scene="summer-dawn-sunny" data-layer={filename} data-sp-group={group} data-requires-rin={conditional?.rin === undefined ? undefined : String(conditional.rin)} data-requires-cup={conditional?.cup === undefined ? undefined : String(conditional.cup)} data-requires-plant={conditional?.plant === undefined ? undefined : String(conditional.plant)} src={images[2].src} srcset={images.map((img,i)=>`${img.src} ${mobileWidths[i]}w`).join(', ')} sizes="100vw" width="1024" height="2400" alt="" loading="lazy" decoding="async" hidden />)}
+      {spSummerEveningLayers.map(({ filename, group, conditional, images }) => <img data-scene="summer-evening-sunny" data-layer={filename} data-sp-group={group} data-requires-rin={conditional?.rin === undefined ? undefined : String(conditional.rin)} data-requires-cup={conditional?.cup === undefined ? undefined : String(conditional.cup)} data-requires-plant={conditional?.plant === undefined ? undefined : String(conditional.plant)} src={images[2].src} srcset={images.map((img,i)=>`${img.src} ${mobileWidths[i]}w`).join(', ')} sizes="100vw" width="1024" height="2400" alt="" loading="lazy" decoding="async" hidden />)}
+      {spSummerNightAwakeLayers.map(({ filename, group, conditional, images }) => <img data-scene="summer-night-sunny-awake" data-layer={filename} data-sp-group={group} data-requires-rin={conditional?.rin === undefined ? undefined : String(conditional.rin)} data-requires-cup={conditional?.cup === undefined ? undefined : String(conditional.cup)} data-requires-plant={conditional?.plant === undefined ? undefined : String(conditional.plant)} src={images[2].src} srcset={images.map((img,i)=>`${img.src} ${mobileWidths[i]}w`).join(', ')} sizes="100vw" width="1024" height="2400" alt="" loading="lazy" decoding="async" hidden />)}
+      {spSummerNightAsleepLayers.map(({ filename, group, conditional, images }) => <img data-scene="summer-night-sunny-asleep" data-layer={filename} data-sp-group={group} data-requires-rin={conditional?.rin === undefined ? undefined : String(conditional.rin)} data-requires-cup={conditional?.cup === undefined ? undefined : String(conditional.cup)} data-requires-plant={conditional?.plant === undefined ? undefined : String(conditional.plant)} src={images[2].src} srcset={images.map((img,i)=>`${img.src} ${mobileWidths[i]}w`).join(', ')} sizes="100vw" width="1024" height="2400" alt="" loading="lazy" decoding="async" hidden />)}
+      {spRainLayers.map(({ filename, group, images }) => <img data-scene="spring-day-rain" data-layer={filename} data-sp-group={group} src={images[2].src} srcset={images.map((img,i)=>`${img.src} ${mobileWidths[i]}w`).join(', ')} sizes="100vw" width="1024" height="2400" alt="" loading="lazy" decoding="async" hidden />)}
+      {spPhase4RainScenes.flatMap(({ id, layers }) => layers.map(({ filename, group, images }) => <img data-scene={id} data-layer={filename} data-sp-group={group} src={images[2].src} srcset={images.map((img,i)=>`${img.src} ${mobileWidths[i]}w`).join(', ')} sizes="100vw" width="1024" height="2400" alt="" loading="lazy" decoding="async" hidden />))}
+      {spRainEffects.map(({ filename, images }) => <img data-scene="spring-day-rain" data-rain-effect={filename.includes('glass-droplets') ? 'glass' : 'outdoor'} data-rain-rin={filename.includes('rin-off') ? 'off' : 'on'} data-rain-plant={filename.includes('plant-off') ? 'off' : 'on'} src={images[2].src} srcset={images.map((img,i)=>`${img.src} ${mobileWidths[i]}w`).join(', ')} sizes="100vw" width="1024" height="2400" alt="" loading="lazy" decoding="async" hidden />)}
+      {spPhase4RainScenes.flatMap(({ id, effects }) => effects.map(({ effect, rin, plant, images }) => <img data-scene={id} data-rain-effect={effect} data-rain-rin={rin} data-rain-plant={plant} src={images[2].src} srcset={images.map((img,i)=>`${img.src} ${mobileWidths[i]}w`).join(', ')} sizes="100vw" width="1024" height="2400" alt="" loading="lazy" decoding="async" hidden />))}
+      <canvas class="rain-motion" width="512" height="1200" aria-hidden="true" hidden></canvas>
+      {spEveningLayers.map(({ filename, group, images }) => <img data-scene="spring-evening-sunny" data-layer={filename} data-sp-group={group} src={images[2].src} srcset={images.map((img,i)=>`${img.src} ${mobileWidths[i]}w`).join(', ')} sizes="100vw" width="1024" height="2400" alt="" loading="lazy" decoding="async" hidden />)}
+      {spEveningCloudyLayers.map(({ filename, group, images }) => <img data-scene="spring-evening-cloudy" data-layer={filename} data-sp-group={group} src={images[2].src} srcset={images.map((img,i)=>`${img.src} ${mobileWidths[i]}w`).join(', ')} sizes="100vw" width="1024" height="2400" alt="" loading="lazy" decoding="async" hidden />)}
+      {spNightAwakeLayers.map(({ filename, group, images }) => <img data-scene="spring-night-sunny-awake" data-layer={filename} data-sp-group={group} src={images[2].src} srcset={images.map((img,i)=>`${img.src} ${mobileWidths[i]}w`).join(', ')} sizes="100vw" width="1024" height="2400" alt="" loading="lazy" decoding="async" hidden />)}
+      {spNightAwakeCloudyLayers.map(({ filename, group, images }) => <img data-scene="spring-night-cloudy-awake" data-layer={filename} data-sp-group={group} src={images[2].src} srcset={images.map((img,i)=>`${img.src} ${mobileWidths[i]}w`).join(', ')} sizes="100vw" width="1024" height="2400" alt="" loading="lazy" decoding="async" hidden />)}
+      {spNightAsleepLayers.map(({ filename, group, images }) => <img data-scene="spring-night-sunny-asleep" data-layer={filename} data-sp-group={group} src={images[2].src} srcset={images.map((img,i)=>`${img.src} ${mobileWidths[i]}w`).join(', ')} sizes="100vw" width="1024" height="2400" alt="" loading="lazy" decoding="async" hidden />)}
+      {spNightAsleepCloudyLayers.map(({ filename, group, images }) => <img data-scene="spring-night-cloudy-asleep" data-layer={filename} data-sp-group={group} src={images[2].src} srcset={images.map((img,i)=>`${img.src} ${mobileWidths[i]}w`).join(', ')} sizes="100vw" width="1024" height="2400" alt="" loading="lazy" decoding="async" hidden />)}
+    </div>
     <h1 class="scene-logo"><a href="/" aria-label="ennui ホーム">ennui</a></h1>
     <Navigation scene />
+    {showSceneSettings && <SceneSettings />}
   </main>
 </Base>
 
 <script>
-  // Bounds include the outer window/sill, measured on the active original PNGs.
+  import { sceneForTokyo } from '../lib/scene-time';
+  import { applyScene } from '../lib/scene-display';
+  import { resolveScene, slotForScene } from '../lib/scene-catalog';
+  import { setupRainMotion } from '../lib/rain-motion';
+  // Bounds include the outer window/sill in the shared 1345 × 1170 PC coordinate space.
   const scene = document.querySelector<HTMLElement>('.scene');
   if (scene) {
     const portrait = matchMedia('(max-aspect-ratio: 1/1)');
     const layout = () => {
       const w = document.documentElement.clientWidth;
       const sp = portrait.matches;
+      const tallSp = sp && ['spring-dawn-sunny', 'spring-dawn-cloudy', 'spring-dawn-rain', 'spring-day-sunny', 'spring-day-cloudy', 'spring-day-rain', 'summer-dawn-sunny', 'summer-day-sunny', 'summer-evening-sunny', 'summer-night-sunny-awake', 'summer-night-sunny-asleep', 'spring-evening-sunny', 'spring-evening-cloudy', 'spring-evening-rain', 'spring-night-sunny-awake', 'spring-night-cloudy-awake', 'spring-night-rain-awake', 'spring-night-sunny-asleep', 'spring-night-cloudy-asleep', 'spring-night-rain-asleep'].includes(scene.querySelector<HTMLElement>('.mobile-artwork')?.dataset.activeScene ?? '');
+      delete scene.dataset.menuPlacement;
       const g = sp
         ? { width: 1024, height: 1997, top: 154, base: 1536, padding: 461, right: 990, bottom: 1530 }
         : { width: 1345, height: 1170, top: 150, base: 756.5625, padding: 413.4375, right: 1305, bottom: 850 };
-      // Reserve 20 CSS pixels beyond the right frame even on smaller screens.
-      const scale = Math.min(w / g.width, Math.max(1, w - 20) / g.right);
+      // The tall SP paintings include the full outer wall; other scenes retain their existing frame.
+      const scale = tallSp ? w / 1024 : Math.min(w / g.width, Math.max(1, w - 20) / g.right);
+      if (tallSp) {
+        const artworkWidth = 1024 * scale;
+        const artworkHeight = 2400 * scale;
+        const nav = scene.querySelector<HTMLElement>('.scene-nav')?.getBoundingClientRect();
+        // Place the menu after the painting only when its fixed position covers the figure/cup area.
+        const menuAfterArt = !!nav && nav.top < 1648 * scale + 16;
+        if (menuAfterArt) scene.dataset.menuPlacement = 'after-art';
+        scene.style.setProperty('--layout-height', `${Math.ceil(Math.max(document.documentElement.clientHeight, 680, menuAfterArt ? artworkHeight + (nav?.height ?? 0) + 16 : 0))}px`);
+        scene.style.setProperty('--layout-width', `${artworkWidth}px`);
+        scene.style.setProperty('--layout-image-height', `${artworkHeight}px`);
+        scene.style.setProperty('--layout-top', '0px');
+        scene.style.setProperty('--layout-logo-top', `${154 * scale + Math.max(16, artworkWidth * .04)}px`);
+        return;
+      }
       const base = g.base * scale;
       const reveal = (h: number) => Math.min(g.top * scale, Math.max(0, h - base) * g.top / g.padding);
       let h = Math.max(document.documentElement.clientHeight, base, sp ? 680 : 0);
@@ -55,5 +296,58 @@ const mobileImages = await Promise.all(mobileWidths.map(width => getImage({src: 
     layout();
     window.addEventListener('resize', layout);
     portrait.addEventListener('change', layout);
+    const updateClockScene = () => {
+      // The preview owns manual selection; the published page has no settings panel.
+      if (document.querySelector('.scene-settings')) {
+        window.dispatchEvent(new Event('ennui:clock-tick'));
+      } else {
+        const slot = slotForScene(sceneForTokyo(new Date()));
+        applyScene(resolveScene({ season: 'spring', weather: 'sunny', slot }, portrait.matches ? 'sp' : 'pc').displayed, portrait.matches);
+      }
+      layout();
+    };
+    const scheduleNextMinute = () => {
+      const untilNextMinute = 60_000 - Date.now() % 60_000 + 50;
+      window.setTimeout(() => { updateClockScene(); scheduleNextMinute(); }, untilNextMinute);
+    };
+    updateClockScene();
+    scheduleNextMinute();
+    portrait.addEventListener('change', updateClockScene);
+    window.addEventListener('ennui:scene-request', layout);
+    document.addEventListener('visibilitychange', () => { if (!document.hidden) updateClockScene(); });
+    window.addEventListener('focus', updateClockScene);
+    setupRainMotion();
   }
 </script>
+
+<style>
+  .pc-artwork {
+    position: absolute;
+    left: 0;
+    top: var(--layout-top, calc(var(--pc-reveal) - var(--pc-top-padding)));
+    width: var(--layout-width, var(--pc-render-width));
+    height: var(--layout-image-height, calc(var(--pc-render-width) / var(--pc-aspect)));
+  }
+  .pc-artwork .rain-motion, .mobile-artwork .rain-motion { position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; }
+  /* Keep the approved hem-cleaned pose intact while seating both feet below the lower window frame. */
+  .pc-artwork img[data-scene="spring-day-sunny"][data-layer="rin-pc-hem-cleaned.png"],
+  .pc-artwork img[data-scene="spring-day-sunny"][data-layer="pc-contact-shadow-v6.png"] { transform: translateY(1.1965812%); }
+  .mobile-artwork img[data-scene="spring-day-sunny"][data-layer="08-rin-notebook.png"] { transform: translateY(0.4583333%); }
+  .pc-artwork[data-active-scene^="spring-night-rain"] .rain-motion,
+  .mobile-artwork[data-active-scene^="spring-night-rain"] .rain-motion { opacity: .7; }
+  .rain-motion[hidden] { display: none; }
+  .pc-artwork img { position: absolute; display: block; width: 100%; height: 100%; object-fit: fill; }
+  .pc-artwork img[hidden] { display: none; }
+  .scene[data-active-scene*="-night-"] .scene-logo { color: #f0eee9; }
+  .scene[data-active-scene="spring-dawn-sunny"] .scene-logo { color: #f0eee9; }
+  .scene[data-active-scene="spring-dawn-cloudy"] .scene-logo { color: #f0eee9; }
+  .scene[data-active-scene="spring-dawn-rain"] .scene-logo { color: #f0eee9; }
+  .scene[data-active-scene="summer-dawn-sunny"] .scene-logo { color: #f0eee9; }
+  .mobile-artwork { display: none !important; position: absolute; left: 0; top: var(--layout-top, calc(var(--revealed-top) - var(--sp-top-padding))); width: var(--layout-width, 100vw); height: var(--layout-image-height, var(--sp-canvas-height)); }
+  .mobile-artwork img { position: absolute; inset: 0; display: block; width: 100%; height: 100%; object-fit: fill; }
+  .mobile-artwork img[hidden] { display: none; }
+  @media (max-aspect-ratio: 1/1) {
+    .pc-artwork { display: none; }
+    .mobile-artwork { display: block !important; }
+  }
+</style>

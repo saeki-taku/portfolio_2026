@@ -1,0 +1,123 @@
+{
+  "dimensions": {
+    "01-exterior.png": [
+      1345,
+      1170
+    ],
+    "02-interior.png": [
+      1345,
+      1170
+    ],
+    "03-rin.png": [
+      1345,
+      1170
+    ],
+    "05-cup-foreground.png": [
+      1345,
+      1170
+    ],
+    "glass-mask.png": [
+      1345,
+      1170
+    ],
+    "preview-composite.png": [
+      1345,
+      1170
+    ],
+    "preview-no-rin-effect-off.png": [
+      1345,
+      1170
+    ],
+    "preview-no-rin.png": [
+      1345,
+      1170
+    ],
+    "preview-rain-effect-off.png": [
+      1345,
+      1170
+    ],
+    "rain-glass-droplets-rin-off.png": [
+      1345,
+      1170
+    ],
+    "rain-glass-droplets-rin-on.png": [
+      1345,
+      1170
+    ],
+    "rain-outdoor-rin-off.png": [
+      1345,
+      1170
+    ],
+    "rain-outdoor-rin-on.png": [
+      1345,
+      1170
+    ],
+    "rain-visibility-alpha-rin-off.png": [
+      1345,
+      1170
+    ],
+    "rain-visibility-alpha-rin-on.png": [
+      1345,
+      1170
+    ],
+    "rain-visibility-mask-rin-off.png": [
+      1345,
+      1170
+    ],
+    "rain-visibility-mask-rin-on.png": [
+      1345,
+      1170
+    ],
+    "rin-contact-shadow.png": [
+      1345,
+      1170
+    ]
+  },
+  "rainLeak": {
+    "rain-outdoor-rin-on.png": 0,
+    "rain-glass-droplets-rin-on.png": 0,
+    "rain-outdoor-rin-off.png": 0,
+    "rain-glass-droplets-rin-off.png": 0
+  },
+  "maskDifference": {
+    "rin-on": {
+      "outsideGlass": 0,
+      "exceedsRinOff": 0
+    },
+    "rin-off": {
+      "outsideGlass": 0,
+      "exceedsRinOff": 0
+    }
+  },
+  "removedGlassUnderpaintPixels": 0,
+  "underpaintGlassRemaining": 0,
+  "rainBehindRemovedPlant": 0,
+  "exteriorAlphaDifference": 0,
+  "interiorAlphaDifference": 0,
+  "glassAlignment": {},
+  "previewAlphaHoles": {
+    "preview-composite.png": 0,
+    "preview-no-rin.png": 0
+  },
+  "protectedLayerHashes": {
+    "02-interior.png": {
+      "source": "0d84afa1a2ad2926d9412ac50a1dd67b70b7f3eb990b7dc5a467e9ca9606ad26",
+      "output": "0d84afa1a2ad2926d9412ac50a1dd67b70b7f3eb990b7dc5a467e9ca9606ad26"
+    },
+    "rin-contact-shadow.png": {
+      "source": "d086800388811a0a8077fbc31257f7fe147df985c0189ca9773b4d063d09b7dc",
+      "output": "d086800388811a0a8077fbc31257f7fe147df985c0189ca9773b4d063d09b7dc"
+    },
+    "03-rin.png": {
+      "source": "375ef03a20575934ac66c5cfdaee74a856202307b83fbfd048c33ab453626c36",
+      "output": "375ef03a20575934ac66c5cfdaee74a856202307b83fbfd048c33ab453626c36"
+    },
+    "05-cup-foreground.png": {
+      "source": "863797e1bcac430e79c8b9b6b078a333b584f53c2253ecda8a8b5ccabc5a2e96",
+      "output": "863797e1bcac430e79c8b9b6b078a333b584f53c2253ecda8a8b5ccabc5a2e96"
+    }
+  },
+  "glassMaskSha256": "8e8549f2bc7252590038ab192518d73ed31288f3a2a4a4fb50b5fa2449898667",
+  "outputGlassMaskSha256": "0b061d58f4afba93423beb941ee43c740987c133e8db2b0a693e5b3a9c44b14f",
+  "status": "mechanical-checks-passed; visual-inspection-completed; aesthetic-approval-pending"
+}

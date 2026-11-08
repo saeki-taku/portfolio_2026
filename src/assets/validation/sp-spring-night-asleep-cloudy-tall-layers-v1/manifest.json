@@ -1,0 +1,53 @@
+{
+  "status": "review-candidate",
+  "scene": "ennui-spring-night-asleep-cloudy-sp-v1",
+  "width": 1024,
+  "height": 2400,
+  "origin": "top-left",
+  "registration": {
+    "x": 0,
+    "y": 0
+  },
+  "baseScene": "/Users/saekitakuya/Documents/ChatGPT/ポートフォリオ/design-proposals/sp-night-asleep-tall-layers-v1",
+  "cloudTextureReference": "/Users/saekitakuya/Documents/ChatGPT/ポートフォリオ/design-proposals/sp-day-cloudy-tall-layers-v1",
+  "paintGuide": "inputs/cloudy-guide.png",
+  "layersBottomToTop": [
+    "01-exterior.png",
+    "01a-city-lights.png",
+    "02-interior-window.png",
+    "03-plant-scene-underpaint.png",
+    "04-indoor-plant.png",
+    "05-cup-contact-underpaint.png",
+    "06-cup-body-underpaint.png",
+    "09-cup-foreground.png"
+  ],
+  "toggleGroups": {
+    "cup": [
+      "05-cup-contact-underpaint.png",
+      "06-cup-body-underpaint.png",
+      "09-cup-foreground.png"
+    ],
+    "plant": [
+      "03-plant-scene-underpaint.png",
+      "04-indoor-plant.png"
+    ]
+  },
+  "glassMask": "glass-mask.png",
+  "glassMaskMode": "luminance",
+  "previews": {
+    "all": "preview-composite.png",
+    "cityLightsOff": "preview-city-lights-off.png",
+    "withoutCup": "preview-no-cup.png",
+    "withoutPlantCup": "preview-no-plant-cup.png",
+    "comparison": "compare-clear-cloudy.png",
+    "skyDetail": "inspection-sky.png",
+    "sillDetail": "inspection-sill-floor.png"
+  },
+  "constraints": [
+    "No new architecture, figure pose, or lighting fixture; all scene coordinates and layer alpha are inherited.",
+    "Rin absent; room light off; only the originally sparse city lights remain.",
+    "Plant underpaint RGB matches its underlying composite to avoid a rectangular patch."
+  ],
+  "verification": "verification.json",
+  "build": "node ../build-spring-weather-cloudy-phase4.cjs"
+}

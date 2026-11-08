@@ -1,0 +1,192 @@
+{
+  "source": "/Users/saekitakuya/Documents/ChatGPT/ポートフォリオ/design-proposals/pc-summer-evening-clear-layers-v2",
+  "target": "/Users/saekitakuya/Documents/ChatGPT/ポートフォリオ/design-proposals/pc-summer-evening-clear-layers-v3",
+  "dimensions": [
+    1345,
+    1170
+  ],
+  "repairPixels": 30320,
+  "restorationPixels": 32393,
+  "exteriorRepairPixels": 21123,
+  "plantCutoutPixels": 7950,
+  "allOnVsSource": {
+    "changedPixels": 25,
+    "changedOutsidePlantArea": 0,
+    "maxChannelDifference": 1,
+    "transparentPixels": 0
+  },
+  "plantOffVsOn": {
+    "changedPixels": 30466,
+    "changedOutsidePlantArea": 0,
+    "maxChannelDifference": 215,
+    "transparentPixels": 0
+  },
+  "combinationChecks": {
+    "rin-on_cup-on_plant-on": {
+      "width": 1345,
+      "height": 1170,
+      "transparentPixels": 0
+    },
+    "rin-on_cup-on_plant-off": {
+      "width": 1345,
+      "height": 1170,
+      "transparentPixels": 0
+    },
+    "rin-on_cup-off_plant-on": {
+      "width": 1345,
+      "height": 1170,
+      "transparentPixels": 0
+    },
+    "rin-on_cup-off_plant-off": {
+      "width": 1345,
+      "height": 1170,
+      "transparentPixels": 0
+    },
+    "rin-off_cup-on_plant-on": {
+      "width": 1345,
+      "height": 1170,
+      "transparentPixels": 0
+    },
+    "rin-off_cup-on_plant-off": {
+      "width": 1345,
+      "height": 1170,
+      "transparentPixels": 0
+    },
+    "rin-off_cup-off_plant-on": {
+      "width": 1345,
+      "height": 1170,
+      "transparentPixels": 0
+    },
+    "rin-off_cup-off_plant-off": {
+      "width": 1345,
+      "height": 1170,
+      "transparentPixels": 0
+    }
+  },
+  "toggleIsolation": {
+    "plant": [
+      {
+        "changedPixels": 30466,
+        "changedOutsidePlantArea": 0,
+        "maxChannelDifference": 215,
+        "transparentPixels": 0
+      },
+      {
+        "changedPixels": 30466,
+        "changedOutsidePlantArea": 0,
+        "maxChannelDifference": 215,
+        "transparentPixels": 0
+      },
+      {
+        "changedPixels": 30466,
+        "changedOutsidePlantArea": 0,
+        "maxChannelDifference": 215,
+        "transparentPixels": 0
+      },
+      {
+        "changedPixels": 30466,
+        "changedOutsidePlantArea": 0,
+        "maxChannelDifference": 215,
+        "transparentPixels": 0
+      }
+    ],
+    "cup": [
+      {
+        "changedPixels": 5669,
+        "changedOutsidePlantArea": 0,
+        "maxChannelDifference": 169,
+        "transparentPixels": 0
+      },
+      {
+        "changedPixels": 5669,
+        "changedOutsidePlantArea": 0,
+        "maxChannelDifference": 169,
+        "transparentPixels": 0
+      },
+      {
+        "changedPixels": 7314,
+        "changedOutsidePlantArea": 0,
+        "maxChannelDifference": 175,
+        "transparentPixels": 0
+      },
+      {
+        "changedPixels": 7314,
+        "changedOutsidePlantArea": 0,
+        "maxChannelDifference": 175,
+        "transparentPixels": 0
+      }
+    ],
+    "rin": [
+      {
+        "changedPixels": 54605,
+        "changedOutsidePlantArea": 0,
+        "maxChannelDifference": 254,
+        "transparentPixels": 0
+      },
+      {
+        "changedPixels": 54605,
+        "changedOutsidePlantArea": 0,
+        "maxChannelDifference": 254,
+        "transparentPixels": 0
+      },
+      {
+        "changedPixels": 55883,
+        "changedOutsidePlantArea": 0,
+        "maxChannelDifference": 254,
+        "transparentPixels": 0
+      },
+      {
+        "changedPixels": 55883,
+        "changedOutsidePlantArea": 0,
+        "maxChannelDifference": 254,
+        "transparentPixels": 0
+      }
+    ]
+  },
+  "sourceExteriorSha256": "f63088671ba622d60c1be0157ee043d26a0e38f7d1efa544e4ec9fdcbf73c466",
+  "targetExteriorSha256": "5e8cdab06865c439cf8b83a52304f4e7b154a05ffce5d79c854e9b9d7301bc1e",
+  "sourceCupForegroundSha256": "36419388fe9fd9e6054ee3cc53a5532c837762a38e0dd89f685fe4e067ee62b2",
+  "targetCupForegroundSha256": "36419388fe9fd9e6054ee3cc53a5532c837762a38e0dd89f685fe4e067ee62b2",
+  "wallLighting": [
+    {
+      "a": 0.8227927092575276,
+      "b": 48.790110149696915
+    },
+    {
+      "a": 1.1772836606212902,
+      "b": -61.28284699800747
+    },
+    {
+      "a": 0.8352364479563686,
+      "b": -25.544292070270785
+    }
+  ],
+  "sillLighting": [
+    {
+      "a": 1.2795252751416022,
+      "b": -76.09501661887455
+    },
+    {
+      "a": 1.1452044237323213,
+      "b": -70.46476840006059
+    },
+    {
+      "a": 0.683009999877432,
+      "b": 6.891480504232135
+    }
+  ],
+  "exteriorLighting": [
+    {
+      "a": 1.0151416148640091,
+      "b": -4.872413808505172
+    },
+    {
+      "a": 0.8625748637043693,
+      "b": -4.176275323476773
+    },
+    {
+      "a": 0.7290508928636947,
+      "b": -7.344974451125978
+    }
+  ]
+}

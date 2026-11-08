@@ -1,0 +1,210 @@
+<details class="scene-settings">
+  <summary>シーン設定</summary>
+  <div class="settings-panel">
+    <strong>開発用プレビュー</strong>
+    <label>切り替え方式<select name="mode"><option value="auto" selected>自動</option><option value="manual">手動</option></select></label>
+    <p class="time-rule">自動は東京時刻の暫定区分です。明け方 05:00–05:59／昼 06:00–16:59／夕方 17:00–18:59／起きている夜 19:00–22:59／就寝後 23:00–04:59。春・晴れを固定し、季節と実天気には連動しません。</p>
+    <fieldset>
+      <label>季節<select name="season"><option value="spring">春</option><option value="summer">夏</option><option value="autumn">秋</option><option value="winter">冬</option></select></label>
+      <label>時間帯<select name="period"><option value="day">昼</option><option value="dawn">明け方</option><option value="evening">夕方</option><option value="night">夜</option></select></label>
+      <label>天気<select name="weather"><option value="sunny">晴れ</option><option value="cloudy">曇り</option><option value="rain">雨</option><option value="snow">雪</option></select></label>
+      <label class="night-state-control" hidden>夜の状態<select name="nightState"><option value="awake">起きている夜</option><option value="asleep">就寝後の夜</option></select></label>
+    </fieldset>
+    <p class="scene-status" role="status" aria-live="polite"></p>
+    <fieldset class="rain-controls" hidden>
+      <legend>雨の確認</legend>
+      <p>屋外とガラスを別々に調整できます。100%が通常、200%が大雨です。</p>
+      <label><span>屋外の雨筋<output data-rain-output="outdoor">通常 100%</output></span><input type="range" data-rain-amount="outdoor" min="0" max="200" value="100" /></label>
+      <label><span>ガラスの滴<output data-rain-output="glass">通常 100%</output></span><input type="range" data-rain-amount="glass" min="0" max="200" value="100" /></label>
+    </fieldset>
+    <button type="button" data-reset-scene>春・昼・晴れに戻す</button>
+    <fieldset class="layer-controls">
+      <legend>PCシーンのレイヤー</legend>
+      <label><input type="checkbox" data-layer-toggle="exterior" checked />外景</label>
+      <label><input type="checkbox" data-layer-toggle="interior" checked />室内</label>
+      <label><input type="checkbox" data-layer-toggle="rin" checked />凛・手元</label>
+      <label><input type="checkbox" data-layer-toggle="cup" checked /><span data-pc-cup-label>カップ前景</span></label>
+      <label><input type="checkbox" data-layer-toggle="plant" checked />鉢植えと連動下地</label>
+    </fieldset>
+    <p class="layer-status" role="status" aria-live="polite"></p>
+    <button type="button" data-reset-layers>全レイヤーを表示</button>
+    <fieldset class="sp-layer-controls">
+      <legend>SPシーンのレイヤー</legend>
+      <label><input type="checkbox" data-sp-toggle="rin" checked />凛と連動する影・下地</label>
+      <label><input type="checkbox" data-sp-toggle="cup" checked />カップと連動下地</label>
+      <label><input type="checkbox" data-sp-toggle="plant" checked />鉢植えと連動下地</label>
+    </fieldset>
+    <p class="sp-layer-status" role="status" aria-live="polite"></p>
+    <button type="button" data-reset-sp-layers>SPの全層を表示</button>
+  </div>
+</details>
+<script>
+  import { sceneForTokyo, type PcScene } from '../lib/scene-time';
+  import { applyScene } from '../lib/scene-display';
+  import { resolveScene, slotForScene, type SceneRequest } from '../lib/scene-catalog';
+  const settings = document.querySelector<HTMLDetailsElement>('.scene-settings');
+  if (settings) {
+    const controls = [...settings.querySelectorAll<HTMLSelectElement>('select')];
+    const layerControls = [...settings.querySelectorAll<HTMLInputElement>('[data-layer-toggle]')];
+    const spControls = [...settings.querySelectorAll<HTMLInputElement>('[data-sp-toggle]')];
+    const rainControls = [...settings.querySelectorAll<HTMLInputElement>('[data-rain-amount]')];
+    const portrait = matchMedia('(max-aspect-ratio: 1/1)');
+    const nightStateControl = settings.querySelector<HTMLElement>('.night-state-control')!;
+    const nightStateSelect = settings.querySelector<HTMLSelectElement>('select[name="nightState"]')!;
+    const update = () => {
+      const state = Object.fromEntries(controls.map(c => [c.name, c.value]));
+      const automatic = state.mode === 'auto';
+      settings.querySelector('fieldset')!.disabled = automatic;
+      const requestedNight = state.period === 'night';
+      nightStateControl.hidden = automatic || !requestedNight;
+      nightStateSelect.disabled = automatic || !requestedNight;
+      const tokyoScene = sceneForTokyo(new Date());
+      const request: SceneRequest = automatic
+        ? { season: 'spring', weather: 'sunny', slot: slotForScene(tokyoScene) }
+        : { season: state.season as SceneRequest['season'], weather: state.weather as SceneRequest['weather'],
+            slot: state.period === 'night' ? (state.nightState === 'asleep' ? 'night-asleep' : 'night-awake') : state.period as 'dawn' | 'day' | 'evening' };
+      const selection = resolveScene(request, portrait.matches ? 'sp' : 'pc');
+      const activeScene = applyScene(selection.displayed, portrait.matches);
+      settings.querySelector<HTMLFieldSetElement>('.rain-controls')!.hidden = !activeScene.split('-').includes('rain');
+      settings.dataset.tokyoScene = automatic ? tokyoScene : '';
+      const sceneName = request.slot === 'dawn' ? '明け方'
+        : request.slot === 'day' ? '昼'
+        : request.slot === 'evening' ? '夕方'
+        : request.slot === 'night-awake' ? '夜（凛が起きている）' : '夜（就寝後）';
+      const seasonName = { spring: '春', summer: '夏', autumn: '秋', winter: '冬' }[request.season];
+      const weatherName = { sunny: '晴れ', cloudy: '曇り', rain: '雨', snow: '雪' }[request.weather];
+      const displayedName = selection.displayed === 'spring-night-sunny-asleep' ? '夜／就寝後'
+        : request.slot === 'dawn' ? '明け方' : request.slot === 'day' ? '昼' : request.slot === 'evening' ? '夕方'
+        : request.slot === 'night-awake' ? '夜／起きている夜' : '夜／就寝後';
+      settings.querySelector('.scene-status')!.textContent = automatic
+        ? selection.reason === 'exact' ? `表示中：春・晴れ／${sceneName}。東京時刻による暫定自動切替です。`
+          : `東京時刻は春・晴れ／${sceneName}。素材未対応のため表示中：${portrait.matches ? 'SP' : 'PC'} 春・${displayedName}・晴れ。`
+        : selection.reason !== 'exact' ? `選択：${seasonName}・${sceneName}・${weatherName}は素材未対応です。表示中：${portrait.matches ? 'SP' : 'PC'} 春・${displayedName}・晴れ。`
+        : activeScene === 'spring-dawn-sunny' ? `表示中：${portrait.matches ? 'SP' : 'PC'} 春・明け方・晴れ。凛と室内灯のない分離レイヤーです。`
+        : activeScene === 'spring-dawn-cloudy' ? `表示中：${portrait.matches ? 'SP' : 'PC'} 春・明け方・曇り。凛と室内灯のない静止画の確認用候補です。`
+        : activeScene === 'spring-dawn-rain' ? `表示中：${portrait.matches ? 'SP' : 'PC'} 春・明け方・雨。凛と室内灯のない雨天候補です。`
+        : activeScene === 'spring-day-cloudy' ? `表示中：${portrait.matches ? 'SP' : 'PC'} 春・昼・曇り。静止画の確認用候補です。`
+        : activeScene === 'spring-day-rain' ? `表示中：${portrait.matches ? 'SP' : 'PC'} 春・昼・雨。雨筋とガラス滴の動きを確認できます。`
+        : activeScene === 'summer-day-sunny' ? `表示中：${portrait.matches ? 'SP' : 'PC'} 夏・昼・晴れ。分離レイヤーの確認用候補です。`
+        : activeScene === 'summer-dawn-sunny' ? `表示中：${portrait.matches ? 'SP' : 'PC'} 夏・明け方・晴れ。凛と室内灯のない確認用候補です。`
+        : activeScene === 'summer-evening-sunny' ? `表示中：${portrait.matches ? 'SP' : 'PC'} 夏・夕方・晴れ。分離レイヤーの確認用候補です。`
+        : activeScene === 'summer-night-sunny-awake' ? `表示中：${portrait.matches ? 'SP' : 'PC'} 夏・夜・晴れ／起きている夜。分離レイヤーの確認用候補です。`
+        : activeScene === 'summer-night-sunny-asleep' ? `表示中：${portrait.matches ? 'SP' : 'PC'} 夏・夜・晴れ／就寝後。凛と室内灯のない確認用候補です。`
+        : activeScene === 'spring-evening-sunny' ? `表示中：${portrait.matches ? 'SP' : 'PC'} 春・夕方・晴れ。分離レイヤー確認用です。`
+        : activeScene === 'spring-evening-cloudy' ? `表示中：${portrait.matches ? 'SP' : 'PC'} 春・夕方・曇り。薄暮の確認用候補です。`
+        : activeScene === 'spring-evening-rain' ? `表示中：${portrait.matches ? 'SP' : 'PC'} 春・夕方・雨。雨筋とガラス滴の動きを確認できます。`
+        : activeScene === 'spring-night-sunny-awake' ? `表示中：${portrait.matches ? 'SP' : 'PC'} 春・夜・晴れ／起きている夜。分離レイヤー確認用です。`
+        : activeScene === 'spring-night-cloudy-awake' ? `表示中：${portrait.matches ? 'SP' : 'PC'} 春・夜・曇り／起きている夜。読書灯のある確認用候補です。`
+        : activeScene === 'spring-night-rain-awake' ? `表示中：${portrait.matches ? 'SP' : 'PC'} 春・夜・雨／起きている夜。読書灯のある雨天候補です。`
+        : activeScene === 'spring-night-sunny-asleep' ? `表示中：${portrait.matches ? 'SP' : 'PC'} 春・夜・晴れ／就寝後。凛と室内灯を消した分離レイヤーです。`
+        : activeScene === 'spring-night-cloudy-asleep' ? `表示中：${portrait.matches ? 'SP' : 'PC'} 春・夜・曇り／就寝後。凛と室内灯のない確認用候補です。`
+        : activeScene === 'spring-night-rain-asleep' ? `表示中：${portrait.matches ? 'SP' : 'PC'} 春・夜・雨／就寝後。凛と室内灯のない雨天候補です。`
+        : '表示中：春・昼・晴れ。描き直し版です。';
+      updateLayers();
+      updateSpLayers();
+      window.dispatchEvent(new CustomEvent('ennui:scene-request', { detail: { ...state, requested: selection.requested, displayed: activeScene,
+        reason: selection.reason, viewport: portrait.matches ? 'sp' : 'pc', tokyoScene: automatic ? tokyoScene : undefined } }));
+    };
+    controls.forEach(c => c.addEventListener('change', update));
+    settings.querySelector<HTMLButtonElement>('[data-reset-scene]')!.addEventListener('click', () => {
+      controls.forEach(c => { c.selectedIndex = 0; });
+      settings.querySelector<HTMLSelectElement>('select[name="mode"]')!.value = 'manual';
+      update();
+    });
+    const updateLayers = () => {
+      const currentScene = (document.querySelector<HTMLElement>('.scene')?.dataset.activeScene ?? 'spring-day-sunny') as PcScene;
+      const noRin = currentScene.endsWith('-asleep') || currentScene.includes('-dawn-');
+      applyScene(currentScene, portrait.matches);
+      settings.querySelector<HTMLFieldSetElement>('.layer-controls')!.disabled = portrait.matches;
+      settings.querySelector<HTMLButtonElement>('[data-reset-layers]')!.disabled = portrait.matches;
+      settings.querySelector<HTMLInputElement>('[data-layer-toggle="rin"]')!.disabled = portrait.matches || noRin;
+      const cupControl = settings.querySelector<HTMLInputElement>('[data-layer-toggle="cup"]')!;
+      const summerCup = currentScene.startsWith('summer-');
+      const cupAvailable = currentScene === 'spring-day-sunny' || summerCup;
+      cupControl.disabled = portrait.matches || !cupAvailable;
+      const plantControl = settings.querySelector<HTMLInputElement>('[data-layer-toggle="plant"]')!;
+      const plantAvailable = currentScene === 'spring-day-sunny' || summerCup && !!document.querySelector(`.pc-artwork img[data-scene="${currentScene}"][data-control="plant"]`);
+      plantControl.disabled = portrait.matches || !plantAvailable;
+      settings.querySelector<HTMLElement>('[data-pc-cup-label]')!.textContent = currentScene === 'spring-day-sunny' ? 'カップ' : plantAvailable ? 'カップと連動下地' : summerCup ? 'カップ' : 'カップ前景';
+      settings.querySelector('.layer-status')!.textContent = portrait.matches
+        ? 'PCの確認操作は横長画面で使えます。'
+        : plantAvailable ? noRin
+          ? 'この時間帯は凛と人物由来の影が素材にありません。カップと鉢植えを連動下地ごと個別に切り替えられます。'
+          : '人物と影、カップ、鉢植えをそれぞれ連動下地ごと切り替えられます。'
+        : summerCup ? noRin
+          ? 'この時間帯は凛と人物由来の影が素材にありません。カップは単独で切り替えられます。'
+          : '人物と影、カップをそれぞれ切り替えられます。'
+        : noRin ? 'この時間帯は凛と人物由来の影が素材にありません。カップ単独切り替えは素材上未対応です。'
+        : !cupAvailable ? '人物と影を連動して切り替えます。カップ単独切り替えは素材上未対応です。'
+        : '人物と影、カップ前景を切り替えます。カップ本体の一部は室内下地に残ります。';
+    };
+    const updateSpLayers = () => {
+      const currentScene = (document.querySelector<HTMLElement>('.scene')?.dataset.activeScene ?? 'spring-day-sunny') as PcScene;
+      applyScene(currentScene, portrait.matches);
+      const noRin = currentScene.endsWith('-asleep') || currentScene.includes('-dawn-');
+      const rinControl = spControls.find(control => control.dataset.spToggle === 'rin')!;
+      rinControl.disabled = !portrait.matches || noRin;
+      settings.querySelector<HTMLFieldSetElement>('.sp-layer-controls')!.disabled = !portrait.matches;
+      settings.querySelector<HTMLButtonElement>('[data-reset-sp-layers]')!.disabled = !portrait.matches;
+      settings.querySelector('.sp-layer-status')!.textContent = portrait.matches
+        ? noRin ? 'この時間帯は凛と人物由来の影が素材にありません。カップと鉢植えは連動下地ごと切り替えられます。'
+          : `SP${currentScene === 'spring-evening-sunny' ? '夕方' : currentScene === 'spring-night-sunny-awake' ? '夜' : '昼'}の人物・カップ・鉢植えと、それぞれの連動する影や下地を切り替えられます。`
+        : 'SPの確認操作は縦長画面で使えます。';
+    };
+    layerControls.forEach(control => control.addEventListener('change', updateLayers));
+    spControls.forEach(control => control.addEventListener('change', updateSpLayers));
+    const updateRainReadout = (control: HTMLInputElement) => {
+      const value = Number(control.value);
+      const label = value === 0 ? 'なし' : value < 75 ? '弱い雨' : value < 135 ? '通常' : value < 175 ? '強い雨' : '大雨';
+      settings.querySelector<HTMLOutputElement>(`[data-rain-output="${control.dataset.rainAmount}"]`)!.textContent = `${label} ${value}%`;
+    };
+    rainControls.forEach(control => {
+      control.addEventListener('input', () => {
+        updateRainReadout(control);
+        applyScene((document.querySelector<HTMLElement>('.scene')?.dataset.activeScene ?? 'spring-day-sunny') as PcScene, portrait.matches);
+      });
+      updateRainReadout(control);
+    });
+    settings.querySelector<HTMLButtonElement>('[data-reset-layers]')!.addEventListener('click', () => {
+      layerControls.forEach(control => { control.checked = true; }); updateLayers();
+    });
+    settings.querySelector<HTMLButtonElement>('[data-reset-sp-layers]')!.addEventListener('click', () => {
+      spControls.forEach(control => { control.checked = true; }); updateSpLayers();
+    });
+    portrait.addEventListener('change', update);
+    window.addEventListener('ennui:clock-tick', () => {
+      if (settings.querySelector<HTMLSelectElement>('select[name="mode"]')!.value === 'auto'
+        && settings.dataset.tokyoScene !== sceneForTokyo(new Date())) update();
+    });
+    settings.addEventListener('keydown', event => {
+      if (event.key === 'Escape') { settings.open = false; settings.querySelector('summary')!.focus(); }
+    });
+    update();
+    updateLayers();
+    updateSpLayers();
+  }
+</script>
+<style>
+  .scene-settings { position: fixed; top: max(12px, env(safe-area-inset-top)); right: max(12px, env(safe-area-inset-right)); z-index: 30; font: 14px/1.6 system-ui, sans-serif; color: #30352f; }
+  summary { cursor: pointer; padding: 10px 14px; border: 1px solid #b8b1a2; border-radius: 6px; background: rgb(248 246 237 / 92%); width: fit-content; margin-left: auto; }
+  .settings-panel { margin-top: 8px; padding: 16px; width: min(290px, calc(100vw - 24px)); max-height: calc(100dvh - 90px); overflow: auto; background: #f8f6ef; border: 1px solid #b8b1a2; border-radius: 6px; box-shadow: 0 4px 20px #0002; }
+  label { display: grid; grid-template-columns: 1fr 1.5fr; gap: 12px; align-items: center; margin-top: 12px; }
+  .night-state-control[hidden] { display: none; }
+  .time-rule { margin: 8px 0; font-size: 12px; line-height: 1.5; }
+  select, button { font: inherit; min-height: 44px; color: inherit; background: white; border: 1px solid #a6a599; border-radius: 4px; padding: 6px; }
+  fieldset { border: 0; padding: 0; margin: 0; }
+  .layer-controls, .sp-layer-controls { margin-top: 14px; padding-top: 12px; border-top: 1px solid #b8b1a2; }
+  .rain-controls { margin-top: 14px; padding-top: 12px; border-top: 1px solid #b8b1a2; }
+  .rain-controls[hidden] { display: none; }
+  .rain-controls p { margin: 4px 0 8px; font-size: 12px; }
+  .rain-controls output { display: block; font-size: 12px; color: #526353; }
+  .rain-controls input { width: 100%; }
+  .layer-controls legend, .sp-layer-controls legend { font-weight: 600; padding-right: 6px; }
+  .layer-controls label, .sp-layer-controls label { display: flex; gap: 10px; margin-top: 4px; min-height: 32px; }
+  .layer-controls input, .sp-layer-controls input { width: 18px; height: 18px; }
+  .layer-status { font-size: 12px; }
+  .scene-status { font-size: 12px; }
+  .sp-layer-status { font-size: 12px; }
+  button { width: 100%; cursor: pointer; }
+  :focus-visible { outline: 2px solid #345646; outline-offset: 3px; }
+</style>

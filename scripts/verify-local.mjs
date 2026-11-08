@@ -6,6 +6,7 @@ const browser = await chromium.launch({ channel: 'chrome', headless: true });
 await mkdir('artifacts', { recursive: true });
 try {
   const page = await browser.newPage();
+  await page.clock.install({ time: new Date('2026-10-11T03:00:00Z') }); // Stable PC/SP day baseline.
   const errors = [];
   page.on('pageerror', error => errors.push(error.message));
   const health = await page.request.get(`${base}/api/health`);
@@ -14,9 +15,10 @@ try {
   for (const [name, width, height] of [['desktop',1440,900], ['wide-desktop',1920,1080], ['reference-size',1024,821], ['mobile',390,844], ['tall-mobile',430,932], ['iphone-se',375,667], ['small-mobile',320,568], ['landscape',844,390], ['tablet',768,1024]]) {
     await page.setViewportSize({width,height});
     await page.goto(base);
-    await page.locator('.scene img').evaluate(img => img.decode());
+    const activeImage = width <= height ? '.mobile-artwork [data-scene="spring-day-sunny"][data-layer="08-rin-notebook.png"]' : '.pc-artwork .pc-rin';
+    await page.locator(activeImage).evaluate(img => img.decode());
     const layout = await page.evaluate(() => {
-      const img = document.querySelector('.scene img');
+      const img = document.querySelector(innerWidth <= innerHeight ? '.mobile-artwork [data-scene="spring-day-sunny"][data-layer="08-rin-notebook.png"]' : '.pc-artwork .pc-rin');
       const nav = document.querySelector('.scene-nav').getBoundingClientRect();
       const logo = document.querySelector('.scene-logo').getBoundingClientRect();
       return {scrollHeight:document.documentElement.scrollHeight,scrollWidth:document.documentElement.scrollWidth,source:img.currentSrc,nav:{x:nav.x,y:nav.y,right:nav.right,bottom:nav.bottom},logo:{x:logo.x,y:logo.y,bottom:logo.bottom}};
@@ -25,7 +27,7 @@ try {
     assert.ok(layout.scrollWidth <= width, `${name}: horizontal overflow`);
     assert.ok(layout.nav.x >= 0 && layout.nav.right <= width && layout.nav.bottom <= layout.scrollHeight, `${name}: navigation outside document`);
     assert.ok(layout.logo.x >= 0 && layout.logo.y >= 0 && layout.logo.bottom <= height, `${name}: logo outside viewport`);
-    assert.ok(layout.source.includes(width <= height ? 'rin-mobile' : 'rin-desktop'), `${name}: wrong composition`);
+    assert.ok(layout.source.includes(width <= height ? '08-rin-notebook' : 'rin-redraw'), `${name}: wrong composition`);
     await page.screenshot({path:`artifacts/${name}.png`});
     console.log(`${name}: no horizontal overflow; correct composition; navigation reachable`);
   }
@@ -59,7 +61,7 @@ try {
   // Failed painting load must leave HTML identity and navigation usable.
   await page.route('**/_astro/*.webp',route=>route.abort());
   await page.goto(base);
-  assert.equal(await page.locator('.scene img').evaluate(img=>img.naturalWidth),0);
+  assert.equal(await page.locator('.mobile-artwork [data-scene="spring-day-sunny"][data-layer="08-rin-notebook.png"]').evaluate(img=>img.naturalWidth),0);
   await page.getByRole('link',{name:'お問い合わせ',exact:true}).click();
   await page.getByRole('heading',{name:'お問い合わせ',exact:true}).waitFor();
   assert.deepEqual(errors,[]);

@@ -1,0 +1,28 @@
+{
+  "source": "/Users/saekitakuya/Documents/ChatGPT/ポートフォリオ/design-proposals/pc-deeper-window-seat-sample-v9/background-perspective-adjusted.png",
+  "sourceSha256": "a19a5bc0b585b278517988afd9b0d2c993e7acb20bcb68e0ccb035de7b6c43f1",
+  "baseline": "/Users/saekitakuya/Documents/ChatGPT/ポートフォリオ/design-proposals/pc-deeper-window-seat-sample/current-background.png",
+  "baselineMatchesCurrentExteriorInterior": true,
+  "changedPixels": 197974,
+  "repairChangedPixels": {
+    "plant": 3426,
+    "cup": 2716
+  },
+  "method": "Opaque changed-background pixels only. Existing off-repair alpha masks retained; add approved (v9 minus baseline) RGB delta to repair RGB, clamp 0..255. No generated images, no people/cup/plant flattened into new base.",
+  "estimatedVanishingPoint": [
+    784,
+    444.7687074829932
+  ],
+  "cupOffLowerRestore": {
+    "region": [
+      1033,
+      750,
+      1126,
+      787
+    ],
+    "source": "Approved v9 empty sill at x-115, same y",
+    "blend": "smoothstep y750..759, retained original off alpha mask",
+    "reason": "RGB delta alone retained a thin old cup-bottom mark; replace lower cup-off surface using adjacent v9 sill pixels, preserving y775 front edge."
+  },
+  "approvedBackgroundReconstructionPixelDifference": 0
+}

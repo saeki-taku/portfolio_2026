@@ -1,0 +1,61 @@
+{
+  "dimensions": [
+    1024,
+    2400
+  ],
+  "alphaChecksAgainstCloudyDay": {
+    "01-exterior.png": 0,
+    "02-interior-window.png": 0,
+    "03-plant-scene-underpaint.png": 27116,
+    "04-indoor-plant.png": 0,
+    "05-cup-contact-underpaint.png": 0,
+    "06-cup-body-underpaint.png": 0,
+    "09-cup-foreground.png": 0
+  },
+  "alphaChangesAgainstClearDawn": {
+    "01-exterior.png": 0,
+    "02-interior-window.png": 0,
+    "03-plant-scene-underpaint.png": 0,
+    "04-indoor-plant.png": 0,
+    "05-cup-contact-underpaint.png": 0,
+    "06-cup-body-underpaint.png": 0,
+    "09-cup-foreground.png": 0
+  },
+  "cityLightsUnchanged": {
+    "source": "6fa765345558a036b36152cdd26c572fc6cfbecd09220dace4975c0f7b885f91",
+    "output": "6fa765345558a036b36152cdd26c572fc6cfbecd09220dace4975c0f7b885f91"
+  },
+  "glassMaskByteIdenticalToClearDawn": true,
+  "glassShapeDifferences": {
+    "sp-day-cloudy-tall-layers-v1": 0,
+    "sp-day-tall-layers-v1": 0,
+    "sp-evening-tall-layers-v1": 0,
+    "sp-night-awake-tall-layers-v1": 0,
+    "sp-night-asleep-tall-layers-v1": 0
+  },
+  "previewAlphaHoles": {
+    "preview-composite.png": 0,
+    "preview-city-lights-off.png": 0,
+    "preview-no-cup.png": 0,
+    "preview-no-plant-cup.png": 0
+  },
+  "sampleLuma": {
+    "sky": {
+      "clearDawn": 89.51337616249977,
+      "cloudyDawn": 103.10324341250212,
+      "cloudyDay": 218.89142165000132
+    },
+    "city": {
+      "clearDawn": 97.49270296888807,
+      "cloudyDawn": 90.125765617778,
+      "cloudyDay": 167.28624872888625
+    },
+    "room": {
+      "clearDawn": 56.22343448888858,
+      "cloudyDawn": 63.113221311111786,
+      "cloudyDay": 171.80436619259237
+    }
+  },
+  "guideSha256": "25d0e5ab25e5a7f3c579f41a31c23bde1dcc3940fe468556403db74647d2fd9e",
+  "status": "mechanical-checks-passed; visual-inspection-completed; aesthetic-approval-pending"
+}

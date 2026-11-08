@@ -1,0 +1,171 @@
+{
+  "dimensions": [
+    1345,
+    1170
+  ],
+  "alphaChanges": {
+    "01-exterior.png": {
+      "changedAlpha": 0
+    },
+    "01a-city-lights.png": {
+      "intentionallyReduced": true,
+      "sourceComponents": 35,
+      "keptComponents": 3,
+      "sourcePixels": 585,
+      "keptPixels": 9,
+      "retainedPixelPercent": 1.5384615384615385
+    },
+    "02-interior.png": {
+      "changedAlpha": 0
+    },
+    "05-cup-foreground.png": {
+      "changedAlpha": 0
+    }
+  },
+  "guideSkyPixels": 224335,
+  "sampleLuma": {
+    "sky": {
+      "asleep": 38.00069462000011,
+      "dawn": 89.09083512000053,
+      "day": 213.12224061999953
+    },
+    "city": {
+      "asleep": 44.17918902469107,
+      "dawn": 90.44009697530885,
+      "day": 165.960565839505
+    },
+    "room": {
+      "asleep": 44.9636232666646,
+      "dawn": 78.87628255555597,
+      "day": 233.3775969851857
+    }
+  },
+  "lights": {
+    "intentionallyReduced": true,
+    "sourceComponents": 35,
+    "keptComponents": 3,
+    "sourcePixels": 585,
+    "keptPixels": 9,
+    "retainedPixelPercent": 1.5384615384615385
+  },
+  "source": "pc-spring-night-asleep-layers-v1",
+  "dayReference": "pc-day-layers-v4",
+  "finalValidation": {
+    "dimensions": [
+      1345,
+      1170
+    ],
+    "layerDimensions": {
+      "01-exterior.png": [
+        1345,
+        1170,
+        4
+      ],
+      "01a-city-lights.png": [
+        1345,
+        1170,
+        4
+      ],
+      "02-interior.png": [
+        1345,
+        1170,
+        4
+      ],
+      "05-cup-foreground.png": [
+        1345,
+        1170,
+        4
+      ]
+    },
+    "preservedAlpha": {
+      "01-exterior.png": {
+        "source": {
+          "changed": 0,
+          "maximum": 0
+        },
+        "day": {
+          "changed": 0,
+          "maximum": 0
+        }
+      },
+      "02-interior.png": {
+        "source": {
+          "changed": 0,
+          "maximum": 0
+        },
+        "day": {
+          "changed": 0,
+          "maximum": 0
+        }
+      },
+      "05-cup-foreground.png": {
+        "source": {
+          "changed": 0,
+          "maximum": 0
+        },
+        "day": {
+          "changed": 0,
+          "maximum": 0
+        }
+      }
+    },
+    "maskChanged": 0,
+    "sourceMask": {
+      "changed": 0,
+      "maximum": 0,
+      "sourceAlphaVerified": true
+    },
+    "cityLights": {
+      "awakePixels": 10072,
+      "sourceAsleepPixels": 585,
+      "dawnPixels": 9,
+      "newLightPixels": 0,
+      "brighterLightAlpha": 0,
+      "changedLightRgb": 0,
+      "dawnPercentOfAwake": 0.08935663224781573
+    },
+    "previews": {
+      "preview-composite.png": {
+        "changed": 0,
+        "maximum": 0,
+        "nonOpaquePixels": 0
+      },
+      "preview-city-lights-off.png": {
+        "changed": 0,
+        "maximum": 0,
+        "nonOpaquePixels": 0
+      }
+    },
+    "sampleLuma": {
+      "sky": {
+        "asleep": 38.00069462000011,
+        "dawn": 89.09083512000053,
+        "day": 213.12224061999953
+      },
+      "city": {
+        "asleep": 44.17918902469107,
+        "dawn": 90.44009697530885,
+        "day": 165.960565839505
+      },
+      "room": {
+        "asleep": 44.9636232666646,
+        "dawn": 78.87628255555597,
+        "day": 233.3775969851857
+      }
+    },
+    "skyColors": {
+      "high": [
+        73.821,
+        88.62844444444444,
+        132.48722222222221
+      ],
+      "low": [
+        165.92097222222222,
+        135.27180555555555,
+        146.59333333333333
+      ]
+    },
+    "visualReview": "Painted sky, city, empty room, plant and sill inspected at original and fitted sizes. Window geometry and oil-painted perspective remain stable. No person or reading light. Broad directional sill/floor shadow softened but a faint exterior-light shadow remains.",
+    "limitations": "Review candidate: site timing, actual device safe areas and cloudy/rain variants are not implemented here."
+  }
+}

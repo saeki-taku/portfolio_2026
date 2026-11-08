@@ -1,0 +1,7 @@
+{
+  "scene": "spring-night-sunny-awake",
+  "input": "/Users/saekitakuya/Documents/ChatGPT/ポートフォリオ/design-proposals/pc-seat-v9-rollout-inputs/spring-night-sunny-awake-background.png",
+  "output": "/Users/saekitakuya/Documents/ChatGPT/ポートフォリオ/design-proposals/pc-seat-v9-rollout-outputs/spring-night-sunny-awake-background-v9.png",
+  "changedPixels": 61285,
+  "method": "Exact approved scene-specific background delta; existing object and figure layers remain separate."
+}

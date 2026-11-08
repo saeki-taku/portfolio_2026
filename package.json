@@ -11,7 +11,8 @@
     "check": "astro check",
     "build": "astro build",
     "preview": "wrangler dev --config dist/server/wrangler.json --port 4399 --ip 127.0.0.1",
-    "test:local": "node scripts/verify-local.mjs"
+    "test:local": "node scripts/verify-local.mjs",
+    "build:dev-preview": "node scripts/build-dev-preview.mjs"
   },
   "dependencies": {
     "@astrojs/cloudflare": "14.3.3",

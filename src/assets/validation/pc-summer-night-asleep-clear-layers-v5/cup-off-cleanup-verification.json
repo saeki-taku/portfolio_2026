@@ -1,0 +1,64 @@
+{
+  "format": "pc",
+  "period": "night-asleep",
+  "dimensions": [
+    1345,
+    1170
+  ],
+  "oldAllOnSha256": "7f8a33d3d4fd074cbc23ac759682d78bed90334115df84b6b49107bf6a827f40",
+  "newAllOnSha256": "7f8a33d3d4fd074cbc23ac759682d78bed90334115df84b6b49107bf6a827f40",
+  "maxAllOnChannelDifference": 0,
+  "repair": null,
+  "combinations": {
+    "rin-on_cup-on_plant-on": {
+      "changedPixels": 0,
+      "changedOutsideRepair": 0,
+      "maxChannelDifference": 0,
+      "alphaHoles": 0
+    },
+    "rin-on_cup-on_plant-off": {
+      "changedPixels": 0,
+      "changedOutsideRepair": 0,
+      "maxChannelDifference": 0,
+      "alphaHoles": 0
+    },
+    "rin-on_cup-off_plant-on": {
+      "changedPixels": 0,
+      "changedOutsideRepair": 0,
+      "maxChannelDifference": 0,
+      "alphaHoles": 0
+    },
+    "rin-on_cup-off_plant-off": {
+      "changedPixels": 0,
+      "changedOutsideRepair": 0,
+      "maxChannelDifference": 0,
+      "alphaHoles": 0
+    },
+    "rin-off_cup-on_plant-on": {
+      "changedPixels": 0,
+      "changedOutsideRepair": 0,
+      "maxChannelDifference": 0,
+      "alphaHoles": 0
+    },
+    "rin-off_cup-on_plant-off": {
+      "changedPixels": 0,
+      "changedOutsideRepair": 0,
+      "maxChannelDifference": 0,
+      "alphaHoles": 0
+    },
+    "rin-off_cup-off_plant-on": {
+      "changedPixels": 0,
+      "changedOutsideRepair": 0,
+      "maxChannelDifference": 0,
+      "alphaHoles": 0
+    },
+    "rin-off_cup-off_plant-off": {
+      "changedPixels": 0,
+      "changedOutsideRepair": 0,
+      "maxChannelDifference": 0,
+      "alphaHoles": 0
+    }
+  },
+  "conditions": {},
+  "sourceUntouched": true
+}

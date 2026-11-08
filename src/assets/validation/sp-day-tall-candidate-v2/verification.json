@@ -1,0 +1,50 @@
+{
+  "dimensions": [
+    1024,
+    2400
+  ],
+  "protectedRange": {
+    "targetY": [
+      890,
+      2190
+    ],
+    "sourceY": [
+      640,
+      1940
+    ],
+    "x": [
+      0,
+      1024
+    ]
+  },
+  "protectedPixelChanges": 0,
+  "protectedPixelsUnchanged": true,
+  "generatedInfillRanges": [
+    [
+      530,
+      800
+    ],
+    [
+      2247,
+      2400
+    ]
+  ],
+  "featherRanges": [
+    [
+      290,
+      384
+    ],
+    [
+      490,
+      530
+    ],
+    [
+      800,
+      890
+    ],
+    [
+      2190,
+      2247
+    ]
+  ]
+}

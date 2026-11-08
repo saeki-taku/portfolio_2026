@@ -1,0 +1,187 @@
+{
+  "dimensions": [
+    1024,
+    2400
+  ],
+  "layerDimensions": {
+    "01-exterior.png": [
+      1024,
+      2400,
+      4
+    ],
+    "01a-city-lights.png": [
+      1024,
+      2400,
+      4
+    ],
+    "02-interior-window.png": [
+      1024,
+      2400,
+      4
+    ],
+    "03-plant-scene-underpaint.png": [
+      1024,
+      2400,
+      4
+    ],
+    "04-indoor-plant.png": [
+      1024,
+      2400,
+      4
+    ],
+    "05-cup-contact-underpaint.png": [
+      1024,
+      2400,
+      4
+    ],
+    "06-cup-body-underpaint.png": [
+      1024,
+      2400,
+      4
+    ],
+    "09-cup-foreground.png": [
+      1024,
+      2400,
+      4
+    ]
+  },
+  "preservedAlpha": {
+    "01-exterior.png": {
+      "source": {
+        "changed": 0,
+        "maximum": 0
+      },
+      "day": {
+        "changed": 0,
+        "maximum": 0
+      }
+    },
+    "02-interior-window.png": {
+      "source": {
+        "changed": 0,
+        "maximum": 0
+      },
+      "day": {
+        "changed": 0,
+        "maximum": 0
+      }
+    },
+    "03-plant-scene-underpaint.png": {
+      "source": {
+        "changed": 0,
+        "maximum": 0
+      },
+      "day": {
+        "changed": 0,
+        "maximum": 0
+      }
+    },
+    "04-indoor-plant.png": {
+      "source": {
+        "changed": 0,
+        "maximum": 0
+      },
+      "day": {
+        "changed": 0,
+        "maximum": 0
+      }
+    },
+    "05-cup-contact-underpaint.png": {
+      "source": {
+        "changed": 0,
+        "maximum": 0
+      },
+      "day": {
+        "changed": 0,
+        "maximum": 0
+      }
+    },
+    "06-cup-body-underpaint.png": {
+      "source": {
+        "changed": 0,
+        "maximum": 0
+      },
+      "day": {
+        "changed": 0,
+        "maximum": 0
+      }
+    },
+    "09-cup-foreground.png": {
+      "source": {
+        "changed": 0,
+        "maximum": 0
+      },
+      "day": {
+        "changed": 0,
+        "maximum": 0
+      }
+    }
+  },
+  "maskChanged": 0,
+  "sourceMask": {
+    "changed": 0,
+    "maximum": 0
+  },
+  "cityLights": {
+    "awakePixels": 19401,
+    "sourceAsleepPixels": 1916,
+    "dawnPixels": 143,
+    "newLightPixels": 0,
+    "brighterLightAlpha": 0,
+    "changedLightRgb": 0,
+    "dawnPercentOfAwake": 0.7370754084840988
+  },
+  "previews": {
+    "preview-composite.png": {
+      "changed": 0,
+      "maximum": 0,
+      "nonOpaquePixels": 0
+    },
+    "preview-city-lights-off.png": {
+      "changed": 0,
+      "maximum": 0,
+      "nonOpaquePixels": 0
+    },
+    "preview-no-cup.png": {
+      "changed": 0,
+      "maximum": 0,
+      "nonOpaquePixels": 0
+    },
+    "preview-no-plant-cup.png": {
+      "changed": 0,
+      "maximum": 0,
+      "nonOpaquePixels": 0
+    }
+  },
+  "sampleLuma": {
+    "sky": {
+      "asleep": 33.863649799999564,
+      "dawn": 89.51337616249977,
+      "day": 204.6975455625005
+    },
+    "city": {
+      "asleep": 50.72370224888742,
+      "dawn": 97.49270296888807,
+      "day": 174.2969991466656
+    },
+    "room": {
+      "asleep": 30.812436029631108,
+      "dawn": 56.22343448888858,
+      "day": 173.49478395555658
+    }
+  },
+  "skyColors": {
+    "high": [
+      60.705555555555556,
+      79.05144444444444,
+      128.21833333333333
+    ],
+    "low": [
+      172.26842592592592,
+      138.72037037037038,
+      151.87564814814814
+    ]
+  },
+  "visualReview": "Painted sky, city, empty room, plant and sill inspected at original and fitted sizes. Window geometry and oil-painted perspective remain stable. No person or reading light. Broad directional sill/floor shadow softened but a faint exterior-light shadow remains.",
+  "limitations": "Review candidate: site timing, actual device safe areas and cloudy/rain variants are not implemented here."
+}

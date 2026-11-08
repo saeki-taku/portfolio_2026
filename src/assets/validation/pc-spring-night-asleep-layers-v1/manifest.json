@@ -1,0 +1,25 @@
+{
+  "status": "review-candidate",
+  "scene": "ennui-rin-spring-night-asleep-pc-v1",
+  "root": "/Users/saekitakuya/Documents/ChatGPT/ポートフォリオ/design-proposals/pc-spring-night-asleep-layers-v1",
+  "width": 1345,
+  "height": 1170,
+  "origin": "top-left",
+  "registration": {
+    "x": 0,
+    "y": 0
+  },
+  "sourceDayLayers": "/Users/saekitakuya/Documents/ChatGPT/ポートフォリオ/design-proposals/pc-day-layers-v4",
+  "lightingReference": "/Users/saekitakuya/Documents/ChatGPT/ポートフォリオ/design-proposals/pc-spring-night-clear-v1/night-awake.png",
+  "layersBottomToTop": [
+    "01-exterior.png",
+    "01a-city-lights.png",
+    "02-interior.png",
+    "05-cup-foreground.png"
+  ],
+  "toggleGroups": {},
+  "previews": {
+    "all": "preview-composite.png"
+  },
+  "verification": "verification.json"
+}

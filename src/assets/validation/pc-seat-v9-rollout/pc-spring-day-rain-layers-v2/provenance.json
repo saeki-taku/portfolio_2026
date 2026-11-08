@@ -1,0 +1,7 @@
+{
+  "scene": "spring-day-rain",
+  "input": "/Users/saekitakuya/Documents/ChatGPT/ポートフォリオ/design-proposals/pc-seat-v9-rollout-inputs/spring-day-rain-background.png",
+  "output": "/Users/saekitakuya/Documents/ChatGPT/ポートフォリオ/design-proposals/pc-seat-v9-rollout-outputs/spring-day-rain-background-v9.png",
+  "changedPixels": 62001,
+  "method": "Exact approved scene-specific background delta; existing object and figure layers remain separate."
+}

@@ -83,7 +83,7 @@ body:not(.scene-page) { min-height: 100svh; background: #fff; }
   .scene-nav a::before { display: none; }
 }
 
-/* Approved artwork stays intact; extra viewport height is neutral page space. */
+/* Keep the scene composition intact; extra viewport height is neutral page space. */
 .scene-page { display: block; padding: 0; }
 .scene { width: 100%; aspect-ratio: auto; height: max(100svh, 600px, 66.93vw); display: block; }
 .scene picture { position: absolute; inset: 0; width: 100%; height: 100%; }
@@ -160,3 +160,12 @@ body:not(.scene-page) { min-height: 100svh; background: #fff; }
   height: var(--layout-image-height);
 }
 .scene[style*="--layout-height"] .scene-logo { top: var(--layout-logo-top); }
+
+/* When the fixed menu would cover Rin or the cup, keep it after the tall painting. */
+@media (max-aspect-ratio: 1/1) {
+  .scene[data-menu-placement="after-art"] .scene-nav {
+    position: absolute;
+    top: calc(var(--layout-image-height) + 8px);
+    bottom: auto;
+  }
+}

@@ -1,0 +1,42 @@
+{
+  "source": "/Users/saekitakuya/Documents/ChatGPT/ポートフォリオ/design-proposals/pc-summer-night-awake-clear-layers-v1",
+  "target": "/Users/saekitakuya/Documents/ChatGPT/ポートフォリオ/design-proposals/pc-summer-night-awake-clear-layers-v2",
+  "sourcePreviewSha256": "926072c15618aa9ac33c6c25e1ea388a77b39abb235bc08ad2998f19d23abb7f",
+  "sourceRecompositionVsCupOn": {
+    "changedPixels": 322,
+    "changedOutsideCupArea": 0,
+    "maxChannelDifference": 40,
+    "meanMaxChannelDifference": 0.0005,
+    "transparentPixels": 0
+  },
+  "cupOnVsOff": {
+    "changedPixels": 5802,
+    "changedOutsideCupArea": 0,
+    "maxChannelDifference": 115,
+    "meanMaxChannelDifference": 0.0965,
+    "transparentPixels": 0
+  },
+  "interiorRestorationPixels": 8869,
+  "sillLightingTransform": [
+    {
+      "slope": 1.06334545082782,
+      "intercept": -81.16058124186344
+    },
+    {
+      "slope": 0.8564892083263485,
+      "intercept": -67.38482656640176
+    },
+    {
+      "slope": 0.5780668168713596,
+      "intercept": -35.95386021526723
+    }
+  ],
+  "personRestorationPixels": 4692,
+  "cupContactShadowPixels": 238,
+  "originalSourcePreserved": true,
+  "dimensions": [
+    1345,
+    1170
+  ],
+  "cupToggleIndependentOfRin": true
+}

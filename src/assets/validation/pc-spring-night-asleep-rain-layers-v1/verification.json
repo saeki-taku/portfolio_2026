@@ -1,0 +1,40 @@
+{
+  "dimensions": [
+    1345,
+    1170
+  ],
+  "alphaChanges": {
+    "01-exterior.png": 0,
+    "01a-city-lights.png": 0,
+    "02-interior.png": 0,
+    "05-cup-foreground.png": 0
+  },
+  "glassMask": {
+    "glassVsDay": 0
+  },
+  "removedGlassUnderpaint": 0,
+  "copiedHashes": {
+    "01a-city-lights.png": {
+      "source": "dde74697f26463310710873e590159c09c0bf6c297d8e54f88abb1ceae8e0b2a",
+      "output": "dde74697f26463310710873e590159c09c0bf6c297d8e54f88abb1ceae8e0b2a"
+    },
+    "02-interior.png": {
+      "source": "cea7fab3dd42b5643c72484be95f8b326971e3de76a04a1f36f98eea08d158e5",
+      "output": "cea7fab3dd42b5643c72484be95f8b326971e3de76a04a1f36f98eea08d158e5"
+    },
+    "05-cup-foreground.png": {
+      "source": "527c54a6a8d06a7dde1062aa03fe1ce132528f0f152c45894c13e2b8d8ca0d66",
+      "output": "527c54a6a8d06a7dde1062aa03fe1ce132528f0f152c45894c13e2b8d8ca0d66"
+    }
+  },
+  "effectLeaks": {
+    "rain-outdoor-default.png": 0,
+    "rain-glass-droplets-default.png": 0
+  },
+  "previewAlphaHoles": {
+    "preview-composite.png": 0,
+    "preview-effect-off.png": 0,
+    "preview-city-lights-off.png": 0
+  },
+  "status": "mechanical-checks-passed; visual-review-required"
+}

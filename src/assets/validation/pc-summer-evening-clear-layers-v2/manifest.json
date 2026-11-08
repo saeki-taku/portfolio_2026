@@ -1,0 +1,58 @@
+{
+  "status": "review-candidate",
+  "scene": "ennui-summer-evening-clear-pc-v2",
+  "root": "/Users/saekitakuya/Documents/ChatGPT/ポートフォリオ/design-proposals/pc-summer-evening-clear-layers-v2",
+  "width": 1345,
+  "height": 1170,
+  "origin": "top-left",
+  "registration": {
+    "x": 0,
+    "y": 0
+  },
+  "sourceLayers": "/Users/saekitakuya/Documents/ChatGPT/ポートフォリオ/design-proposals/pc-summer-day-clear-layers-v1",
+  "period": "evening",
+  "personPresent": true,
+  "lighting": {
+    "indoorLamp": false,
+    "cityLights": "off"
+  },
+  "layersBottomToTop": [
+    "01-exterior.png",
+    "02-interior.png",
+    "02a-cup-body-contact.png",
+    "02b-cup-contact-shadow.png",
+    "04-contact-shadow.png",
+    "03-rin.png",
+    "03a-rin-cup-on-restore.png",
+    "05-cup-foreground.png"
+  ],
+  "toggleGroups": {
+    "rin": [
+      "04-contact-shadow.png",
+      "03-rin.png"
+    ],
+    "cup": [
+      "02a-cup-body-contact.png",
+      "02b-cup-contact-shadow.png",
+      "05-cup-foreground.png"
+    ]
+  },
+  "glassMask": "glass-mask.png",
+  "glassMaskMode": "luminance",
+  "previews": {
+    "all": "preview-composite.png",
+    "cupOff": "preview-cup-off.png",
+    "rinOffCupOn": "preview-rin-off-cup-on.png",
+    "rinOffCupOff": "preview-rin-off-cup-off.png"
+  },
+  "verification": "verification.json",
+  "build": "node ../summer-pc-cup-toggle-v2/build.cjs",
+  "inputGuide": "inputs/lighting-guide.png",
+  "sourceSet": "/Users/saekitakuya/Documents/ChatGPT/ポートフォリオ/design-proposals/pc-summer-evening-clear-layers-v1",
+  "conditionalLayers": {
+    "03a-rin-cup-on-restore.png": {
+      "rin": true,
+      "cup": true
+    }
+  }
+}

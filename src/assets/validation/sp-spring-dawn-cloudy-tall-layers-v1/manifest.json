@@ -1,0 +1,56 @@
+{
+  "status": "review-candidate",
+  "scene": "ennui-spring-dawn-cloudy-sp-v1",
+  "width": 1024,
+  "height": 2400,
+  "origin": "top-left",
+  "registration": {
+    "x": 0,
+    "y": 0
+  },
+  "sourceClearDawn": "/Users/saekitakuya/Documents/ChatGPT/ポートフォリオ/design-proposals/sp-spring-dawn-tall-layers-v1",
+  "cloudyDayReference": "/Users/saekitakuya/Documents/ChatGPT/ポートフォリオ/design-proposals/sp-day-cloudy-tall-layers-v1",
+  "paintGuide": "inputs/cloudy-dawn-guide.png",
+  "suggestedTimeJST": "05:00-05:59 (provisional)",
+  "layersBottomToTop": [
+    "01-exterior.png",
+    "01a-city-lights.png",
+    "02-interior-window.png",
+    "03-plant-scene-underpaint.png",
+    "04-indoor-plant.png",
+    "05-cup-contact-underpaint.png",
+    "06-cup-body-underpaint.png",
+    "09-cup-foreground.png"
+  ],
+  "toggleGroups": {
+    "cup": [
+      "05-cup-contact-underpaint.png",
+      "06-cup-body-underpaint.png",
+      "09-cup-foreground.png"
+    ],
+    "plant": [
+      "03-plant-scene-underpaint.png",
+      "04-indoor-plant.png"
+    ]
+  },
+  "glassMask": "glass-mask.png",
+  "glassMaskMode": "luminance",
+  "previews": {
+    "all": "preview-composite.png",
+    "cityLightsOff": "preview-city-lights-off.png",
+    "comparison": "compare-clear-cloudy-day.png",
+    "skyDetail": "inspection-sky.png",
+    "sillDetail": "inspection-sill.png",
+    "withoutCup": "preview-no-cup.png",
+    "withoutPlantCup": "preview-no-plant-cup.png",
+    "plantDetail": "inspection-plant.png"
+  },
+  "constraints": [
+    "No person or indoor lamp; the tiny approved clear-dawn city lights are unchanged.",
+    "Window/city/floor alpha and coordinates are unchanged; generated guide contributes sky texture and broad ambient light, not new building or room geometry.",
+    "No sunbeam or hard cast shadow; overcast but discernibly early dawn, not darkened daytime.",
+    "SP plant and cup underpaints must follow their toggle groups. The 03 plant underpaint keeps clear-dawn alpha and takes the exact underlying base composite RGB to avoid a rectangular color patch."
+  ],
+  "verification": "verification.json",
+  "build": "node ../build-spring-dawn-cloudy-v1.cjs"
+}

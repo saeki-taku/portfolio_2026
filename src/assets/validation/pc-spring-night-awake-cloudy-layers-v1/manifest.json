@@ -1,0 +1,45 @@
+{
+  "status": "review-candidate",
+  "scene": "ennui-spring-night-awake-cloudy-pc-v1",
+  "width": 1345,
+  "height": 1170,
+  "origin": "top-left",
+  "registration": {
+    "x": 0,
+    "y": 0
+  },
+  "baseScene": "/Users/saekitakuya/Documents/ChatGPT/ポートフォリオ/design-proposals/pc-spring-night-awake-pose-layers-v2",
+  "cloudTextureReference": "/Users/saekitakuya/Documents/ChatGPT/ポートフォリオ/design-proposals/pc-spring-day-cloudy-layers-v1",
+  "paintGuide": "inputs/cloudy-guide.png",
+  "layersBottomToTop": [
+    "01-exterior.png",
+    "01a-city-lights.png",
+    "02-interior.png",
+    "rin-contact-shadow.png",
+    "rin.png",
+    "05-cup-foreground.png"
+  ],
+  "toggleGroups": {
+    "rin": [
+      "rin-contact-shadow.png",
+      "rin.png"
+    ]
+  },
+  "glassMask": "glass-mask.png",
+  "glassMaskMode": "luminance",
+  "previews": {
+    "all": "preview-composite.png",
+    "withoutRin": "preview-no-rin.png",
+    "cityLightsOff": "preview-city-lights-off.png",
+    "comparison": "compare-clear-cloudy.png",
+    "skyDetail": "inspection-sky.png",
+    "sillDetail": "inspection-sill-floor.png"
+  },
+  "constraints": [
+    "No new architecture, figure pose, or lighting fixture; all scene coordinates and layer alpha are inherited.",
+    "Rin reads and the approved warm off-screen room light stays on.",
+    "PC cup is not independently removable."
+  ],
+  "verification": "verification.json",
+  "build": "node ../build-spring-weather-cloudy-phase4.cjs"
+}

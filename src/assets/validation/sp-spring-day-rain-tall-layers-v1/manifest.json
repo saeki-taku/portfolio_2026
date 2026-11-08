@@ -1,0 +1,89 @@
+{
+  "status": "review-candidate",
+  "scene": "ennui-spring-day-rain-sp-tall-v1",
+  "width": 1024,
+  "height": 2400,
+  "origin": "top-left",
+  "registration": {
+    "x": 0,
+    "y": 0
+  },
+  "sourceCloudy": "/Users/saekitakuya/Documents/ChatGPT/ポートフォリオ/design-proposals/sp-day-cloudy-tall-layers-v1",
+  "sourceRainDraft": "/Users/saekitakuya/Documents/ChatGPT/ポートフォリオ/design-proposals/sp-spring-day-rain-layers-v1",
+  "layersBottomToTop": [
+    "01-exterior.png",
+    "02-interior-window.png",
+    "03-plant-scene-underpaint.png",
+    "04-indoor-plant.png",
+    "05-cup-contact-underpaint.png",
+    "06-cup-body-underpaint.png",
+    "07-rin-occluded-underpaint.png",
+    "rin-contact-shadow.png",
+    "08-rin-notebook.png",
+    "09-cup-foreground.png",
+    "rain-outdoor-{rin-on|rin-off}.png",
+    "rain-glass-droplets-{rin-on|rin-off}.png"
+  ],
+  "toggleGroups": {
+    "rin": [
+      "07-rin-occluded-underpaint.png",
+      "rin-contact-shadow.png",
+      "08-rin-notebook.png"
+    ],
+    "plant": [
+      "03-plant-scene-underpaint.png",
+      "04-indoor-plant.png"
+    ],
+    "cup": [
+      "05-cup-contact-underpaint.png",
+      "06-cup-body-underpaint.png",
+      "09-cup-foreground.png"
+    ]
+  },
+  "weatherEffect": {
+    "staticWeather": "rain",
+    "glassMask": "glass-mask.png",
+    "glassMaskMode": "luminance",
+    "alphaMasksByRinState": {
+      "on": "rain-visibility-alpha-rin-on.png",
+      "off": "rain-visibility-alpha-rin-off.png"
+    },
+    "alphaMasksWhenPlantOff": {
+      "rinOn": "rain-visibility-alpha-plant-off-rin-on.png",
+      "rinOff": "rain-visibility-alpha-plant-off-rin-off.png"
+    },
+    "outdoorRainByRinState": {
+      "on": "rain-outdoor-rin-on.png",
+      "off": "rain-outdoor-rin-off.png"
+    },
+    "glassDropletsByRinState": {
+      "on": "rain-glass-droplets-rin-on.png",
+      "off": "rain-glass-droplets-rin-off.png"
+    },
+    "outdoorRainWhenPlantOff": {
+      "rinOn": "rain-outdoor-plant-off-rin-on.png",
+      "rinOff": "rain-outdoor-plant-off-rin-off.png"
+    },
+    "glassDropletsWhenPlantOff": {
+      "rinOn": "rain-glass-droplets-plant-off-rin-on.png",
+      "rinOff": "rain-glass-droplets-plant-off-rin-off.png"
+    },
+    "placement": "Preclipped rain effects are composited last, but visibility is restricted to architectural glass minus actual plant/person silhouettes. The mixed underpaint is never an occluder.",
+    "animation": "Sample stills only; animate outdoor streaks separately from sparse glass droplets using the alpha visibility masks.",
+    "plantUnderpaintResolution": "Glass pixels of 03 are transparent, not rectangular occluders; rainy exterior remains visible behind true 04 plant alpha. Toggle 03 and 04 together."
+  },
+  "previews": {
+    "all": "preview-composite.png",
+    "withoutRin": "preview-no-rin.png",
+    "rainEffectOff": "preview-rain-effect-off.png",
+    "withoutRinEffectOff": "preview-no-rin-effect-off.png",
+    "compareCloudyRain": "compare-cloudy-rain.png",
+    "compareEffectOffOn": "compare-effect-off-on.png",
+    "withoutPlant": "preview-no-plant.png",
+    "withoutPlantOrRin": "preview-no-plant-no-rin.png",
+    "withoutCup": "preview-no-cup.png",
+    "plantDetail": "inspection-plant.png"
+  },
+  "verification": "verification.json",
+  "build": "node ../build-spring-day-rain-current.cjs"
+}

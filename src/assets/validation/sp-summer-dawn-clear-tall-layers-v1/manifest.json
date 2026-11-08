@@ -1,0 +1,51 @@
+{
+  "status": "review-candidate",
+  "scene": "ennui-summer-dawn-clear-sp-v1",
+  "root": "/Users/saekitakuya/Documents/ChatGPT/ポートフォリオ/design-proposals/sp-summer-dawn-clear-tall-layers-v1",
+  "width": 1024,
+  "height": 2400,
+  "origin": "top-left",
+  "registration": {
+    "x": 0,
+    "y": 0
+  },
+  "sourceLayers": "/Users/saekitakuya/Documents/ChatGPT/ポートフォリオ/design-proposals/sp-summer-day-clear-tall-layers-v1",
+  "period": "dawn",
+  "personPresent": false,
+  "lighting": {
+    "indoorLamp": false,
+    "cityLights": "off"
+  },
+  "layersBottomToTop": [
+    "01-exterior.png",
+    "02-interior-window.png",
+    "03-plant-scene-underpaint.png",
+    "04-indoor-plant.png",
+    "05-cup-contact-underpaint.png",
+    "06-cup-body-underpaint.png",
+    "09-cup-foreground.png"
+  ],
+  "toggleGroups": {
+    "rin": [],
+    "cup": [
+      "05-cup-contact-underpaint.png",
+      "06-cup-body-underpaint.png",
+      "09-cup-foreground.png"
+    ],
+    "plant": [
+      "03-plant-scene-underpaint.png",
+      "04-indoor-plant.png"
+    ]
+  },
+  "glassMask": "glass-mask.png",
+  "glassMaskMode": "luminance",
+  "previews": {
+    "all": "preview-composite.png",
+    "withoutRin": "preview-no-rin.png",
+    "withoutCup": "preview-no-cup.png",
+    "withoutPlant": "preview-no-plant.png"
+  },
+  "verification": "verification.json",
+  "build": "node ../build-summer-clear-periods-v1.cjs dawn",
+  "inputGuide": "inputs/lighting-guide.png"
+}

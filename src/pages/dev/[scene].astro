@@ -1,0 +1,145 @@
+---
+import Base from '../../layouts/Base.astro';
+import Navigation from '../../components/Navigation.astro';
+import original from '../../assets/scenes/rin-desktop-corner-soft-v4.png?url';
+import { getImage } from 'astro:assets';
+import mobile from '../../assets/scenes/rin-mobile-vertical-extended-v1.png';
+import coordinates from '../../assets/scenes/vertical-extension-v1.json';
+
+export function getStaticPaths() {
+  return import.meta.env.ENNUI_SCENE_DEV === '1'
+    ? [{ params: { scene: 'pc-day-scene-v2' } }, { params: { scene: 'pc-day-scene-redraw' } }] : [];
+}
+const geometry = Object.fromEntries(coordinates.filter(item => item.variant === 'sp').flatMap(item => {
+  const vw = (pixels: number) => `${pixels / item.sourceRect.width * 100}vw`;
+  return [
+    ['--sp-base-height', vw(item.sourceRect.height)],
+    ['--sp-canvas-height', vw(item.canvas.height)],
+    ['--sp-top-padding', vw(item.sourceRect.y)],
+    ['--sp-top-share', item.padding.top / (item.padding.top + item.padding.bottom)],
+  ];
+}));
+const mobileImage = await getImage({src: mobile, width: 1024, format: 'webp', quality: 85});
+const isRedraw = Astro.params.scene === 'pc-day-scene-redraw';
+const v2Layers = [
+  { id: 'exterior', src: '/__ennui-review-v2/01-exterior.png' },
+  { id: 'interior', src: '/__ennui-review-v2/02-interior.png' },
+  { id: 'shadow', src: '/__ennui-review-v2/04-contact-shadow.png' },
+  { id: 'rin', src: '/__ennui-review-v2/03-rin.png' },
+  { id: 'cup', src: '/__ennui-review-v2/05-cup-foreground.png' },
+  { id: 'edge', src: '/__ennui-review-v2/06-person-edge-restore.png' },
+];
+const redrawLayers = [
+  { id: 'exterior', src: '/__ennui-review-redraw/01-exterior.png' },
+  { id: 'interior', src: '/__ennui-review-redraw/02-interior.png' },
+  { id: 'redraw', src: '/__ennui-review-redraw/rin-redraw-transparent-v1.png' },
+  { id: 'cup', src: '/__ennui-review-redraw/05-cup-foreground.png' },
+];
+const layers = isRedraw ? redrawLayers : v2Layers;
+---
+<Base scene title={isRedraw ? "PC春・昼 描き直し版 確認" : "PC春・昼 v2 確認"}>
+  <main class="scene" aria-label={`ennuiの窓辺：PC春・昼${isRedraw ? "描き直し版" : "v2"}確認`} style={{...geometry, '--pc-aspect': 1345 / 1170}}>
+    <picture class="mobile-artwork">
+      <source media="(max-aspect-ratio: 1/1)" srcset={mobileImage.src} width={mobile.width} height={mobile.height} />
+      <img src={mobileImage.src} width={mobile.width} height={mobile.height} alt="春の街を見下ろす窓辺で凛がスケッチをしている油絵。スマートフォン用の採用構図。" />
+    </picture>
+    <div class="pc-artwork" data-variant={isRedraw ? "redraw" : "v2"} role="img" aria-label={`春の昼、窓辺で凛がスケッチしている油絵。${isRedraw ? "描き直し版" : "v2"}確認表示。`}>
+      <img class="pc-original" src={original} width="1345" height="1170" alt="" hidden />
+      {layers.map(layer => <img class="pc-layer" data-layer={layer.id} src={layer.src} width="1345" height="1170" alt="" />)}
+    </div>
+    <h1 class="scene-logo"><a href="/" aria-label="ennui ホーム">ennui</a></h1>
+    <Navigation scene />
+    <div class="review-controls" aria-label={`PC春・昼${isRedraw ? "描き直し版" : "v2"}確認操作`}>
+      <strong>PC春・昼 {isRedraw ? "描き直し版" : "v2"} 確認用</strong>
+      <div class="view-buttons" role="group" aria-label="表示画像">
+        <button type="button" data-view="original" aria-pressed="false">採用原本</button>
+        <button type="button" data-view="composite" aria-pressed="true">{isRedraw ? "描き直し版" : "v2合成"}</button>
+      </div>
+      <label><input type="checkbox" id="show-person" checked />人物を表示</label>
+      <a href={isRedraw ? "/dev/pc-day-redraw/" : "/dev/pc-day-layers-v2/"}>原寸・個別レイヤーを確認</a>
+    </div>
+  </main>
+</Base>
+<script>
+  const scene = document.querySelector<HTMLElement>('.scene');
+  if (scene) {
+    const portrait = matchMedia('(max-aspect-ratio: 1/1)');
+    const artwork = scene.querySelector<HTMLElement>('.pc-artwork')!;
+    const original = artwork.querySelector<HTMLImageElement>('.pc-original')!;
+    const layers = [...artwork.querySelectorAll<HTMLImageElement>('.pc-layer')];
+    const buttons = [...scene.querySelectorAll<HTMLButtonElement>('[data-view]')];
+    const person = scene.querySelector<HTMLInputElement>('#show-person')!;
+    const personLayers = new Set(artwork.dataset.variant === 'redraw' ? ['redraw'] : ['shadow', 'rin', 'edge']);
+    const params = new URLSearchParams(location.search);
+    let view = params.get('view') === 'original' ? 'original' : 'composite';
+    person.checked = params.get('person') !== '0';
+    const update = () => {
+      const showOriginal = view === 'original';
+      original.hidden = !showOriginal;
+      for (const layer of layers) {
+        layer.hidden = showOriginal || (personLayers.has(layer.dataset.layer!) && !person.checked);
+      }
+      person.disabled = showOriginal || portrait.matches;
+      buttons.forEach(button => { button.setAttribute('aria-pressed', String(button.dataset.view === view)); });
+      artwork.setAttribute('aria-label', showOriginal
+        ? '春の昼、窓辺で凛がスケッチしている採用原本'
+        : `春の昼の確認用レイヤー合成。人物${person.checked ? 'あり' : 'なし'}`);
+    };
+    buttons.forEach(button => button.addEventListener('click', () => { view = button.dataset.view!; update(); }));
+    person.addEventListener('change', update);
+    const layout = () => {
+      const w = document.documentElement.clientWidth;
+      const sp = portrait.matches;
+      const g = sp
+        ? { width: 1024, height: 1997, top: 154, base: 1536, padding: 461, right: 990, bottom: 1530 }
+        : { width: 1345, height: 1170, top: 150, base: 756.5625, padding: 413.4375, right: 1305, bottom: 850 };
+      const scale = Math.min(w / g.width, Math.max(1, w - 20) / g.right);
+      const base = g.base * scale;
+      const reveal = (h: number) => Math.min(g.top * scale, Math.max(0, h - base) * g.top / g.padding);
+      let h = Math.max(document.documentElement.clientHeight, base, sp ? 680 : 0);
+      for (let i = 0; i < 20; i++) h = Math.max(h, (g.bottom - g.top) * scale + reveal(h) + 60);
+      scene.style.setProperty('--layout-height', `${Math.ceil(h)}px`);
+      scene.style.setProperty('--layout-width', `${g.width * scale}px`);
+      scene.style.setProperty('--layout-image-height', `${g.height * scale}px`);
+      scene.style.setProperty('--layout-top', `${reveal(h) - g.top * scale}px`);
+      scene.style.setProperty('--layout-logo-top', `${reveal(h) + Math.max(sp ? 16 : 24, g.width * scale * (sp ? .04 : .12))}px`);
+      update();
+    };
+    layout();
+    window.addEventListener('resize', layout);
+    portrait.addEventListener('change', layout);
+  }
+</script>
+<style>
+  .pc-artwork {
+    position: absolute;
+    left: 0;
+    top: var(--layout-top);
+    width: var(--layout-width);
+    height: var(--layout-image-height);
+  }
+  .pc-artwork img { position: absolute; inset: 0; display: block; width: 100%; height: 100%; }
+  .pc-artwork img[data-layer="redraw"] {
+    left: 69.91%; top: 38.93%; right: auto; bottom: auto;
+    width: 26.33%; height: auto;
+  }
+  .pc-artwork img[hidden] { display: none; }
+  .mobile-artwork { display: none !important; }
+  @media (max-aspect-ratio: 1/1) {
+    .pc-artwork { display: none; }
+    .mobile-artwork { display: block !important; }
+  }
+  .review-controls {
+    position: fixed; z-index: 20; top: max(12px, env(safe-area-inset-top)); right: max(12px, env(safe-area-inset-right));
+    display: grid; gap: 8px; width: min(270px, calc(100vw - 24px)); padding: 12px;
+    border: 1px solid #b8b1a2; border-radius: 6px; background: rgb(248 246 237 / 94%);
+    font: 13px/1.5 system-ui, sans-serif; color: #30352f;
+  }
+  .view-buttons { display: flex; gap: 4px; }
+  button { flex: 1; padding: 7px 5px; border: 1px solid #899888; background: white; color: inherit; border-radius: 4px; font: inherit; cursor: pointer; min-height: 38px; }
+  button[aria-pressed="true"] { background: #345646; color: white; }
+  label { display: flex; gap: 6px; align-items: center; min-height: 32px; }
+  a { color: #345646; }
+  :focus-visible { outline: 2px solid #345646; outline-offset: 2px; }
+  @media (max-aspect-ratio: 1/1) { .review-controls { top: auto; bottom: 82px; } .view-buttons, label { display: none; } }
+</style>

@@ -1,0 +1,43 @@
+{
+  "dimensions": [
+    1345,
+    1170
+  ],
+  "alphaDifferencesWhenUsingDayStructure": {
+    "01-exterior.png": 0,
+    "02-interior.png": 0,
+    "rin.png": 0,
+    "05-cup-foreground.png": 0
+  },
+  "outputAlphaDifferences": {
+    "01-exterior.png": 0,
+    "01a-city-lights.png": 0,
+    "02-interior.png": 0,
+    "rin-contact-shadow.png": 0,
+    "rin.png": 0,
+    "05-cup-foreground.png": 0
+  },
+  "glassMaskDifferences": 0,
+  "protectedLayerHashes": {
+    "01a-city-lights.png": {
+      "source": "1b0b4e77c54fba37ab9eb1320c21a70275e0b21c91a7fb49bc2a718b76ce3fa2",
+      "output": "1b0b4e77c54fba37ab9eb1320c21a70275e0b21c91a7fb49bc2a718b76ce3fa2"
+    },
+    "rin-contact-shadow.png": {
+      "source": "6e08bc1c370522be2b11ee88d5a05486c719cd1c9448f818f49b478686c3abfc",
+      "output": "6e08bc1c370522be2b11ee88d5a05486c719cd1c9448f818f49b478686c3abfc"
+    }
+  },
+  "previewAlphaHoles": {
+    "preview-composite.png": 0,
+    "preview-no-rin.png": 0,
+    "preview-city-lights-off.png": 0
+  },
+  "luma": {
+    "sky": 49.30169088888987,
+    "city": 52.02736883333363,
+    "room": 72.66184546938733
+  },
+  "guideSha256": "d15c299aba9e6cd66741ac140dec64c2ba4cbd96d2fe9b1a9d11fd57c74514ea",
+  "status": "mechanical-checks-passed; visual-review-required"
+}

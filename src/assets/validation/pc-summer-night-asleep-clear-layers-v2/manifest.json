@@ -1,0 +1,45 @@
+{
+  "status": "review-candidate",
+  "scene": "ennui-summer-night-asleep-clear-pc-v2",
+  "root": "/Users/saekitakuya/Documents/ChatGPT/ポートフォリオ/design-proposals/pc-summer-night-asleep-clear-layers-v2",
+  "width": 1345,
+  "height": 1170,
+  "origin": "top-left",
+  "registration": {
+    "x": 0,
+    "y": 0
+  },
+  "sourceLayers": "/Users/saekitakuya/Documents/ChatGPT/ポートフォリオ/design-proposals/pc-summer-day-clear-layers-v1",
+  "period": "night-asleep",
+  "personPresent": false,
+  "lighting": {
+    "indoorLamp": false,
+    "cityLights": "off"
+  },
+  "layersBottomToTop": [
+    "01-exterior.png",
+    "02-interior.png",
+    "02a-cup-body-contact.png",
+    "05-cup-foreground.png"
+  ],
+  "toggleGroups": {
+    "rin": [],
+    "cup": [
+      "02a-cup-body-contact.png",
+      "05-cup-foreground.png"
+    ]
+  },
+  "glassMask": "glass-mask.png",
+  "glassMaskMode": "luminance",
+  "previews": {
+    "all": "preview-composite.png",
+    "cupOff": "preview-cup-off.png",
+    "rinOffCupOn": "preview-rin-off-cup-on.png",
+    "rinOffCupOff": "preview-rin-off-cup-off.png"
+  },
+  "verification": "verification.json",
+  "build": "node ../summer-pc-cup-toggle-v2/build.cjs",
+  "inputGuide": "inputs/lighting-guide.png",
+  "sourceSet": "/Users/saekitakuya/Documents/ChatGPT/ポートフォリオ/design-proposals/pc-summer-night-asleep-clear-layers-v1",
+  "conditionalLayers": {}
+}

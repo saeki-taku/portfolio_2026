@@ -1,0 +1,42 @@
+{
+  "source": "/Users/saekitakuya/Documents/ChatGPT/ポートフォリオ/design-proposals/pc-summer-day-clear-layers-v1",
+  "target": "/Users/saekitakuya/Documents/ChatGPT/ポートフォリオ/design-proposals/pc-summer-day-clear-layers-v2",
+  "sourcePreviewSha256": "95f5535a7f2c761a61fafba4d5f3cf592c445dc24c0d93c4b9df7b2fd31cc65d",
+  "sourceRecompositionVsCupOn": {
+    "changedPixels": 385,
+    "changedOutsideCupArea": 0,
+    "maxChannelDifference": 41,
+    "meanMaxChannelDifference": 0.0008,
+    "transparentPixels": 0
+  },
+  "cupOnVsOff": {
+    "changedPixels": 5618,
+    "changedOutsideCupArea": 0,
+    "maxChannelDifference": 228,
+    "meanMaxChannelDifference": 0.1201,
+    "transparentPixels": 0
+  },
+  "interiorRestorationPixels": 8869,
+  "sillLightingTransform": [
+    {
+      "slope": 1,
+      "intercept": 0
+    },
+    {
+      "slope": 1,
+      "intercept": 0
+    },
+    {
+      "slope": 1,
+      "intercept": 0
+    }
+  ],
+  "personRestorationPixels": 4692,
+  "cupContactShadowPixels": 238,
+  "originalSourcePreserved": true,
+  "dimensions": [
+    1345,
+    1170
+  ],
+  "cupToggleIndependentOfRin": true
+}

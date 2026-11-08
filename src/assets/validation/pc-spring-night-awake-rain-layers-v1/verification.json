@@ -1,0 +1,54 @@
+{
+  "dimensions": [
+    1345,
+    1170
+  ],
+  "alphaChanges": {
+    "01-exterior.png": 0,
+    "01a-city-lights.png": 0,
+    "02-interior.png": 0,
+    "rin-contact-shadow.png": 0,
+    "rin.png": 0,
+    "05-cup-foreground.png": 0
+  },
+  "glassMask": {
+    "glassVsDay": 0
+  },
+  "removedGlassUnderpaint": 0,
+  "copiedHashes": {
+    "01a-city-lights.png": {
+      "source": "1b0b4e77c54fba37ab9eb1320c21a70275e0b21c91a7fb49bc2a718b76ce3fa2",
+      "output": "1b0b4e77c54fba37ab9eb1320c21a70275e0b21c91a7fb49bc2a718b76ce3fa2"
+    },
+    "02-interior.png": {
+      "source": "bae9480fca82a4e1748de7b7bfd2d5d11790a5fa170448a1800178b3a6dfd958",
+      "output": "bae9480fca82a4e1748de7b7bfd2d5d11790a5fa170448a1800178b3a6dfd958"
+    },
+    "rin-contact-shadow.png": {
+      "source": "6e08bc1c370522be2b11ee88d5a05486c719cd1c9448f818f49b478686c3abfc",
+      "output": "6e08bc1c370522be2b11ee88d5a05486c719cd1c9448f818f49b478686c3abfc"
+    },
+    "rin.png": {
+      "source": "da76448415a8312115452379c68683f9a7b7a238739281c0ccab2a4b09338b54",
+      "output": "da76448415a8312115452379c68683f9a7b7a238739281c0ccab2a4b09338b54"
+    },
+    "05-cup-foreground.png": {
+      "source": "93b262cf2fb758229588e849a7ec24524135ed07a49a2e74c7391528257c7af2",
+      "output": "93b262cf2fb758229588e849a7ec24524135ed07a49a2e74c7391528257c7af2"
+    }
+  },
+  "effectLeaks": {
+    "rain-outdoor-default.png": 0,
+    "rain-glass-droplets-default.png": 0,
+    "rain-outdoor-rin-off.png": 0,
+    "rain-glass-droplets-rin-off.png": 0
+  },
+  "previewAlphaHoles": {
+    "preview-composite.png": 0,
+    "preview-effect-off.png": 0,
+    "preview-no-rin.png": 0,
+    "preview-no-rin-effect-off.png": 0,
+    "preview-city-lights-off.png": 0
+  },
+  "status": "mechanical-checks-passed; visual-review-required"
+}

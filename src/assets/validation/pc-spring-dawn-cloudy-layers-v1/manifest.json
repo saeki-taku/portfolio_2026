@@ -1,0 +1,39 @@
+{
+  "status": "review-candidate",
+  "scene": "ennui-spring-dawn-cloudy-pc-v1",
+  "width": 1345,
+  "height": 1170,
+  "origin": "top-left",
+  "registration": {
+    "x": 0,
+    "y": 0
+  },
+  "sourceClearDawn": "/Users/saekitakuya/Documents/ChatGPT/ポートフォリオ/design-proposals/pc-spring-dawn-layers-v1",
+  "cloudyDayReference": "/Users/saekitakuya/Documents/ChatGPT/ポートフォリオ/design-proposals/pc-spring-day-cloudy-layers-v1",
+  "paintGuide": "inputs/cloudy-dawn-guide.png",
+  "suggestedTimeJST": "05:00-05:59 (provisional)",
+  "layersBottomToTop": [
+    "01-exterior.png",
+    "01a-city-lights.png",
+    "02-interior.png",
+    "05-cup-foreground.png"
+  ],
+  "toggleGroups": {},
+  "glassMask": "glass-mask.png",
+  "glassMaskMode": "luminance",
+  "previews": {
+    "all": "preview-composite.png",
+    "cityLightsOff": "preview-city-lights-off.png",
+    "comparison": "compare-clear-cloudy-day.png",
+    "skyDetail": "inspection-sky.png",
+    "sillDetail": "inspection-sill.png"
+  },
+  "constraints": [
+    "No person or indoor lamp; the tiny approved clear-dawn city lights are unchanged.",
+    "Window/city/floor alpha and coordinates are unchanged; generated guide contributes sky texture and broad ambient light, not new building or room geometry.",
+    "No sunbeam or hard cast shadow; overcast but discernibly early dawn, not darkened daytime.",
+    "PC cup is partly baked into the interior."
+  ],
+  "verification": "verification.json",
+  "build": "node ../build-spring-dawn-cloudy-v1.cjs"
+}

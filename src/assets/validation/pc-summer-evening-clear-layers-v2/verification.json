@@ -1,0 +1,42 @@
+{
+  "source": "/Users/saekitakuya/Documents/ChatGPT/ポートフォリオ/design-proposals/pc-summer-evening-clear-layers-v1",
+  "target": "/Users/saekitakuya/Documents/ChatGPT/ポートフォリオ/design-proposals/pc-summer-evening-clear-layers-v2",
+  "sourcePreviewSha256": "c742997d8b45e3691ba18f8b1103f7b09f0ea6b9565c0c16d398ba04b6a6a294",
+  "sourceRecompositionVsCupOn": {
+    "changedPixels": 353,
+    "changedOutsideCupArea": 0,
+    "maxChannelDifference": 38,
+    "meanMaxChannelDifference": 0.0007,
+    "transparentPixels": 0
+  },
+  "cupOnVsOff": {
+    "changedPixels": 5669,
+    "changedOutsideCupArea": 0,
+    "maxChannelDifference": 169,
+    "meanMaxChannelDifference": 0.1094,
+    "transparentPixels": 0
+  },
+  "interiorRestorationPixels": 8869,
+  "sillLightingTransform": [
+    {
+      "slope": 1.0934214014968713,
+      "intercept": -30.428900863168337
+    },
+    {
+      "slope": 1.0514090112874386,
+      "intercept": -45.568010521851505
+    },
+    {
+      "slope": 0.7542443066603348,
+      "intercept": -3.621483455200547
+    }
+  ],
+  "personRestorationPixels": 4692,
+  "cupContactShadowPixels": 238,
+  "originalSourcePreserved": true,
+  "dimensions": [
+    1345,
+    1170
+  ],
+  "cupToggleIndependentOfRin": true
+}

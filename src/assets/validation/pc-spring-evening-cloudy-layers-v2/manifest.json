@@ -1,0 +1,53 @@
+{
+  "status": "review-candidate",
+  "scene": "ennui-spring-evening-cloudy-pc-v2",
+  "width": 1345,
+  "height": 1170,
+  "origin": "top-left",
+  "registration": {
+    "x": 0,
+    "y": 0
+  },
+  "baseScene": "/Users/saekitakuya/Documents/ChatGPT/ポートフォリオ/design-proposals/pc-spring-evening-pose-layers-v2",
+  "cloudTextureReference": "/Users/saekitakuya/Documents/ChatGPT/ポートフォリオ/design-proposals/pc-spring-day-cloudy-layers-v1",
+  "paintGuide": "inputs/cloudy-guide.png",
+  "layersBottomToTop": [
+    "01-exterior.png",
+    "02-interior.png",
+    "rin-contact-shadow.png",
+    "rin.png",
+    "05-cup-foreground.png"
+  ],
+  "toggleGroups": {
+    "rin": [
+      "rin-contact-shadow.png",
+      "rin.png"
+    ]
+  },
+  "glassMask": "glass-mask.png",
+  "glassMaskMode": "luminance",
+  "previews": {
+    "all": "preview-composite.png",
+    "withoutRin": "preview-no-rin.png",
+    "comparison": "compare-clear-cloudy.png",
+    "skyDetail": "inspection-sky.png",
+    "sillDetail": "inspection-sill-floor.png",
+    "rinClose": "inspection-rin-close.png",
+    "rinBeforeAfter": "compare-rin-before-after.png"
+  },
+  "constraints": [
+    "No new architecture, figure pose, or lighting fixture; all scene coordinates and layer alpha are inherited.",
+    "Rin looks outside; direct sunset streaks replaced with diffuse twilight.",
+    "PC cup is not independently removable."
+  ],
+  "verification": "verification.json",
+  "build": "node ../build-spring-evening-cloudy-figure-finish.cjs",
+  "sourceScene": "/Users/saekitakuya/Documents/ChatGPT/ポートフォリオ/design-proposals/pc-spring-evening-cloudy-layers-v1",
+  "figureFinish": {
+    "type": "localized warm-rim neutralization",
+    "file": "rin.png",
+    "originalAlphaPreserved": true,
+    "changedPixels": 6157,
+    "comparison": "compare-rin-before-after.png"
+  }
+}

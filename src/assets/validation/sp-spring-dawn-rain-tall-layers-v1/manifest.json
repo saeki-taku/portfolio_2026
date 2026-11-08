@@ -1,0 +1,63 @@
+{
+  "status": "review-candidate",
+  "scene": "ennui-spring-dawn-rain-sp-v1",
+  "width": 1024,
+  "height": 2400,
+  "origin": "top-left",
+  "registration": {
+    "x": 0,
+    "y": 0
+  },
+  "sourceCloudy": "/Users/saekitakuya/Documents/ChatGPT/ポートフォリオ/design-proposals/sp-spring-dawn-cloudy-tall-layers-v1",
+  "rainyDayColorReference": "/Users/saekitakuya/Documents/ChatGPT/ポートフォリオ/design-proposals/sp-spring-day-rain-tall-layers-v1",
+  "staticLayersBottomToTop": [
+    "01-exterior.png",
+    "01a-city-lights.png",
+    "02-interior-window.png",
+    "03-plant-scene-underpaint.png",
+    "04-indoor-plant.png",
+    "05-cup-contact-underpaint.png",
+    "06-cup-body-underpaint.png",
+    "09-cup-foreground.png"
+  ],
+  "toggleGroups": {
+    "cup": [
+      "05-cup-contact-underpaint.png",
+      "06-cup-body-underpaint.png",
+      "09-cup-foreground.png"
+    ],
+    "plant": [
+      "03-plant-scene-underpaint.png",
+      "04-indoor-plant.png"
+    ]
+  },
+  "glassMask": "glass-mask.png",
+  "glassMaskMode": "luminance",
+  "effectStates": {
+    "default": {
+      "alphaMask": "rain-visibility-alpha-default.png",
+      "luminanceMask": "rain-visibility-luma-default.png",
+      "outdoor": "rain-outdoor-default.png",
+      "droplets": "rain-glass-droplets-default.png"
+    },
+    "plant-off": {
+      "alphaMask": "rain-visibility-alpha-plant-off.png",
+      "luminanceMask": "rain-visibility-luma-plant-off.png",
+      "outdoor": "rain-outdoor-plant-off.png",
+      "droplets": "rain-glass-droplets-plant-off.png"
+    }
+  },
+  "effectPlacement": "Composite the state-specific outdoor streaks and glass droplets after static layers; effects are preclipped to architectural glass minus true foreground silhouettes. Never use 03 plant underpaint as an occluder.",
+  "effectSemantics": "Static sample frames; existing runtime fine-rain and droplet animation can use the matching alpha masks and separate outdoor/glass roles.",
+  "previews": {
+    "all": "preview-composite.png",
+    "effectOff": "preview-effect-off.png",
+    "withoutPlant": "preview-no-plant.png",
+    "withoutCup": "preview-no-cup.png",
+    "cityLightsOff": "preview-city-lights-off.png",
+    "skyDetail": "inspection-sky.png",
+    "foregroundDetail": "inspection-window-foreground.png"
+  },
+  "verification": "verification.json",
+  "build": "node ../build-spring-weather-rain-phase4.cjs"
+}

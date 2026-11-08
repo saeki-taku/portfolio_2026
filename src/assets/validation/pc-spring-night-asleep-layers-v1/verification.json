@@ -1,0 +1,26 @@
+{
+  "width": 1345,
+  "height": 1170,
+  "registration": [
+    0,
+    0
+  ],
+  "reference": "/Users/saekitakuya/Documents/ChatGPT/ポートフォリオ/design-proposals/pc-spring-night-clear-v1/night-awake.png",
+  "sourceDayLayers": "/Users/saekitakuya/Documents/ChatGPT/ポートフォリオ/design-proposals/pc-day-layers-v4",
+  "cityLightComponentsAwake": 419,
+  "cityLightComponentsAsleep": 35,
+  "cityLightPixelsAwake": 10072,
+  "cityLightPixelsAsleep": 585,
+  "sleepLightPixelRetentionPercent": 6,
+  "alphaSha256BySourceLayer": {
+    "01-exterior.png": "c7fef472abfa5320339755fcc710fc0c7b7cf6d4df28085d14cfff2594a1990e",
+    "02-interior.png": "bbc643fb31a57f29b2f4adfca6823bdf843eb80c0695b852cd8728a69f3fe80c",
+    "04-contact-shadow.png": "ffef9c2f70f430b9d5eda3afe2cda1977df2b6cce95f68d60a0151630b5825ef",
+    "03-rin.png": "d0465b413458af472ae519247a712c112f76d8ba82b12bdb227bc3a01969d6ef",
+    "05-cup-foreground.png": "a1e68d209f0db22dffd31118ef4d47e047a2bfd6883e5e8db7c57198373e5f9c",
+    "06-person-edge-restore.png": "418f2500aee8ec60bcbf3ad3bf246fd25512329fc9398ba0c01d473a56714f0d"
+  },
+  "shapesAndAlphaPreserved": true,
+  "originalFilesUntouched": true,
+  "notes": "Night/sleep use the same exterior base and city geometry. Sleep removes Rin and its linked layers, cools/dims only indoor layers, and removes most discrete light components."
+}

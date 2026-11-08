@@ -1,0 +1,39 @@
+{
+  "status": "review-candidate",
+  "scene": "ennui-rin-spring-dawn-pc-v1",
+  "width": 1345,
+  "height": 1170,
+  "origin": "top-left",
+  "registration": {
+    "x": 0,
+    "y": 0
+  },
+  "root": "/Users/saekitakuya/Documents/ChatGPT/ポートフォリオ/design-proposals/pc-spring-dawn-layers-v1",
+  "sourceLayers": "/Users/saekitakuya/Documents/ChatGPT/ポートフォリオ/design-proposals/pc-spring-night-asleep-layers-v1",
+  "dayLightingReference": "/Users/saekitakuya/Documents/ChatGPT/ポートフォリオ/design-proposals/pc-day-layers-v4",
+  "paintGuide": "inputs/dawn-paint-guide.png",
+  "suggestedTimeJST": "05:00-05:59 (provisional)",
+  "layersBottomToTop": [
+    "01-exterior.png",
+    "01a-city-lights.png",
+    "02-interior.png",
+    "05-cup-foreground.png"
+  ],
+  "toggleGroups": {},
+  "glassMask": "glass-mask.png",
+  "glassMaskMode": "luminance",
+  "previews": {
+    "all": "preview-composite.png",
+    "cityLightsOff": "preview-city-lights-off.png",
+    "comparison": "compare-night-dawn-day.png",
+    "skyDetail": "inspection-sky.png",
+    "sillDetail": "inspection-sill.png"
+  },
+  "constraints": [
+    "No person or indoor reading lamp. Existing window/city/room/plant/cup shapes and alpha are preserved.",
+    "This is a static dawn candidate, not a change to existing night/day artwork or site timing logic.",
+    "The PC cup is partly baked into the interior and cannot be toggled independently."
+  ],
+  "verification": "verification.json",
+  "build": "node ../build-spring-dawn-layer-sets-v1.cjs"
+}

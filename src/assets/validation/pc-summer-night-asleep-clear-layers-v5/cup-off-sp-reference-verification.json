@@ -1,0 +1,66 @@
+{
+  "source": "/Users/saekitakuya/Documents/ChatGPT/ポートフォリオ/design-proposals/pc-summer-night-asleep-clear-layers-v4",
+  "bounds": null,
+  "allOn": {
+    "changedPixels": 0,
+    "changedOutsideRepair": 0,
+    "maxChannelDifference": 0,
+    "alphaHoles": 0
+  },
+  "cupOff": {
+    "changedPixels": 0,
+    "changedOutsideRepair": 0,
+    "maxChannelDifference": 0,
+    "alphaHoles": 0
+  },
+  "combinations": {
+    "rin-on_cup-on_plant-on": {
+      "changedPixels": 0,
+      "changedOutsideRepair": 0,
+      "maxChannelDifference": 0,
+      "alphaHoles": 0
+    },
+    "rin-on_cup-on_plant-off": {
+      "changedPixels": 0,
+      "changedOutsideRepair": 0,
+      "maxChannelDifference": 0,
+      "alphaHoles": 0
+    },
+    "rin-on_cup-off_plant-on": {
+      "changedPixels": 0,
+      "changedOutsideRepair": 0,
+      "maxChannelDifference": 0,
+      "alphaHoles": 0
+    },
+    "rin-on_cup-off_plant-off": {
+      "changedPixels": 0,
+      "changedOutsideRepair": 0,
+      "maxChannelDifference": 0,
+      "alphaHoles": 0
+    },
+    "rin-off_cup-on_plant-on": {
+      "changedPixels": 0,
+      "changedOutsideRepair": 0,
+      "maxChannelDifference": 0,
+      "alphaHoles": 0
+    },
+    "rin-off_cup-on_plant-off": {
+      "changedPixels": 0,
+      "changedOutsideRepair": 0,
+      "maxChannelDifference": 0,
+      "alphaHoles": 0
+    },
+    "rin-off_cup-off_plant-on": {
+      "changedPixels": 0,
+      "changedOutsideRepair": 0,
+      "maxChannelDifference": 0,
+      "alphaHoles": 0
+    },
+    "rin-off_cup-off_plant-off": {
+      "changedPixels": 0,
+      "changedOutsideRepair": 0,
+      "maxChannelDifference": 0,
+      "alphaHoles": 0
+    }
+  }
+}

@@ -1,0 +1,52 @@
+{
+  "source": "/Users/saekitakuya/Documents/ChatGPT/ポートフォリオ/design-proposals/pc-spring-day-sunny-cup-off-layers-v1",
+  "bounds": {
+    "left": 1032,
+    "right": 1127,
+    "top": 705,
+    "bottom": 788
+  },
+  "order": [
+    "01-exterior.png",
+    "02-interior.png",
+    "02a-cup-off-sill-clean.png",
+    "03-rin.png",
+    "05-cup-foreground.png",
+    "10-cup-off-sp-refine.png"
+  ],
+  "conditions": {
+    "10-cup-off-sp-refine.png": {
+      "rin": true,
+      "cup": false
+    },
+    "02a-cup-off-sill-clean.png": {
+      "cup": false
+    }
+  },
+  "states": {
+    "rin-on_cup-on": {
+      "changedPixels": 0,
+      "outsideBounds": 0,
+      "maxChannelDifference": 0,
+      "alphaHoles": 0
+    },
+    "rin-on_cup-off": {
+      "changedPixels": 871,
+      "outsideBounds": 0,
+      "maxChannelDifference": 6,
+      "alphaHoles": 0
+    },
+    "rin-off_cup-on": {
+      "changedPixels": 0,
+      "outsideBounds": 0,
+      "maxChannelDifference": 0,
+      "alphaHoles": 0
+    },
+    "rin-off_cup-off": {
+      "changedPixels": 7144,
+      "outsideBounds": 0,
+      "maxChannelDifference": 171,
+      "alphaHoles": 0
+    }
+  }
+}

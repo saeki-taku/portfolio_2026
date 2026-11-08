@@ -1,0 +1,48 @@
+{
+  "dimensions": [
+    1345,
+    1170
+  ],
+  "alphaChanges": {
+    "01-exterior.png": 0,
+    "02-interior.png": 0,
+    "rin-contact-shadow.png": 0,
+    "rin.png": 0,
+    "05-cup-foreground.png": 0
+  },
+  "glassMask": {
+    "glassVsDay": 0
+  },
+  "removedGlassUnderpaint": 0,
+  "copiedHashes": {
+    "02-interior.png": {
+      "source": "c6fca278f1f555227c92008d7f92684e3c8430020322e57a7ffb22809e4bd37f",
+      "output": "c6fca278f1f555227c92008d7f92684e3c8430020322e57a7ffb22809e4bd37f"
+    },
+    "rin-contact-shadow.png": {
+      "source": "d74f3fb6e760ef067ad2310038d57b8bd1c888ef0ff3b94a69ba810888bced59",
+      "output": "d74f3fb6e760ef067ad2310038d57b8bd1c888ef0ff3b94a69ba810888bced59"
+    },
+    "rin.png": {
+      "source": "0e1f906f7d8dee222940b07716568d907db047d43859c521918b0800358f46ff",
+      "output": "0e1f906f7d8dee222940b07716568d907db047d43859c521918b0800358f46ff"
+    },
+    "05-cup-foreground.png": {
+      "source": "180e62619a8e7fa7fe3cb67795ef10f750a40c8b4197336ca0e63061593fce35",
+      "output": "180e62619a8e7fa7fe3cb67795ef10f750a40c8b4197336ca0e63061593fce35"
+    }
+  },
+  "effectLeaks": {
+    "rain-outdoor-default.png": 0,
+    "rain-glass-droplets-default.png": 0,
+    "rain-outdoor-rin-off.png": 0,
+    "rain-glass-droplets-rin-off.png": 0
+  },
+  "previewAlphaHoles": {
+    "preview-composite.png": 0,
+    "preview-effect-off.png": 0,
+    "preview-no-rin.png": 0,
+    "preview-no-rin-effect-off.png": 0
+  },
+  "status": "mechanical-checks-passed; visual-review-required"
+}

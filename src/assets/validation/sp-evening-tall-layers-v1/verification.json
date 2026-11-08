@@ -1,0 +1,108 @@
+{
+  "dimensions": [
+    1024,
+    2400
+  ],
+  "referenceComposite": {
+    "changedChannels": 0,
+    "channelsOverTwo": 0,
+    "maximumChannelDifference": 0,
+    "meanChannelDifference": 0
+  },
+  "noRinProtectedRange": {
+    "targetRows": [
+      890,
+      2190
+    ],
+    "sourceRows": [
+      640,
+      1940
+    ]
+  },
+  "noRinProtectedComparison": {
+    "changedChannels": 0,
+    "channelsOverTwo": 0,
+    "maximumChannelDifference": 0,
+    "meanChannelDifference": 0
+  },
+  "originalObjectLayers": {
+    "03-plant-scene-underpaint.png": {
+      "changedAlpha": 0,
+      "changedRgb": 0,
+      "pass": true
+    },
+    "04-indoor-plant.png": {
+      "changedAlpha": 0,
+      "changedRgb": 0,
+      "pass": true
+    },
+    "05-cup-contact-underpaint.png": {
+      "changedAlpha": 0,
+      "changedRgb": 0,
+      "pass": true
+    },
+    "06-cup-body-underpaint.png": {
+      "changedAlpha": 0,
+      "changedRgb": 0,
+      "pass": true
+    },
+    "rin-contact-shadow.png": {
+      "changedAlpha": 0,
+      "changedRgb": 0,
+      "pass": true
+    },
+    "rin.png": {
+      "changedAlpha": 0,
+      "changedRgb": 0,
+      "pass": true
+    },
+    "09-cup-foreground.png": {
+      "changedAlpha": 0,
+      "changedRgb": 0,
+      "pass": true
+    }
+  },
+  "check": "all output PNG layers share the full 1024x2400 origin; visible composite and person-off inspected separately",
+  "finalValidation": {
+    "layerDimensions": "9 layers: 1024x2400 RGBA",
+    "dayWindowAlpha": {
+      "changed": 0,
+      "max": 0
+    },
+    "dayGlassMask": {
+      "changed": 0,
+      "max": 0
+    },
+    "reference": {
+      "changed": 0,
+      "max": 0
+    },
+    "previews": {
+      "preview-composite.png": {
+        "changed": 0,
+        "max": 0,
+        "nonOpaquePixels": 0
+      },
+      "preview-no-rin-with-cup.png": {
+        "changed": 0,
+        "max": 0,
+        "nonOpaquePixels": 0
+      },
+      "preview-background-no-rin-no-cup.png": {
+        "changed": 0,
+        "max": 0,
+        "nonOpaquePixels": 0
+      },
+      "preview-room-no-plant-rin-cup.png": {
+        "changed": 0,
+        "max": 0,
+        "nonOpaquePixels": 0
+      }
+    }
+  },
+  "visualReview": {
+    "fullScene": "Inspected at fitted size; no conspicuous join gaps.",
+    "details": "Plant, person/feet/cup and person-off inspected at original pixel resolution; no conspicuous missing edges, transparency or person residue.",
+    "scope": "Static artwork packaging only; browser layout and rain effects not verified."
+  }
+}

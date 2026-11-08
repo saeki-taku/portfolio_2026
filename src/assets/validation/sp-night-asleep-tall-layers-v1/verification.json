@@ -1,0 +1,202 @@
+{
+  "dimensions": [
+    1024,
+    2400
+  ],
+  "referenceComposite": {
+    "changedChannels": 3120,
+    "channelsOverTwo": 0,
+    "maximumChannelDifference": 1,
+    "meanChannelDifference": 0.0003173828125
+  },
+  "noRinProtectedRange": {
+    "targetRows": [
+      890,
+      2190
+    ],
+    "sourceRows": [
+      640,
+      1940
+    ]
+  },
+  "noRinProtectedComparison": {
+    "changedChannels": 3120,
+    "channelsOverTwo": 0,
+    "maximumChannelDifference": 1,
+    "meanChannelDifference": 0.0005859375
+  },
+  "originalObjectLayers": {
+    "03-plant-scene-underpaint.png": {
+      "changedAlpha": 0,
+      "changedRgb": 0,
+      "pass": true
+    },
+    "04-indoor-plant.png": {
+      "changedAlpha": 0,
+      "changedRgb": 0,
+      "pass": true
+    },
+    "05-cup-contact-underpaint.png": {
+      "changedAlpha": 0,
+      "changedRgb": 0,
+      "pass": true
+    },
+    "06-cup-body-underpaint.png": {
+      "changedAlpha": 0,
+      "changedRgb": 0,
+      "pass": true
+    },
+    "09-cup-foreground.png": {
+      "changedAlpha": 0,
+      "changedRgb": 0,
+      "pass": true
+    }
+  },
+  "check": "all output PNG layers share the full 1024x2400 origin; visible composite and person-off inspected separately",
+  "finalValidation": {
+    "dimensions": [
+      1024,
+      2400
+    ],
+    "layerDimensions": {
+      "01-exterior.png": [
+        1024,
+        2400,
+        4
+      ],
+      "01a-city-lights.png": [
+        1024,
+        2400,
+        4
+      ],
+      "02-interior-window.png": [
+        1024,
+        2400,
+        4
+      ],
+      "03-plant-scene-underpaint.png": [
+        1024,
+        2400,
+        4
+      ],
+      "04-indoor-plant.png": [
+        1024,
+        2400,
+        4
+      ],
+      "05-cup-contact-underpaint.png": [
+        1024,
+        2400,
+        4
+      ],
+      "06-cup-body-underpaint.png": [
+        1024,
+        2400,
+        4
+      ],
+      "09-cup-foreground.png": [
+        1024,
+        2400,
+        4
+      ]
+    },
+    "windowGeometry": {
+      "sp-day-tall-layers-v1": {
+        "interiorAlpha": {
+          "changed": 0,
+          "maximum": 0
+        },
+        "exteriorAlpha": {
+          "changed": 0,
+          "maximum": 0
+        },
+        "glassMask": {
+          "changed": 0,
+          "maximum": 0
+        }
+      },
+      "sp-evening-tall-layers-v1": {
+        "interiorAlpha": {
+          "changed": 0,
+          "maximum": 0
+        },
+        "exteriorAlpha": {
+          "changed": 0,
+          "maximum": 0
+        },
+        "glassMask": {
+          "changed": 0,
+          "maximum": 0
+        }
+      },
+      "sp-night-awake-tall-layers-v1": {
+        "interiorAlpha": {
+          "changed": 0,
+          "maximum": 0
+        },
+        "exteriorAlpha": {
+          "changed": 0,
+          "maximum": 0
+        },
+        "glassMask": {
+          "changed": 0,
+          "maximum": 0
+        }
+      }
+    },
+    "cityLights": {
+      "awakeAlphaPixels": 19401,
+      "asleepAlphaPixels": 1916,
+      "retentionPercent": 9.875779598989743,
+      "changedChannelsFromOriginalAsleep": 0
+    },
+    "referenceComposite": {
+      "changed": 3120,
+      "maximum": 1
+    },
+    "inheritedSourceRounding": {
+      "changed": 3120,
+      "maximum": 1
+    },
+    "protectedOriginalRegion": {
+      "targetRows": [
+        890,
+        2190
+      ],
+      "sourceRows": [
+        640,
+        1940
+      ],
+      "changedChannels": 3120,
+      "maximum": 1
+    },
+    "previews": {
+      "preview-composite.png": {
+        "changed": 0,
+        "maximum": 0,
+        "nonOpaquePixels": 0
+      },
+      "preview-no-rin-with-cup.png": {
+        "changed": 0,
+        "maximum": 0,
+        "nonOpaquePixels": 0
+      },
+      "preview-background-no-rin-no-cup.png": {
+        "changed": 0,
+        "maximum": 0,
+        "nonOpaquePixels": 0
+      },
+      "preview-room-no-plant-rin-cup.png": {
+        "changed": 0,
+        "maximum": 0,
+        "nonOpaquePixels": 0
+      }
+    },
+    "visualReview": {
+      "scene": "Deep-blue unoccupied room; no indoor reading glow; most buildings dark, city and park still legible.",
+      "joins": "Sky and floor joins inspected at original pixels.",
+      "details": "Plant and empty windowsill inspected at original pixels; no conspicuous person residue or transparent holes.",
+      "limitations": "Static assets only. Device layout, time switching and weather effects remain unverified."
+    }
+  }
+}

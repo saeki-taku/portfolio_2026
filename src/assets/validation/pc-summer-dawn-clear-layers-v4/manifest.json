@@ -1,0 +1,63 @@
+{
+  "status": "review-candidate",
+  "scene": "ennui-summer-dawn-clear-pc-v3-cup-off-cleanup",
+  "root": "/Users/saekitakuya/Documents/ChatGPT/ポートフォリオ/design-proposals/pc-summer-dawn-clear-layers-v3",
+  "width": 1345,
+  "height": 1170,
+  "origin": "top-left",
+  "registration": {
+    "x": 0,
+    "y": 0
+  },
+  "sourceLayers": "/Users/saekitakuya/Documents/ChatGPT/ポートフォリオ/design-proposals/pc-summer-day-clear-layers-v1",
+  "period": "dawn",
+  "personPresent": false,
+  "lighting": {
+    "indoorLamp": false,
+    "cityLights": "off"
+  },
+  "layersBottomToTop": [
+    "01-exterior.png",
+    "02-interior.png",
+    "03-plant-scene-underpaint.png",
+    "04-indoor-plant.png",
+    "02a-cup-body-contact.png",
+    "05-cup-foreground.png"
+  ],
+  "toggleGroups": {
+    "rin": [],
+    "cup": [
+      "02a-cup-body-contact.png",
+      "05-cup-foreground.png"
+    ],
+    "plant": [
+      "03-plant-scene-underpaint.png",
+      "04-indoor-plant.png"
+    ]
+  },
+  "glassMask": "glass-mask.png",
+  "glassMaskMode": "luminance",
+  "previews": {
+    "all": "preview-composite.png",
+    "plantOff": "preview-plant-off.png",
+    "cupOff": "preview-cup-off.png",
+    "combinations": {
+      "rin-on_cup-on_plant-on": "preview-rin-on_cup-on_plant-on.png",
+      "rin-on_cup-on_plant-off": "preview-rin-on_cup-on_plant-off.png",
+      "rin-on_cup-off_plant-on": "preview-rin-on_cup-off_plant-on.png",
+      "rin-on_cup-off_plant-off": "preview-rin-on_cup-off_plant-off.png",
+      "rin-off_cup-on_plant-on": "preview-rin-off_cup-on_plant-on.png",
+      "rin-off_cup-on_plant-off": "preview-rin-off_cup-on_plant-off.png",
+      "rin-off_cup-off_plant-on": "preview-rin-off_cup-off_plant-on.png",
+      "rin-off_cup-off_plant-off": "preview-rin-off_cup-off_plant-off.png"
+    },
+    "withoutCup": "preview-cup-off.png",
+    "cupOffDetail": "inspection-cup-off.png",
+    "cupOnDetail": "inspection-cup-on.png"
+  },
+  "verification": "verification.json",
+  "build": "node ../summer-cup-off-cleanup-v1/build.cjs",
+  "inputGuide": "inputs/lighting-guide.png",
+  "sourceSet": "/Users/saekitakuya/Documents/ChatGPT/ポートフォリオ/design-proposals/pc-summer-dawn-clear-layers-v3",
+  "conditionalLayers": {}
+}

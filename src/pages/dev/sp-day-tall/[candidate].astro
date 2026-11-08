@@ -1,0 +1,117 @@
+---
+import Base from '../../../layouts/Base.astro';
+import Navigation from '../../../components/Navigation.astro';
+import currentImage from '../../../assets/validation/sp-day-tall-candidate-v2/current-sp-day-v21.png?url';
+import candidateImage from '../../../assets/validation/sp-day-tall-candidate-v2/preview-tall.png?url';
+
+export function getStaticPaths() {
+  return import.meta.env.DEV || import.meta.env.ENNUI_SCENE_DEV === '1'
+    ? [{ params: { candidate: 'v2' } }] : [];
+}
+---
+<Base scene title="SP春・昼 縦長構図の比較">
+  <main class="scene" aria-label="SP春・昼の縦長構図の確認用比較">
+    <div class="painting" role="img" aria-label="SP春・昼、縦長構図v2の確認用一枚絵">
+      <img data-image="current" src={currentImage} width="1024" height="1997" alt="" hidden />
+      <img data-image="candidate" src={candidateImage} width="1024" height="2400" alt="" />
+    </div>
+    <h1 class="scene-logo"><a href="/" aria-label="ennui ホーム">ennui</a></h1>
+    <Navigation scene />
+    <details class="review-controls">
+      <summary>SP縦構図を比較</summary>
+      <div class="review-panel">
+        <strong>春・昼／確認用</strong>
+        <div class="view-buttons" role="group" aria-label="比較画像">
+          <button type="button" data-select-view="current" aria-pressed="false">現行 1997px</button>
+          <button type="button" data-select-view="candidate" aria-pressed="true">候補 2400px</button>
+        </div>
+        <label>下部safe-areaの確認
+          <select name="review-safe-area">
+            <option value="0">端末の設定どおり</option>
+            <option value="34">下部34pxを模擬</option>
+          </select>
+        </label>
+        <p class="review-status" role="status" aria-live="polite"></p>
+        <p>候補は一枚絵の構図確認です。現行の人物レイヤーや他の時間帯には適用していません。</p>
+      </div>
+    </details>
+  </main>
+</Base>
+
+<script>
+  const scene = document.querySelector<HTMLElement>('.scene');
+  if (scene) {
+    const artwork = scene.querySelector<HTMLElement>('.painting')!;
+    const images = [...artwork.querySelectorAll<HTMLImageElement>('img[data-image]')];
+    const buttons = [...scene.querySelectorAll<HTMLButtonElement>('[data-select-view]')];
+    const safeArea = scene.querySelector<HTMLSelectElement>('[name="review-safe-area"]')!;
+    const status = scene.querySelector<HTMLElement>('.review-status')!;
+    const params = new URLSearchParams(location.search);
+    let selected = params.get('view') === 'current' ? 'current' : 'candidate';
+    safeArea.value = params.get('safe') === '34' ? '34' : '0';
+
+    const render = () => {
+      const w = document.documentElement.clientWidth;
+      const scale = w / 1024;
+      const sourceHeight = selected === 'candidate' ? 2400 : 1997;
+      const artworkWidth = 1024 * scale;
+      scene.style.setProperty('--layout-height', `${Math.ceil(Math.max(document.documentElement.clientHeight, 680))}px`);
+      scene.style.setProperty('--layout-width', `${artworkWidth}px`);
+      scene.style.setProperty('--layout-image-height', `${sourceHeight * scale}px`);
+      scene.style.setProperty('--layout-logo-top', `${154 * scale + Math.max(16, artworkWidth * .04)}px`);
+      scene.style.setProperty('--review-safe-bottom', `${safeArea.value}px`);
+      for (const image of images) image.hidden = image.dataset.image !== selected;
+      buttons.forEach(button => button.setAttribute('aria-pressed', String(button.dataset.selectView === selected)));
+      artwork.setAttribute('aria-label', `SP春・昼、${selected === 'candidate' ? '1024×2400の縦長構図候補' : '1024×1997の現行採用構図'}`);
+      status.textContent = `表示中：${selected === 'candidate' ? '縦長候補 2400px' : '現行 1997px'}。下部safe-area：${safeArea.value === '34' ? '34px模擬' : '端末の設定どおり'}。`;
+      const query = new URLSearchParams(location.search);
+      query.set('view', selected);
+      if (safeArea.value === '34') query.set('safe', '34'); else query.delete('safe');
+      history.replaceState(null, '', `${location.pathname}?${query}`);
+    };
+    buttons.forEach(button => button.addEventListener('click', () => {
+      selected = button.dataset.selectView!;
+      render();
+    }));
+    safeArea.addEventListener('change', render);
+    window.addEventListener('resize', render);
+    render();
+  }
+</script>
+
+<style>
+  .scene { background: #e5dcd0; overflow: clip; }
+  .painting {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: var(--layout-width, 100%);
+    height: var(--layout-image-height, auto);
+    aspect-ratio: 1024 / 2400;
+  }
+  .painting img { position: absolute; inset: 0; display: block; width: 100%; height: 100%; object-fit: fill; }
+  .painting img[hidden] { display: none; }
+  .scene[style*="--layout-height"] { height: var(--layout-height); }
+  .scene[style*="--layout-height"] .scene-logo { top: var(--layout-logo-top); }
+  .scene :global(.scene-nav) { bottom: max(16px, env(safe-area-inset-bottom), var(--review-safe-bottom, 0px)); }
+  .review-controls {
+    position: fixed; z-index: 30; top: max(12px, env(safe-area-inset-top)); right: max(12px, env(safe-area-inset-right));
+    width: min(290px, calc(100vw - 24px)); font: 13px/1.5 system-ui, sans-serif; color: #30352f;
+  }
+  .review-controls summary {
+    display: block; width: fit-content; margin-left: auto; padding: 10px 12px; cursor: pointer;
+    background: rgb(248 246 237 / 94%); border: 1px solid #b8b1a2; border-radius: 6px;
+  }
+  .review-panel {
+    margin-top: 8px; padding: 14px; background: rgb(248 246 237 / 96%); border: 1px solid #b8b1a2;
+    border-radius: 6px; box-shadow: 0 4px 20px #0002;
+  }
+  .view-buttons { display: flex; gap: 5px; margin: 10px 0; }
+  button, select { min-height: 40px; padding: 6px 8px; border: 1px solid #899888; border-radius: 4px; background: white; color: inherit; font: inherit; }
+  button { flex: 1; cursor: pointer; }
+  button[aria-pressed="true"] { background: #345646; color: white; }
+  label { display: grid; gap: 4px; }
+  .review-panel p { margin: 10px 0 0; }
+  .review-status { font-weight: 600; }
+  :focus-visible { outline: 2px solid #345646; outline-offset: 2px; }
+</style>

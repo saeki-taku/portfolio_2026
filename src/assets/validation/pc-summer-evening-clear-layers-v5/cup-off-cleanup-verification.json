@@ -1,0 +1,87 @@
+{
+  "format": "pc",
+  "period": "evening",
+  "dimensions": [
+    1345,
+    1170
+  ],
+  "oldAllOnSha256": "b7bb6cb9e429df66ed3d78fc56cc70d2a085ebb64ad479f3d95b016ea522bdf5",
+  "newAllOnSha256": "b7bb6cb9e429df66ed3d78fc56cc70d2a085ebb64ad479f3d95b016ea522bdf5",
+  "maxAllOnChannelDifference": 0,
+  "repair": {
+    "paintedPixels": 17883,
+    "bounds": {
+      "x0": 999,
+      "x1": 1155,
+      "y0": 672,
+      "y1": 790
+    },
+    "clothRatio": [
+      0.9703902405686167,
+      0.8786506808491128,
+      0.793576555837243
+    ],
+    "sillRatio": [
+      0.9081711119014928,
+      0.7825373566854282,
+      0.7376637630590672
+    ]
+  },
+  "combinations": {
+    "rin-on_cup-on_plant-on": {
+      "changedPixels": 0,
+      "changedOutsideRepair": 0,
+      "maxChannelDifference": 0,
+      "alphaHoles": 0
+    },
+    "rin-on_cup-on_plant-off": {
+      "changedPixels": 0,
+      "changedOutsideRepair": 0,
+      "maxChannelDifference": 0,
+      "alphaHoles": 0
+    },
+    "rin-on_cup-off_plant-on": {
+      "changedPixels": 17349,
+      "changedOutsideRepair": 0,
+      "maxChannelDifference": 130,
+      "alphaHoles": 0
+    },
+    "rin-on_cup-off_plant-off": {
+      "changedPixels": 17349,
+      "changedOutsideRepair": 0,
+      "maxChannelDifference": 130,
+      "alphaHoles": 0
+    },
+    "rin-off_cup-on_plant-on": {
+      "changedPixels": 0,
+      "changedOutsideRepair": 0,
+      "maxChannelDifference": 0,
+      "alphaHoles": 0
+    },
+    "rin-off_cup-on_plant-off": {
+      "changedPixels": 0,
+      "changedOutsideRepair": 0,
+      "maxChannelDifference": 0,
+      "alphaHoles": 0
+    },
+    "rin-off_cup-off_plant-on": {
+      "changedPixels": 0,
+      "changedOutsideRepair": 0,
+      "maxChannelDifference": 0,
+      "alphaHoles": 0
+    },
+    "rin-off_cup-off_plant-off": {
+      "changedPixels": 0,
+      "changedOutsideRepair": 0,
+      "maxChannelDifference": 0,
+      "alphaHoles": 0
+    }
+  },
+  "conditions": {
+    "10-cup-off-repaint.png": {
+      "rin": true,
+      "cup": false
+    }
+  },
+  "sourceUntouched": true
+}

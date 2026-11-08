@@ -1,0 +1,192 @@
+{
+  "source": "/Users/saekitakuya/Documents/ChatGPT/ポートフォリオ/design-proposals/pc-summer-day-clear-layers-v2",
+  "target": "/Users/saekitakuya/Documents/ChatGPT/ポートフォリオ/design-proposals/pc-summer-day-clear-layers-v3",
+  "dimensions": [
+    1345,
+    1170
+  ],
+  "repairPixels": 30320,
+  "restorationPixels": 32393,
+  "exteriorRepairPixels": 21123,
+  "plantCutoutPixels": 7698,
+  "allOnVsSource": {
+    "changedPixels": 30,
+    "changedOutsidePlantArea": 0,
+    "maxChannelDifference": 1,
+    "transparentPixels": 0
+  },
+  "plantOffVsOn": {
+    "changedPixels": 29202,
+    "changedOutsidePlantArea": 0,
+    "maxChannelDifference": 222,
+    "transparentPixels": 0
+  },
+  "combinationChecks": {
+    "rin-on_cup-on_plant-on": {
+      "width": 1345,
+      "height": 1170,
+      "transparentPixels": 0
+    },
+    "rin-on_cup-on_plant-off": {
+      "width": 1345,
+      "height": 1170,
+      "transparentPixels": 0
+    },
+    "rin-on_cup-off_plant-on": {
+      "width": 1345,
+      "height": 1170,
+      "transparentPixels": 0
+    },
+    "rin-on_cup-off_plant-off": {
+      "width": 1345,
+      "height": 1170,
+      "transparentPixels": 0
+    },
+    "rin-off_cup-on_plant-on": {
+      "width": 1345,
+      "height": 1170,
+      "transparentPixels": 0
+    },
+    "rin-off_cup-on_plant-off": {
+      "width": 1345,
+      "height": 1170,
+      "transparentPixels": 0
+    },
+    "rin-off_cup-off_plant-on": {
+      "width": 1345,
+      "height": 1170,
+      "transparentPixels": 0
+    },
+    "rin-off_cup-off_plant-off": {
+      "width": 1345,
+      "height": 1170,
+      "transparentPixels": 0
+    }
+  },
+  "toggleIsolation": {
+    "plant": [
+      {
+        "changedPixels": 29202,
+        "changedOutsidePlantArea": 0,
+        "maxChannelDifference": 222,
+        "transparentPixels": 0
+      },
+      {
+        "changedPixels": 29202,
+        "changedOutsidePlantArea": 0,
+        "maxChannelDifference": 222,
+        "transparentPixels": 0
+      },
+      {
+        "changedPixels": 29202,
+        "changedOutsidePlantArea": 0,
+        "maxChannelDifference": 222,
+        "transparentPixels": 0
+      },
+      {
+        "changedPixels": 29202,
+        "changedOutsidePlantArea": 0,
+        "maxChannelDifference": 222,
+        "transparentPixels": 0
+      }
+    ],
+    "cup": [
+      {
+        "changedPixels": 5618,
+        "changedOutsidePlantArea": 0,
+        "maxChannelDifference": 228,
+        "transparentPixels": 0
+      },
+      {
+        "changedPixels": 5618,
+        "changedOutsidePlantArea": 0,
+        "maxChannelDifference": 228,
+        "transparentPixels": 0
+      },
+      {
+        "changedPixels": 7126,
+        "changedOutsidePlantArea": 0,
+        "maxChannelDifference": 237,
+        "transparentPixels": 0
+      },
+      {
+        "changedPixels": 7126,
+        "changedOutsidePlantArea": 0,
+        "maxChannelDifference": 237,
+        "transparentPixels": 0
+      }
+    ],
+    "rin": [
+      {
+        "changedPixels": 54620,
+        "changedOutsidePlantArea": 0,
+        "maxChannelDifference": 247,
+        "transparentPixels": 0
+      },
+      {
+        "changedPixels": 54620,
+        "changedOutsidePlantArea": 0,
+        "maxChannelDifference": 247,
+        "transparentPixels": 0
+      },
+      {
+        "changedPixels": 55898,
+        "changedOutsidePlantArea": 0,
+        "maxChannelDifference": 247,
+        "transparentPixels": 0
+      },
+      {
+        "changedPixels": 55898,
+        "changedOutsidePlantArea": 0,
+        "maxChannelDifference": 247,
+        "transparentPixels": 0
+      }
+    ]
+  },
+  "sourceExteriorSha256": "101d3bc6655aa964569d250fbfae4fc6d777c7016ca37e1d00484a28fe72f471",
+  "targetExteriorSha256": "ab59cbbdd47f8235f6ed8ef970442e6c87bdb9a297cbf29df52506e456a3b81f",
+  "sourceCupForegroundSha256": "1f50a46eaea528fb4d08187c1080e0d7b94978640f993e2544347c673e27cab4",
+  "targetCupForegroundSha256": "1f50a46eaea528fb4d08187c1080e0d7b94978640f993e2544347c673e27cab4",
+  "wallLighting": [
+    {
+      "a": 1,
+      "b": 0
+    },
+    {
+      "a": 1,
+      "b": 0
+    },
+    {
+      "a": 1,
+      "b": 0
+    }
+  ],
+  "sillLighting": [
+    {
+      "a": 1,
+      "b": 0
+    },
+    {
+      "a": 1,
+      "b": 0
+    },
+    {
+      "a": 1,
+      "b": 0
+    }
+  ],
+  "exteriorLighting": [
+    {
+      "a": 1,
+      "b": 0
+    },
+    {
+      "a": 1,
+      "b": 0
+    },
+    {
+      "a": 1,
+      "b": 0
+    }
+  ]
+}

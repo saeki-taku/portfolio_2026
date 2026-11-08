@@ -1,0 +1,73 @@
+{
+  "status": "implementation-candidate",
+  "scene": "ennui-rin-spring-day-sp-tall-v1",
+  "width": 1024,
+  "height": 2400,
+  "origin": "top-left",
+  "registration": {
+    "x": 0,
+    "y": 0
+  },
+  "root": "/Users/saekitakuya/Documents/ChatGPT/ポートフォリオ/design-proposals/sp-day-tall-layers-v1",
+  "sourceLayers": "/Users/saekitakuya/Documents/ChatGPT/ポートフォリオ/design-proposals/sp-day-layers-v21",
+  "referenceComposite": "/Users/saekitakuya/Documents/ChatGPT/ポートフォリオ/design-proposals/sp-day-tall-candidate-v2/preview-tall.png",
+  "geometry": {
+    "sourceRows0to329": "same y",
+    "sourceRows350to549": "target y = source y - 20",
+    "newSky": "target y530..799",
+    "sourceRows550to1996": "target y = source y + 250",
+    "newFloor": "target y2247..2399",
+    "joinTreatment": "reference paint assigned to exterior/interior only at y290..889 and y2190..2399"
+  },
+  "layersBottomToTop": [
+    "01-exterior.png",
+    "02-interior-window.png",
+    "03-plant-scene-underpaint.png",
+    "04-indoor-plant.png",
+    "05-cup-contact-underpaint.png",
+    "06-cup-body-underpaint.png",
+    "07-rin-occluded-underpaint.png",
+    "08-rin-notebook.png",
+    "09-cup-foreground.png"
+  ],
+  "toggleGroups": {
+    "rin": [
+      "07-rin-occluded-underpaint.png",
+      "08-rin-notebook.png"
+    ],
+    "cup": [
+      "05-cup-contact-underpaint.png",
+      "06-cup-body-underpaint.png",
+      "09-cup-foreground.png"
+    ],
+    "plant": [
+      "03-plant-scene-underpaint.png",
+      "04-indoor-plant.png"
+    ]
+  },
+  "glassMask": "glass-mask.png",
+  "glassMaskMode": "luminance",
+  "previews": {
+    "all": "preview-composite.png",
+    "withoutRin": "preview-no-rin-with-cup.png",
+    "withoutRinOrCup": "preview-background-no-rin-no-cup.png",
+    "bareRoom": "preview-room-no-plant-rin-cup.png",
+    "compareReference": "compare-reference-recomposite.png",
+    "plantDetail": "inspection-plant.png",
+    "personCupDetail": "inspection-person-cup.png",
+    "withoutRinCupDetail": "inspection-no-rin-cup.png"
+  },
+  "constraints": [
+    "The localized plant, cup and person underpaints stay linked to their toggle groups and must not move independently.",
+    "This sunny daytime package does not automatically replace the 1024x1997 evening, night, cloudy or rain packages.",
+    "HTML logo/menu and device safe-area checks belong to implementation review, not to these image layers."
+  ],
+  "verification": "verification.json",
+  "build": "../build-sp-day-tall-layers-v1.cjs",
+  "conditionalLayers": {
+    "07-rin-occluded-underpaint.png": {
+      "rin": true,
+      "cup": true
+    }
+  }
+}

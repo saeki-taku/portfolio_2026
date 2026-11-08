@@ -1,0 +1,78 @@
+{
+  "status": "review-candidate",
+  "scene": "ennui-rin-spring-day-cloudy-sp-v1",
+  "width": 1024,
+  "height": 1997,
+  "origin": "top-left",
+  "registration": {
+    "x": 0,
+    "y": 0
+  },
+  "source": "sp-day-layers-v21",
+  "skyGuide": "inputs/generated-cloudy-guide.png",
+  "indoorLightingGuide": "inputs/generated-empty-room-guide.png",
+  "interiorEdit": "inputs/generated-interior-edit.png",
+  "layerRoles": {
+    "01-exterior.png": "exterior",
+    "02-interior-window.png": "interior-window",
+    "03-plant-scene-underpaint.png": "foreground-or-dependent-underpaint",
+    "04-indoor-plant.png": "foreground-or-dependent-underpaint",
+    "05-cup-contact-underpaint.png": "foreground-or-dependent-underpaint",
+    "06-cup-body-underpaint.png": "foreground-or-dependent-underpaint",
+    "07-rin-occluded-underpaint.png": "person-or-dependent-underpaint",
+    "rin-contact-shadow.png": "person-contact-shadow",
+    "08-rin-notebook.png": "person-or-dependent-underpaint",
+    "09-cup-foreground.png": "foreground-or-dependent-underpaint"
+  },
+  "layersBottomToTop": [
+    "01-exterior.png",
+    "02-interior-window.png",
+    "03-plant-scene-underpaint.png",
+    "04-indoor-plant.png",
+    "05-cup-contact-underpaint.png",
+    "06-cup-body-underpaint.png",
+    "07-rin-occluded-underpaint.png",
+    "rin-contact-shadow.png",
+    "08-rin-notebook.png",
+    "09-cup-foreground.png"
+  ],
+  "toggleGroups": {
+    "rin": [
+      "07-rin-occluded-underpaint.png",
+      "rin-contact-shadow.png",
+      "08-rin-notebook.png"
+    ],
+    "cup": [
+      "05-cup-contact-underpaint.png",
+      "06-cup-body-underpaint.png",
+      "09-cup-foreground.png"
+    ],
+    "plant": [
+      "03-plant-scene-underpaint.png",
+      "04-indoor-plant.png"
+    ]
+  },
+  "weatherEffect": {
+    "staticWeather": "cloudy",
+    "rainAnimation": false,
+    "glassMask": "glass-mask-v2.png",
+    "maskMode": "luminance",
+    "effectInsertion": {
+      "after": "01-exterior.png",
+      "before": "02-interior-window.png",
+      "order": [
+        "outdoor-rain",
+        "glass-droplets"
+      ],
+      "status": "diagnostic-only-not-production-ready"
+    },
+    "foregroundOcclusion": "SP plant-scene-underpaint occludes effect in a rectangular exterior patch. Resolve underpaint/effect ordering and use true object occlusion before rain integration.",
+    "rainIntegrationStatus": "blocked-by-foreground-underpaint-occlusion"
+  },
+  "previews": {
+    "all": "preview-composite.png",
+    "withoutRin": "preview-no-rin.png",
+    "maskCheck": "preview-mask-check.png"
+  },
+  "verification": "verification.json"
+}

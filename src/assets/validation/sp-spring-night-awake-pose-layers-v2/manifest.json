@@ -1,0 +1,51 @@
+{
+  "status": "review-candidate",
+  "scene": "ennui-rin-spring-night-awake-sp-pose-v2",
+  "root": "/Users/saekitakuya/Documents/ChatGPT/ポートフォリオ/design-proposals/sp-spring-night-awake-pose-layers-v2",
+  "width": 1024,
+  "height": 1997,
+  "origin": "top-left",
+  "registration": {
+    "x": 0,
+    "y": 0
+  },
+  "sourcePrevious": "/Users/saekitakuya/Documents/ChatGPT/ポートフォリオ/design-proposals/sp-spring-night-awake-layers-v1",
+  "identityReference": "../sp-day-pose-v21/rin-transparent.png",
+  "layersBottomToTop": [
+    "01-exterior.png",
+    "01a-city-lights.png",
+    "02-interior-window.png",
+    "03-plant-scene-underpaint.png",
+    "04-indoor-plant.png",
+    "05-cup-contact-underpaint.png",
+    "06-cup-body-underpaint.png",
+    "rin-contact-shadow.png",
+    "rin.png",
+    "09-cup-foreground.png"
+  ],
+  "toggleGroups": {
+    "rin": [
+      "rin-contact-shadow.png",
+      "rin.png"
+    ],
+    "cup": [
+      "05-cup-contact-underpaint.png",
+      "06-cup-body-underpaint.png",
+      "09-cup-foreground.png"
+    ],
+    "plant": [
+      "03-plant-scene-underpaint.png",
+      "04-indoor-plant.png"
+    ]
+  },
+  "previews": {
+    "before": "preview-before.png",
+    "all": "preview-composite.png",
+    "withoutRin": "preview-no-rin.png",
+    "comparison": "compare-before-after.png",
+    "beforeDetail": "detail-before.png",
+    "afterDetail": "detail-after.png",
+    "isolatedDetail": "detail-rin-gray.png"
+  },
+  "verification": "verification.json"
+}

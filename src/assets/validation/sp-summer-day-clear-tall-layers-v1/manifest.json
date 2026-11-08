@@ -1,0 +1,54 @@
+{
+  "status": "review-candidate",
+  "scene": "ennui-rin-summer-day-clear-sp-v1",
+  "width": 1024,
+  "height": 2400,
+  "origin": "top-left",
+  "registration": {
+    "x": 0,
+    "y": 0
+  },
+  "baseScene": "/Users/saekitakuya/Documents/ChatGPT/ポートフォリオ/design-proposals/sp-day-tall-layers-v1/manifest.json",
+  "seasonCase": "C22 盛夏・昼・快晴",
+  "layersBottomToTop": [
+    "01-exterior.png",
+    "02-interior-window.png",
+    "03-plant-scene-underpaint.png",
+    "04-indoor-plant.png",
+    "05-cup-contact-underpaint.png",
+    "06-cup-body-underpaint.png",
+    "07-rin-occluded-underpaint.png",
+    "08-rin-notebook.png",
+    "09-cup-foreground.png"
+  ],
+  "toggleGroups": {
+    "rin": [
+      "07-rin-occluded-underpaint.png",
+      "08-rin-notebook.png"
+    ],
+    "cup": [
+      "05-cup-contact-underpaint.png",
+      "06-cup-body-underpaint.png",
+      "09-cup-foreground.png"
+    ],
+    "plant": [
+      "03-plant-scene-underpaint.png",
+      "04-indoor-plant.png"
+    ]
+  },
+  "glassMask": "glass-mask.png",
+  "glassMaskMode": "luminance",
+  "previews": {
+    "all": "preview-composite.png",
+    "withoutRin": "preview-no-rin.png",
+    "withoutCup": "preview-no-cup.png",
+    "withoutPlant": "preview-no-plant.png",
+    "withoutPlantOrRin": "preview-no-plant-no-rin.png",
+    "personDetail": "inspection-person-cup.png",
+    "springSummerComparison": "compare-spring-summer.png"
+  },
+  "inputGuide": "inputs/summer-guide.png",
+  "futureMotion": "Trees/leaves may become an optional foliage animation layer later; base scene contains no falling petals or motion and Lottie adoption is undecided.",
+  "build": "node ../build-summer-day-clear-v1.cjs",
+  "verification": "verification.json"
+}

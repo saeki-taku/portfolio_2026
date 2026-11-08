@@ -1,0 +1,85 @@
+{
+  "width": 1024,
+  "height": 1997,
+  "figureAlphaBounds": [
+    528,
+    989,
+    1003,
+    1403
+  ],
+  "backgroundLayersByteIdentical": {
+    "01-exterior.png": true,
+    "02-interior-window.png": true,
+    "03-plant-scene-underpaint.png": true,
+    "04-indoor-plant.png": true,
+    "05-cup-contact-underpaint.png": true,
+    "06-cup-body-underpaint.png": true,
+    "09-cup-foreground.png": true
+  },
+  "noRinMaxChannelDifference": 1,
+  "originalAssetsOverwritten": false,
+  "generatedSource": "exec-a5519841-38ff-4615-8038-4bcd6784da50.png",
+  "registration": {
+    "left": 500,
+    "top": 960,
+    "width": 510,
+    "height": 460
+  },
+  "contactShadow": "New low-opacity contact mask derived from current figure bottom silhouette; not old person/contact RGB. Optical accuracy remains review-candidate.",
+  "layerMetadata": {
+    "01-exterior.png": {
+      "width": 1024,
+      "height": 1997,
+      "hasAlpha": true
+    },
+    "02-interior-window.png": {
+      "width": 1024,
+      "height": 1997,
+      "hasAlpha": true
+    },
+    "03-plant-scene-underpaint.png": {
+      "width": 1024,
+      "height": 1997,
+      "hasAlpha": true
+    },
+    "04-indoor-plant.png": {
+      "width": 1024,
+      "height": 1997,
+      "hasAlpha": true
+    },
+    "05-cup-contact-underpaint.png": {
+      "width": 1024,
+      "height": 1997,
+      "hasAlpha": true
+    },
+    "06-cup-body-underpaint.png": {
+      "width": 1024,
+      "height": 1997,
+      "hasAlpha": true
+    },
+    "rin-contact-shadow.png": {
+      "width": 1024,
+      "height": 1997,
+      "hasAlpha": true
+    },
+    "rin.png": {
+      "width": 1024,
+      "height": 1997,
+      "hasAlpha": true
+    },
+    "09-cup-foreground.png": {
+      "width": 1024,
+      "height": 1997,
+      "hasAlpha": true
+    }
+  },
+  "manifestRecompositionExact": true,
+  "toggleGroupsValid": true,
+  "visualReview": {
+    "pose": "Hands resting on closed notebook, gaze outside, no pen.",
+    "anatomy": "No conspicuous torso/pelvis/knee/ankle discontinuity in inspected composites.",
+    "alpha": "No visible scenery fragments in isolated figure review.",
+    "eveningRim": "Warm rim remains visible at enlarged scale; judged consistent with golden window light at full composition scale. Existing candidate retained without regeneration.",
+    "residual": "Minor generated silhouette and brushwork variation from daytime reference. Contact shadow is an approximate silhouette-derived mask, requiring final aesthetic review."
+  }
+}

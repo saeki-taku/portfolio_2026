@@ -1,0 +1,224 @@
+{
+  "dimensions": {
+    "01-exterior.png": [
+      1024,
+      2400
+    ],
+    "02-interior-window.png": [
+      1024,
+      2400
+    ],
+    "03-plant-scene-underpaint.png": [
+      1024,
+      2400
+    ],
+    "04-indoor-plant.png": [
+      1024,
+      2400
+    ],
+    "05-cup-contact-underpaint.png": [
+      1024,
+      2400
+    ],
+    "06-cup-body-underpaint.png": [
+      1024,
+      2400
+    ],
+    "07-rin-occluded-underpaint.png": [
+      1024,
+      2400
+    ],
+    "08-rin-notebook.png": [
+      1024,
+      2400
+    ],
+    "09-cup-foreground.png": [
+      1024,
+      2400
+    ],
+    "glass-mask.png": [
+      1024,
+      2400
+    ],
+    "preview-composite.png": [
+      1024,
+      2400
+    ],
+    "preview-no-cup.png": [
+      1024,
+      2400
+    ],
+    "preview-no-plant-no-rin.png": [
+      1024,
+      2400
+    ],
+    "preview-no-plant.png": [
+      1024,
+      2400
+    ],
+    "preview-no-rin-effect-off.png": [
+      1024,
+      2400
+    ],
+    "preview-no-rin.png": [
+      1024,
+      2400
+    ],
+    "preview-rain-effect-off.png": [
+      1024,
+      2400
+    ],
+    "rain-glass-droplets-plant-off-rin-off.png": [
+      1024,
+      2400
+    ],
+    "rain-glass-droplets-plant-off-rin-on.png": [
+      1024,
+      2400
+    ],
+    "rain-glass-droplets-rin-off.png": [
+      1024,
+      2400
+    ],
+    "rain-glass-droplets-rin-on.png": [
+      1024,
+      2400
+    ],
+    "rain-outdoor-plant-off-rin-off.png": [
+      1024,
+      2400
+    ],
+    "rain-outdoor-plant-off-rin-on.png": [
+      1024,
+      2400
+    ],
+    "rain-outdoor-rin-off.png": [
+      1024,
+      2400
+    ],
+    "rain-outdoor-rin-on.png": [
+      1024,
+      2400
+    ],
+    "rain-visibility-alpha-plant-off-rin-off.png": [
+      1024,
+      2400
+    ],
+    "rain-visibility-alpha-plant-off-rin-on.png": [
+      1024,
+      2400
+    ],
+    "rain-visibility-alpha-rin-off.png": [
+      1024,
+      2400
+    ],
+    "rain-visibility-alpha-rin-on.png": [
+      1024,
+      2400
+    ],
+    "rain-visibility-mask-plant-off-rin-off.png": [
+      1024,
+      2400
+    ],
+    "rain-visibility-mask-plant-off-rin-on.png": [
+      1024,
+      2400
+    ],
+    "rain-visibility-mask-rin-off.png": [
+      1024,
+      2400
+    ],
+    "rain-visibility-mask-rin-on.png": [
+      1024,
+      2400
+    ],
+    "rin-contact-shadow.png": [
+      1024,
+      2400
+    ]
+  },
+  "rainLeak": {
+    "rain-outdoor-rin-on.png": 0,
+    "rain-glass-droplets-rin-on.png": 0,
+    "rain-outdoor-rin-off.png": 0,
+    "rain-glass-droplets-rin-off.png": 0,
+    "rain-outdoor-plant-off-rin-on.png": 0,
+    "rain-glass-droplets-plant-off-rin-on.png": 0,
+    "rain-outdoor-plant-off-rin-off.png": 0,
+    "rain-glass-droplets-plant-off-rin-off.png": 0
+  },
+  "maskDifference": {
+    "rin-on": {
+      "outsideGlass": 0,
+      "exceedsRinOff": 0
+    },
+    "rin-off": {
+      "outsideGlass": 0,
+      "exceedsRinOff": 0
+    },
+    "plant-off-rin-on": {
+      "outsideGlass": 0,
+      "exceedsRinOff": 0
+    },
+    "plant-off-rin-off": {
+      "outsideGlass": 0,
+      "exceedsRinOff": 0
+    }
+  },
+  "removedGlassUnderpaintPixels": 23687,
+  "underpaintGlassRemaining": 0,
+  "rainBehindRemovedPlant": 23687,
+  "exteriorAlphaDifference": 0,
+  "interiorAlphaDifference": 0,
+  "glassAlignment": {
+    "sp-day-tall-layers-v1": 0,
+    "sp-evening-tall-layers-v1": 0,
+    "sp-night-awake-tall-layers-v1": 0,
+    "sp-night-asleep-tall-layers-v1": 0,
+    "sp-spring-dawn-tall-layers-v1": 0
+  },
+  "previewAlphaHoles": {
+    "preview-composite.png": 0,
+    "preview-no-rin.png": 0,
+    "preview-no-plant.png": 0,
+    "preview-no-plant-no-rin.png": 0,
+    "preview-no-cup.png": 0
+  },
+  "protectedLayerHashes": {
+    "02-interior-window.png": {
+      "source": "c5ec0ca67457dcca924745866e1412a8d68b2fb1fc25b3f066ff43728ea1ab86",
+      "output": "c5ec0ca67457dcca924745866e1412a8d68b2fb1fc25b3f066ff43728ea1ab86"
+    },
+    "04-indoor-plant.png": {
+      "source": "43e2fd5c1cd94b08f86b45cbf7e71f2155598938ca3ac6db1235704a588fc413",
+      "output": "43e2fd5c1cd94b08f86b45cbf7e71f2155598938ca3ac6db1235704a588fc413"
+    },
+    "05-cup-contact-underpaint.png": {
+      "source": "fcb2f81e84de537645888e531b349af95ffeb42f67713246d33517f594f542bf",
+      "output": "fcb2f81e84de537645888e531b349af95ffeb42f67713246d33517f594f542bf"
+    },
+    "06-cup-body-underpaint.png": {
+      "source": "91da1f5718e3deb7f6c2e1be8002020cac6c7b739ed2609b4620739bdeff5dde",
+      "output": "91da1f5718e3deb7f6c2e1be8002020cac6c7b739ed2609b4620739bdeff5dde"
+    },
+    "07-rin-occluded-underpaint.png": {
+      "source": "03ad93029ba7d0a65a736ffa3ad1e380fb8a8dcefa8b5953d82e6364dd095242",
+      "output": "03ad93029ba7d0a65a736ffa3ad1e380fb8a8dcefa8b5953d82e6364dd095242"
+    },
+    "rin-contact-shadow.png": {
+      "source": "ab843d3f4d96f1be46cdf90fd40f90112a148cc5ff0aa0ee6465c08928090492",
+      "output": "ab843d3f4d96f1be46cdf90fd40f90112a148cc5ff0aa0ee6465c08928090492"
+    },
+    "08-rin-notebook.png": {
+      "source": "624c18aed49ef8467ad68dd1ec6535e928e0a8db143b77e9a7b4b3691544eba0",
+      "output": "624c18aed49ef8467ad68dd1ec6535e928e0a8db143b77e9a7b4b3691544eba0"
+    },
+    "09-cup-foreground.png": {
+      "source": "e7da4ae85d6c9b26cf9ba9a8590dbad8401371e2afd0ab25b3e06d3147546679",
+      "output": "e7da4ae85d6c9b26cf9ba9a8590dbad8401371e2afd0ab25b3e06d3147546679"
+    }
+  },
+  "glassMaskSha256": "60569a5c53892c52a9a363bf5b1856d4a6f1e7a33c25e6bd9e4f05e841880f06",
+  "outputGlassMaskSha256": "60569a5c53892c52a9a363bf5b1856d4a6f1e7a33c25e6bd9e4f05e841880f06",
+  "status": "mechanical-checks-passed; visual-inspection-completed; aesthetic-approval-pending"
+}

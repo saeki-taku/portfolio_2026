@@ -1,0 +1,57 @@
+{
+  "status": "review-candidate",
+  "scene": "ennui-rin-spring-day-cloudy-pc-v1",
+  "width": 1345,
+  "height": 1170,
+  "origin": "top-left",
+  "registration": {
+    "x": 0,
+    "y": 0
+  },
+  "source": "pc-day-layers-v4",
+  "skyGuide": "inputs/generated-cloudy-guide.png",
+  "indoorLightingGuide": "inputs/generated-empty-room-guide.png",
+  "interiorEdit": "inputs/generated-interior-edit.png",
+  "layerRoles": {
+    "01-exterior.png": "exterior",
+    "02-interior.png": "interior-window",
+    "rin-contact-shadow.png": "person-contact-shadow",
+    "03-rin.png": "person-or-dependent-underpaint",
+    "05-cup-foreground.png": "foreground-or-dependent-underpaint"
+  },
+  "layersBottomToTop": [
+    "01-exterior.png",
+    "02-interior.png",
+    "rin-contact-shadow.png",
+    "03-rin.png",
+    "05-cup-foreground.png"
+  ],
+  "toggleGroups": {
+    "rin": [
+      "rin-contact-shadow.png",
+      "03-rin.png"
+    ]
+  },
+  "weatherEffect": {
+    "staticWeather": "cloudy",
+    "rainAnimation": false,
+    "glassMask": "glass-mask-v2.png",
+    "maskMode": "luminance",
+    "effectInsertion": {
+      "after": "01-exterior.png",
+      "before": "02-interior.png",
+      "order": [
+        "outdoor-rain",
+        "glass-droplets"
+      ]
+    },
+    "foregroundOcclusion": "All later manifest layers must render above effects. Mask already excludes opaque interior/window pixels.",
+    "rainIntegrationStatus": "mask-overlay-checked; actual-rain-not-tested"
+  },
+  "previews": {
+    "all": "preview-composite.png",
+    "withoutRin": "preview-no-rin.png",
+    "maskCheck": "preview-mask-check.png"
+  },
+  "verification": "verification.json"
+}

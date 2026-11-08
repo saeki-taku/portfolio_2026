@@ -1,0 +1,123 @@
+{
+  "source": "/Users/saekitakuya/Documents/ChatGPT/ポートフォリオ/design-proposals/pc-summer-night-asleep-clear-layers-v2",
+  "target": "/Users/saekitakuya/Documents/ChatGPT/ポートフォリオ/design-proposals/pc-summer-night-asleep-clear-layers-v3",
+  "dimensions": [
+    1345,
+    1170
+  ],
+  "repairPixels": 30320,
+  "restorationPixels": 32393,
+  "exteriorRepairPixels": 21123,
+  "plantCutoutPixels": 9895,
+  "allOnVsSource": {
+    "changedPixels": 15,
+    "changedOutsidePlantArea": 0,
+    "maxChannelDifference": 1,
+    "transparentPixels": 0
+  },
+  "plantOffVsOn": {
+    "changedPixels": 28690,
+    "changedOutsidePlantArea": 0,
+    "maxChannelDifference": 64,
+    "transparentPixels": 0
+  },
+  "combinationChecks": {
+    "rin-off_cup-on_plant-on": {
+      "width": 1345,
+      "height": 1170,
+      "transparentPixels": 0
+    },
+    "rin-off_cup-on_plant-off": {
+      "width": 1345,
+      "height": 1170,
+      "transparentPixels": 0
+    },
+    "rin-off_cup-off_plant-on": {
+      "width": 1345,
+      "height": 1170,
+      "transparentPixels": 0
+    },
+    "rin-off_cup-off_plant-off": {
+      "width": 1345,
+      "height": 1170,
+      "transparentPixels": 0
+    }
+  },
+  "toggleIsolation": {
+    "plant": [
+      {
+        "changedPixels": 28690,
+        "changedOutsidePlantArea": 0,
+        "maxChannelDifference": 64,
+        "transparentPixels": 0
+      },
+      {
+        "changedPixels": 28690,
+        "changedOutsidePlantArea": 0,
+        "maxChannelDifference": 64,
+        "transparentPixels": 0
+      }
+    ],
+    "cup": [
+      {
+        "changedPixels": 6824,
+        "changedOutsidePlantArea": 0,
+        "maxChannelDifference": 73,
+        "transparentPixels": 0
+      },
+      {
+        "changedPixels": 6824,
+        "changedOutsidePlantArea": 0,
+        "maxChannelDifference": 73,
+        "transparentPixels": 0
+      }
+    ],
+    "rin": []
+  },
+  "sourceExteriorSha256": "fc59f55726cab19b936a7042fba372028cab512cff96dc9c76fb1f4dc308ccea",
+  "targetExteriorSha256": "1af2938c2d2812cbfc10834f7712f77929de4ba83ba967cde873a8095272781e",
+  "sourceCupForegroundSha256": "bf9948010828cb627f2d5bac120f155e92aaec3103f55a8c4f1873edd691235a",
+  "targetCupForegroundSha256": "bf9948010828cb627f2d5bac120f155e92aaec3103f55a8c4f1873edd691235a",
+  "wallLighting": [
+    {
+      "a": 0.23492743214594952,
+      "b": -20.500867319493977
+    },
+    {
+      "a": 0.2080696142627437,
+      "b": -3.7044032654806855
+    },
+    {
+      "a": 0.3489770203266373,
+      "b": -14.54162822264891
+    }
+  ],
+  "sillLighting": [
+    {
+      "a": 0.1872254329613816,
+      "b": -10.725476879917789
+    },
+    {
+      "a": 0.23368772601792123,
+      "b": -9.555948084217924
+    },
+    {
+      "a": 0.3563128496390969,
+      "b": -14.705881067293262
+    }
+  ],
+  "exteriorLighting": [
+    {
+      "a": 0.12759392071276693,
+      "b": -1.6174892980351316
+    },
+    {
+      "a": 0.17481413248660416,
+      "b": -0.7544766547340238
+    },
+    {
+      "a": 0.274076552030164,
+      "b": -0.06267640302543498
+    }
+  ]
+}

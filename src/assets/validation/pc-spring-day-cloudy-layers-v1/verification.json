@@ -1,0 +1,62 @@
+{
+  "dimensions": [
+    1345,
+    1170
+  ],
+  "sourceSha256": "4b6486b1831dcf764cc94a0219ef488ff0e1d4058eb9409dd7565d35b6925a20",
+  "generatedGuideSha256": "e08c2bd074353528e52345b82fa633d71056a06ca4bf4565334ef971b5d6db04",
+  "generatedEmptyRoomGuideSha256": "970c75869f17224b69b77fbb2f1f7d3f34e6977743dfa5e1f6199c77a81b1fb8",
+  "generatedInteriorEditSha256": "1e21d31e1094efba4f9175d9ba356c37c929f6ac79c299d00fb9a522fe6a7231",
+  "layerDimensionsAndAlpha": {
+    "01-exterior.png": {
+      "width": 1345,
+      "height": 1170,
+      "alpha": true
+    },
+    "02-interior.png": {
+      "width": 1345,
+      "height": 1170,
+      "alpha": true
+    },
+    "rin-contact-shadow.png": {
+      "width": 1345,
+      "height": 1170,
+      "alpha": true
+    },
+    "03-rin.png": {
+      "width": 1345,
+      "height": 1170,
+      "alpha": true
+    },
+    "05-cup-foreground.png": {
+      "width": 1345,
+      "height": 1170,
+      "alpha": true
+    }
+  },
+  "cityGeometry": "Original separated exterior pixels retained outside sky; their RGB is relit without resampling.",
+  "personGeometry": "Adopted redraw was registered at x940 y455 size354x318, same proportions as current website CSS.",
+  "visualApproval": "technical and visual QA completed; user adoption pending",
+  "recomposition": {
+    "preview-composite.png": "exact with documented per-layer 8-bit rounding",
+    "preview-no-rin.png": "exact with documented per-layer 8-bit rounding"
+  },
+  "personAlphaDifferences": 0,
+  "maskValidation": {
+    "file": "glass-mask-v2.png",
+    "method": "exterior alpha multiplied by one minus interior alpha; no scene repaint",
+    "width": 1345,
+    "height": 1170,
+    "opaqueInteriorLeakPixels": 0,
+    "nonzeroPixels": 519577,
+    "foreground": "Occluded by later manifest layers, not encoded into SP glass mask.",
+    "scope": "Validated for spring daytime cloudy only; other periods not yet verified.",
+    "effectOverlayReview": "PASS diagnostic blue coverage: frames, wall, sill and foreground excluded. Actual rain not tested."
+  },
+  "visualReview": {
+    "lighting": "Cloudy sky and diffuse interior/person light coherent. No conspicuous hard sun-cast floor/window shadows remain.",
+    "personOff": "No visible Rin/book/contact-shadow residue in inspected preview.",
+    "geometry": "Adopted figure alpha unchanged. No conspicuous city or framing displacement.",
+    "limitations": "Bright overcast rendering; exterior retains original painted building form shadows. No dynamic rain validation yet."
+  }
+}

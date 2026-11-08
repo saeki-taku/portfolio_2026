@@ -1,0 +1,60 @@
+{
+  "dimensions": [
+    1024,
+    2400
+  ],
+  "alphaChanges": {
+    "01-exterior.png": 0,
+    "01a-city-lights.png": 0,
+    "02-interior-window.png": 0,
+    "04-indoor-plant.png": 0,
+    "05-cup-contact-underpaint.png": 0,
+    "06-cup-body-underpaint.png": 0,
+    "09-cup-foreground.png": 0
+  },
+  "glassMask": {
+    "glassVsDay": 0,
+    "underpaintOpaqueGlass": 0
+  },
+  "removedGlassUnderpaint": 23687,
+  "copiedHashes": {
+    "01a-city-lights.png": {
+      "source": "6fa765345558a036b36152cdd26c572fc6cfbecd09220dace4975c0f7b885f91",
+      "output": "6fa765345558a036b36152cdd26c572fc6cfbecd09220dace4975c0f7b885f91"
+    },
+    "02-interior-window.png": {
+      "source": "88adb399ef8aa565dd043af3abd88d972e46564b2f2ed7919e7c0c284175c0f6",
+      "output": "88adb399ef8aa565dd043af3abd88d972e46564b2f2ed7919e7c0c284175c0f6"
+    },
+    "04-indoor-plant.png": {
+      "source": "47998701404ca6f5a14ee90593e1ba51b1f7b14db10f8eeb809ab96b4fad7f1b",
+      "output": "47998701404ca6f5a14ee90593e1ba51b1f7b14db10f8eeb809ab96b4fad7f1b"
+    },
+    "05-cup-contact-underpaint.png": {
+      "source": "145e3d6c339271f87d4f6a90da15255eb11196122bf315c0e7c5f44a85a1cd77",
+      "output": "145e3d6c339271f87d4f6a90da15255eb11196122bf315c0e7c5f44a85a1cd77"
+    },
+    "06-cup-body-underpaint.png": {
+      "source": "7b51dec309224ba846c2d204bf6826a8da9f5f55aad8f35ede7520aa73ec8c76",
+      "output": "7b51dec309224ba846c2d204bf6826a8da9f5f55aad8f35ede7520aa73ec8c76"
+    },
+    "09-cup-foreground.png": {
+      "source": "0a1126c89096903b3cf2bb10d74f3c243c122e1cbeb0e96e3c40b67ae10c0914",
+      "output": "0a1126c89096903b3cf2bb10d74f3c243c122e1cbeb0e96e3c40b67ae10c0914"
+    }
+  },
+  "effectLeaks": {
+    "rain-outdoor-default.png": 0,
+    "rain-glass-droplets-default.png": 0,
+    "rain-outdoor-plant-off.png": 0,
+    "rain-glass-droplets-plant-off.png": 0
+  },
+  "previewAlphaHoles": {
+    "preview-composite.png": 0,
+    "preview-effect-off.png": 0,
+    "preview-no-plant.png": 0,
+    "preview-no-cup.png": 0,
+    "preview-city-lights-off.png": 0
+  },
+  "status": "mechanical-checks-passed; visual-review-required"
+}

@@ -1,0 +1,53 @@
+{
+  "status": "passed",
+  "canvas": {
+    "width": 1345,
+    "height": 1170
+  },
+  "source": "pc-day-layers-v4",
+  "outputAlphaDiff": {
+    "01-exterior.png": 0,
+    "02-interior.png": 0,
+    "04-contact-shadow.png": 0,
+    "03-rin.png": 0,
+    "05-cup-foreground.png": 0
+  },
+  "unchangedHashes": {
+    "02-interior.png": {
+      "source": "4d8c1e2cd9d9b9ca3b80924a00994e933552ff736df563bc7aefea615efd9d6c",
+      "output": "4d8c1e2cd9d9b9ca3b80924a00994e933552ff736df563bc7aefea615efd9d6c"
+    },
+    "04-contact-shadow.png": {
+      "source": "e4cbf41413be662363b5500a7597271978a27b001d16c12eb618e81a46bc2fa3",
+      "output": "e4cbf41413be662363b5500a7597271978a27b001d16c12eb618e81a46bc2fa3"
+    }
+  },
+  "previewHoles": {
+    "preview-composite.png": 0,
+    "preview-no-rin.png": 0,
+    "preview-no-cup.png": 0
+  },
+  "changes": {
+    "exterior": {
+      "changedExteriorPixels": 573792,
+      "sourceAlphaPreserved": true,
+      "guideRegistration": "source aperture [270,178,1032,556] from guide crop [66,190,1220,681]"
+    },
+    "02-interior.png": {
+      "sourceSha256": "4d8c1e2cd9d9b9ca3b80924a00994e933552ff736df563bc7aefea615efd9d6c",
+      "alphaChanged": 0
+    },
+    "04-contact-shadow.png": {
+      "sourceSha256": "e4cbf41413be662363b5500a7597271978a27b001d16c12eb618e81a46bc2fa3",
+      "alphaChanged": 0
+    },
+    "03-rin.png": {
+      "guideRegisteredPixels": 54484,
+      "alphaChanged": 0
+    },
+    "05-cup-foreground.png": {
+      "guideRegisteredPixels": 1516,
+      "alphaChanged": 0
+    }
+  }
+}

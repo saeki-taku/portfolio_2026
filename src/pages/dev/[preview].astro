@@ -1,0 +1,183 @@
+---
+import original from '../../assets/scenes/rin-desktop-corner-soft-v4.png?url';
+import exterior from '../../assets/validation/pc-day-layers-v1/01-exterior.png?url';
+import interior from '../../assets/validation/pc-day-layers-v1/02-interior.png?url';
+import shadow from '../../assets/validation/pc-day-layers-v1/04-contact-shadow.png?url';
+import rin from '../../assets/validation/pc-day-layers-v1/03-rin.png?url';
+import cup from '../../assets/validation/pc-day-layers-v1/05-cup-foreground.png?url';
+
+export function getStaticPaths() {
+  return [
+    ...(import.meta.env.DEV || import.meta.env.ENNUI_SCENE_DEV === '1' ? [{ params: { preview: 'pc-day-layers' } }] : []),
+    ...(import.meta.env.ENNUI_SCENE_DEV === '1' ? [{ params: { preview: 'pc-day-layers-v2' } }, { params: { preview: 'pc-day-redraw' } }] : []),
+  ];
+}
+const isV2 = Astro.params.preview === 'pc-day-layers-v2';
+const isRedraw = Astro.params.preview === 'pc-day-redraw';
+const v1Layers = [
+  { id: 'exterior', name: '01 外景', src: exterior },
+  { id: 'interior', name: '02 室内・鉢植え・カップ', src: interior },
+  { id: 'shadow', name: '04 接触影（近似）', src: shadow },
+  { id: 'rin', name: '03 凛・ペン・スケッチブック', src: rin },
+  { id: 'cup', name: '05 カップ前景', src: cup },
+];
+const v2Layers = [
+  { id: 'exterior', name: '01 外景', src: '/__ennui-review-v2/01-exterior.png' },
+  { id: 'interior', name: '02 室内・鉢植え・カップ', src: '/__ennui-review-v2/02-interior.png' },
+  { id: 'shadow', name: '04 接触影（近似）', src: '/__ennui-review-v2/04-contact-shadow.png' },
+  { id: 'rin', name: '03 凛・ペン・スケッチブック', src: '/__ennui-review-v2/03-rin.png' },
+  { id: 'cup', name: '05 カップ前景', src: '/__ennui-review-v2/05-cup-foreground.png' },
+  { id: 'edge', name: '06 人物輪郭周辺の復元', src: '/__ennui-review-v2/06-person-edge-restore.png' },
+];
+const redrawLayers = [
+  { id: 'exterior', name: '01 外景（v4）', src: '/__ennui-review-redraw/01-exterior.png' },
+  { id: 'interior', name: '02 室内（v4）', src: '/__ennui-review-redraw/02-interior.png' },
+  { id: 'redraw', name: '描き直し版の凛', src: '/__ennui-review-redraw/rin-redraw-transparent-v1.png' },
+  { id: 'cup', name: '05 カップ前景（v4）', src: '/__ennui-review-redraw/05-cup-foreground.png' },
+];
+const layers = isRedraw ? redrawLayers : isV2 ? v2Layers : v1Layers;
+---
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="robots" content="noindex,nofollow" />
+    <title>PC春・昼 レイヤー検証 {isRedraw ? '描き直し版' : isV2 ? 'v2' : 'v1'} — ennui</title>
+  </head>
+  <body>
+    <main>
+      <header>
+        <p class="eyebrow">ENNUI / LOCAL STUDY</p>
+        <h1>PC春・昼 レイヤー検証 {isRedraw ? '描き直し版' : isV2 ? 'v2' : 'v1'}</h1>
+        <p>分離素材 {isRedraw ? '描き直し版・確認用' : isV2 ? 'v2・確認用' : 'v1・未採用の初稿'}。1345 × 1170 px、左上原点 (0, 0)。本番の表示は変更していません。</p>
+      </header>
+      <section class="controls" aria-label="比較操作">
+        <fieldset class="mode">
+          <legend>比較対象</legend>
+          <label><input type="radio" name="view" value="original" />採用原本</label>
+          <label><input type="radio" name="view" value="composite" checked />レイヤー合成</label>
+        </fieldset>
+        <label class="select-label">表示寸法
+          <select id="size"><option value="fit">画面幅に合わせる</option><option value="native">原寸（1画像px = 1 CSS px）</option></select>
+        </label>
+        <label class="select-label">透過確認の背景
+          <select id="background"><option value="checker">市松模様</option><option value="white">白</option><option value="gray">グレー</option><option value="black">黒</option></select>
+        </label>
+        <button id="reset" type="button">初期表示に戻す</button>
+        {(isV2 || isRedraw) && <a href={isRedraw ? '/dev/pc-day-scene-redraw/' : '/dev/pc-day-scene-v2/'}>サイト画角で確認する</a>}
+        <fieldset id="layers">
+          <legend>レイヤー（下から上の順）</legend>
+          <label class="person"><input id="person" type="checkbox" checked />{isRedraw ? '描き直し版の凛を表示' : `人物と接触影${isV2 ? '・輪郭復元' : ''}をまとめて表示`}</label>
+          <div class="layer-list">
+            {layers.map(layer => <label><input type="checkbox" data-toggle={layer.id} checked />{layer.name}</label>)}
+          </div>
+        </fieldset>
+      </section>
+      <p id="status" role="status" aria-live="polite">レイヤー合成・全{layers.length}枚を表示</p>
+      <p class="hint">原寸では枠内を縦横にスクロールできます。ブラウザ倍率100%で輪郭を確認してください。原本の表示中はレイヤー操作を無効にしています。</p>
+      <div class="viewport" tabindex="0" role="region" aria-label="画像比較領域（原寸時はスクロール可能）">
+        <div class="painting" data-size="fit" data-background="checker">
+          <img id="original" src={original} width="1345" height="1170" alt="採用原本：春の昼、窓辺でスケッチする凛" hidden />
+          <div id="composite" role="img" aria-label="外景・室内・接触影・凛・カップ前景の合成">
+            {layers.map(layer => <img data-layer={layer.id} src={layer.src} width="1345" height="1170" alt="" />)}
+          </div>
+        </div>
+      </div>
+      <aside>
+        <h2>素材の確認ポイント</h2>
+        <p>人物・植物の輪郭、補完した外景の接続、カップ周囲の残存色を確認。接触影は近似です。カップ背後のスカートは未補完のため人物は移動しません。</p>
+        <p>{isRedraw ? '人物なし：描き直し版の凛のみ非表示にし、v4の01・02・05を維持。旧03・04・06は読み込みません。' : `人物なし：03・04${isV2 ? '・06' : ''}を同時に非表示にし、01・02・05を維持。髪・服・足・影の残像と、窓の四辺（特に下枠）を確認します。`}</p>
+        <p>原本・合成ともキャンバス全体を表示。全画像は同一の親要素・同一寸法・同一原点で固定し、個別補正や追加の影はありません。</p>
+      </aside>
+      <noscript>比較操作にはJavaScriptが必要です。現在は全5枚の合成を表示しています。</noscript>
+    </main>
+  </body>
+</html>
+<script>
+  const painting = document.querySelector<HTMLElement>('.painting')!;
+  const original = document.querySelector<HTMLImageElement>('#original')!;
+  const composite = document.querySelector<HTMLElement>('#composite')!;
+  const group = document.querySelector<HTMLFieldSetElement>('#layers')!;
+  const person = document.querySelector<HTMLInputElement>('#person')!;
+  const toggles = [...document.querySelectorAll<HTMLInputElement>('[data-toggle]')];
+  const radios = [...document.querySelectorAll<HTMLInputElement>('[name="view"]')];
+  const size = document.querySelector<HTMLSelectElement>('#size')!;
+  const background = document.querySelector<HTMLSelectElement>('#background')!;
+  const status = document.querySelector<HTMLElement>('#status')!;
+  const people = toggles.filter(input => ['rin', 'shadow', 'edge', 'redraw'].includes(input.dataset.toggle!));
+  function update() {
+    const isOriginal = radios.find(input => input.checked)?.value === 'original';
+    original.hidden = isOriginal ? false : true;
+    composite.hidden = !!isOriginal;
+    group.disabled = !!isOriginal;
+    for (const input of toggles) {
+      document.querySelector<HTMLImageElement>(`[data-layer="${input.dataset.toggle}"]`)!.hidden = !input.checked;
+    }
+    person.checked = people.every(input => input.checked);
+    person.indeterminate = people.some(input => input.checked) && !person.checked;
+    painting.dataset.size = size.value;
+    painting.dataset.background = background.value;
+    const visible = toggles.filter(input => input.checked).map(input => input.parentElement!.textContent!.trim());
+    const description = visible.length ? visible.join('、') : 'なし（透過背景のみ）';
+    composite.setAttribute('aria-label', `レイヤー合成。表示：${description}`);
+    status.textContent = `${isOriginal ? '採用原本' : `レイヤー合成｜表示：${description}`} ／ ${size.value === 'native' ? '原寸 1345 × 1170 CSS px' : '画面幅に合わせて等比表示'}`;
+  }
+  person.addEventListener('change', () => {
+    people.forEach(input => { input.checked = person.checked; });
+    update();
+  });
+  [...toggles, ...radios, size, background].forEach(input => input.addEventListener('change', update));
+  document.querySelector('#reset')!.addEventListener('click', () => {
+    toggles.forEach(input => { input.checked = true; });
+    radios.forEach(input => { input.checked = input.value === 'composite'; });
+    size.value = 'fit';
+    background.value = 'checker';
+    update();
+    document.querySelector('.viewport')!.scrollTo(0, 0);
+  });
+  update();
+</script>
+<style>
+  :global(*) { box-sizing: border-box; }
+  :global(body) { margin: 0; background: #f4f2ed; color: #303630; font: 15px/1.65 system-ui, sans-serif; }
+  main { max-width: 1540px; padding: 24px; margin: 0 auto; }
+  h1 { margin: 0; font-size: clamp(22px, 3vw, 30px); font-weight: 550; }
+  h2 { font-size: 17px; }
+  p { margin: 8px 0; }
+  .eyebrow { font-size: 11px; letter-spacing: .16em; color: #687167; }
+  .controls { display: flex; flex-wrap: wrap; align-items: end; gap: 14px 24px; padding: 18px; margin-top: 20px; border: 1px solid #c5c9be; background: #fffefa; border-radius: 8px; }
+  fieldset { margin: 0; padding: 0; border: 0; min-width: 0; }
+  legend, .select-label { font-size: 13px; }
+  legend { margin-bottom: 4px; }
+  label { display: inline-flex; align-items: center; gap: 7px; min-height: 36px; cursor: pointer; }
+  .mode label { margin-right: 12px; }
+  .select-label { display: flex; flex-direction: column; align-items: start; gap: 4px; }
+  select, button { font: inherit; color: inherit; padding: 8px 10px; background: white; border: 1px solid #aab2a5; border-radius: 4px; max-width: 100%; min-height: 42px; }
+  button { cursor: pointer; }
+  a { color: #345646; align-self: center; }
+  input { accent-color: #446454; }
+  #layers { width: 100%; border-top: 1px solid #dce0d5; padding-top: 6px; }
+  #layers:disabled { opacity: .5; }
+  .layer-list { display: flex; flex-wrap: wrap; column-gap: 22px; }
+  .person { font-weight: 600; }
+  #status { margin-top: 16px; font-size: 13px; }
+  .hint { font-size: 12px; color: #626b61; }
+  .viewport { width: 100%; max-height: 78vh; overflow: auto; border: 1px solid #aab2a5; background: #dedfd9; }
+  .painting { position: relative; width: 100%; aspect-ratio: 1345 / 1170; isolation: isolate; }
+  .painting[data-size="native"] { width: 1345px; }
+  .painting[data-background="checker"] { background-color: #eee; background-image: conic-gradient(#c0c0c0 25%, transparent 0 50%, #c0c0c0 0 75%, transparent 0); background-size: 24px 24px; }
+  .painting[data-background="white"] { background: #fff; }
+  .painting[data-background="gray"] { background: #808080; }
+  .painting[data-background="black"] { background: #000; }
+  .painting img, #composite { position: absolute; inset: 0; width: 100%; height: 100%; }
+  .painting img { display: block; }
+  .painting img[data-layer="redraw"] {
+    left: 69.91%; top: 38.93%; right: auto; bottom: auto;
+    width: 26.33%; height: auto;
+  }
+  .painting [hidden] { display: none; }
+  aside { max-width: 1000px; margin-top: 20px; font-size: 13px; }
+  :focus-visible { outline: 3px solid #477960; outline-offset: 3px; }
+  @media (max-width: 600px) { main { padding: 14px; } .controls { padding: 12px; gap: 10px; } }
+</style>

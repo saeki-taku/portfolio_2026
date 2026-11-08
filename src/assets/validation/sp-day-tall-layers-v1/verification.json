@@ -1,0 +1,66 @@
+{
+  "dimensions": [
+    1024,
+    2400
+  ],
+  "referenceComposite": {
+    "changedChannels": 0,
+    "channelsOverTwo": 0,
+    "maximumChannelDifference": 0,
+    "meanChannelDifference": 0
+  },
+  "noRinProtectedRange": {
+    "targetRows": [
+      890,
+      2190
+    ],
+    "sourceRows": [
+      640,
+      1940
+    ]
+  },
+  "noRinProtectedComparison": {
+    "changedChannels": 333,
+    "channelsOverTwo": 0,
+    "maximumChannelDifference": 1,
+    "meanChannelDifference": 0.00006253756009615385
+  },
+  "originalObjectLayers": {
+    "03-plant-scene-underpaint.png": {
+      "changedAlpha": 0,
+      "changedRgb": 0,
+      "pass": true
+    },
+    "04-indoor-plant.png": {
+      "changedAlpha": 0,
+      "changedRgb": 0,
+      "pass": true
+    },
+    "05-cup-contact-underpaint.png": {
+      "changedAlpha": 0,
+      "changedRgb": 0,
+      "pass": true
+    },
+    "06-cup-body-underpaint.png": {
+      "changedAlpha": 0,
+      "changedRgb": 0,
+      "pass": true
+    },
+    "07-rin-occluded-underpaint.png": {
+      "changedAlpha": 0,
+      "changedRgb": 0,
+      "pass": true
+    },
+    "08-rin-notebook.png": {
+      "changedAlpha": 0,
+      "changedRgb": 0,
+      "pass": true
+    },
+    "09-cup-foreground.png": {
+      "changedAlpha": 0,
+      "changedRgb": 0,
+      "pass": true
+    }
+  },
+  "check": "all output PNG layers share the full 1024x2400 origin; visible composite and person-off inspected separately"
+}

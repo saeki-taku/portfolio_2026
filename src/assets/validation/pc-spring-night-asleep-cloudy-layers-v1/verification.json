@@ -1,0 +1,35 @@
+{
+  "dimensions": [
+    1345,
+    1170
+  ],
+  "alphaDifferencesWhenUsingDayStructure": {
+    "01-exterior.png": 0,
+    "02-interior.png": 0,
+    "05-cup-foreground.png": 0
+  },
+  "outputAlphaDifferences": {
+    "01-exterior.png": 0,
+    "01a-city-lights.png": 0,
+    "02-interior.png": 0,
+    "05-cup-foreground.png": 0
+  },
+  "glassMaskDifferences": 0,
+  "protectedLayerHashes": {
+    "01a-city-lights.png": {
+      "source": "dde74697f26463310710873e590159c09c0bf6c297d8e54f88abb1ceae8e0b2a",
+      "output": "dde74697f26463310710873e590159c09c0bf6c297d8e54f88abb1ceae8e0b2a"
+    }
+  },
+  "previewAlphaHoles": {
+    "preview-composite.png": 0,
+    "preview-city-lights-off.png": 0
+  },
+  "luma": {
+    "sky": 27.31329577777769,
+    "city": 27.763143357143207,
+    "room": 41.93122950000011
+  },
+  "guideSha256": "fb619ee94cf9f36f034f2d6b1d2132f0c5cd9472e79d1c05f62febf6501277d9",
+  "status": "mechanical-checks-passed; visual-review-required"
+}

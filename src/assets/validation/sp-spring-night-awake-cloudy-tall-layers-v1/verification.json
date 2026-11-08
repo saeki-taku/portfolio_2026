@@ -1,0 +1,53 @@
+{
+  "dimensions": [
+    1024,
+    2400
+  ],
+  "alphaDifferencesWhenUsingDayStructure": {
+    "01-exterior.png": 0,
+    "02-interior-window.png": 0,
+    "03-plant-scene-underpaint.png": 0,
+    "04-indoor-plant.png": 0,
+    "05-cup-contact-underpaint.png": 0,
+    "06-cup-body-underpaint.png": 0,
+    "rin.png": 0,
+    "09-cup-foreground.png": 0
+  },
+  "outputAlphaDifferences": {
+    "01-exterior.png": 0,
+    "01a-city-lights.png": 0,
+    "02-interior-window.png": 0,
+    "03-plant-scene-underpaint.png": 0,
+    "04-indoor-plant.png": 0,
+    "05-cup-contact-underpaint.png": 0,
+    "06-cup-body-underpaint.png": 0,
+    "rin-contact-shadow.png": 0,
+    "rin.png": 0,
+    "09-cup-foreground.png": 0
+  },
+  "glassMaskDifferences": 0,
+  "protectedLayerHashes": {
+    "01a-city-lights.png": {
+      "source": "31f7b325d84208b9daae8bd82cd3dfa72ca459893a46f616a5c34e3faa046d7a",
+      "output": "31f7b325d84208b9daae8bd82cd3dfa72ca459893a46f616a5c34e3faa046d7a"
+    },
+    "rin-contact-shadow.png": {
+      "source": "177db44cad2458dfeaefe724b6dc7f89129a8c87a5bdbcb713a2a0f81cd7e837",
+      "output": "177db44cad2458dfeaefe724b6dc7f89129a8c87a5bdbcb713a2a0f81cd7e837"
+    }
+  },
+  "previewAlphaHoles": {
+    "preview-composite.png": 0,
+    "preview-no-rin.png": 0,
+    "preview-city-lights-off.png": 0,
+    "preview-no-cup.png": 0,
+    "preview-no-plant-cup.png": 0
+  },
+  "luma": {
+    "sky": 38.508813299999495,
+    "city": 54.00055060512799,
+    "room": 51.55877576888746
+  },
+  "guideSha256": "2a01cc653125a29442d3e8bc0fb9dd8dadf1b0b06b708b9becd9b5971bd738f6",
+  "status": "mechanical-checks-passed; visual-review-required"
+}

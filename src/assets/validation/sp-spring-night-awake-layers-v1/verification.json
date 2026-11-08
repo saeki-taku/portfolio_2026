@@ -1,0 +1,29 @@
+{
+  "width": 1024,
+  "height": 1997,
+  "registration": [
+    0,
+    0
+  ],
+  "reference": "/Users/saekitakuya/Documents/ChatGPT/ポートフォリオ/design-proposals/sp-spring-night-lighting-reference-v1.png",
+  "sourceDayLayers": "/Users/saekitakuya/Documents/ChatGPT/ポートフォリオ/design-proposals/sp-day-layers-v21",
+  "cityLightComponentsAwake": 901,
+  "cityLightComponentsAsleep": 87,
+  "cityLightPixelsAwake": 19401,
+  "cityLightPixelsAsleep": 1916,
+  "sleepLightPixelRetentionPercent": 10,
+  "alphaSha256BySourceLayer": {
+    "01-exterior.png": "3a5005603f33d8984d2387f291878e59d064a4c497c070da1811dc75468de1ba",
+    "02-interior-window.png": "2ad010aa2a9cfb7166bd2999aaf748cbd1f5c77839b3521251c705627a25797f",
+    "03-plant-scene-underpaint.png": "1053d994fa0fd539206debbff7ae5f2b79fd9ed6bec1eeb079174ef6efdb4580",
+    "04-indoor-plant.png": "00b714618489b82f3f160057ed0132534463e5b8823f00902c7f4806ee87a3ba",
+    "05-cup-contact-underpaint.png": "ea0d6cbedfe6861fa0b79e2b0d023c6ee7549d83428793ff9aacec489b30cd85",
+    "06-cup-body-underpaint.png": "6bfcae10513f74cb7699a6e64d7d7693c50dca48e4a4b18123c84a5bc708757a",
+    "07-rin-occluded-underpaint.png": "7fc8d03b1d2a79bfaaf06d3cb2c8963e8a239b23c384693344deb306391f651f",
+    "08-rin-notebook.png": "d60153d5184469a35f0c5b63a62cf581a7dc57c3a114d31effc617d0ce52840d",
+    "09-cup-foreground.png": "b471b8a1a0cff6f3c094e00e7b24de15c62e100bd468f6f64479681a65b2ebb2"
+  },
+  "shapesAndAlphaPreserved": true,
+  "originalFilesUntouched": true,
+  "notes": "Night/sleep use the same exterior base and city geometry. Sleep removes Rin and its linked layers, cools/dims only indoor layers, and removes most discrete light components."
+}

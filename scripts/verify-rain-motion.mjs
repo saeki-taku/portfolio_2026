@@ -1,0 +1,111 @@
+import assert from 'node:assert/strict';
+import { mkdir } from 'node:fs/promises';
+import { join } from 'node:path';
+import { fileURLToPath } from 'node:url';
+import { chromium } from '@playwright/test';
+
+const root = fileURLToPath(new URL('..', import.meta.url));
+const output = join(root, 'artifacts/rain-motion');
+const base = process.env.ENNUI_TEST_URL || 'http://127.0.0.1:4512';
+await mkdir(output, { recursive: true });
+const measureLeak = canvas => canvas.evaluate(async element => {
+  const mask = new Image();
+  mask.src = element.dataset.maskUrl;
+  await mask.decode();
+  const probe = document.createElement('canvas');
+  probe.width = element.width; probe.height = element.height;
+  const maskCtx = probe.getContext('2d');
+  maskCtx.drawImage(mask, 0, 0, probe.width, probe.height);
+  const expected = maskCtx.getImageData(0, 0, probe.width, probe.height).data;
+  const actual = element.getContext('2d').getImageData(0, 0, element.width, element.height).data;
+  let outside = 0, painted = 0;
+  for (let i = 3; i < actual.length; i += 4) {
+    if (actual[i] > 0) painted++;
+    if (expected[i] === 0 && actual[i] > 0) outside++;
+  }
+  return { outside, painted };
+});
+const browser = await chromium.launch({ channel: 'chrome', headless: true });
+try {
+  for (const [name, width, height] of [['pc', 1440, 900], ['sp', 393, 852]]) {
+    const page = await browser.newPage({ viewport: { width, height }, deviceScaleFactor: 1 });
+    await page.clock.install({ time: new Date('2026-10-19T03:00:00Z') });
+    await page.goto(base);
+    await page.locator('.scene-settings summary').click();
+    await page.locator('select[name="mode"]').selectOption('manual');
+    await page.locator('select[name="weather"]').selectOption('rain');
+    const art = name === 'pc' ? '.pc-artwork' : '.mobile-artwork';
+    const canvas = page.locator(`${art} canvas.rain-motion`);
+    await page.locator(`${art} img[data-scene="spring-day-rain"]:not([hidden])`).evaluateAll(images => Promise.all(images.map(image => image.decode())));
+    await page.waitForFunction(selector => !document.querySelector(selector)?.hidden, `${art} canvas.rain-motion`);
+    const first = await canvas.evaluate(element => element.toDataURL());
+    await page.locator('.scene-settings summary').click();
+    await page.screenshot({ path: join(output, `${name}-frame-1.png`), fullPage: true });
+    await page.waitForTimeout(450);
+    const second = await canvas.evaluate(element => element.toDataURL());
+    assert.notEqual(first, second, `${name}: animation frames did not change`);
+    await page.screenshot({ path: join(output, `${name}-frame-2.png`), fullPage: true });
+    const leak = await measureLeak(canvas);
+    assert.equal(leak.outside, 0, `${name}: animated rain leaked outside fixed mask`);
+    assert.ok(leak.painted > 100, `${name}: rain was not painted`);
+    await page.locator('.scene-settings summary').click();
+    await page.locator('[data-rain-amount="outdoor"]').fill('200');
+    await page.locator('[data-rain-amount="glass"]').fill('200');
+    assert.match(await page.locator('[data-rain-output="outdoor"]').textContent(), /大雨 200%/);
+    await page.locator('.scene-settings summary').click();
+    await page.waitForTimeout(200);
+    const heavyFirst = await canvas.evaluate(element => element.toDataURL());
+    await page.screenshot({ path: join(output, `${name}-heavy-frame-1.png`), fullPage: true });
+    await page.waitForTimeout(450);
+    const heavySecond = await canvas.evaluate(element => element.toDataURL());
+    assert.notEqual(heavyFirst, heavySecond, `${name}: heavy rain did not move`);
+    await page.screenshot({ path: join(output, `${name}-heavy-frame-2.png`), fullPage: true });
+    const heavyLeak = await measureLeak(canvas);
+    assert.equal(heavyLeak.outside, 0, `${name}: heavy rain leaked outside fixed mask`);
+    assert.ok(heavyLeak.painted > leak.painted * 1.25, `${name}: maximum rain not visibly denser`);
+    await page.locator('.scene-settings summary').click();
+    await page.locator('[data-rain-amount="outdoor"]').fill('40');
+    await page.locator('[data-rain-amount="glass"]').fill('40');
+    assert.match(await page.locator('[data-rain-output="outdoor"]').textContent(), /弱い雨 40%/);
+    await page.locator('.scene-settings summary').click();
+    await page.waitForTimeout(200);
+    assert.ok((await measureLeak(canvas)).painted < leak.painted, `${name}: weak rain not sparser`);
+    await page.screenshot({ path: join(output, `${name}-weak.png`), fullPage: true });
+    await page.locator('.scene-settings summary').click();
+    await page.locator('[data-rain-amount="outdoor"]').fill('200');
+    await page.locator('[data-rain-amount="glass"]').fill('0');
+    assert.equal(await page.locator(`${art} img[data-rain-effect="glass"]:not([hidden])`).count(), 0, `${name}: glass control is coupled to outdoor rain`);
+    assert.equal(await page.locator(`${art} img[data-rain-effect="outdoor"]:not([hidden])`).count(), 1);
+    await page.locator('[data-rain-amount="outdoor"]').fill('0');
+    await page.locator('[data-rain-amount="glass"]').fill('200');
+    assert.equal(await page.locator(`${art} img[data-rain-effect="outdoor"]:not([hidden])`).count(), 0, `${name}: outdoor control is coupled to glass droplets`);
+    assert.equal(await page.locator(`${art} img[data-rain-effect="glass"]:not([hidden])`).count(), 1);
+    await page.locator('[data-rain-amount="outdoor"]').fill('200');
+    const oldMask = await canvas.getAttribute('data-mask-url');
+    await page.locator(name === 'pc' ? '[data-layer-toggle="rin"]' : '[data-sp-toggle="rin"]').uncheck();
+    await page.waitForFunction(([selector, old]) => document.querySelector(selector)?.dataset.maskUrl !== old, [`${art} canvas.rain-motion`, oldMask]);
+    if (name === 'sp') {
+      const personOffMask = await canvas.getAttribute('data-mask-url');
+      await page.locator('[data-sp-toggle="plant"]').uncheck();
+      await page.waitForFunction(([selector, old]) => document.querySelector(selector)?.dataset.maskUrl !== old, [`${art} canvas.rain-motion`, personOffMask]);
+    }
+    await page.waitForFunction(selector => !document.querySelector(selector)?.hidden, `${art} canvas.rain-motion`);
+    assert.equal((await measureLeak(canvas)).outside, 0, `${name}: rain leaked after person/plant toggle`);
+    await page.locator('select[name="weather"]').selectOption('cloudy');
+    assert.equal(await canvas.evaluate(element => element.hidden), true, `${name}: animation continued in cloudy scene`);
+    await page.locator('select[name="weather"]').selectOption('rain');
+    await page.emulateMedia({ reducedMotion: 'reduce' });
+    await page.waitForFunction(selector => document.querySelector(selector)?.hidden, `${art} canvas.rain-motion`);
+    await page.emulateMedia({ reducedMotion: 'no-preference' });
+    await page.waitForFunction(selector => !document.querySelector(selector)?.hidden, `${art} canvas.rain-motion`);
+    await page.evaluate(() => { Object.defineProperty(document, 'hidden', { configurable: true, get: () => true }); document.dispatchEvent(new Event('visibilitychange')); });
+    assert.equal(await canvas.evaluate(element => element.hidden), true, `${name}: background tab animation continued`);
+    await page.evaluate(() => { Object.defineProperty(document, 'hidden', { configurable: true, get: () => false }); document.dispatchEvent(new Event('visibilitychange')); });
+    await page.waitForFunction(selector => !document.querySelector(selector)?.hidden, `${art} canvas.rain-motion`);
+    await page.locator('[data-rain-amount="outdoor"]').fill('0');
+    await page.locator('[data-rain-amount="glass"]').fill('0');
+    assert.equal(await canvas.evaluate(element => element.hidden), true, `${name}: zero intensity animation continued`);
+    await page.close();
+  }
+} finally { await browser.close(); }
+console.log(`PC/SP animated frames, fixed-mask exclusion, person/plant mask switching, reduced motion and pause: passed. Screenshots: ${output}`);

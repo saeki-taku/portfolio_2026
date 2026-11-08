@@ -1,0 +1,42 @@
+{
+  "source": "/Users/saekitakuya/Documents/ChatGPT/ポートフォリオ/design-proposals/pc-summer-dawn-clear-layers-v1",
+  "target": "/Users/saekitakuya/Documents/ChatGPT/ポートフォリオ/design-proposals/pc-summer-dawn-clear-layers-v2",
+  "sourcePreviewSha256": "bc3d1fa8232ca3b5849e64f98d0cbc6a2e3bdd425235387d7b948416b09a5956",
+  "sourceRecompositionVsCupOn": {
+    "changedPixels": 0,
+    "changedOutsideCupArea": 0,
+    "maxChannelDifference": 0,
+    "meanMaxChannelDifference": 0,
+    "transparentPixels": 0
+  },
+  "cupOnVsOff": {
+    "changedPixels": 7148,
+    "changedOutsideCupArea": 0,
+    "maxChannelDifference": 172,
+    "meanMaxChannelDifference": 0.1162,
+    "transparentPixels": 0
+  },
+  "interiorRestorationPixels": 8869,
+  "sillLightingTransform": [
+    {
+      "slope": 0.5731761283972582,
+      "intercept": -15.19372283923093
+    },
+    {
+      "slope": 0.6169541982212224,
+      "intercept": -17.04530235445212
+    },
+    {
+      "slope": 0.8287038823718675,
+      "intercept": -24.8821322080299
+    }
+  ],
+  "personRestorationPixels": 0,
+  "cupContactShadowPixels": 0,
+  "originalSourcePreserved": true,
+  "dimensions": [
+    1345,
+    1170
+  ],
+  "cupToggleIndependentOfRin": true
+}

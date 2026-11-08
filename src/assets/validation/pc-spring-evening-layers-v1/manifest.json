@@ -1,0 +1,34 @@
+{
+  "status": "review-candidate",
+  "scene": "ennui-rin-spring-evening-pc-v1",
+  "root": "/Users/saekitakuya/Documents/ChatGPT/ポートフォリオ/design-proposals/pc-spring-evening-layers-v1",
+  "width": 1345,
+  "height": 1170,
+  "origin": "top-left",
+  "registration": {
+    "x": 0,
+    "y": 0
+  },
+  "sourceDayLayers": "/Users/saekitakuya/Documents/ChatGPT/ポートフォリオ/design-proposals/pc-day-layers-v4",
+  "lightingReference": "/Users/saekitakuya/Documents/ChatGPT/ポートフォリオ/design-proposals/pc-spring-evening-lighting-reference-v1.png",
+  "layersBottomToTop": [
+    "01-exterior.png",
+    "02-interior.png",
+    "04-contact-shadow.png",
+    "03-rin.png",
+    "05-cup-foreground.png",
+    "06-person-edge-restore.png"
+  ],
+  "toggleGroups": {
+    "rin": [
+      "04-contact-shadow.png",
+      "03-rin.png",
+      "06-person-edge-restore.png"
+    ]
+  },
+  "previews": {
+    "all": "preview-composite.png",
+    "withoutRin": "preview-no-rin.png"
+  },
+  "verification": "verification.json"
+}

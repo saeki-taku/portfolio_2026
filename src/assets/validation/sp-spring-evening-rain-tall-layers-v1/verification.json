@@ -1,0 +1,71 @@
+{
+  "dimensions": [
+    1024,
+    2400
+  ],
+  "alphaChanges": {
+    "01-exterior.png": 0,
+    "02-interior-window.png": 0,
+    "04-indoor-plant.png": 0,
+    "05-cup-contact-underpaint.png": 0,
+    "06-cup-body-underpaint.png": 0,
+    "rin-contact-shadow.png": 0,
+    "rin.png": 0,
+    "09-cup-foreground.png": 0
+  },
+  "glassMask": {
+    "glassVsDay": 0,
+    "underpaintOpaqueGlass": 0
+  },
+  "removedGlassUnderpaint": 23687,
+  "copiedHashes": {
+    "02-interior-window.png": {
+      "source": "ef2eabe452ec3946ca666dc89f67b801231463a34338dc6f1c3ce1df925d103e",
+      "output": "ef2eabe452ec3946ca666dc89f67b801231463a34338dc6f1c3ce1df925d103e"
+    },
+    "04-indoor-plant.png": {
+      "source": "53310a1e0394a0a393924f927c4be65f5e364f6168cb750dcc1f2d5a94fddb02",
+      "output": "53310a1e0394a0a393924f927c4be65f5e364f6168cb750dcc1f2d5a94fddb02"
+    },
+    "05-cup-contact-underpaint.png": {
+      "source": "ff38449462bf0c7fcb19b7e2f04331cd8af9286d21ed16235a6be657cd7bb91f",
+      "output": "ff38449462bf0c7fcb19b7e2f04331cd8af9286d21ed16235a6be657cd7bb91f"
+    },
+    "06-cup-body-underpaint.png": {
+      "source": "1e45bab2b1333f6a531890f24ad736be00dd948e3bd0ede2029a6c1024e5dd8a",
+      "output": "1e45bab2b1333f6a531890f24ad736be00dd948e3bd0ede2029a6c1024e5dd8a"
+    },
+    "rin-contact-shadow.png": {
+      "source": "93d8ba0f9b14716108974ef344c723809779a7e9bb4e925b01527573174c3b07",
+      "output": "93d8ba0f9b14716108974ef344c723809779a7e9bb4e925b01527573174c3b07"
+    },
+    "rin.png": {
+      "source": "ef7752ae0fddf8390c65957310acf7a0953655fbe0e88704e8ef52c63f50a519",
+      "output": "ef7752ae0fddf8390c65957310acf7a0953655fbe0e88704e8ef52c63f50a519"
+    },
+    "09-cup-foreground.png": {
+      "source": "964bc3e518c5daae33e034fa8e4b617990cf687322714259ae35462e17d73c3e",
+      "output": "964bc3e518c5daae33e034fa8e4b617990cf687322714259ae35462e17d73c3e"
+    }
+  },
+  "effectLeaks": {
+    "rain-outdoor-default.png": 0,
+    "rain-glass-droplets-default.png": 0,
+    "rain-outdoor-rin-off.png": 0,
+    "rain-glass-droplets-rin-off.png": 0,
+    "rain-outdoor-plant-off.png": 0,
+    "rain-glass-droplets-plant-off.png": 0,
+    "rain-outdoor-plant-off-rin-off.png": 0,
+    "rain-glass-droplets-plant-off-rin-off.png": 0
+  },
+  "previewAlphaHoles": {
+    "preview-composite.png": 0,
+    "preview-effect-off.png": 0,
+    "preview-no-rin.png": 0,
+    "preview-no-rin-effect-off.png": 0,
+    "preview-no-plant.png": 0,
+    "preview-no-cup.png": 0,
+    "preview-no-plant-no-rin.png": 0
+  },
+  "status": "mechanical-checks-passed; visual-review-required"
+}

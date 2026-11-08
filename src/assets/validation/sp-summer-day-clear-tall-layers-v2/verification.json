@@ -1,0 +1,79 @@
+{
+  "status": "passed",
+  "canvas": {
+    "width": 1024,
+    "height": 2400
+  },
+  "source": "sp-day-tall-layers-v1",
+  "outputAlphaDiff": {
+    "01-exterior.png": 0,
+    "02-interior-window.png": 0,
+    "03-plant-scene-underpaint.png": 0,
+    "04-indoor-plant.png": 0,
+    "05-cup-contact-underpaint.png": 0,
+    "06-cup-body-underpaint.png": 0,
+    "07-rin-occluded-underpaint.png": 0,
+    "08-rin-notebook.png": 0,
+    "09-cup-foreground.png": 0
+  },
+  "unchangedHashes": {
+    "02-interior-window.png": {
+      "source": "96bb0c750fbadcfc911ac5545097186cfc55c918de06df27a1b4881644803796",
+      "output": "96bb0c750fbadcfc911ac5545097186cfc55c918de06df27a1b4881644803796"
+    },
+    "04-indoor-plant.png": {
+      "source": "147370da18797e3d27303d8c926813b6c549df108ea2d5acd2d18c65ea6d0446",
+      "output": "147370da18797e3d27303d8c926813b6c549df108ea2d5acd2d18c65ea6d0446"
+    },
+    "05-cup-contact-underpaint.png": {
+      "source": "ab05c5fa847d5f351267f9eefb35668e80b3b0f5b039f8d0663b2820fed89a0a",
+      "output": "ab05c5fa847d5f351267f9eefb35668e80b3b0f5b039f8d0663b2820fed89a0a"
+    }
+  },
+  "previewHoles": {
+    "preview-composite.png": 0,
+    "preview-no-rin.png": 0,
+    "preview-no-cup.png": 0,
+    "preview-no-plant.png": 0,
+    "preview-no-plant-no-rin.png": 0
+  },
+  "changes": {
+    "exterior": {
+      "changedExteriorPixels": 1048800,
+      "sourceAlphaPreserved": true,
+      "guideRegistration": "guide resized from 819x1920 to source 1024x2400"
+    },
+    "02-interior-window.png": {
+      "sourceSha256": "96bb0c750fbadcfc911ac5545097186cfc55c918de06df27a1b4881644803796",
+      "alphaChanged": 0
+    },
+    "03-plant-scene-underpaint.png": {
+      "adjustedPixels": 56438,
+      "alphaChanged": 0
+    },
+    "04-indoor-plant.png": {
+      "sourceSha256": "147370da18797e3d27303d8c926813b6c549df108ea2d5acd2d18c65ea6d0446",
+      "alphaChanged": 0
+    },
+    "05-cup-contact-underpaint.png": {
+      "sourceSha256": "ab05c5fa847d5f351267f9eefb35668e80b3b0f5b039f8d0663b2820fed89a0a",
+      "alphaChanged": 0
+    },
+    "06-cup-body-underpaint.png": {
+      "guideRegisteredPixels": 2860,
+      "alphaChanged": 0
+    },
+    "07-rin-occluded-underpaint.png": {
+      "guideRegisteredPixels": 8615,
+      "alphaChanged": 0
+    },
+    "08-rin-notebook.png": {
+      "guideRegisteredPixels": 103522,
+      "alphaChanged": 0
+    },
+    "09-cup-foreground.png": {
+      "guideRegisteredPixels": 2860,
+      "alphaChanged": 0
+    }
+  }
+}

@@ -1,0 +1,67 @@
+{
+  "width": 1345,
+  "height": 1170,
+  "figureAlphaBounds": [
+    945,
+    468,
+    1293,
+    769
+  ],
+  "backgroundLayersByteIdentical": {
+    "01-exterior.png": true,
+    "01a-city-lights.png": true,
+    "02-interior.png": true,
+    "05-cup-foreground.png": true
+  },
+  "noRinMaxChannelDifference": 1,
+  "originalAssetsOverwritten": false,
+  "generatedSource": "exec-a5d7b513-34a6-4c38-bcb8-b73e5c5d3d1b.png",
+  "registration": {
+    "left": 940,
+    "top": 455,
+    "width": 354,
+    "height": 318
+  },
+  "contactShadow": "New low-opacity contact mask derived from current figure bottom silhouette; not old person/contact RGB. Optical accuracy remains review-candidate.",
+  "layerMetadata": {
+    "01-exterior.png": {
+      "width": 1345,
+      "height": 1170,
+      "hasAlpha": true
+    },
+    "01a-city-lights.png": {
+      "width": 1345,
+      "height": 1170,
+      "hasAlpha": true
+    },
+    "02-interior.png": {
+      "width": 1345,
+      "height": 1170,
+      "hasAlpha": true
+    },
+    "rin-contact-shadow.png": {
+      "width": 1345,
+      "height": 1170,
+      "hasAlpha": true
+    },
+    "rin.png": {
+      "width": 1345,
+      "height": 1170,
+      "hasAlpha": true
+    },
+    "05-cup-foreground.png": {
+      "width": 1345,
+      "height": 1170,
+      "hasAlpha": true
+    }
+  },
+  "manifestRecompositionExact": true,
+  "toggleGroupsValid": true,
+  "visualReview": {
+    "pose": "Open book held in both hands, gaze on pages, blue-gray loungewear, no pen.",
+    "anatomy": "No conspicuous torso/pelvis/knee/ankle discontinuity in inspected composites.",
+    "alpha": "No visible scenery fragments in isolated figure review.",
+    "eveningRim": null,
+    "residual": "Minor generated silhouette and brushwork variation from daytime reference. Contact shadow is an approximate silhouette-derived mask, requiring final aesthetic review."
+  }
+}

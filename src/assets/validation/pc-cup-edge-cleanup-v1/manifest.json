@@ -1,0 +1,32 @@
+{
+  "pc-summer-dawn-clear-layers-v5": {
+    "filename": "cup-clean--eaca4479b735.png",
+    "removedAlphaPixels": 70,
+    "reducedAlphaPixels": 1376,
+    "method": "min(originalAlpha, imagegenAlpha resized to 80x80); original RGB unchanged; origin 1040,710"
+  },
+  "pc-summer-day-clear-layers-v5": {
+    "filename": "cup-clean--d7ceba3655f9.png",
+    "removedAlphaPixels": 70,
+    "reducedAlphaPixels": 1376,
+    "method": "min(originalAlpha, imagegenAlpha resized to 80x80); original RGB unchanged; origin 1040,710"
+  },
+  "pc-summer-evening-clear-layers-v5": {
+    "filename": "cup-clean--bfe9197ea535.png",
+    "removedAlphaPixels": 70,
+    "reducedAlphaPixels": 1376,
+    "method": "min(originalAlpha, imagegenAlpha resized to 80x80); original RGB unchanged; origin 1040,710"
+  },
+  "pc-summer-night-awake-clear-layers-v5": {
+    "filename": "cup-clean--6397ec812abd.png",
+    "removedAlphaPixels": 70,
+    "reducedAlphaPixels": 1376,
+    "method": "min(originalAlpha, imagegenAlpha resized to 80x80); original RGB unchanged; origin 1040,710"
+  },
+  "pc-summer-night-asleep-clear-layers-v5": {
+    "filename": "cup-clean--c700c195e032.png",
+    "removedAlphaPixels": 70,
+    "reducedAlphaPixels": 1376,
+    "method": "min(originalAlpha, imagegenAlpha resized to 80x80); original RGB unchanged; origin 1040,710"
+  }
+}

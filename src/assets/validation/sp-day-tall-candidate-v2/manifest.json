@@ -1,0 +1,45 @@
+{
+  "status": "review-candidate",
+  "source": "sp-day-pose-v21/preview-composite.png",
+  "size": {
+    "width": 1024,
+    "height": 2400,
+    "aspect": 2.34375
+  },
+  "viewport": {
+    "iphone16": "393x852",
+    "taller": "393x900",
+    "implementationScale": 0.3768,
+    "renderedAt393": "386x904",
+    "cropFor852": 52,
+    "cropFor900": 4
+  },
+  "newGeometry": {
+    "upperWindowFrame": "20px higher",
+    "generatedSkyBand": {
+      "y": [
+        530,
+        800
+      ],
+      "height": 270
+    },
+    "preservedCityPersonSill": "source rows 550..1996 translated +250px; x and scale unchanged",
+    "generatedFloorBand": {
+      "y": [
+        2247,
+        2400
+      ],
+      "height": 153
+    },
+    "extraTotal": 403
+  },
+  "protectedPixels": "Source city, playground, person, sill and existing floor rows 550..1996 copied without scale or repaint, except the floor feather band y2190..2246.",
+  "imagegenGuide": "inputs/generated-infill-guide.png",
+  "promptUse": "Generated guide used only in the inserted sky and floor bands and narrow feather zones. It is not a replacement scene.",
+  "previews": [
+    "preview-tall.png",
+    "compare-before-after.png",
+    "preview-393x852.png",
+    "preview-393x900.png"
+  ]
+}

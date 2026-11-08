@@ -1,0 +1,37 @@
+{
+  "layerDimensions": "9 layers: 1024x2400 RGBA",
+  "dayWindowAlpha": {
+    "changed": 0,
+    "max": 0
+  },
+  "dayGlassMask": {
+    "changed": 0,
+    "max": 0
+  },
+  "reference": {
+    "changed": 0,
+    "max": 0
+  },
+  "previews": {
+    "preview-composite.png": {
+      "changed": 0,
+      "max": 0,
+      "nonOpaquePixels": 0
+    },
+    "preview-no-rin-with-cup.png": {
+      "changed": 0,
+      "max": 0,
+      "nonOpaquePixels": 0
+    },
+    "preview-background-no-rin-no-cup.png": {
+      "changed": 0,
+      "max": 0,
+      "nonOpaquePixels": 0
+    },
+    "preview-room-no-plant-rin-cup.png": {
+      "changed": 0,
+      "max": 0,
+      "nonOpaquePixels": 0
+    }
+  }
+}

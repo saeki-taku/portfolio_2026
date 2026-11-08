@@ -1,0 +1,25 @@
+{
+  "width": 1345,
+  "height": 1170,
+  "registration": [
+    0,
+    0
+  ],
+  "source": "/Users/saekitakuya/Documents/ChatGPT/ポートフォリオ/design-proposals/pc-day-layers-v4/preview-composite.png",
+  "reference": "/Users/saekitakuya/Documents/ChatGPT/ポートフォリオ/design-proposals/pc-spring-evening-lighting-reference-v1.png",
+  "method": "Pointwise RGB lighting transfer from 35px low-pass evening/day reference ratio; source-layer alpha and pixel coordinates preserved.",
+  "dayRecompositionMeanAbsoluteRgbDifference": 0.00043868289221449074,
+  "pixelsChangedFromDayOver5": 1572957,
+  "maxColorDeltaFromDay": 116,
+  "alphaSha256ByLayer": {
+    "01-exterior.png": "c7fef472abfa5320339755fcc710fc0c7b7cf6d4df28085d14cfff2594a1990e",
+    "02-interior.png": "bbc643fb31a57f29b2f4adfca6823bdf843eb80c0695b852cd8728a69f3fe80c",
+    "04-contact-shadow.png": "ffef9c2f70f430b9d5eda3afe2cda1977df2b6cce95f68d60a0151630b5825ef",
+    "03-rin.png": "d0465b413458af472ae519247a712c112f76d8ba82b12bdb227bc3a01969d6ef",
+    "05-cup-foreground.png": "a1e68d209f0db22dffd31118ef4d47e047a2bfd6883e5e8db7c57198373e5f9c",
+    "06-person-edge-restore.png": "418f2500aee8ec60bcbf3ad3bf246fd25512329fc9398ba0c01d473a56714f0d"
+  },
+  "alphaPreservedByLayer": true,
+  "originalFilesUntouched": true,
+  "note": "Evening image is a lighting study, not a pixel-identical copy of its generative reference. The adopted day geometry and figure pixels supply all shapes and impasto texture."
+}

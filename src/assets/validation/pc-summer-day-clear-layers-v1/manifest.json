@@ -1,0 +1,42 @@
+{
+  "status": "review-candidate",
+  "scene": "ennui-rin-summer-day-clear-pc-v1",
+  "width": 1345,
+  "height": 1170,
+  "origin": "top-left",
+  "registration": {
+    "x": 0,
+    "y": 0
+  },
+  "baseScene": "/Users/saekitakuya/Documents/ChatGPT/ポートフォリオ/design-proposals/pc-day-layers-v4/manifest.json",
+  "seasonCase": "C22 盛夏・昼・快晴",
+  "layersBottomToTop": [
+    "01-exterior.png",
+    "02-interior.png",
+    "04-contact-shadow.png",
+    "03-rin.png",
+    "05-cup-foreground.png"
+  ],
+  "toggleGroups": {
+    "rin": [
+      "04-contact-shadow.png",
+      "03-rin.png"
+    ],
+    "cup": [
+      "05-cup-foreground.png"
+    ]
+  },
+  "glassMask": "glass-mask.png",
+  "glassMaskMode": "luminance",
+  "previews": {
+    "all": "preview-composite.png",
+    "withoutRin": "preview-no-rin.png",
+    "withoutCup": "preview-no-cup.png",
+    "personDetail": "inspection-person-cup.png",
+    "springSummerComparison": "compare-spring-summer.png"
+  },
+  "inputGuide": "inputs/summer-guide.png",
+  "futureMotion": "Trees/leaves may become an optional foliage animation layer later; base scene contains no falling petals or motion and Lottie adoption is undecided.",
+  "build": "node ../build-summer-day-clear-v1.cjs",
+  "verification": "verification.json"
+}

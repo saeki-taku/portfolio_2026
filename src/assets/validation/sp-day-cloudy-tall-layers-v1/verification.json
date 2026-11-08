@@ -1,0 +1,133 @@
+{
+  "dimensions": [
+    1024,
+    2400
+  ],
+  "objectRegistrationChecks": {
+    "03-plant-scene-underpaint.png": {
+      "changedChannels": 27116,
+      "maximumDifference": 249,
+      "reason": "Feather existing rectangular underpaint outer edge only; plant object untouched."
+    },
+    "04-indoor-plant.png": {
+      "changedChannels": 0,
+      "maximumDifference": 0
+    },
+    "05-cup-contact-underpaint.png": {
+      "changedChannels": 0,
+      "maximumDifference": 0
+    },
+    "06-cup-body-underpaint.png": {
+      "changedChannels": 0,
+      "maximumDifference": 0
+    },
+    "07-rin-occluded-underpaint.png": {
+      "changedChannels": 0,
+      "maximumDifference": 0
+    },
+    "rin-contact-shadow.png": {
+      "changedChannels": 0,
+      "maximumDifference": 0
+    },
+    "08-rin-notebook.png": {
+      "changedChannels": 0,
+      "maximumDifference": 0
+    },
+    "09-cup-foreground.png": {
+      "changedChannels": 0,
+      "maximumDifference": 0
+    }
+  },
+  "previews": {
+    "preview-composite.png": {
+      "changedChannels": 0,
+      "maximumDifference": 0,
+      "nonOpaquePixels": 0
+    },
+    "preview-no-rin.png": {
+      "changedChannels": 0,
+      "maximumDifference": 0,
+      "nonOpaquePixels": 0
+    },
+    "preview-no-rin-no-cup.png": {
+      "changedChannels": 0,
+      "maximumDifference": 0,
+      "nonOpaquePixels": 0
+    },
+    "preview-bare-room.png": {
+      "changedChannels": 0,
+      "maximumDifference": 0,
+      "nonOpaquePixels": 0
+    }
+  },
+  "01-exterior.png-dayAlphaDifferences": 0,
+  "02-interior-window.png-dayAlphaDifferences": 0,
+  "glassMaskMatchesDay": true,
+  "protectedNoRinRegion": {
+    "rows": [
+      890,
+      2190
+    ],
+    "changedChannels": 73930,
+    "maximumDifference": 70,
+    "note": "Differences include intentional plant-underpaint edge feathering; this region is not pixel-identical. Before patch feathering only 343 channels differed by 1 due to composition rounding."
+  },
+  "layerMetadata": {
+    "01-exterior.png": {
+      "width": 1024,
+      "height": 2400,
+      "alpha": true
+    },
+    "02-interior-window.png": {
+      "width": 1024,
+      "height": 2400,
+      "alpha": true
+    },
+    "03-plant-scene-underpaint.png": {
+      "width": 1024,
+      "height": 2400,
+      "alpha": true
+    },
+    "04-indoor-plant.png": {
+      "width": 1024,
+      "height": 2400,
+      "alpha": true
+    },
+    "05-cup-contact-underpaint.png": {
+      "width": 1024,
+      "height": 2400,
+      "alpha": true
+    },
+    "06-cup-body-underpaint.png": {
+      "width": 1024,
+      "height": 2400,
+      "alpha": true
+    },
+    "07-rin-occluded-underpaint.png": {
+      "width": 1024,
+      "height": 2400,
+      "alpha": true
+    },
+    "rin-contact-shadow.png": {
+      "width": 1024,
+      "height": 2400,
+      "alpha": true
+    },
+    "08-rin-notebook.png": {
+      "width": 1024,
+      "height": 2400,
+      "alpha": true
+    },
+    "09-cup-foreground.png": {
+      "width": 1024,
+      "height": 2400,
+      "alpha": true
+    }
+  },
+  "visualReview": {
+    "skyAndFloor": "Full scene and original-size join crops inspected; no obvious gaps, hard bands or sunlight added.",
+    "personOff": "No visible person/book/contact residue in inspected area.",
+    "plantPatch": "Original source rectangular underpaint edge feathered in this new package only; visible hard rectangle reduced. Plant body pixels unchanged.",
+    "limitations": "Rain requires underpaint-aware ordering; no browser or dynamic rain verification."
+  }
+}

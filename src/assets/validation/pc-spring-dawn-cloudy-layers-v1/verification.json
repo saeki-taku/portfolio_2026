@@ -1,0 +1,47 @@
+{
+  "dimensions": [
+    1345,
+    1170
+  ],
+  "alphaChecksAgainstCloudyDay": {
+    "01-exterior.png": 0,
+    "02-interior.png": 0,
+    "05-cup-foreground.png": 0
+  },
+  "alphaChangesAgainstClearDawn": {
+    "01-exterior.png": 0,
+    "02-interior.png": 0,
+    "05-cup-foreground.png": 0
+  },
+  "cityLightsUnchanged": {
+    "source": "b7d217720523b32220c8f9181fd4e663ed8bee03306479f55807d408a90f2236",
+    "output": "b7d217720523b32220c8f9181fd4e663ed8bee03306479f55807d408a90f2236"
+  },
+  "glassMaskByteIdenticalToClearDawn": true,
+  "glassShapeDifferences": {
+    "pc-spring-day-cloudy-layers-v1": 0
+  },
+  "previewAlphaHoles": {
+    "preview-composite.png": 0,
+    "preview-city-lights-off.png": 0
+  },
+  "sampleLuma": {
+    "sky": {
+      "clearDawn": 89.09083512000053,
+      "cloudyDawn": 112.30712701999897,
+      "cloudyDay": 197.06903729999942
+    },
+    "city": {
+      "clearDawn": 90.44009697530885,
+      "cloudyDawn": 92.17677700000036,
+      "cloudyDay": 158.552139074074
+    },
+    "room": {
+      "clearDawn": 78.87628255555597,
+      "cloudyDawn": 93.50398845185273,
+      "cloudyDay": 209.28974593333217
+    }
+  },
+  "guideSha256": "dd8066a6eb390eced1b4f4cd1784339753d9ce4d073c5fd2486a9e764ca54997",
+  "status": "mechanical-checks-passed; visual-inspection-completed; aesthetic-approval-pending"
+}

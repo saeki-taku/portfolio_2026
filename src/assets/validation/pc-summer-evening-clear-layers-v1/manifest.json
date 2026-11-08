@@ -1,0 +1,45 @@
+{
+  "status": "review-candidate",
+  "scene": "ennui-summer-evening-clear-pc-v1",
+  "root": "/Users/saekitakuya/Documents/ChatGPT/ポートフォリオ/design-proposals/pc-summer-evening-clear-layers-v1",
+  "width": 1345,
+  "height": 1170,
+  "origin": "top-left",
+  "registration": {
+    "x": 0,
+    "y": 0
+  },
+  "sourceLayers": "/Users/saekitakuya/Documents/ChatGPT/ポートフォリオ/design-proposals/pc-summer-day-clear-layers-v1",
+  "period": "evening",
+  "personPresent": true,
+  "lighting": {
+    "indoorLamp": false,
+    "cityLights": "off"
+  },
+  "layersBottomToTop": [
+    "01-exterior.png",
+    "02-interior.png",
+    "04-contact-shadow.png",
+    "03-rin.png",
+    "05-cup-foreground.png"
+  ],
+  "toggleGroups": {
+    "rin": [
+      "04-contact-shadow.png",
+      "03-rin.png"
+    ],
+    "cup": [
+      "05-cup-foreground.png"
+    ]
+  },
+  "glassMask": "glass-mask.png",
+  "glassMaskMode": "luminance",
+  "previews": {
+    "all": "preview-composite.png",
+    "withoutRin": "preview-no-rin.png",
+    "withoutCup": "preview-no-cup.png"
+  },
+  "verification": "verification.json",
+  "build": "node ../build-summer-clear-periods-v1.cjs evening",
+  "inputGuide": "inputs/lighting-guide.png"
+}
