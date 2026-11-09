@@ -9,12 +9,13 @@ export const TOKYO_SCENE_START = {
 } as const;
 
 export type PcScene =
+  | 'summer-dawn-cloudy' | 'summer-dawn-rain' | 'summer-evening-cloudy' | 'summer-evening-rain' | 'summer-night-cloudy-awake' | 'summer-night-rain-awake' | 'summer-night-cloudy-asleep' | 'summer-night-rain-asleep'
   | 'spring-dawn-sunny' | 'spring-dawn-cloudy' | 'spring-dawn-rain'
   | 'spring-day-sunny' | 'spring-day-cloudy' | 'spring-day-rain'
   | 'spring-evening-sunny' | 'spring-evening-cloudy' | 'spring-evening-rain'
   | 'spring-night-sunny-awake' | 'spring-night-cloudy-awake' | 'spring-night-rain-awake'
   | 'spring-night-sunny-asleep' | 'spring-night-cloudy-asleep' | 'spring-night-rain-asleep'
-  | 'summer-dawn-sunny' | 'summer-day-sunny' | 'summer-evening-sunny'
+  | 'summer-dawn-thunderstorm' | 'summer-evening-thunderstorm' | 'summer-night-thunderstorm-awake' | 'summer-night-thunderstorm-asleep' | 'summer-day-thunderstorm' | 'summer-day-cloudy' | 'summer-day-rain' | 'summer-dawn-sunny' | 'summer-day-sunny' | 'summer-evening-sunny'
   | 'summer-night-sunny-awake' | 'summer-night-sunny-asleep';
 export type TokyoScene = PcScene;
 

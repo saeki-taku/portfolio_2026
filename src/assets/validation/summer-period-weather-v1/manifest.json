@@ -1,0 +1,682 @@
+{
+  "pc-dawn-cloudy": {
+    "scene": "summer-dawn-cloudy",
+    "width": 1345,
+    "height": 1170,
+    "layers": [
+      {
+        "name": "01-exterior",
+        "group": "exterior",
+        "file": "pc-dawn-cloudy-exterior--ee96851ea4a6.png"
+      },
+      {
+        "name": "02-interior",
+        "group": "interior",
+        "file": "pc-dawn-cloudy-interior--14808e770ba4.png"
+      },
+      {
+        "name": "03-plant",
+        "group": "plant",
+        "file": "pc-dawn-cloudy-plant--29bc08b30664.png"
+      },
+      {
+        "name": "05b-cup-shadow",
+        "group": "cup",
+        "file": "pc-dawn-cloudy-cup-shadow--c08ac512e26d.png"
+      },
+      {
+        "name": "06-cup",
+        "group": "cup",
+        "file": "pc-dawn-cloudy-cup--dd1b51839fd2.png"
+      }
+    ],
+    "masks": {}
+  },
+  "sp-dawn-cloudy": {
+    "scene": "summer-dawn-cloudy",
+    "width": 1024,
+    "height": 2400,
+    "layers": [
+      {
+        "name": "01-exterior",
+        "group": "exterior",
+        "file": "sp-dawn-cloudy-exterior--becc7058f0c2.png"
+      },
+      {
+        "name": "02-interior",
+        "group": "interior",
+        "file": "sp-dawn-cloudy-interior--5f7fa87329ad.png"
+      },
+      {
+        "name": "03-plant",
+        "group": "plant",
+        "file": "sp-dawn-cloudy-plant--728669ec36e0.png"
+      },
+      {
+        "name": "05b-cup-shadow",
+        "group": "cup",
+        "file": "sp-dawn-cloudy-cup-shadow--96209215de16.png"
+      },
+      {
+        "name": "06-cup",
+        "group": "cup",
+        "file": "sp-dawn-cloudy-cup--bbf7355715b4.png"
+      }
+    ],
+    "masks": {}
+  },
+  "pc-dawn-rain": {
+    "scene": "summer-dawn-rain",
+    "width": 1345,
+    "height": 1170,
+    "layers": [
+      {
+        "name": "01-exterior",
+        "group": "exterior",
+        "file": "pc-dawn-rain-exterior--9c44fbaab308.png"
+      },
+      {
+        "name": "02-interior",
+        "group": "interior",
+        "file": "pc-dawn-rain-interior--9ee5dcb923b8.png"
+      },
+      {
+        "name": "03-plant",
+        "group": "plant",
+        "file": "pc-dawn-rain-plant--222c3060946d.png"
+      },
+      {
+        "name": "05b-cup-shadow",
+        "group": "cup",
+        "file": "pc-dawn-rain-cup-shadow--c08ac512e26d.png"
+      },
+      {
+        "name": "06-cup",
+        "group": "cup",
+        "file": "pc-dawn-rain-cup--cf8f8324fab0.png"
+      }
+    ],
+    "masks": {
+      "0": "pc-dawn-rain-mask-0--0f9d53e5db16.png",
+      "1": "pc-dawn-rain-mask-1--0f9d53e5db16.png",
+      "2": "pc-dawn-rain-mask-2--f731c2114715.png",
+      "3": "pc-dawn-rain-mask-3--f731c2114715.png",
+      "4": "pc-dawn-rain-mask-4--3adff24c3cd2.png",
+      "5": "pc-dawn-rain-mask-5--3adff24c3cd2.png",
+      "6": "pc-dawn-rain-mask-6--400943d7cae4.png",
+      "7": "pc-dawn-rain-mask-7--400943d7cae4.png"
+    }
+  },
+  "sp-dawn-rain": {
+    "scene": "summer-dawn-rain",
+    "width": 1024,
+    "height": 2400,
+    "layers": [
+      {
+        "name": "01-exterior",
+        "group": "exterior",
+        "file": "sp-dawn-rain-exterior--e1f1446493aa.png"
+      },
+      {
+        "name": "02-interior",
+        "group": "interior",
+        "file": "sp-dawn-rain-interior--75d882591c62.png"
+      },
+      {
+        "name": "03-plant",
+        "group": "plant",
+        "file": "sp-dawn-rain-plant--231b4b24f58b.png"
+      },
+      {
+        "name": "05b-cup-shadow",
+        "group": "cup",
+        "file": "sp-dawn-rain-cup-shadow--96209215de16.png"
+      },
+      {
+        "name": "06-cup",
+        "group": "cup",
+        "file": "sp-dawn-rain-cup--2e8d437f9e51.png"
+      }
+    ],
+    "masks": {
+      "0": "sp-dawn-rain-mask-0--7eab59eaffa2.png",
+      "1": "sp-dawn-rain-mask-1--7eab59eaffa2.png",
+      "2": "sp-dawn-rain-mask-2--7eab59eaffa2.png",
+      "3": "sp-dawn-rain-mask-3--7eab59eaffa2.png",
+      "4": "sp-dawn-rain-mask-4--cb79a5176b12.png",
+      "5": "sp-dawn-rain-mask-5--cb79a5176b12.png",
+      "6": "sp-dawn-rain-mask-6--cb79a5176b12.png",
+      "7": "sp-dawn-rain-mask-7--cb79a5176b12.png"
+    }
+  },
+  "pc-evening-cloudy": {
+    "scene": "summer-evening-cloudy",
+    "width": 1345,
+    "height": 1170,
+    "layers": [
+      {
+        "name": "01-exterior",
+        "group": "exterior",
+        "file": "pc-evening-cloudy-exterior--951ca8e784f5.png"
+      },
+      {
+        "name": "02-interior",
+        "group": "interior",
+        "file": "pc-evening-cloudy-interior--73c08587a856.png"
+      },
+      {
+        "name": "03-plant",
+        "group": "plant",
+        "file": "pc-evening-cloudy-plant--eb2d48f7cb73.png"
+      },
+      {
+        "name": "04-rin-shadow",
+        "group": "rin",
+        "file": "pc-evening-cloudy-rin-shadow--1f1787112191.png"
+      },
+      {
+        "name": "05-rin",
+        "group": "rin",
+        "file": "pc-evening-cloudy-rin--2b292c830214.png"
+      },
+      {
+        "name": "05b-cup-shadow",
+        "group": "cup",
+        "file": "pc-evening-cloudy-cup-shadow--c08ac512e26d.png"
+      },
+      {
+        "name": "06-cup",
+        "group": "cup",
+        "file": "pc-evening-cloudy-cup--820fd768c1a6.png"
+      }
+    ],
+    "masks": {}
+  },
+  "sp-evening-cloudy": {
+    "scene": "summer-evening-cloudy",
+    "width": 1024,
+    "height": 2400,
+    "layers": [
+      {
+        "name": "01-exterior",
+        "group": "exterior",
+        "file": "sp-evening-cloudy-exterior--60a9d3d345e7.png"
+      },
+      {
+        "name": "02-interior",
+        "group": "interior",
+        "file": "sp-evening-cloudy-interior--d76602b4a875.png"
+      },
+      {
+        "name": "03-plant",
+        "group": "plant",
+        "file": "sp-evening-cloudy-plant--66faf17ff408.png"
+      },
+      {
+        "name": "04-rin-shadow",
+        "group": "rin",
+        "file": "sp-evening-cloudy-rin-shadow--d00d0430d1dc.png"
+      },
+      {
+        "name": "05-rin",
+        "group": "rin",
+        "file": "sp-evening-cloudy-rin--43b548b17572.png"
+      },
+      {
+        "name": "05b-cup-shadow",
+        "group": "cup",
+        "file": "sp-evening-cloudy-cup-shadow--96209215de16.png"
+      },
+      {
+        "name": "06-cup",
+        "group": "cup",
+        "file": "sp-evening-cloudy-cup--a6df9cd9f872.png"
+      }
+    ],
+    "masks": {}
+  },
+  "pc-evening-rain": {
+    "scene": "summer-evening-rain",
+    "width": 1345,
+    "height": 1170,
+    "layers": [
+      {
+        "name": "01-exterior",
+        "group": "exterior",
+        "file": "pc-evening-rain-exterior--253292318876.png"
+      },
+      {
+        "name": "02-interior",
+        "group": "interior",
+        "file": "pc-evening-rain-interior--e7b408e3cd0c.png"
+      },
+      {
+        "name": "03-plant",
+        "group": "plant",
+        "file": "pc-evening-rain-plant--bad3df784c94.png"
+      },
+      {
+        "name": "04-rin-shadow",
+        "group": "rin",
+        "file": "pc-evening-rain-rin-shadow--1f1787112191.png"
+      },
+      {
+        "name": "05-rin",
+        "group": "rin",
+        "file": "pc-evening-rain-rin--ea1179353f86.png"
+      },
+      {
+        "name": "05b-cup-shadow",
+        "group": "cup",
+        "file": "pc-evening-rain-cup-shadow--c08ac512e26d.png"
+      },
+      {
+        "name": "06-cup",
+        "group": "cup",
+        "file": "pc-evening-rain-cup--8328a2e4d3b1.png"
+      }
+    ],
+    "masks": {
+      "0": "pc-evening-rain-mask-0--0f9d53e5db16.png",
+      "1": "pc-evening-rain-mask-1--0491272e00a6.png",
+      "2": "pc-evening-rain-mask-2--c2fa2d11a588.png",
+      "3": "pc-evening-rain-mask-3--1a75f7ad0c87.png",
+      "4": "pc-evening-rain-mask-4--bbaf1bb61d60.png",
+      "5": "pc-evening-rain-mask-5--0358729acb12.png",
+      "6": "pc-evening-rain-mask-6--ba48db97209f.png",
+      "7": "pc-evening-rain-mask-7--58a2abb0fbfe.png"
+    }
+  },
+  "sp-evening-rain": {
+    "scene": "summer-evening-rain",
+    "width": 1024,
+    "height": 2400,
+    "layers": [
+      {
+        "name": "01-exterior",
+        "group": "exterior",
+        "file": "sp-evening-rain-exterior--713ee212095a.png"
+      },
+      {
+        "name": "02-interior",
+        "group": "interior",
+        "file": "sp-evening-rain-interior--ac7be696dd87.png"
+      },
+      {
+        "name": "03-plant",
+        "group": "plant",
+        "file": "sp-evening-rain-plant--d0a7d884413a.png"
+      },
+      {
+        "name": "04-rin-shadow",
+        "group": "rin",
+        "file": "sp-evening-rain-rin-shadow--d00d0430d1dc.png"
+      },
+      {
+        "name": "05-rin",
+        "group": "rin",
+        "file": "sp-evening-rain-rin--8b848bc15312.png"
+      },
+      {
+        "name": "05b-cup-shadow",
+        "group": "cup",
+        "file": "sp-evening-rain-cup-shadow--96209215de16.png"
+      },
+      {
+        "name": "06-cup",
+        "group": "cup",
+        "file": "sp-evening-rain-cup--6d499331ba01.png"
+      }
+    ],
+    "masks": {
+      "0": "sp-evening-rain-mask-0--7eab59eaffa2.png",
+      "1": "sp-evening-rain-mask-1--ce9bb961a32f.png",
+      "2": "sp-evening-rain-mask-2--7eab59eaffa2.png",
+      "3": "sp-evening-rain-mask-3--ce9bb961a32f.png",
+      "4": "sp-evening-rain-mask-4--1f1b8061b94f.png",
+      "5": "sp-evening-rain-mask-5--7e32509c3097.png",
+      "6": "sp-evening-rain-mask-6--1f1b8061b94f.png",
+      "7": "sp-evening-rain-mask-7--7e32509c3097.png"
+    }
+  },
+  "pc-night-awake-cloudy": {
+    "scene": "summer-night-cloudy-awake",
+    "width": 1345,
+    "height": 1170,
+    "layers": [
+      {
+        "name": "01-exterior",
+        "group": "exterior",
+        "file": "pc-night-awake-cloudy-exterior--b7a25548086c.png"
+      },
+      {
+        "name": "02-interior",
+        "group": "interior",
+        "file": "pc-night-awake-cloudy-interior--8e33f319d2ef.png"
+      },
+      {
+        "name": "03-plant",
+        "group": "plant",
+        "file": "pc-night-awake-cloudy-plant--c0c3cf0c74cf.png"
+      },
+      {
+        "name": "04-rin-shadow",
+        "group": "rin",
+        "file": "pc-night-awake-cloudy-rin-shadow--1f1787112191.png"
+      },
+      {
+        "name": "05-rin",
+        "group": "rin",
+        "file": "pc-night-awake-cloudy-rin--9b75ba22c2d8.png"
+      },
+      {
+        "name": "05b-cup-shadow",
+        "group": "cup",
+        "file": "pc-night-awake-cloudy-cup-shadow--c08ac512e26d.png"
+      },
+      {
+        "name": "06-cup",
+        "group": "cup",
+        "file": "pc-night-awake-cloudy-cup--6942424fbb85.png"
+      }
+    ],
+    "masks": {}
+  },
+  "sp-night-awake-cloudy": {
+    "scene": "summer-night-cloudy-awake",
+    "width": 1024,
+    "height": 2400,
+    "layers": [
+      {
+        "name": "01-exterior",
+        "group": "exterior",
+        "file": "sp-night-awake-cloudy-exterior--1444b66a61aa.png"
+      },
+      {
+        "name": "02-interior",
+        "group": "interior",
+        "file": "sp-night-awake-cloudy-interior--c3c815d3c2ee.png"
+      },
+      {
+        "name": "03-plant",
+        "group": "plant",
+        "file": "sp-night-awake-cloudy-plant--7b6197c5caa4.png"
+      },
+      {
+        "name": "04-rin-shadow",
+        "group": "rin",
+        "file": "sp-night-awake-cloudy-rin-shadow--d00d0430d1dc.png"
+      },
+      {
+        "name": "05-rin",
+        "group": "rin",
+        "file": "sp-night-awake-cloudy-rin--3ee0a65b58a2.png"
+      },
+      {
+        "name": "05b-cup-shadow",
+        "group": "cup",
+        "file": "sp-night-awake-cloudy-cup-shadow--96209215de16.png"
+      },
+      {
+        "name": "06-cup",
+        "group": "cup",
+        "file": "sp-night-awake-cloudy-cup--486a0354b55b.png"
+      }
+    ],
+    "masks": {}
+  },
+  "pc-night-awake-rain": {
+    "scene": "summer-night-rain-awake",
+    "width": 1345,
+    "height": 1170,
+    "layers": [
+      {
+        "name": "01-exterior",
+        "group": "exterior",
+        "file": "pc-night-awake-rain-exterior--a0a12e66c219.png"
+      },
+      {
+        "name": "02-interior",
+        "group": "interior",
+        "file": "pc-night-awake-rain-interior--52df7eb990ab.png"
+      },
+      {
+        "name": "03-plant",
+        "group": "plant",
+        "file": "pc-night-awake-rain-plant--d6229223bdc7.png"
+      },
+      {
+        "name": "04-rin-shadow",
+        "group": "rin",
+        "file": "pc-night-awake-rain-rin-shadow--1f1787112191.png"
+      },
+      {
+        "name": "05-rin",
+        "group": "rin",
+        "file": "pc-night-awake-rain-rin--912cc52d2d22.png"
+      },
+      {
+        "name": "05b-cup-shadow",
+        "group": "cup",
+        "file": "pc-night-awake-rain-cup-shadow--c08ac512e26d.png"
+      },
+      {
+        "name": "06-cup",
+        "group": "cup",
+        "file": "pc-night-awake-rain-cup--8aae77b66257.png"
+      }
+    ],
+    "masks": {
+      "0": "pc-night-awake-rain-mask-0--0f9d53e5db16.png",
+      "1": "pc-night-awake-rain-mask-1--c0c795c94e30.png",
+      "2": "pc-night-awake-rain-mask-2--b7ae4f6a34f9.png",
+      "3": "pc-night-awake-rain-mask-3--461a28bfee40.png",
+      "4": "pc-night-awake-rain-mask-4--77412556a7ac.png",
+      "5": "pc-night-awake-rain-mask-5--c3dcb6e15afc.png",
+      "6": "pc-night-awake-rain-mask-6--f49f3a30781e.png",
+      "7": "pc-night-awake-rain-mask-7--7eee43b59223.png"
+    }
+  },
+  "sp-night-awake-rain": {
+    "scene": "summer-night-rain-awake",
+    "width": 1024,
+    "height": 2400,
+    "layers": [
+      {
+        "name": "01-exterior",
+        "group": "exterior",
+        "file": "sp-night-awake-rain-exterior--763472f2c868.png"
+      },
+      {
+        "name": "02-interior",
+        "group": "interior",
+        "file": "sp-night-awake-rain-interior--ad4336274a94.png"
+      },
+      {
+        "name": "03-plant",
+        "group": "plant",
+        "file": "sp-night-awake-rain-plant--e06774a54822.png"
+      },
+      {
+        "name": "04-rin-shadow",
+        "group": "rin",
+        "file": "sp-night-awake-rain-rin-shadow--d00d0430d1dc.png"
+      },
+      {
+        "name": "05-rin",
+        "group": "rin",
+        "file": "sp-night-awake-rain-rin--9fab118525f7.png"
+      },
+      {
+        "name": "05b-cup-shadow",
+        "group": "cup",
+        "file": "sp-night-awake-rain-cup-shadow--96209215de16.png"
+      },
+      {
+        "name": "06-cup",
+        "group": "cup",
+        "file": "sp-night-awake-rain-cup--b9b92a6a58e3.png"
+      }
+    ],
+    "masks": {
+      "0": "sp-night-awake-rain-mask-0--7eab59eaffa2.png",
+      "1": "sp-night-awake-rain-mask-1--a5f4c1232c72.png",
+      "2": "sp-night-awake-rain-mask-2--7eab59eaffa2.png",
+      "3": "sp-night-awake-rain-mask-3--a5f4c1232c72.png",
+      "4": "sp-night-awake-rain-mask-4--f11d259ab95c.png",
+      "5": "sp-night-awake-rain-mask-5--76dee61da282.png",
+      "6": "sp-night-awake-rain-mask-6--f11d259ab95c.png",
+      "7": "sp-night-awake-rain-mask-7--76dee61da282.png"
+    }
+  },
+  "pc-night-asleep-cloudy": {
+    "scene": "summer-night-cloudy-asleep",
+    "width": 1345,
+    "height": 1170,
+    "layers": [
+      {
+        "name": "01-exterior",
+        "group": "exterior",
+        "file": "pc-night-asleep-cloudy-exterior--187aa036a2ec.png"
+      },
+      {
+        "name": "02-interior",
+        "group": "interior",
+        "file": "pc-night-asleep-cloudy-interior--2d2745bfef16.png"
+      },
+      {
+        "name": "03-plant",
+        "group": "plant",
+        "file": "pc-night-asleep-cloudy-plant--5a5007404a88.png"
+      },
+      {
+        "name": "05b-cup-shadow",
+        "group": "cup",
+        "file": "pc-night-asleep-cloudy-cup-shadow--c08ac512e26d.png"
+      },
+      {
+        "name": "06-cup",
+        "group": "cup",
+        "file": "pc-night-asleep-cloudy-cup--32ad75fbaf14.png"
+      }
+    ],
+    "masks": {}
+  },
+  "sp-night-asleep-cloudy": {
+    "scene": "summer-night-cloudy-asleep",
+    "width": 1024,
+    "height": 2400,
+    "layers": [
+      {
+        "name": "01-exterior",
+        "group": "exterior",
+        "file": "sp-night-asleep-cloudy-exterior--5dcb5a8be27b.png"
+      },
+      {
+        "name": "02-interior",
+        "group": "interior",
+        "file": "sp-night-asleep-cloudy-interior--a6e608905107.png"
+      },
+      {
+        "name": "03-plant",
+        "group": "plant",
+        "file": "sp-night-asleep-cloudy-plant--29af3ec4c28b.png"
+      },
+      {
+        "name": "05b-cup-shadow",
+        "group": "cup",
+        "file": "sp-night-asleep-cloudy-cup-shadow--96209215de16.png"
+      },
+      {
+        "name": "06-cup",
+        "group": "cup",
+        "file": "sp-night-asleep-cloudy-cup--f13c274bebf9.png"
+      }
+    ],
+    "masks": {}
+  },
+  "pc-night-asleep-rain": {
+    "scene": "summer-night-rain-asleep",
+    "width": 1345,
+    "height": 1170,
+    "layers": [
+      {
+        "name": "01-exterior",
+        "group": "exterior",
+        "file": "pc-night-asleep-rain-exterior--e1098e124cf4.png"
+      },
+      {
+        "name": "02-interior",
+        "group": "interior",
+        "file": "pc-night-asleep-rain-interior--fad6697d3d27.png"
+      },
+      {
+        "name": "03-plant",
+        "group": "plant",
+        "file": "pc-night-asleep-rain-plant--325ce062e407.png"
+      },
+      {
+        "name": "05b-cup-shadow",
+        "group": "cup",
+        "file": "pc-night-asleep-rain-cup-shadow--c08ac512e26d.png"
+      },
+      {
+        "name": "06-cup",
+        "group": "cup",
+        "file": "pc-night-asleep-rain-cup--b1118bd229e2.png"
+      }
+    ],
+    "masks": {
+      "0": "pc-night-asleep-rain-mask-0--0f9d53e5db16.png",
+      "1": "pc-night-asleep-rain-mask-1--0f9d53e5db16.png",
+      "2": "pc-night-asleep-rain-mask-2--644b24712927.png",
+      "3": "pc-night-asleep-rain-mask-3--644b24712927.png",
+      "4": "pc-night-asleep-rain-mask-4--947f8e1a80f6.png",
+      "5": "pc-night-asleep-rain-mask-5--947f8e1a80f6.png",
+      "6": "pc-night-asleep-rain-mask-6--96361ee6e2f2.png",
+      "7": "pc-night-asleep-rain-mask-7--96361ee6e2f2.png"
+    }
+  },
+  "sp-night-asleep-rain": {
+    "scene": "summer-night-rain-asleep",
+    "width": 1024,
+    "height": 2400,
+    "layers": [
+      {
+        "name": "01-exterior",
+        "group": "exterior",
+        "file": "sp-night-asleep-rain-exterior--71e6a345dfff.png"
+      },
+      {
+        "name": "02-interior",
+        "group": "interior",
+        "file": "sp-night-asleep-rain-interior--abaefbddf2b8.png"
+      },
+      {
+        "name": "03-plant",
+        "group": "plant",
+        "file": "sp-night-asleep-rain-plant--492dbd08ac55.png"
+      },
+      {
+        "name": "05b-cup-shadow",
+        "group": "cup",
+        "file": "sp-night-asleep-rain-cup-shadow--96209215de16.png"
+      },
+      {
+        "name": "06-cup",
+        "group": "cup",
+        "file": "sp-night-asleep-rain-cup--60fb63083d62.png"
+      }
+    ],
+    "masks": {
+      "0": "sp-night-asleep-rain-mask-0--7eab59eaffa2.png",
+      "1": "sp-night-asleep-rain-mask-1--7eab59eaffa2.png",
+      "2": "sp-night-asleep-rain-mask-2--7eab59eaffa2.png",
+      "3": "sp-night-asleep-rain-mask-3--7eab59eaffa2.png",
+      "4": "sp-night-asleep-rain-mask-4--fb2bb4d8c575.png",
+      "5": "sp-night-asleep-rain-mask-5--fb2bb4d8c575.png",
+      "6": "sp-night-asleep-rain-mask-6--fb2bb4d8c575.png",
+      "7": "sp-night-asleep-rain-mask-7--fb2bb4d8c575.png"
+    }
+  }
+}

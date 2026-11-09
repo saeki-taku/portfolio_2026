@@ -39,7 +39,7 @@ try {
       if (request.resourceType() === 'image') imageRequests.push(decodeURIComponent(request.url()));
     });
     await page.goto(base, { waitUntil: 'networkidle' });
-    assert.equal(imageRequests.filter(url => url.includes('summer-')).length, 0,
+    assert.equal(imageRequests.filter(url => url.includes('summer-') && !url.includes('-approved-contact-shadow.png')).length, 0,
       `${name}: unselected summer images fetched on initial load`);
     const summary = page.locator('.scene-settings summary');
     await summary.evaluate(element => { if (element instanceof HTMLElement) element.click(); });

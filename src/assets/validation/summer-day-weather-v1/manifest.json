@@ -1,0 +1,192 @@
+{
+  "pc-cloudy": {
+    "scene": "summer-day-cloudy",
+    "width": 1345,
+    "height": 1170,
+    "layers": [
+      {
+        "name": "01-exterior",
+        "group": "exterior",
+        "file": "pc-cloudy-exterior--4f591cf319c4.png"
+      },
+      {
+        "name": "02-interior",
+        "group": "interior",
+        "file": "pc-cloudy-interior--7b1d79cad845.png"
+      },
+      {
+        "name": "03-plant",
+        "group": "plant",
+        "file": "pc-cloudy-plant--14b8f306d475.png"
+      },
+      {
+        "name": "04-rin-shadow",
+        "group": "rin",
+        "file": "pc-cloudy-shadow--1f1787112191.png"
+      },
+      {
+        "name": "05-rin",
+        "group": "rin",
+        "file": "pc-cloudy-rin--c9da783bac97.png"
+      },
+      {
+        "name": "05b-cup-shadow",
+        "group": "cup",
+        "file": "pc-cloudy-cup-shadow--c08ac512e26d.png"
+      },
+      {
+        "name": "06-cup",
+        "group": "cup",
+        "file": "pc-cloudy-cup--2fc6c5e3b97c.png"
+      }
+    ],
+    "masks": {}
+  },
+  "sp-cloudy": {
+    "scene": "summer-day-cloudy",
+    "width": 1024,
+    "height": 2400,
+    "layers": [
+      {
+        "name": "01-exterior",
+        "group": "exterior",
+        "file": "sp-cloudy-exterior--3661db5083ed.png"
+      },
+      {
+        "name": "02-interior",
+        "group": "interior",
+        "file": "sp-cloudy-interior--c7ad25e637d5.png"
+      },
+      {
+        "name": "03-plant",
+        "group": "plant",
+        "file": "sp-cloudy-plant--229fb4d0c422.png"
+      },
+      {
+        "name": "04-rin-shadow",
+        "group": "rin",
+        "file": "sp-cloudy-shadow--d00d0430d1dc.png"
+      },
+      {
+        "name": "05-rin",
+        "group": "rin",
+        "file": "sp-cloudy-rin--54e793e7788f.png"
+      },
+      {
+        "name": "05b-cup-shadow",
+        "group": "cup",
+        "file": "sp-cloudy-cup-shadow--96209215de16.png"
+      },
+      {
+        "name": "06-cup",
+        "group": "cup",
+        "file": "sp-cloudy-cup--b08f668ab761.png"
+      }
+    ],
+    "masks": {}
+  },
+  "pc-rain": {
+    "scene": "summer-day-rain",
+    "width": 1345,
+    "height": 1170,
+    "layers": [
+      {
+        "name": "01-exterior",
+        "group": "exterior",
+        "file": "pc-rain-exterior--d4cff7e7dc78.png"
+      },
+      {
+        "name": "02-interior",
+        "group": "interior",
+        "file": "pc-rain-interior--09b0512def12.png"
+      },
+      {
+        "name": "03-plant",
+        "group": "plant",
+        "file": "pc-rain-plant--c6f74c461c58.png"
+      },
+      {
+        "name": "04-rin-shadow",
+        "group": "rin",
+        "file": "pc-rain-shadow--1f1787112191.png"
+      },
+      {
+        "name": "05-rin",
+        "group": "rin",
+        "file": "pc-rain-rin--6550cb9bf1da.png"
+      },
+      {
+        "name": "05b-cup-shadow",
+        "group": "cup",
+        "file": "pc-rain-cup-shadow--c08ac512e26d.png"
+      },
+      {
+        "name": "06-cup",
+        "group": "cup",
+        "file": "pc-rain-cup--eb7d5eb01713.png"
+      }
+    ],
+    "masks": {
+      "0": "pc-rain-mask-0--0f9d53e5db16.png",
+      "1": "pc-rain-mask-1--9466e3ce78c0.png",
+      "2": "pc-rain-mask-2--edbe830d56aa.png",
+      "3": "pc-rain-mask-3--bf428459f14b.png",
+      "4": "pc-rain-mask-4--5a028c7b515d.png",
+      "5": "pc-rain-mask-5--abffacd6c14e.png",
+      "6": "pc-rain-mask-6--7466259d9254.png",
+      "7": "pc-rain-mask-7--29b7fc4cfd80.png"
+    }
+  },
+  "sp-rain": {
+    "scene": "summer-day-rain",
+    "width": 1024,
+    "height": 2400,
+    "layers": [
+      {
+        "name": "01-exterior",
+        "group": "exterior",
+        "file": "sp-rain-exterior--96661eff33d5.png"
+      },
+      {
+        "name": "02-interior",
+        "group": "interior",
+        "file": "sp-rain-interior--7cb268d3a286.png"
+      },
+      {
+        "name": "03-plant",
+        "group": "plant",
+        "file": "sp-rain-plant--f0ccc0347e9a.png"
+      },
+      {
+        "name": "04-rin-shadow",
+        "group": "rin",
+        "file": "sp-rain-shadow--d00d0430d1dc.png"
+      },
+      {
+        "name": "05-rin",
+        "group": "rin",
+        "file": "sp-rain-rin--aae735f2c9b2.png"
+      },
+      {
+        "name": "05b-cup-shadow",
+        "group": "cup",
+        "file": "sp-rain-cup-shadow--96209215de16.png"
+      },
+      {
+        "name": "06-cup",
+        "group": "cup",
+        "file": "sp-rain-cup--52c883a9c10b.png"
+      }
+    ],
+    "masks": {
+      "0": "sp-rain-mask-0--7eab59eaffa2.png",
+      "1": "sp-rain-mask-1--892945186e0b.png",
+      "2": "sp-rain-mask-2--7eab59eaffa2.png",
+      "3": "sp-rain-mask-3--892945186e0b.png",
+      "4": "sp-rain-mask-4--420af1763bac.png",
+      "5": "sp-rain-mask-5--46a2f5bd5d46.png",
+      "6": "sp-rain-mask-6--420af1763bac.png",
+      "7": "sp-rain-mask-7--46a2f5bd5d46.png"
+    }
+  }
+}

@@ -7,7 +7,7 @@
     <fieldset>
       <label>季節<select name="season"><option value="spring">春</option><option value="summer">夏</option><option value="autumn">秋</option><option value="winter">冬</option></select></label>
       <label>時間帯<select name="period"><option value="day">昼</option><option value="dawn">明け方</option><option value="evening">夕方</option><option value="night">夜</option></select></label>
-      <label>天気<select name="weather"><option value="sunny">晴れ</option><option value="cloudy">曇り</option><option value="rain">雨</option><option value="snow">雪</option></select></label>
+      <label>天気<select name="weather"><option value="sunny">晴れ</option><option value="cloudy">曇り</option><option value="rain">雨</option><option value="thunderstorm">雷雨（夏）</option><option value="snow">雪</option></select></label>
       <label class="night-state-control" hidden>夜の状態<select name="nightState"><option value="awake">起きている夜</option><option value="asleep">就寝後の夜</option></select></label>
     </fieldset>
     <p class="scene-status" role="status" aria-live="polite"></p>
@@ -65,14 +65,14 @@
             slot: state.period === 'night' ? (state.nightState === 'asleep' ? 'night-asleep' : 'night-awake') : state.period as 'dawn' | 'day' | 'evening' };
       const selection = resolveScene(request, portrait.matches ? 'sp' : 'pc');
       const activeScene = applyScene(selection.displayed, portrait.matches);
-      settings.querySelector<HTMLFieldSetElement>('.rain-controls')!.hidden = !activeScene.split('-').includes('rain');
+      settings.querySelector<HTMLFieldSetElement>('.rain-controls')!.hidden = !activeScene.split('-').some(part=>part==='rain'||part==='thunderstorm');
       settings.dataset.tokyoScene = automatic ? tokyoScene : '';
       const sceneName = request.slot === 'dawn' ? '明け方'
         : request.slot === 'day' ? '昼'
         : request.slot === 'evening' ? '夕方'
         : request.slot === 'night-awake' ? '夜（凛が起きている）' : '夜（就寝後）';
       const seasonName = { spring: '春', summer: '夏', autumn: '秋', winter: '冬' }[request.season];
-      const weatherName = { sunny: '晴れ', cloudy: '曇り', rain: '雨', snow: '雪' }[request.weather];
+      const weatherName = { sunny: '晴れ', cloudy: '曇り', rain: '雨', thunderstorm: '雷雨', snow: '雪' }[request.weather];
       const displayedName = selection.displayed === 'spring-night-sunny-asleep' ? '夜／就寝後'
         : request.slot === 'dawn' ? '明け方' : request.slot === 'day' ? '昼' : request.slot === 'evening' ? '夕方'
         : request.slot === 'night-awake' ? '夜／起きている夜' : '夜／就寝後';
@@ -85,6 +85,10 @@
         : activeScene === 'spring-dawn-rain' ? `表示中：${portrait.matches ? 'SP' : 'PC'} 春・明け方・雨。凛と室内灯のない雨天候補です。`
         : activeScene === 'spring-day-cloudy' ? `表示中：${portrait.matches ? 'SP' : 'PC'} 春・昼・曇り。静止画の確認用候補です。`
         : activeScene === 'spring-day-rain' ? `表示中：${portrait.matches ? 'SP' : 'PC'} 春・昼・雨。雨筋とガラス滴の動きを確認できます。`
+        : activeScene.includes('-thunderstorm') ? `表示中：${portrait.matches ? 'SP' : 'PC'} 夏・${sceneName}・雷雨。凛のいない窓辺で、遠くの雲がゆっくり光ります。`
+        : activeScene.startsWith('summer-') && request.weather !== 'sunny' ? `表示中：${portrait.matches ? 'SP' : 'PC'} 夏・${sceneName}・${weatherName}。`
+        : activeScene === 'summer-day-cloudy' ? `表示中：${portrait.matches ? 'SP' : 'PC'} 夏・昼・曇り。`
+        : activeScene === 'summer-day-rain' ? `表示中：${portrait.matches ? 'SP' : 'PC'} 夏・昼・雨。雨筋とガラス滴の強さを調整できます。`
         : activeScene === 'summer-day-sunny' ? `表示中：${portrait.matches ? 'SP' : 'PC'} 夏・昼・晴れ。分離レイヤーの確認用候補です。`
         : activeScene === 'summer-dawn-sunny' ? `表示中：${portrait.matches ? 'SP' : 'PC'} 夏・明け方・晴れ。凛と室内灯のない確認用候補です。`
         : activeScene === 'summer-evening-sunny' ? `表示中：${portrait.matches ? 'SP' : 'PC'} 夏・夕方・晴れ。分離レイヤーの確認用候補です。`
@@ -113,7 +117,7 @@
     });
     const updateLayers = () => {
       const currentScene = (document.querySelector<HTMLElement>('.scene')?.dataset.activeScene ?? 'spring-day-sunny') as PcScene;
-      const noRin = currentScene.endsWith('-asleep') || currentScene.includes('-dawn-');
+      const noRin = currentScene.endsWith('-asleep') || currentScene.includes('-dawn-') || currentScene.includes('-thunderstorm');
       applyScene(currentScene, portrait.matches);
       settings.querySelector<HTMLFieldSetElement>('.layer-controls')!.disabled = portrait.matches;
       settings.querySelector<HTMLButtonElement>('[data-reset-layers]')!.disabled = portrait.matches;
@@ -129,25 +133,25 @@
       settings.querySelector('.layer-status')!.textContent = portrait.matches
         ? 'PCの確認操作は横長画面で使えます。'
         : plantAvailable ? noRin
-          ? 'この時間帯は凛と人物由来の影が素材にありません。カップと鉢植えを連動下地ごと個別に切り替えられます。'
+          ? 'このシーンでは凛と人物由来の影は表示されません。カップと鉢植えを連動下地ごと個別に切り替えられます。'
           : '人物と影、カップ、鉢植えをそれぞれ連動下地ごと切り替えられます。'
         : summerCup ? noRin
-          ? 'この時間帯は凛と人物由来の影が素材にありません。カップは単独で切り替えられます。'
+          ? 'このシーンでは凛と人物由来の影は表示されません。カップは単独で切り替えられます。'
           : '人物と影、カップをそれぞれ切り替えられます。'
-        : noRin ? 'この時間帯は凛と人物由来の影が素材にありません。カップ単独切り替えは素材上未対応です。'
+        : noRin ? 'このシーンでは凛と人物由来の影は表示されません。カップ単独切り替えは素材上未対応です。'
         : !cupAvailable ? '人物と影を連動して切り替えます。カップ単独切り替えは素材上未対応です。'
         : '人物と影、カップ前景を切り替えます。カップ本体の一部は室内下地に残ります。';
     };
     const updateSpLayers = () => {
       const currentScene = (document.querySelector<HTMLElement>('.scene')?.dataset.activeScene ?? 'spring-day-sunny') as PcScene;
       applyScene(currentScene, portrait.matches);
-      const noRin = currentScene.endsWith('-asleep') || currentScene.includes('-dawn-');
+      const noRin = currentScene.endsWith('-asleep') || currentScene.includes('-dawn-') || currentScene.includes('-thunderstorm');
       const rinControl = spControls.find(control => control.dataset.spToggle === 'rin')!;
       rinControl.disabled = !portrait.matches || noRin;
       settings.querySelector<HTMLFieldSetElement>('.sp-layer-controls')!.disabled = !portrait.matches;
       settings.querySelector<HTMLButtonElement>('[data-reset-sp-layers]')!.disabled = !portrait.matches;
       settings.querySelector('.sp-layer-status')!.textContent = portrait.matches
-        ? noRin ? 'この時間帯は凛と人物由来の影が素材にありません。カップと鉢植えは連動下地ごと切り替えられます。'
+        ? noRin ? 'このシーンでは凛と人物由来の影は表示されません。カップと鉢植えは連動下地ごと切り替えられます。'
           : `SP${currentScene === 'spring-evening-sunny' ? '夕方' : currentScene === 'spring-night-sunny-awake' ? '夜' : '昼'}の人物・カップ・鉢植えと、それぞれの連動する影や下地を切り替えられます。`
         : 'SPの確認操作は縦長画面で使えます。';
     };

@@ -1,6 +1,14 @@
 import type { PcScene } from './scene-time';
 
 const descriptions: Record<PcScene, string> = {
+  'summer-dawn-cloudy': '夏の曇りの明け方、凛のいない静かな窓辺から緑の街を望む油絵。',
+  'summer-dawn-rain': '夏の雨の明け方、凛のいない静かな窓辺から緑の街を望む油絵。',
+  'summer-evening-cloudy': '夏の曇りの夕方、凛が座る窓辺から緑の街を望む油絵。',
+  'summer-evening-rain': '夏の雨の夕方、凛が座る窓辺から緑の街を望む油絵。',
+  'summer-night-cloudy-awake': '夏の曇りの夜、凛が座る窓辺から緑の街を望む油絵。',
+  'summer-night-rain-awake': '夏の雨の夜、凛が座る窓辺から緑の街を望む油絵。',
+  'summer-night-cloudy-asleep': '夏の曇りの夜、凛のいない静かな窓辺から緑の街を望む油絵。',
+  'summer-night-rain-asleep': '夏の雨の夜、凛のいない静かな窓辺から緑の街を望む油絵。',
   'spring-dawn-sunny': '春の明け方、凛のいない窓辺から青灰色と淡い桃色の空を見渡す油絵。',
   'spring-dawn-cloudy': '春の曇った明け方、凛のいない窓辺から青灰色の空を見渡す油絵。',
   'spring-dawn-rain': '春の雨の明け方、凛のいない窓辺から街を見渡す油絵。',
@@ -16,6 +24,13 @@ const descriptions: Record<PcScene, string> = {
   'spring-night-sunny-asleep': '春の晴れた夜、凛のいない静かな窓辺を描いた油絵。',
   'spring-night-cloudy-asleep': '春の曇った夜、凛のいない静かな窓辺を描いた油絵。',
   'spring-night-rain-asleep': '春の雨の夜、凛のいない静かな窓辺を描いた油絵。',
+  'summer-dawn-thunderstorm': '夏の明け方、凛のいない窓辺から雲が光る雨の街を望む油絵。',
+  'summer-evening-thunderstorm': '夏の夕方、凛のいない窓辺から雲が光る雨の街を望む油絵。',
+  'summer-night-thunderstorm-awake': '夏の夜、室内灯の点いた凛のいない窓辺から雲が光る雨の街を望む油絵。',
+  'summer-night-thunderstorm-asleep': '夏の就寝後、凛と室内灯のない窓辺から雲が光る雨の街を望む油絵。',
+  'summer-day-thunderstorm': '夏の昼、凛のいない静かな窓辺から、遠い雲が光る雨の街を望む油絵。',
+  'summer-day-cloudy': '夏の曇りの昼、柔らかな光の窓辺で凛がスケッチをしている油絵。',
+  'summer-day-rain': '夏の雨の昼、濡れた緑の街を望む乾いた窓辺で凛がスケッチをしている油絵。',
   'summer-day-sunny': '夏の晴れた昼、緑の街を望む窓辺で凛が静かにスケッチをしている油絵。',
   'summer-dawn-sunny': '夏の晴れた明け方、凛のいない窓辺から緑の街を見渡す油絵。',
   'summer-evening-sunny': '夏の晴れた夕方、緑の街を望む窓辺に凛が座る油絵。',

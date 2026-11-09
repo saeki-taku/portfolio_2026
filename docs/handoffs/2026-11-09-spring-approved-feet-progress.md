@@ -3,7 +3,7 @@
 最新結果: 春の人物あり9シーンのうち昼晴れPC/SPを保持し、残り8シーン×PC/SP=16表示セットへ承認正本の足重なり・一重裾を反映。昼筆記・夕休息・夜読書の上半身/視線/本と時間帯の照明を保持。人物なし6シーンは維持。既存カップ修正、窓台v9、床延長も保持。
 
 - `node scripts/capture-spring-rin-approved-feet.mjs`: 新8シーン×PC2/SP2の全有効160状態（PC32/SP128）合格。親進行役も代表4枚＋全状態16枚を独立目視し、足/裾/接地・旧足復活なし・cupOFF下地を合格確認。
-- `node scripts/verify-spring-approved-rain.mjs`: 実配信新alphaと実際の静止雨/動的canvasの9ケースで人物内/静止雨/動的mask外漏れ各0。人物OFFでmask切替と遮蔽画素の回復を確認。`rain-served-audit.json`。最終2px雨境界修正後の代表全景 `final-rain-{pc,sp}-{day,evening,night}.png` 6枚も保存。
+- `node scripts/verify-spring-approved-rain.mjs`: 実配信新alphaと実際の静止雨/動的canvasの9ケースで人物内/静止雨/動的mask外漏れ各0。人物OFFでmask切替と遮蔽画素の回復を確認。`rain-served-audit.json`。親が最終雨6全景も独立目視し、昼/夕休息/夜読書と足元、新輪郭への室内雨重なりなしを合格確認。最終2px雨境界修正後の代表全景 `final-rain-{pc,sp}-{day,evening,night}.png` 6枚も保存。
 - `node scripts/verify-spring-final.mjs`: 春15×PC/SP回帰合格。
 - `node scripts/verify-summer-five-scenes.mjs`: 夏晴れ5×PC/SP回帰合格（修正済み人物3時間帯を含む）。
 - `npm run check`: 90 files、error/warning/hint各0。`npm run build` / `npm run build:dev-preview` 成功。`git diff --check` 合格。
