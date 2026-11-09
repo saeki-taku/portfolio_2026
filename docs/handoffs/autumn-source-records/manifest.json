@@ -1,0 +1,256 @@
+{
+  "expected": 30,
+  "completed": 30,
+  "implementationComplete": true,
+  "assets": [
+    {
+      "file": "pc-dawn-clear-background.png",
+      "width": 1345,
+      "height": 1170,
+      "sha256": "6c7ba58535b5ff289467e68ef1682ead539bf3a069013cf5f526dadb74af2626",
+      "status": "candidate-reviewed",
+      "objectsBaked": false
+    },
+    {
+      "file": "pc-dawn-cloudy-background.png",
+      "width": 1345,
+      "height": 1170,
+      "sha256": "17961d9e64ebab2ab7966f941d913dbf9c44f3ea9671e432cf0d9bfbdf629af8",
+      "status": "candidate-reviewed",
+      "objectsBaked": false
+    },
+    {
+      "file": "pc-dawn-rain-background.png",
+      "width": 1345,
+      "height": 1170,
+      "sha256": "72716cadad95e37b34915bd9d5ac42b2413a32f6d991ec3f68523a26a7895561",
+      "status": "candidate-reviewed",
+      "objectsBaked": false
+    },
+    {
+      "file": "pc-day-clear-background.png",
+      "width": 1345,
+      "height": 1170,
+      "sha256": "bc906276bc71ba1323dcf4900be6846b54aa50ec749625385fbafca42b1244c9",
+      "status": "candidate-reviewed",
+      "objectsBaked": false
+    },
+    {
+      "file": "pc-day-cloudy-background.png",
+      "width": 1345,
+      "height": 1169,
+      "sha256": "9a4dc863e952f3648b2a3c94e32d26cc93464954ec32fba70c8ce48340539322",
+      "status": "candidate-reviewed",
+      "objectsBaked": false
+    },
+    {
+      "file": "pc-day-rain-background.png",
+      "width": 1345,
+      "height": 1170,
+      "sha256": "fd46da2625e7ee97d432bfa2771ffd0fac853c54ef4501403f5c5bb67fdf0779",
+      "status": "candidate-reviewed",
+      "objectsBaked": false
+    },
+    {
+      "file": "pc-evening-clear-background.png",
+      "width": 1345,
+      "height": 1170,
+      "sha256": "a9ea148c66bae0e52c666388c003b56a1ccbdb104c393379b0e09210cf027995",
+      "status": "candidate-reviewed",
+      "objectsBaked": false
+    },
+    {
+      "file": "pc-evening-cloudy-background.png",
+      "width": 1345,
+      "height": 1170,
+      "sha256": "db12177194a95187d3d728ab9f999beed849172742e8e139befe58bce052a2e1",
+      "status": "candidate-reviewed",
+      "objectsBaked": false
+    },
+    {
+      "file": "pc-evening-rain-background.png",
+      "width": 1345,
+      "height": 1170,
+      "sha256": "2bc73d5b456a62f8329bb8b79505ee4542641f1fec700c801e2180457dcfa54c",
+      "status": "candidate-reviewed",
+      "objectsBaked": false
+    },
+    {
+      "file": "pc-night-asleep-clear-background.png",
+      "width": 1345,
+      "height": 1170,
+      "sha256": "080af6702bc6cc72be342305c65f17919745deb9417cb532d6c1555402a15995",
+      "status": "candidate-reviewed",
+      "objectsBaked": false
+    },
+    {
+      "file": "pc-night-asleep-cloudy-background.png",
+      "width": 1345,
+      "height": 1170,
+      "sha256": "4d2e2d3f1ffea7564a22ae303bb6b1c727a9a666b1ba3e3700fc8ed5a2b1fe79",
+      "status": "candidate-reviewed",
+      "objectsBaked": false
+    },
+    {
+      "file": "pc-night-asleep-rain-background.png",
+      "width": 1345,
+      "height": 1170,
+      "sha256": "fc494770fe1617c2d4a5dc9a47ac97816d1ba782b4e538a5e1d54daf5942974a",
+      "status": "candidate-reviewed",
+      "objectsBaked": false
+    },
+    {
+      "file": "pc-night-awake-clear-background.png",
+      "width": 1345,
+      "height": 1170,
+      "sha256": "9556edd0f58ddef4924fc3cd7599d93149343753abd9d520b3d24926ba08011f",
+      "status": "candidate-reviewed",
+      "objectsBaked": false
+    },
+    {
+      "file": "pc-night-awake-cloudy-background.png",
+      "width": 1345,
+      "height": 1170,
+      "sha256": "7da98dfb158ba5cfab7e4d6c59daa107a49bac7f8c2e7c1165769354759615ea",
+      "status": "candidate-reviewed",
+      "objectsBaked": false
+    },
+    {
+      "file": "pc-night-awake-rain-background.png",
+      "width": 1345,
+      "height": 1170,
+      "sha256": "b4b6e49e5a15ee5e0401e59b6608517c9eb4e44188bd5ba799bee03f005a6992",
+      "status": "candidate-reviewed",
+      "objectsBaked": false
+    },
+    {
+      "file": "sp-dawn-clear-background.png",
+      "width": 819,
+      "height": 1920,
+      "sha256": "f3751a5185392e268b4fa2cd02c47cf9828849b98b69d38defa8fdc37d16bbfb",
+      "status": "candidate-reviewed",
+      "objectsBaked": false
+    },
+    {
+      "file": "sp-dawn-cloudy-background.png",
+      "width": 819,
+      "height": 1920,
+      "sha256": "6d4f0d90c7663048980e3399ca0d77c1e5bc5c60b0ef27224539764d5c583bd2",
+      "status": "candidate-reviewed",
+      "objectsBaked": false
+    },
+    {
+      "file": "sp-dawn-rain-background.png",
+      "width": 819,
+      "height": 1920,
+      "sha256": "d861a23b7cdfbd75acb69e4096cf358ad9509d88b1648d25aa861ad9cbccb70b",
+      "status": "candidate-reviewed",
+      "objectsBaked": false
+    },
+    {
+      "file": "sp-day-clear-background.png",
+      "width": 819,
+      "height": 1920,
+      "sha256": "e6d0a7037f121d4caab1ebb420595b464992d7cbb93662e144d7065d5a0d470d",
+      "status": "candidate-reviewed",
+      "objectsBaked": false
+    },
+    {
+      "file": "sp-day-cloudy-background.png",
+      "width": 819,
+      "height": 1920,
+      "sha256": "6a77ad34cb7d47fbfae2a060757625a7016902166c4f37221c1e05fae3627a61",
+      "status": "candidate-reviewed",
+      "objectsBaked": false
+    },
+    {
+      "file": "sp-day-rain-background.png",
+      "width": 819,
+      "height": 1920,
+      "sha256": "8b7973bea6acde95f6e3b499e23b4eca34ab69660fa29a0a354b6a11b9262f37",
+      "status": "candidate-reviewed",
+      "objectsBaked": false
+    },
+    {
+      "file": "sp-evening-clear-background.png",
+      "width": 819,
+      "height": 1920,
+      "sha256": "404e014cb38d9e42de0e01c6f424dc26a5f76a601b9b8f513562852dacc79aa9",
+      "status": "candidate-reviewed",
+      "objectsBaked": false
+    },
+    {
+      "file": "sp-evening-cloudy-background.png",
+      "width": 819,
+      "height": 1920,
+      "sha256": "011fa3fcd7a8b56bf045b56b5de4a9d2b9709b5b162f483ab2639fb4cd9f224b",
+      "status": "candidate-reviewed",
+      "objectsBaked": false
+    },
+    {
+      "file": "sp-evening-rain-background.png",
+      "width": 819,
+      "height": 1920,
+      "sha256": "c2de063fb56ba7f4cfc7742c15a42d49236b53b7b03af66c0803825b5c15128e",
+      "status": "candidate-reviewed",
+      "objectsBaked": false
+    },
+    {
+      "file": "sp-night-asleep-clear-background.png",
+      "width": 819,
+      "height": 1920,
+      "sha256": "4511e0d9c4627a3fa234ae885a3d69892a4f71989136e271eccd0c871fce94ec",
+      "status": "candidate-reviewed",
+      "objectsBaked": false
+    },
+    {
+      "file": "sp-night-asleep-cloudy-background.png",
+      "width": 819,
+      "height": 1920,
+      "sha256": "a029ba38e6e662f68c41b4d59d902a44341bf9553728ad377685ceaf87f8aa8c",
+      "status": "candidate-reviewed",
+      "objectsBaked": false
+    },
+    {
+      "file": "sp-night-asleep-rain-background.png",
+      "width": 819,
+      "height": 1920,
+      "sha256": "65860a00e074c7c6233f06d30aca87cb59a13cce5d0008fffde5e6482c7af02c",
+      "status": "candidate-reviewed",
+      "objectsBaked": false
+    },
+    {
+      "file": "sp-night-awake-clear-background.png",
+      "width": 819,
+      "height": 1920,
+      "sha256": "776750e4fa754d0acb8974ddcc7e2f338f1c13299053c35d58a834fce22a21db",
+      "status": "candidate-reviewed",
+      "objectsBaked": false
+    },
+    {
+      "file": "sp-night-awake-cloudy-background.png",
+      "width": 819,
+      "height": 1920,
+      "sha256": "4b829b0dd8e870cc71d2cd399cc5542ebbc3cd4601802ef2ecd5b71927155322",
+      "status": "candidate-reviewed",
+      "objectsBaked": false
+    },
+    {
+      "file": "sp-night-awake-rain-background.png",
+      "width": 819,
+      "height": 1920,
+      "sha256": "c7330a2d1b7661259d7fea188be4d4ee8df67de7730f460e7b1338fb65a19c8c",
+      "status": "candidate-reviewed",
+      "objectsBaked": false
+    }
+  ],
+  "implementation": {
+    "scenes": 15,
+    "viewportSets": 30,
+    "functionalStates": 384,
+    "rainCases": 192,
+    "check": "112 files, 0 errors/warnings/hints",
+    "build": "passed",
+    "record": "/Users/saekitakuya/.codex/worktrees/e84c/ポートフォリオ/docs/handoffs/2026-11-10-autumn-scenes-progress.md"
+  }
+}

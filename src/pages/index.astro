@@ -118,11 +118,13 @@ import springRinManifest from '../assets/validation/spring-rin-approved-feet-v1/
 const springRinSources = import.meta.glob<{default:ImageMetadata}>('../assets/validation/spring-rin-approved-feet-v1/*.png', {eager:true});
 import summerRinManifest from '../assets/validation/summer-rin-approved-feet-v1/manifest.json';
 const summerRinSources = import.meta.glob<{default:ImageMetadata}>('../assets/validation/summer-rin-approved-feet-v1/*.png', {eager:true});
+import autumnManifest from '../assets/validation/autumn-weather-v1/manifest.json';
+const autumnSources=import.meta.glob<{default:ImageMetadata}>('../assets/validation/autumn-weather-v1/*.png',{eager:true});
 import summerPeriodManifest from '../assets/validation/summer-period-weather-v1/manifest.json';
 const summerPeriodSources=import.meta.glob<{default:ImageMetadata}>('../assets/validation/summer-period-weather-v1/*.png',{eager:true});
 import summerWeatherManifest from '../assets/validation/summer-day-weather-v1/manifest.json';
 const summerWeatherSources = import.meta.glob<{default:ImageMetadata}>('../assets/validation/summer-day-weather-v1/*.png',{eager:true});
-const summerWeatherScenes = await Promise.all(Object.entries({...summerWeatherManifest,...summerPeriodManifest}).map(async ([key,entry])=>({key,...entry,layers:await Promise.all(entry.layers.map(async layer=>({...layer,images:await Promise.all((key.startsWith('pc-')?desktopWidths:mobileWidths).map(width=>getImage({src:(summerWeatherSources[`../assets/validation/summer-day-weather-v1/${layer.file}`] ?? summerPeriodSources[`../assets/validation/summer-period-weather-v1/${layer.file}`]).default,width,format:'png'})))})))})));
+const summerWeatherScenes = await Promise.all(Object.entries({...summerWeatherManifest,...summerPeriodManifest,...autumnManifest}).map(async ([key,entry])=>({key,...entry,layers:await Promise.all(entry.layers.map(async layer=>({...layer,images:await Promise.all((key.startsWith('pc-')?desktopWidths:mobileWidths).map(width=>getImage({src:(summerWeatherSources[`../assets/validation/summer-day-weather-v1/${layer.file}`] ?? summerPeriodSources[`../assets/validation/summer-period-weather-v1/${layer.file}`] ?? autumnSources[`../assets/validation/autumn-weather-v1/${layer.file}`]).default,width,format:'png'})))})))})));
 summerWeatherScenes.push(...summerWeatherScenes.filter(s=>s.scene.startsWith('summer-')&&s.scene.includes('-rain')).map(s=>({...s,key:s.key.replace('-rain','-thunderstorm'),scene:s.scene.replace('-rain','-thunderstorm'),layers:s.layers.filter(layer=>layer.group!=='rin')})));
 const makeSceneLayers = async (manifest: { width: number; height: number; layersBottomToTop: string[]; toggleGroups: Record<string, string[]>; conditionalLayers?: Record<string, { rin?: boolean; cup?: boolean; plant?: boolean }> }, sources: Record<string, { default: ImageMetadata }>, folder: string, widths: number[], quality: number) => {
   const springRin = manifest.layersBottomToTop.some(n => ['03-rin.png','08-rin-notebook.png','rin.png'].includes(n)) ? (springRinManifest as Record<string,{filename:string}>)[folder] : undefined;
@@ -289,7 +291,7 @@ const spCloudyDawnLayers = await makeSceneLayers(spCloudyDawnManifest, spCloudyD
     const layout = () => {
       const w = document.documentElement.clientWidth;
       const sp = portrait.matches;
-      const tallSp = sp && (scene.querySelector<HTMLElement>('.mobile-artwork')?.dataset.activeScene?.startsWith('summer-') || ['spring-dawn-sunny', 'spring-dawn-cloudy', 'spring-dawn-rain', 'spring-day-sunny', 'spring-day-cloudy', 'spring-day-rain', 'summer-dawn-sunny', 'summer-day-sunny', 'summer-day-cloudy', 'summer-day-rain', 'summer-day-thunderstorm', 'summer-evening-sunny', 'summer-night-sunny-awake', 'summer-night-sunny-asleep', 'spring-evening-sunny', 'spring-evening-cloudy', 'spring-evening-rain', 'spring-night-sunny-awake', 'spring-night-cloudy-awake', 'spring-night-rain-awake', 'spring-night-sunny-asleep', 'spring-night-cloudy-asleep', 'spring-night-rain-asleep'].includes(scene.querySelector<HTMLElement>('.mobile-artwork')?.dataset.activeScene ?? ''));
+      const tallSp = sp && (scene.querySelector<HTMLElement>('.mobile-artwork')?.dataset.activeScene?.match(/^(summer|autumn)-/) || ['spring-dawn-sunny', 'spring-dawn-cloudy', 'spring-dawn-rain', 'spring-day-sunny', 'spring-day-cloudy', 'spring-day-rain', 'summer-dawn-sunny', 'summer-day-sunny', 'summer-day-cloudy', 'summer-day-rain', 'summer-day-thunderstorm', 'summer-evening-sunny', 'summer-night-sunny-awake', 'summer-night-sunny-asleep', 'spring-evening-sunny', 'spring-evening-cloudy', 'spring-evening-rain', 'spring-night-sunny-awake', 'spring-night-cloudy-awake', 'spring-night-rain-awake', 'spring-night-sunny-asleep', 'spring-night-cloudy-asleep', 'spring-night-rain-asleep'].includes(scene.querySelector<HTMLElement>('.mobile-artwork')?.dataset.activeScene ?? ''));
       delete scene.dataset.menuPlacement;
       scene.querySelectorAll('.mobile-floor-fill, .pc-floor-fill').forEach(fill => fill.remove());
       const g = sp
@@ -402,6 +404,8 @@ const spCloudyDawnLayers = await makeSceneLayers(spCloudyDawnManifest, spCloudyD
   .pc-artwork img[data-scene="spring-day-sunny"][data-layer="rin-pc-hem-cleaned.png"],
   .pc-artwork img[data-scene="spring-day-sunny"][data-layer="pc-contact-shadow-v6.png"] { transform: translateY(1.1965812%); }
   .mobile-artwork img[data-scene="spring-day-sunny"][data-layer="08-rin-notebook.png"] { transform: translateY(0.4583333%); }
+  .pc-artwork[data-active-scene^="autumn-night-rain"] .rain-motion,
+  .mobile-artwork[data-active-scene^="autumn-night-rain"] .rain-motion,
   .pc-artwork[data-active-scene^="summer-night-thunderstorm"] .rain-motion,
   .mobile-artwork[data-active-scene^="summer-night-thunderstorm"] .rain-motion,
   .pc-artwork[data-active-scene^="summer-night-rain"] .rain-motion,

@@ -1,0 +1,1262 @@
+{
+  "pc-autumn-dawn-sunny": {
+    "scene": "autumn-dawn-sunny",
+    "width": 1345,
+    "height": 1170,
+    "layers": [
+      {
+        "name": "01-exterior",
+        "group": "exterior",
+        "file": "pc-autumn-dawn-sunny-01-exterior--5753a26c24a0.png"
+      },
+      {
+        "name": "02-interior",
+        "group": "interior",
+        "file": "pc-autumn-dawn-sunny-02-interior--0e4a5e0bb8d0.png"
+      },
+      {
+        "name": "03-plant",
+        "group": "plant",
+        "file": "pc-autumn-dawn-sunny-plant--29bc08b30664.png"
+      },
+      {
+        "name": "05b-cup-shadow",
+        "group": "cup",
+        "file": "pc-autumn-dawn-sunny-cup-shadow--c08ac512e26d.png"
+      },
+      {
+        "name": "06-cup",
+        "group": "cup",
+        "file": "pc-autumn-dawn-sunny-cup--7a28f19b6f83.png"
+      }
+    ],
+    "masks": {}
+  },
+  "sp-autumn-dawn-sunny": {
+    "scene": "autumn-dawn-sunny",
+    "width": 1024,
+    "height": 2400,
+    "layers": [
+      {
+        "name": "01-exterior",
+        "group": "exterior",
+        "file": "sp-autumn-dawn-sunny-01-exterior--003adebae878.png"
+      },
+      {
+        "name": "02-interior",
+        "group": "interior",
+        "file": "sp-autumn-dawn-sunny-02-interior--1c326354381a.png"
+      },
+      {
+        "name": "03-plant",
+        "group": "plant",
+        "file": "sp-autumn-dawn-sunny-plant--728669ec36e0.png"
+      },
+      {
+        "name": "05b-cup-shadow",
+        "group": "cup",
+        "file": "sp-autumn-dawn-sunny-cup-shadow--96209215de16.png"
+      },
+      {
+        "name": "06-cup",
+        "group": "cup",
+        "file": "sp-autumn-dawn-sunny-cup--5266d4e472f2.png"
+      }
+    ],
+    "masks": {}
+  },
+  "pc-autumn-dawn-cloudy": {
+    "scene": "autumn-dawn-cloudy",
+    "width": 1345,
+    "height": 1170,
+    "layers": [
+      {
+        "name": "01-exterior",
+        "group": "exterior",
+        "file": "pc-autumn-dawn-cloudy-01-exterior--858f1cc2104f.png"
+      },
+      {
+        "name": "02-interior",
+        "group": "interior",
+        "file": "pc-autumn-dawn-cloudy-02-interior--34d12e2dca25.png"
+      },
+      {
+        "name": "03-plant",
+        "group": "plant",
+        "file": "pc-autumn-dawn-cloudy-plant--29bc08b30664.png"
+      },
+      {
+        "name": "05b-cup-shadow",
+        "group": "cup",
+        "file": "pc-autumn-dawn-cloudy-cup-shadow--c08ac512e26d.png"
+      },
+      {
+        "name": "06-cup",
+        "group": "cup",
+        "file": "pc-autumn-dawn-cloudy-cup--11217b58b36a.png"
+      }
+    ],
+    "masks": {}
+  },
+  "sp-autumn-dawn-cloudy": {
+    "scene": "autumn-dawn-cloudy",
+    "width": 1024,
+    "height": 2400,
+    "layers": [
+      {
+        "name": "01-exterior",
+        "group": "exterior",
+        "file": "sp-autumn-dawn-cloudy-01-exterior--1edeaf3a7f12.png"
+      },
+      {
+        "name": "02-interior",
+        "group": "interior",
+        "file": "sp-autumn-dawn-cloudy-02-interior--3610447d8b85.png"
+      },
+      {
+        "name": "03-plant",
+        "group": "plant",
+        "file": "sp-autumn-dawn-cloudy-plant--728669ec36e0.png"
+      },
+      {
+        "name": "05b-cup-shadow",
+        "group": "cup",
+        "file": "sp-autumn-dawn-cloudy-cup-shadow--96209215de16.png"
+      },
+      {
+        "name": "06-cup",
+        "group": "cup",
+        "file": "sp-autumn-dawn-cloudy-cup--0a1126c89096.png"
+      }
+    ],
+    "masks": {}
+  },
+  "pc-autumn-dawn-rain": {
+    "scene": "autumn-dawn-rain",
+    "width": 1345,
+    "height": 1170,
+    "layers": [
+      {
+        "name": "01-exterior",
+        "group": "exterior",
+        "file": "pc-autumn-dawn-rain-01-exterior--78eeaac1baf5.png"
+      },
+      {
+        "name": "02-interior",
+        "group": "interior",
+        "file": "pc-autumn-dawn-rain-02-interior--127a97d63b0d.png"
+      },
+      {
+        "name": "03-plant",
+        "group": "plant",
+        "file": "pc-autumn-dawn-rain-plant--222c3060946d.png"
+      },
+      {
+        "name": "05b-cup-shadow",
+        "group": "cup",
+        "file": "pc-autumn-dawn-rain-cup-shadow--c08ac512e26d.png"
+      },
+      {
+        "name": "06-cup",
+        "group": "cup",
+        "file": "pc-autumn-dawn-rain-cup--11217b58b36a.png"
+      }
+    ],
+    "masks": {
+      "0": "pc-autumn-dawn-rain-mask-0--0f9d53e5db16.png",
+      "1": "pc-autumn-dawn-rain-mask-1--0f9d53e5db16.png",
+      "2": "pc-autumn-dawn-rain-mask-2--a18a2b8b0ea3.png",
+      "3": "pc-autumn-dawn-rain-mask-3--a18a2b8b0ea3.png",
+      "4": "pc-autumn-dawn-rain-mask-4--3adff24c3cd2.png",
+      "5": "pc-autumn-dawn-rain-mask-5--3adff24c3cd2.png",
+      "6": "pc-autumn-dawn-rain-mask-6--222f55732212.png",
+      "7": "pc-autumn-dawn-rain-mask-7--222f55732212.png"
+    }
+  },
+  "sp-autumn-dawn-rain": {
+    "scene": "autumn-dawn-rain",
+    "width": 1024,
+    "height": 2400,
+    "layers": [
+      {
+        "name": "01-exterior",
+        "group": "exterior",
+        "file": "sp-autumn-dawn-rain-01-exterior--f47212751bae.png"
+      },
+      {
+        "name": "02-interior",
+        "group": "interior",
+        "file": "sp-autumn-dawn-rain-02-interior--d6610f5dd0d0.png"
+      },
+      {
+        "name": "03-plant",
+        "group": "plant",
+        "file": "sp-autumn-dawn-rain-plant--231b4b24f58b.png"
+      },
+      {
+        "name": "05b-cup-shadow",
+        "group": "cup",
+        "file": "sp-autumn-dawn-rain-cup-shadow--96209215de16.png"
+      },
+      {
+        "name": "06-cup",
+        "group": "cup",
+        "file": "sp-autumn-dawn-rain-cup--0a1126c89096.png"
+      }
+    ],
+    "masks": {
+      "0": "sp-autumn-dawn-rain-mask-0--7eab59eaffa2.png",
+      "1": "sp-autumn-dawn-rain-mask-1--7eab59eaffa2.png",
+      "2": "sp-autumn-dawn-rain-mask-2--7eab59eaffa2.png",
+      "3": "sp-autumn-dawn-rain-mask-3--7eab59eaffa2.png",
+      "4": "sp-autumn-dawn-rain-mask-4--cb79a5176b12.png",
+      "5": "sp-autumn-dawn-rain-mask-5--cb79a5176b12.png",
+      "6": "sp-autumn-dawn-rain-mask-6--cb79a5176b12.png",
+      "7": "sp-autumn-dawn-rain-mask-7--cb79a5176b12.png"
+    }
+  },
+  "pc-autumn-day-sunny": {
+    "scene": "autumn-day-sunny",
+    "width": 1345,
+    "height": 1170,
+    "layers": [
+      {
+        "name": "01-exterior",
+        "group": "exterior",
+        "file": "pc-autumn-day-sunny-01-exterior--ba968679d134.png"
+      },
+      {
+        "name": "02-interior",
+        "group": "interior",
+        "file": "pc-autumn-day-sunny-02-interior--482647bdb70e.png"
+      },
+      {
+        "name": "03-plant",
+        "group": "plant",
+        "file": "pc-autumn-day-sunny-plant--14b8f306d475.png"
+      },
+      {
+        "name": "04-rin-shadow",
+        "group": "rin",
+        "file": "pc-autumn-day-sunny-rin-shadow--1f1787112191.png"
+      },
+      {
+        "name": "05-rin",
+        "group": "rin",
+        "file": "pc-autumn-day-sunny-rin--e1cf53a32054.png"
+      },
+      {
+        "name": "05b-cup-shadow",
+        "group": "cup",
+        "file": "pc-autumn-day-sunny-cup-shadow--c08ac512e26d.png"
+      },
+      {
+        "name": "06-cup",
+        "group": "cup",
+        "file": "pc-autumn-day-sunny-cup--1ab8308867eb.png"
+      }
+    ],
+    "masks": {}
+  },
+  "sp-autumn-day-sunny": {
+    "scene": "autumn-day-sunny",
+    "width": 1024,
+    "height": 2400,
+    "layers": [
+      {
+        "name": "01-exterior",
+        "group": "exterior",
+        "file": "sp-autumn-day-sunny-01-exterior--825736caf446.png"
+      },
+      {
+        "name": "02-interior",
+        "group": "interior",
+        "file": "sp-autumn-day-sunny-02-interior--e1bd336b3538.png"
+      },
+      {
+        "name": "03-plant",
+        "group": "plant",
+        "file": "sp-autumn-day-sunny-plant--229fb4d0c422.png"
+      },
+      {
+        "name": "04-rin-shadow",
+        "group": "rin",
+        "file": "sp-autumn-day-sunny-rin-shadow--d00d0430d1dc.png"
+      },
+      {
+        "name": "05-rin",
+        "group": "rin",
+        "file": "sp-autumn-day-sunny-rin--0e431fa3aeb3.png"
+      },
+      {
+        "name": "05b-cup-shadow",
+        "group": "cup",
+        "file": "sp-autumn-day-sunny-cup-shadow--96209215de16.png"
+      },
+      {
+        "name": "06-cup",
+        "group": "cup",
+        "file": "sp-autumn-day-sunny-cup--2f6da709fcf6.png"
+      }
+    ],
+    "masks": {}
+  },
+  "pc-autumn-day-cloudy": {
+    "scene": "autumn-day-cloudy",
+    "width": 1345,
+    "height": 1170,
+    "layers": [
+      {
+        "name": "01-exterior",
+        "group": "exterior",
+        "file": "pc-autumn-day-cloudy-01-exterior--1e07f9195396.png"
+      },
+      {
+        "name": "02-interior",
+        "group": "interior",
+        "file": "pc-autumn-day-cloudy-02-interior--ed85ea80b1c5.png"
+      },
+      {
+        "name": "03-plant",
+        "group": "plant",
+        "file": "pc-autumn-day-cloudy-plant--14b8f306d475.png"
+      },
+      {
+        "name": "04-rin-shadow",
+        "group": "rin",
+        "file": "pc-autumn-day-cloudy-rin-shadow--1f1787112191.png"
+      },
+      {
+        "name": "05-rin",
+        "group": "rin",
+        "file": "pc-autumn-day-cloudy-rin--3226f14286f3.png"
+      },
+      {
+        "name": "05b-cup-shadow",
+        "group": "cup",
+        "file": "pc-autumn-day-cloudy-cup-shadow--c08ac512e26d.png"
+      },
+      {
+        "name": "06-cup",
+        "group": "cup",
+        "file": "pc-autumn-day-cloudy-cup--916f58c0e696.png"
+      }
+    ],
+    "masks": {}
+  },
+  "sp-autumn-day-cloudy": {
+    "scene": "autumn-day-cloudy",
+    "width": 1024,
+    "height": 2400,
+    "layers": [
+      {
+        "name": "01-exterior",
+        "group": "exterior",
+        "file": "sp-autumn-day-cloudy-01-exterior--861d601abe27.png"
+      },
+      {
+        "name": "02-interior",
+        "group": "interior",
+        "file": "sp-autumn-day-cloudy-02-interior--679bb998a099.png"
+      },
+      {
+        "name": "03-plant",
+        "group": "plant",
+        "file": "sp-autumn-day-cloudy-plant--229fb4d0c422.png"
+      },
+      {
+        "name": "04-rin-shadow",
+        "group": "rin",
+        "file": "sp-autumn-day-cloudy-rin-shadow--d00d0430d1dc.png"
+      },
+      {
+        "name": "05-rin",
+        "group": "rin",
+        "file": "sp-autumn-day-cloudy-rin--b8c04275c131.png"
+      },
+      {
+        "name": "05b-cup-shadow",
+        "group": "cup",
+        "file": "sp-autumn-day-cloudy-cup-shadow--96209215de16.png"
+      },
+      {
+        "name": "06-cup",
+        "group": "cup",
+        "file": "sp-autumn-day-cloudy-cup--e7da4ae85d6c.png"
+      }
+    ],
+    "masks": {}
+  },
+  "pc-autumn-day-rain": {
+    "scene": "autumn-day-rain",
+    "width": 1345,
+    "height": 1170,
+    "layers": [
+      {
+        "name": "01-exterior",
+        "group": "exterior",
+        "file": "pc-autumn-day-rain-01-exterior--49c2e58c7c1a.png"
+      },
+      {
+        "name": "02-interior",
+        "group": "interior",
+        "file": "pc-autumn-day-rain-02-interior--6ff8ec029b23.png"
+      },
+      {
+        "name": "03-plant",
+        "group": "plant",
+        "file": "pc-autumn-day-rain-plant--c6f74c461c58.png"
+      },
+      {
+        "name": "04-rin-shadow",
+        "group": "rin",
+        "file": "pc-autumn-day-rain-rin-shadow--1f1787112191.png"
+      },
+      {
+        "name": "05-rin",
+        "group": "rin",
+        "file": "pc-autumn-day-rain-rin--3226f14286f3.png"
+      },
+      {
+        "name": "05b-cup-shadow",
+        "group": "cup",
+        "file": "pc-autumn-day-rain-cup-shadow--c08ac512e26d.png"
+      },
+      {
+        "name": "06-cup",
+        "group": "cup",
+        "file": "pc-autumn-day-rain-cup--916f58c0e696.png"
+      }
+    ],
+    "masks": {
+      "0": "pc-autumn-day-rain-mask-0--0f9d53e5db16.png",
+      "1": "pc-autumn-day-rain-mask-1--ab120f86f635.png",
+      "2": "pc-autumn-day-rain-mask-2--a18a2b8b0ea3.png",
+      "3": "pc-autumn-day-rain-mask-3--ad08f8e5bb90.png",
+      "4": "pc-autumn-day-rain-mask-4--5a028c7b515d.png",
+      "5": "pc-autumn-day-rain-mask-5--31b3802794d1.png",
+      "6": "pc-autumn-day-rain-mask-6--8e498c00382e.png",
+      "7": "pc-autumn-day-rain-mask-7--c8318993b1aa.png"
+    }
+  },
+  "sp-autumn-day-rain": {
+    "scene": "autumn-day-rain",
+    "width": 1024,
+    "height": 2400,
+    "layers": [
+      {
+        "name": "01-exterior",
+        "group": "exterior",
+        "file": "sp-autumn-day-rain-01-exterior--e71737c3853a.png"
+      },
+      {
+        "name": "02-interior",
+        "group": "interior",
+        "file": "sp-autumn-day-rain-02-interior--89a4629c025a.png"
+      },
+      {
+        "name": "03-plant",
+        "group": "plant",
+        "file": "sp-autumn-day-rain-plant--f0ccc0347e9a.png"
+      },
+      {
+        "name": "04-rin-shadow",
+        "group": "rin",
+        "file": "sp-autumn-day-rain-rin-shadow--d00d0430d1dc.png"
+      },
+      {
+        "name": "05-rin",
+        "group": "rin",
+        "file": "sp-autumn-day-rain-rin--b8c04275c131.png"
+      },
+      {
+        "name": "05b-cup-shadow",
+        "group": "cup",
+        "file": "sp-autumn-day-rain-cup-shadow--96209215de16.png"
+      },
+      {
+        "name": "06-cup",
+        "group": "cup",
+        "file": "sp-autumn-day-rain-cup--e7da4ae85d6c.png"
+      }
+    ],
+    "masks": {
+      "0": "sp-autumn-day-rain-mask-0--7eab59eaffa2.png",
+      "1": "sp-autumn-day-rain-mask-1--9c6d9c55d78e.png",
+      "2": "sp-autumn-day-rain-mask-2--7eab59eaffa2.png",
+      "3": "sp-autumn-day-rain-mask-3--9c6d9c55d78e.png",
+      "4": "sp-autumn-day-rain-mask-4--420af1763bac.png",
+      "5": "sp-autumn-day-rain-mask-5--351a24da83f1.png",
+      "6": "sp-autumn-day-rain-mask-6--420af1763bac.png",
+      "7": "sp-autumn-day-rain-mask-7--351a24da83f1.png"
+    }
+  },
+  "pc-autumn-evening-sunny": {
+    "scene": "autumn-evening-sunny",
+    "width": 1345,
+    "height": 1170,
+    "layers": [
+      {
+        "name": "01-exterior",
+        "group": "exterior",
+        "file": "pc-autumn-evening-sunny-01-exterior--38f1e01dda4d.png"
+      },
+      {
+        "name": "02-interior",
+        "group": "interior",
+        "file": "pc-autumn-evening-sunny-02-interior--25ae477e8763.png"
+      },
+      {
+        "name": "03-plant",
+        "group": "plant",
+        "file": "pc-autumn-evening-sunny-plant--eb2d48f7cb73.png"
+      },
+      {
+        "name": "04-rin-shadow",
+        "group": "rin",
+        "file": "pc-autumn-evening-sunny-rin-shadow--1f1787112191.png"
+      },
+      {
+        "name": "05-rin",
+        "group": "rin",
+        "file": "pc-autumn-evening-sunny-rin--b2db490c1edf.png"
+      },
+      {
+        "name": "05b-cup-shadow",
+        "group": "cup",
+        "file": "pc-autumn-evening-sunny-cup-shadow--c08ac512e26d.png"
+      },
+      {
+        "name": "06-cup",
+        "group": "cup",
+        "file": "pc-autumn-evening-sunny-cup--1fecbfcb4731.png"
+      }
+    ],
+    "masks": {}
+  },
+  "sp-autumn-evening-sunny": {
+    "scene": "autumn-evening-sunny",
+    "width": 1024,
+    "height": 2400,
+    "layers": [
+      {
+        "name": "01-exterior",
+        "group": "exterior",
+        "file": "sp-autumn-evening-sunny-01-exterior--3eac7aee94fe.png"
+      },
+      {
+        "name": "02-interior",
+        "group": "interior",
+        "file": "sp-autumn-evening-sunny-02-interior--ac68307625cd.png"
+      },
+      {
+        "name": "03-plant",
+        "group": "plant",
+        "file": "sp-autumn-evening-sunny-plant--66faf17ff408.png"
+      },
+      {
+        "name": "04-rin-shadow",
+        "group": "rin",
+        "file": "sp-autumn-evening-sunny-rin-shadow--d00d0430d1dc.png"
+      },
+      {
+        "name": "05-rin",
+        "group": "rin",
+        "file": "sp-autumn-evening-sunny-rin--42666f522e7c.png"
+      },
+      {
+        "name": "05b-cup-shadow",
+        "group": "cup",
+        "file": "sp-autumn-evening-sunny-cup-shadow--96209215de16.png"
+      },
+      {
+        "name": "06-cup",
+        "group": "cup",
+        "file": "sp-autumn-evening-sunny-cup--09cf3a9e949e.png"
+      }
+    ],
+    "masks": {}
+  },
+  "pc-autumn-evening-cloudy": {
+    "scene": "autumn-evening-cloudy",
+    "width": 1345,
+    "height": 1170,
+    "layers": [
+      {
+        "name": "01-exterior",
+        "group": "exterior",
+        "file": "pc-autumn-evening-cloudy-01-exterior--0fd9c139ee5c.png"
+      },
+      {
+        "name": "02-interior",
+        "group": "interior",
+        "file": "pc-autumn-evening-cloudy-02-interior--5a754c497e81.png"
+      },
+      {
+        "name": "03-plant",
+        "group": "plant",
+        "file": "pc-autumn-evening-cloudy-plant--eb2d48f7cb73.png"
+      },
+      {
+        "name": "04-rin-shadow",
+        "group": "rin",
+        "file": "pc-autumn-evening-cloudy-rin-shadow--1f1787112191.png"
+      },
+      {
+        "name": "05-rin",
+        "group": "rin",
+        "file": "pc-autumn-evening-cloudy-rin--06d836e38b71.png"
+      },
+      {
+        "name": "05b-cup-shadow",
+        "group": "cup",
+        "file": "pc-autumn-evening-cloudy-cup-shadow--c08ac512e26d.png"
+      },
+      {
+        "name": "06-cup",
+        "group": "cup",
+        "file": "pc-autumn-evening-cloudy-cup--417d15fd2bda.png"
+      }
+    ],
+    "masks": {}
+  },
+  "sp-autumn-evening-cloudy": {
+    "scene": "autumn-evening-cloudy",
+    "width": 1024,
+    "height": 2400,
+    "layers": [
+      {
+        "name": "01-exterior",
+        "group": "exterior",
+        "file": "sp-autumn-evening-cloudy-01-exterior--e29cfea486df.png"
+      },
+      {
+        "name": "02-interior",
+        "group": "interior",
+        "file": "sp-autumn-evening-cloudy-02-interior--1b8b332f75f3.png"
+      },
+      {
+        "name": "03-plant",
+        "group": "plant",
+        "file": "sp-autumn-evening-cloudy-plant--66faf17ff408.png"
+      },
+      {
+        "name": "04-rin-shadow",
+        "group": "rin",
+        "file": "sp-autumn-evening-cloudy-rin-shadow--d00d0430d1dc.png"
+      },
+      {
+        "name": "05-rin",
+        "group": "rin",
+        "file": "sp-autumn-evening-cloudy-rin--d5ac7788f6ec.png"
+      },
+      {
+        "name": "05b-cup-shadow",
+        "group": "cup",
+        "file": "sp-autumn-evening-cloudy-cup-shadow--96209215de16.png"
+      },
+      {
+        "name": "06-cup",
+        "group": "cup",
+        "file": "sp-autumn-evening-cloudy-cup--964bc3e518c5.png"
+      }
+    ],
+    "masks": {}
+  },
+  "pc-autumn-evening-rain": {
+    "scene": "autumn-evening-rain",
+    "width": 1345,
+    "height": 1170,
+    "layers": [
+      {
+        "name": "01-exterior",
+        "group": "exterior",
+        "file": "pc-autumn-evening-rain-01-exterior--8b346cf5e6b0.png"
+      },
+      {
+        "name": "02-interior",
+        "group": "interior",
+        "file": "pc-autumn-evening-rain-02-interior--bcfbf6f654f9.png"
+      },
+      {
+        "name": "03-plant",
+        "group": "plant",
+        "file": "pc-autumn-evening-rain-plant--bad3df784c94.png"
+      },
+      {
+        "name": "04-rin-shadow",
+        "group": "rin",
+        "file": "pc-autumn-evening-rain-rin-shadow--1f1787112191.png"
+      },
+      {
+        "name": "05-rin",
+        "group": "rin",
+        "file": "pc-autumn-evening-rain-rin--06d836e38b71.png"
+      },
+      {
+        "name": "05b-cup-shadow",
+        "group": "cup",
+        "file": "pc-autumn-evening-rain-cup-shadow--c08ac512e26d.png"
+      },
+      {
+        "name": "06-cup",
+        "group": "cup",
+        "file": "pc-autumn-evening-rain-cup--417d15fd2bda.png"
+      }
+    ],
+    "masks": {
+      "0": "pc-autumn-evening-rain-mask-0--0f9d53e5db16.png",
+      "1": "pc-autumn-evening-rain-mask-1--003ce1356f5b.png",
+      "2": "pc-autumn-evening-rain-mask-2--a18a2b8b0ea3.png",
+      "3": "pc-autumn-evening-rain-mask-3--238d08db664f.png",
+      "4": "pc-autumn-evening-rain-mask-4--bbaf1bb61d60.png",
+      "5": "pc-autumn-evening-rain-mask-5--b6a04eccb1d5.png",
+      "6": "pc-autumn-evening-rain-mask-6--28b2c0e6af2a.png",
+      "7": "pc-autumn-evening-rain-mask-7--b5e2afef142e.png"
+    }
+  },
+  "sp-autumn-evening-rain": {
+    "scene": "autumn-evening-rain",
+    "width": 1024,
+    "height": 2400,
+    "layers": [
+      {
+        "name": "01-exterior",
+        "group": "exterior",
+        "file": "sp-autumn-evening-rain-01-exterior--f3057abc3609.png"
+      },
+      {
+        "name": "02-interior",
+        "group": "interior",
+        "file": "sp-autumn-evening-rain-02-interior--754fa3a7c161.png"
+      },
+      {
+        "name": "03-plant",
+        "group": "plant",
+        "file": "sp-autumn-evening-rain-plant--d0a7d884413a.png"
+      },
+      {
+        "name": "04-rin-shadow",
+        "group": "rin",
+        "file": "sp-autumn-evening-rain-rin-shadow--d00d0430d1dc.png"
+      },
+      {
+        "name": "05-rin",
+        "group": "rin",
+        "file": "sp-autumn-evening-rain-rin--d5ac7788f6ec.png"
+      },
+      {
+        "name": "05b-cup-shadow",
+        "group": "cup",
+        "file": "sp-autumn-evening-rain-cup-shadow--96209215de16.png"
+      },
+      {
+        "name": "06-cup",
+        "group": "cup",
+        "file": "sp-autumn-evening-rain-cup--964bc3e518c5.png"
+      }
+    ],
+    "masks": {
+      "0": "sp-autumn-evening-rain-mask-0--7eab59eaffa2.png",
+      "1": "sp-autumn-evening-rain-mask-1--8f8861f7e9bb.png",
+      "2": "sp-autumn-evening-rain-mask-2--7eab59eaffa2.png",
+      "3": "sp-autumn-evening-rain-mask-3--8f8861f7e9bb.png",
+      "4": "sp-autumn-evening-rain-mask-4--1f1b8061b94f.png",
+      "5": "sp-autumn-evening-rain-mask-5--7fe46d9f73fd.png",
+      "6": "sp-autumn-evening-rain-mask-6--1f1b8061b94f.png",
+      "7": "sp-autumn-evening-rain-mask-7--7fe46d9f73fd.png"
+    }
+  },
+  "pc-autumn-night-awake-sunny": {
+    "scene": "autumn-night-sunny-awake",
+    "width": 1345,
+    "height": 1170,
+    "layers": [
+      {
+        "name": "01-exterior",
+        "group": "exterior",
+        "file": "pc-autumn-night-awake-sunny-01-exterior--a58253cac1e5.png"
+      },
+      {
+        "name": "02-interior",
+        "group": "interior",
+        "file": "pc-autumn-night-awake-sunny-02-interior--17bd081b053a.png"
+      },
+      {
+        "name": "03-plant",
+        "group": "plant",
+        "file": "pc-autumn-night-awake-sunny-plant--c0c3cf0c74cf.png"
+      },
+      {
+        "name": "04-rin-shadow",
+        "group": "rin",
+        "file": "pc-autumn-night-awake-sunny-rin-shadow--1f1787112191.png"
+      },
+      {
+        "name": "05-rin",
+        "group": "rin",
+        "file": "pc-autumn-night-awake-sunny-rin--99e6158f6621.png"
+      },
+      {
+        "name": "05b-cup-shadow",
+        "group": "cup",
+        "file": "pc-autumn-night-awake-sunny-cup-shadow--c08ac512e26d.png"
+      },
+      {
+        "name": "06-cup",
+        "group": "cup",
+        "file": "pc-autumn-night-awake-sunny-cup--71e91817c455.png"
+      }
+    ],
+    "masks": {}
+  },
+  "sp-autumn-night-awake-sunny": {
+    "scene": "autumn-night-sunny-awake",
+    "width": 1024,
+    "height": 2400,
+    "layers": [
+      {
+        "name": "01-exterior",
+        "group": "exterior",
+        "file": "sp-autumn-night-awake-sunny-01-exterior--e7d29e4bd16f.png"
+      },
+      {
+        "name": "02-interior",
+        "group": "interior",
+        "file": "sp-autumn-night-awake-sunny-02-interior--1ca1ff3d4d5d.png"
+      },
+      {
+        "name": "03-plant",
+        "group": "plant",
+        "file": "sp-autumn-night-awake-sunny-plant--7b6197c5caa4.png"
+      },
+      {
+        "name": "04-rin-shadow",
+        "group": "rin",
+        "file": "sp-autumn-night-awake-sunny-rin-shadow--d00d0430d1dc.png"
+      },
+      {
+        "name": "05-rin",
+        "group": "rin",
+        "file": "sp-autumn-night-awake-sunny-rin--fcf52494ee6f.png"
+      },
+      {
+        "name": "05b-cup-shadow",
+        "group": "cup",
+        "file": "sp-autumn-night-awake-sunny-cup-shadow--96209215de16.png"
+      },
+      {
+        "name": "06-cup",
+        "group": "cup",
+        "file": "sp-autumn-night-awake-sunny-cup--0aef34f826e4.png"
+      }
+    ],
+    "masks": {}
+  },
+  "pc-autumn-night-awake-cloudy": {
+    "scene": "autumn-night-cloudy-awake",
+    "width": 1345,
+    "height": 1170,
+    "layers": [
+      {
+        "name": "01-exterior",
+        "group": "exterior",
+        "file": "pc-autumn-night-awake-cloudy-01-exterior--c765a33ad213.png"
+      },
+      {
+        "name": "02-interior",
+        "group": "interior",
+        "file": "pc-autumn-night-awake-cloudy-02-interior--fa379f4d67a8.png"
+      },
+      {
+        "name": "03-plant",
+        "group": "plant",
+        "file": "pc-autumn-night-awake-cloudy-plant--c0c3cf0c74cf.png"
+      },
+      {
+        "name": "04-rin-shadow",
+        "group": "rin",
+        "file": "pc-autumn-night-awake-cloudy-rin-shadow--1f1787112191.png"
+      },
+      {
+        "name": "05-rin",
+        "group": "rin",
+        "file": "pc-autumn-night-awake-cloudy-rin--407dd3c83f93.png"
+      },
+      {
+        "name": "05b-cup-shadow",
+        "group": "cup",
+        "file": "pc-autumn-night-awake-cloudy-cup-shadow--c08ac512e26d.png"
+      },
+      {
+        "name": "06-cup",
+        "group": "cup",
+        "file": "pc-autumn-night-awake-cloudy-cup--f2ea5e59223f.png"
+      }
+    ],
+    "masks": {}
+  },
+  "sp-autumn-night-awake-cloudy": {
+    "scene": "autumn-night-cloudy-awake",
+    "width": 1024,
+    "height": 2400,
+    "layers": [
+      {
+        "name": "01-exterior",
+        "group": "exterior",
+        "file": "sp-autumn-night-awake-cloudy-01-exterior--ed1d28435c2d.png"
+      },
+      {
+        "name": "02-interior",
+        "group": "interior",
+        "file": "sp-autumn-night-awake-cloudy-02-interior--ba72b756f08d.png"
+      },
+      {
+        "name": "03-plant",
+        "group": "plant",
+        "file": "sp-autumn-night-awake-cloudy-plant--7b6197c5caa4.png"
+      },
+      {
+        "name": "04-rin-shadow",
+        "group": "rin",
+        "file": "sp-autumn-night-awake-cloudy-rin-shadow--d00d0430d1dc.png"
+      },
+      {
+        "name": "05-rin",
+        "group": "rin",
+        "file": "sp-autumn-night-awake-cloudy-rin--27a5e54ef6bd.png"
+      },
+      {
+        "name": "05b-cup-shadow",
+        "group": "cup",
+        "file": "sp-autumn-night-awake-cloudy-cup-shadow--96209215de16.png"
+      },
+      {
+        "name": "06-cup",
+        "group": "cup",
+        "file": "sp-autumn-night-awake-cloudy-cup--12e9987d67fc.png"
+      }
+    ],
+    "masks": {}
+  },
+  "pc-autumn-night-awake-rain": {
+    "scene": "autumn-night-rain-awake",
+    "width": 1345,
+    "height": 1170,
+    "layers": [
+      {
+        "name": "01-exterior",
+        "group": "exterior",
+        "file": "pc-autumn-night-awake-rain-01-exterior--de12267557b0.png"
+      },
+      {
+        "name": "02-interior",
+        "group": "interior",
+        "file": "pc-autumn-night-awake-rain-02-interior--3427e6f90ec5.png"
+      },
+      {
+        "name": "03-plant",
+        "group": "plant",
+        "file": "pc-autumn-night-awake-rain-plant--d6229223bdc7.png"
+      },
+      {
+        "name": "04-rin-shadow",
+        "group": "rin",
+        "file": "pc-autumn-night-awake-rain-rin-shadow--1f1787112191.png"
+      },
+      {
+        "name": "05-rin",
+        "group": "rin",
+        "file": "pc-autumn-night-awake-rain-rin--407dd3c83f93.png"
+      },
+      {
+        "name": "05b-cup-shadow",
+        "group": "cup",
+        "file": "pc-autumn-night-awake-rain-cup-shadow--c08ac512e26d.png"
+      },
+      {
+        "name": "06-cup",
+        "group": "cup",
+        "file": "pc-autumn-night-awake-rain-cup--f2ea5e59223f.png"
+      }
+    ],
+    "masks": {
+      "0": "pc-autumn-night-awake-rain-mask-0--0f9d53e5db16.png",
+      "1": "pc-autumn-night-awake-rain-mask-1--b01ac72cdc51.png",
+      "2": "pc-autumn-night-awake-rain-mask-2--a18a2b8b0ea3.png",
+      "3": "pc-autumn-night-awake-rain-mask-3--d02da61faedc.png",
+      "4": "pc-autumn-night-awake-rain-mask-4--77412556a7ac.png",
+      "5": "pc-autumn-night-awake-rain-mask-5--bb81c82af99d.png",
+      "6": "pc-autumn-night-awake-rain-mask-6--b556d93b43ea.png",
+      "7": "pc-autumn-night-awake-rain-mask-7--b9b86fbac2d0.png"
+    }
+  },
+  "sp-autumn-night-awake-rain": {
+    "scene": "autumn-night-rain-awake",
+    "width": 1024,
+    "height": 2400,
+    "layers": [
+      {
+        "name": "01-exterior",
+        "group": "exterior",
+        "file": "sp-autumn-night-awake-rain-01-exterior--dcd51bfdd84f.png"
+      },
+      {
+        "name": "02-interior",
+        "group": "interior",
+        "file": "sp-autumn-night-awake-rain-02-interior--75947075f8d2.png"
+      },
+      {
+        "name": "03-plant",
+        "group": "plant",
+        "file": "sp-autumn-night-awake-rain-plant--e06774a54822.png"
+      },
+      {
+        "name": "04-rin-shadow",
+        "group": "rin",
+        "file": "sp-autumn-night-awake-rain-rin-shadow--d00d0430d1dc.png"
+      },
+      {
+        "name": "05-rin",
+        "group": "rin",
+        "file": "sp-autumn-night-awake-rain-rin--27a5e54ef6bd.png"
+      },
+      {
+        "name": "05b-cup-shadow",
+        "group": "cup",
+        "file": "sp-autumn-night-awake-rain-cup-shadow--96209215de16.png"
+      },
+      {
+        "name": "06-cup",
+        "group": "cup",
+        "file": "sp-autumn-night-awake-rain-cup--12e9987d67fc.png"
+      }
+    ],
+    "masks": {
+      "0": "sp-autumn-night-awake-rain-mask-0--7eab59eaffa2.png",
+      "1": "sp-autumn-night-awake-rain-mask-1--8e11eb40e1bf.png",
+      "2": "sp-autumn-night-awake-rain-mask-2--7eab59eaffa2.png",
+      "3": "sp-autumn-night-awake-rain-mask-3--8e11eb40e1bf.png",
+      "4": "sp-autumn-night-awake-rain-mask-4--f11d259ab95c.png",
+      "5": "sp-autumn-night-awake-rain-mask-5--e2d6159aa087.png",
+      "6": "sp-autumn-night-awake-rain-mask-6--f11d259ab95c.png",
+      "7": "sp-autumn-night-awake-rain-mask-7--e2d6159aa087.png"
+    }
+  },
+  "pc-autumn-night-asleep-sunny": {
+    "scene": "autumn-night-sunny-asleep",
+    "width": 1345,
+    "height": 1170,
+    "layers": [
+      {
+        "name": "01-exterior",
+        "group": "exterior",
+        "file": "pc-autumn-night-asleep-sunny-01-exterior--7b1fa339645f.png"
+      },
+      {
+        "name": "02-interior",
+        "group": "interior",
+        "file": "pc-autumn-night-asleep-sunny-02-interior--3ece5bf0709c.png"
+      },
+      {
+        "name": "03-plant",
+        "group": "plant",
+        "file": "pc-autumn-night-asleep-sunny-plant--5a5007404a88.png"
+      },
+      {
+        "name": "05b-cup-shadow",
+        "group": "cup",
+        "file": "pc-autumn-night-asleep-sunny-cup-shadow--c08ac512e26d.png"
+      },
+      {
+        "name": "06-cup",
+        "group": "cup",
+        "file": "pc-autumn-night-asleep-sunny-cup--deeeba3a4f07.png"
+      }
+    ],
+    "masks": {}
+  },
+  "sp-autumn-night-asleep-sunny": {
+    "scene": "autumn-night-sunny-asleep",
+    "width": 1024,
+    "height": 2400,
+    "layers": [
+      {
+        "name": "01-exterior",
+        "group": "exterior",
+        "file": "sp-autumn-night-asleep-sunny-01-exterior--e1111e719acd.png"
+      },
+      {
+        "name": "02-interior",
+        "group": "interior",
+        "file": "sp-autumn-night-asleep-sunny-02-interior--667e06525643.png"
+      },
+      {
+        "name": "03-plant",
+        "group": "plant",
+        "file": "sp-autumn-night-asleep-sunny-plant--29af3ec4c28b.png"
+      },
+      {
+        "name": "05b-cup-shadow",
+        "group": "cup",
+        "file": "sp-autumn-night-asleep-sunny-cup-shadow--96209215de16.png"
+      },
+      {
+        "name": "06-cup",
+        "group": "cup",
+        "file": "sp-autumn-night-asleep-sunny-cup--d0a428ec07dc.png"
+      }
+    ],
+    "masks": {}
+  },
+  "pc-autumn-night-asleep-cloudy": {
+    "scene": "autumn-night-cloudy-asleep",
+    "width": 1345,
+    "height": 1170,
+    "layers": [
+      {
+        "name": "01-exterior",
+        "group": "exterior",
+        "file": "pc-autumn-night-asleep-cloudy-01-exterior--4d1c77a71b81.png"
+      },
+      {
+        "name": "02-interior",
+        "group": "interior",
+        "file": "pc-autumn-night-asleep-cloudy-02-interior--151f09d26f8d.png"
+      },
+      {
+        "name": "03-plant",
+        "group": "plant",
+        "file": "pc-autumn-night-asleep-cloudy-plant--5a5007404a88.png"
+      },
+      {
+        "name": "05b-cup-shadow",
+        "group": "cup",
+        "file": "pc-autumn-night-asleep-cloudy-cup-shadow--c08ac512e26d.png"
+      },
+      {
+        "name": "06-cup",
+        "group": "cup",
+        "file": "pc-autumn-night-asleep-cloudy-cup--eac7131e4ae4.png"
+      }
+    ],
+    "masks": {}
+  },
+  "sp-autumn-night-asleep-cloudy": {
+    "scene": "autumn-night-cloudy-asleep",
+    "width": 1024,
+    "height": 2400,
+    "layers": [
+      {
+        "name": "01-exterior",
+        "group": "exterior",
+        "file": "sp-autumn-night-asleep-cloudy-01-exterior--44aee1d0d8f2.png"
+      },
+      {
+        "name": "02-interior",
+        "group": "interior",
+        "file": "sp-autumn-night-asleep-cloudy-02-interior--3e3f4d6d575a.png"
+      },
+      {
+        "name": "03-plant",
+        "group": "plant",
+        "file": "sp-autumn-night-asleep-cloudy-plant--29af3ec4c28b.png"
+      },
+      {
+        "name": "05b-cup-shadow",
+        "group": "cup",
+        "file": "sp-autumn-night-asleep-cloudy-cup-shadow--96209215de16.png"
+      },
+      {
+        "name": "06-cup",
+        "group": "cup",
+        "file": "sp-autumn-night-asleep-cloudy-cup--c2b24a235177.png"
+      }
+    ],
+    "masks": {}
+  },
+  "pc-autumn-night-asleep-rain": {
+    "scene": "autumn-night-rain-asleep",
+    "width": 1345,
+    "height": 1170,
+    "layers": [
+      {
+        "name": "01-exterior",
+        "group": "exterior",
+        "file": "pc-autumn-night-asleep-rain-01-exterior--f12b324b1cf6.png"
+      },
+      {
+        "name": "02-interior",
+        "group": "interior",
+        "file": "pc-autumn-night-asleep-rain-02-interior--8232ec6acb0f.png"
+      },
+      {
+        "name": "03-plant",
+        "group": "plant",
+        "file": "pc-autumn-night-asleep-rain-plant--325ce062e407.png"
+      },
+      {
+        "name": "05b-cup-shadow",
+        "group": "cup",
+        "file": "pc-autumn-night-asleep-rain-cup-shadow--c08ac512e26d.png"
+      },
+      {
+        "name": "06-cup",
+        "group": "cup",
+        "file": "pc-autumn-night-asleep-rain-cup--eac7131e4ae4.png"
+      }
+    ],
+    "masks": {
+      "0": "pc-autumn-night-asleep-rain-mask-0--0f9d53e5db16.png",
+      "1": "pc-autumn-night-asleep-rain-mask-1--0f9d53e5db16.png",
+      "2": "pc-autumn-night-asleep-rain-mask-2--a18a2b8b0ea3.png",
+      "3": "pc-autumn-night-asleep-rain-mask-3--a18a2b8b0ea3.png",
+      "4": "pc-autumn-night-asleep-rain-mask-4--947f8e1a80f6.png",
+      "5": "pc-autumn-night-asleep-rain-mask-5--947f8e1a80f6.png",
+      "6": "pc-autumn-night-asleep-rain-mask-6--e39db515e5a4.png",
+      "7": "pc-autumn-night-asleep-rain-mask-7--e39db515e5a4.png"
+    }
+  },
+  "sp-autumn-night-asleep-rain": {
+    "scene": "autumn-night-rain-asleep",
+    "width": 1024,
+    "height": 2400,
+    "layers": [
+      {
+        "name": "01-exterior",
+        "group": "exterior",
+        "file": "sp-autumn-night-asleep-rain-01-exterior--ff7dd90b3e3d.png"
+      },
+      {
+        "name": "02-interior",
+        "group": "interior",
+        "file": "sp-autumn-night-asleep-rain-02-interior--ed2b1c72adb7.png"
+      },
+      {
+        "name": "03-plant",
+        "group": "plant",
+        "file": "sp-autumn-night-asleep-rain-plant--492dbd08ac55.png"
+      },
+      {
+        "name": "05b-cup-shadow",
+        "group": "cup",
+        "file": "sp-autumn-night-asleep-rain-cup-shadow--96209215de16.png"
+      },
+      {
+        "name": "06-cup",
+        "group": "cup",
+        "file": "sp-autumn-night-asleep-rain-cup--c2b24a235177.png"
+      }
+    ],
+    "masks": {
+      "0": "sp-autumn-night-asleep-rain-mask-0--7eab59eaffa2.png",
+      "1": "sp-autumn-night-asleep-rain-mask-1--7eab59eaffa2.png",
+      "2": "sp-autumn-night-asleep-rain-mask-2--7eab59eaffa2.png",
+      "3": "sp-autumn-night-asleep-rain-mask-3--7eab59eaffa2.png",
+      "4": "sp-autumn-night-asleep-rain-mask-4--fb2bb4d8c575.png",
+      "5": "sp-autumn-night-asleep-rain-mask-5--fb2bb4d8c575.png",
+      "6": "sp-autumn-night-asleep-rain-mask-6--fb2bb4d8c575.png",
+      "7": "sp-autumn-night-asleep-rain-mask-7--fb2bb4d8c575.png"
+    }
+  }
+}

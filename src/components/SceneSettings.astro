@@ -85,6 +85,7 @@
         : activeScene === 'spring-dawn-rain' ? `表示中：${portrait.matches ? 'SP' : 'PC'} 春・明け方・雨。凛と室内灯のない雨天候補です。`
         : activeScene === 'spring-day-cloudy' ? `表示中：${portrait.matches ? 'SP' : 'PC'} 春・昼・曇り。静止画の確認用候補です。`
         : activeScene === 'spring-day-rain' ? `表示中：${portrait.matches ? 'SP' : 'PC'} 春・昼・雨。雨筋とガラス滴の動きを確認できます。`
+        : activeScene.startsWith('autumn-') ? `表示中：${portrait.matches ? 'SP' : 'PC'} 秋・${sceneName}・${weatherName}。`
         : activeScene.includes('-thunderstorm') ? `表示中：${portrait.matches ? 'SP' : 'PC'} 夏・${sceneName}・雷雨。凛のいない窓辺で、遠くの雲がゆっくり光ります。`
         : activeScene.startsWith('summer-') && request.weather !== 'sunny' ? `表示中：${portrait.matches ? 'SP' : 'PC'} 夏・${sceneName}・${weatherName}。`
         : activeScene === 'summer-day-cloudy' ? `表示中：${portrait.matches ? 'SP' : 'PC'} 夏・昼・曇り。`
@@ -123,7 +124,7 @@
       settings.querySelector<HTMLButtonElement>('[data-reset-layers]')!.disabled = portrait.matches;
       settings.querySelector<HTMLInputElement>('[data-layer-toggle="rin"]')!.disabled = portrait.matches || noRin;
       const cupControl = settings.querySelector<HTMLInputElement>('[data-layer-toggle="cup"]')!;
-      const summerCup = currentScene.startsWith('summer-');
+      const summerCup = /^(summer|autumn)-/.test(currentScene);
       const cupAvailable = currentScene === 'spring-day-sunny' || summerCup;
       cupControl.disabled = portrait.matches || !cupAvailable;
       const plantControl = settings.querySelector<HTMLInputElement>('[data-layer-toggle="plant"]')!;

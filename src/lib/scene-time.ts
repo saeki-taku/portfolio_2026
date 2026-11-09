@@ -15,7 +15,7 @@ export type PcScene =
   | 'spring-evening-sunny' | 'spring-evening-cloudy' | 'spring-evening-rain'
   | 'spring-night-sunny-awake' | 'spring-night-cloudy-awake' | 'spring-night-rain-awake'
   | 'spring-night-sunny-asleep' | 'spring-night-cloudy-asleep' | 'spring-night-rain-asleep'
-  | 'summer-dawn-thunderstorm' | 'summer-evening-thunderstorm' | 'summer-night-thunderstorm-awake' | 'summer-night-thunderstorm-asleep' | 'summer-day-thunderstorm' | 'summer-day-cloudy' | 'summer-day-rain' | 'summer-dawn-sunny' | 'summer-day-sunny' | 'summer-evening-sunny'
+  | `autumn-${'dawn'|'day'|'evening'}-${'sunny'|'cloudy'|'rain'}` | `autumn-night-${'sunny'|'cloudy'|'rain'}-${'awake'|'asleep'}` | 'summer-dawn-thunderstorm' | 'summer-evening-thunderstorm' | 'summer-night-thunderstorm-awake' | 'summer-night-thunderstorm-asleep' | 'summer-day-thunderstorm' | 'summer-day-cloudy' | 'summer-day-rain' | 'summer-dawn-sunny' | 'summer-day-sunny' | 'summer-evening-sunny'
   | 'summer-night-sunny-awake' | 'summer-night-sunny-asleep';
 export type TokyoScene = PcScene;
 

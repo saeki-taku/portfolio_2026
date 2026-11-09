@@ -1,6 +1,21 @@
 import type { PcScene } from './scene-time';
 
 const descriptions: Record<PcScene, string> = {
+  'autumn-dawn-sunny': '秋の窓辺から紅葉した街を望む油絵。',
+  'autumn-dawn-cloudy': '秋の窓辺から紅葉した街を望む油絵。',
+  'autumn-dawn-rain': '秋の窓辺から紅葉した街を望む油絵。',
+  'autumn-day-sunny': '秋の窓辺から紅葉した街を望む油絵。',
+  'autumn-day-cloudy': '秋の窓辺から紅葉した街を望む油絵。',
+  'autumn-day-rain': '秋の窓辺から紅葉した街を望む油絵。',
+  'autumn-evening-sunny': '秋の窓辺から紅葉した街を望む油絵。',
+  'autumn-evening-cloudy': '秋の窓辺から紅葉した街を望む油絵。',
+  'autumn-evening-rain': '秋の窓辺から紅葉した街を望む油絵。',
+  'autumn-night-sunny-awake': '秋の窓辺から紅葉した街を望む油絵。',
+  'autumn-night-cloudy-awake': '秋の窓辺から紅葉した街を望む油絵。',
+  'autumn-night-rain-awake': '秋の窓辺から紅葉した街を望む油絵。',
+  'autumn-night-sunny-asleep': '秋の窓辺から紅葉した街を望む油絵。',
+  'autumn-night-cloudy-asleep': '秋の窓辺から紅葉した街を望む油絵。',
+  'autumn-night-rain-asleep': '秋の窓辺から紅葉した街を望む油絵。',
   'summer-dawn-cloudy': '夏の曇りの明け方、凛のいない静かな窓辺から緑の街を望む油絵。',
   'summer-dawn-rain': '夏の雨の明け方、凛のいない静かな窓辺から緑の街を望む油絵。',
   'summer-evening-cloudy': '夏の曇りの夕方、凛が座る窓辺から緑の街を望む油絵。',
@@ -51,7 +66,7 @@ export function applyScene(requestedScene: PcScene, portrait: boolean): PcScene 
     artwork.dataset.activeScene = selected;
     const rinToggle = document.querySelector<HTMLInputElement>(selector === '.pc-artwork' ? '[data-layer-toggle="rin"]' : '[data-sp-toggle="rin"]');
     artwork.setAttribute('aria-label', selected.endsWith('-asleep') || selected.includes('-dawn-') || rinToggle?.checked !== false
-      ? descriptions[selected] : `${selected.startsWith('summer-') ? '夏' : '春'}の街を見下ろす窓辺の油絵。凛は表示されていません。`);
+      ? descriptions[selected] : `${selected.startsWith('autumn-') ? '秋' : selected.startsWith('summer-') ? '夏' : '春'}の街を見下ろす窓辺の油絵。凛は表示されていません。`);
     for (const image of artwork.querySelectorAll<HTMLImageElement>('img[data-scene]')) {
       if (image.dataset.rainEffect) {
         if (image.dataset.scene === selected) image.loading = 'eager';

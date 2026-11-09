@@ -1,3 +1,5 @@
+import autumnManifest from '../assets/validation/autumn-weather-v1/manifest.json';
+const autumnMaskFiles=import.meta.glob<string>('../assets/validation/autumn-weather-v1/*.png',{eager:true,query:'?url',import:'default'});
 import summerPeriodManifest from '../assets/validation/summer-period-weather-v1/manifest.json';
 const periodMaskFiles=import.meta.glob<string>('../assets/validation/summer-period-weather-v1/*.png',{eager:true,query:'?url',import:'default'});
 import summerWeatherManifest from '../assets/validation/summer-day-weather-v1/manifest.json';
@@ -19,7 +21,10 @@ const phase4Masks = (pcFolder: string, spFolder: string, pcStates: string[], spS
 const summerRainMasks=(kind:'pc'|'sp')=>Object.fromEntries(Object.entries(summerWeatherManifest[`${kind}-rain`].masks).map(([key,file])=>[key,summerWeatherFiles[`../assets/validation/summer-day-weather-v1/${file}`]]));
 const periodRainScenes: Record<string,{pc:Record<string,string>;sp:Record<string,string>}>={};
 for(const [key,entry] of Object.entries(summerPeriodManifest)){if(!entry.scene.includes('-rain'))continue;const view=key.startsWith('pc-')?'pc':'sp';periodRainScenes[entry.scene]??={pc:{},sp:{}};periodRainScenes[entry.scene][view]=Object.fromEntries(Object.entries(entry.masks).map(([state,file])=>[state,periodMaskFiles[`../assets/validation/summer-period-weather-v1/${file}`]]));}
+const autumnRainScenes:Record<string,{pc:Record<string,string>;sp:Record<string,string>}>={};
+for(const[key,e]of Object.entries(autumnManifest)){if(!e.scene.includes('-rain'))continue;const view=key.startsWith('pc-')?'pc':'sp';autumnRainScenes[e.scene]??={pc:{},sp:{}};autumnRainScenes[e.scene][view]=Object.fromEntries(Object.entries(e.masks).map(([n,f])=>[n,autumnMaskFiles[`../assets/validation/autumn-weather-v1/${f}`]]));}
 const masks: Record<string, { pc: Record<string, string>; sp: Record<string, string> }> = {
+  ...autumnRainScenes,
   ...periodRainScenes,
   ...Object.fromEntries(Object.entries(periodRainScenes).map(([scene,value])=>[scene.replace('-rain','-thunderstorm'),value])),
   'summer-day-thunderstorm': {pc:summerRainMasks('pc'),sp:summerRainMasks('sp')},
@@ -106,7 +111,7 @@ export function setupRainMotion() {
     let loadedMask: HTMLCanvasElement | HTMLImageElement | undefined;
 
     const isThunder = () => (artwork.dataset.activeScene ?? '').includes('-thunderstorm');
-    const isSummerRain = () => (artwork.dataset.activeScene ?? '').startsWith('summer-') && !!masks[artwork.dataset.activeScene ?? ''];
+    const isSummerRain = () => /^(summer|autumn)-/.test(artwork.dataset.activeScene ?? '') && !!masks[artwork.dataset.activeScene ?? ''];
     let thunderStartedAt = 0;
     let previousScene = '';
     const active = () => !!masks[artwork.dataset.activeScene ?? '']

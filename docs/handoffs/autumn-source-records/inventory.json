@@ -1,0 +1,306 @@
+{
+  "date": "2026-11-10",
+  "expectedBackgrounds": 30,
+  "inputs": [
+    {
+      "key": "pc-day-clear",
+      "source": "design-proposals/summer-weather-v1/inputs/pc-day-sunny-background.png",
+      "input": "inputs/pc-day-clear.png",
+      "sha256": "c070abca4f08fe40032a77078c3244063ade034df2b10c8fc9ad4e6357bfb40d",
+      "personPresent": true,
+      "indoorLamp": false,
+      "cityLights": false,
+      "status": "pending"
+    },
+    {
+      "key": "sp-day-clear",
+      "source": "design-proposals/summer-weather-v1/inputs/sp-day-sunny-background.png",
+      "input": "inputs/sp-day-clear.png",
+      "sha256": "09a43f1ecc2927498ee58e5ccb1b3b213b9128c47247b9f8a7170df40a4386e8",
+      "personPresent": true,
+      "indoorLamp": false,
+      "cityLights": false,
+      "status": "pending"
+    },
+    {
+      "key": "pc-day-cloudy",
+      "source": "design-proposals/summer-weather-v1/pc-day-cloudy-candidate.png",
+      "input": "inputs/pc-day-cloudy.png",
+      "sha256": "6e5a5ccb27f3a13078a587aae1c7224e78b58918dd38c789eb3bc4a9c4f5f2ce",
+      "personPresent": true,
+      "indoorLamp": false,
+      "cityLights": false,
+      "status": "pending"
+    },
+    {
+      "key": "sp-day-cloudy",
+      "source": "design-proposals/summer-weather-v1/sp-day-cloudy-candidate.png",
+      "input": "inputs/sp-day-cloudy.png",
+      "sha256": "47ebbb838205a31be3d942db93a93938aee50abdedb405e4ca160dbf434bbe90",
+      "personPresent": true,
+      "indoorLamp": false,
+      "cityLights": false,
+      "status": "pending"
+    },
+    {
+      "key": "pc-day-rain",
+      "source": "design-proposals/summer-weather-v1/pc-day-rain-candidate.png",
+      "input": "inputs/pc-day-rain.png",
+      "sha256": "19dd065495cfd04a7186aaab25948f5c30a3adfbd443aeace231713837abddf8",
+      "personPresent": true,
+      "indoorLamp": false,
+      "cityLights": false,
+      "status": "pending"
+    },
+    {
+      "key": "sp-day-rain",
+      "source": "design-proposals/summer-weather-v1/sp-day-rain-candidate.png",
+      "input": "inputs/sp-day-rain.png",
+      "sha256": "90ce4af8b99e285398cd6558fb91b9be17684ccdb7287c7ac69a2826de249e5d",
+      "personPresent": true,
+      "indoorLamp": false,
+      "cityLights": false,
+      "status": "pending"
+    },
+    {
+      "key": "pc-dawn-clear",
+      "source": "design-proposals/summer-weather-periods-v1/inputs/pc-dawn-sunny-background.png",
+      "input": "inputs/pc-dawn-clear.png",
+      "sha256": "d26dd47021a09e182d002ab9eed2535ff31ec86fbd1cc1914e3da93ccecf49c9",
+      "personPresent": false,
+      "indoorLamp": false,
+      "cityLights": false,
+      "status": "pending"
+    },
+    {
+      "key": "sp-dawn-clear",
+      "source": "design-proposals/summer-weather-periods-v1/inputs/sp-dawn-sunny-background.png",
+      "input": "inputs/sp-dawn-clear.png",
+      "sha256": "dfd93bcddbc2d6b102ba5f54f0c47e9834cb00306a739ef93a7e45baf14e00b9",
+      "personPresent": false,
+      "indoorLamp": false,
+      "cityLights": false,
+      "status": "pending"
+    },
+    {
+      "key": "pc-dawn-cloudy",
+      "source": "design-proposals/summer-weather-periods-v1/pc-dawn-cloudy-background.png",
+      "input": "inputs/pc-dawn-cloudy.png",
+      "sha256": "24d4404a6e29e24f2b07dce855a62d989c0e1032b55cf223cf6b4d2e46b0204a",
+      "personPresent": false,
+      "indoorLamp": false,
+      "cityLights": false,
+      "status": "pending"
+    },
+    {
+      "key": "sp-dawn-cloudy",
+      "source": "design-proposals/summer-weather-periods-v1/sp-dawn-cloudy-background.png",
+      "input": "inputs/sp-dawn-cloudy.png",
+      "sha256": "089cd7d192c97a6483783562907c1751f131945db517f43c0f462c86cb1244f2",
+      "personPresent": false,
+      "indoorLamp": false,
+      "cityLights": false,
+      "status": "pending"
+    },
+    {
+      "key": "pc-dawn-rain",
+      "source": "design-proposals/summer-weather-periods-v1/pc-dawn-rain-background.png",
+      "input": "inputs/pc-dawn-rain.png",
+      "sha256": "53d4b493e15f1df0ba823acd68ba23a34a47fe966ce141c507e9e9fd6b1aa6e8",
+      "personPresent": false,
+      "indoorLamp": false,
+      "cityLights": false,
+      "status": "pending"
+    },
+    {
+      "key": "sp-dawn-rain",
+      "source": "design-proposals/summer-weather-periods-v1/sp-dawn-rain-background.png",
+      "input": "inputs/sp-dawn-rain.png",
+      "sha256": "3ea87b0834f8d052073bcb7f5c17416c7db56d3428d9a6e297c2b9eea312aaed",
+      "personPresent": false,
+      "indoorLamp": false,
+      "cityLights": false,
+      "status": "pending"
+    },
+    {
+      "key": "pc-evening-clear",
+      "source": "design-proposals/summer-weather-periods-v1/inputs/pc-evening-sunny-background.png",
+      "input": "inputs/pc-evening-clear.png",
+      "sha256": "c32059a8256b4aa8db7561b783a3dbe23a98e3371e6f84902ac48b63f768bbad",
+      "personPresent": true,
+      "indoorLamp": false,
+      "cityLights": false,
+      "status": "pending"
+    },
+    {
+      "key": "sp-evening-clear",
+      "source": "design-proposals/summer-weather-periods-v1/inputs/sp-evening-sunny-background.png",
+      "input": "inputs/sp-evening-clear.png",
+      "sha256": "7b38b7f85dc6ee87e831749e063ca254d4d4e633b00c9463f09960f1edebad90",
+      "personPresent": true,
+      "indoorLamp": false,
+      "cityLights": false,
+      "status": "pending"
+    },
+    {
+      "key": "pc-evening-cloudy",
+      "source": "design-proposals/summer-weather-periods-v1/pc-evening-cloudy-background.png",
+      "input": "inputs/pc-evening-cloudy.png",
+      "sha256": "faab772ead2033279e94b04d578f351419fb03dd4a3c73bf9a215218283b601c",
+      "personPresent": true,
+      "indoorLamp": false,
+      "cityLights": false,
+      "status": "pending"
+    },
+    {
+      "key": "sp-evening-cloudy",
+      "source": "design-proposals/summer-weather-periods-v1/sp-evening-cloudy-background.png",
+      "input": "inputs/sp-evening-cloudy.png",
+      "sha256": "870f4d60340239ba632102bae20673a9ad7a75804a60efd8539abac81f56b37d",
+      "personPresent": true,
+      "indoorLamp": false,
+      "cityLights": false,
+      "status": "pending"
+    },
+    {
+      "key": "pc-evening-rain",
+      "source": "design-proposals/summer-weather-periods-v1/pc-evening-rain-background.png",
+      "input": "inputs/pc-evening-rain.png",
+      "sha256": "7cc52557be1ace7b864bf00c836a5473e1ba25a9d124a74a2402b00b161af8d4",
+      "personPresent": true,
+      "indoorLamp": false,
+      "cityLights": false,
+      "status": "pending"
+    },
+    {
+      "key": "sp-evening-rain",
+      "source": "design-proposals/summer-weather-periods-v1/sp-evening-rain-background.png",
+      "input": "inputs/sp-evening-rain.png",
+      "sha256": "63304f49906fb2b8497ca72bcf165ac765541196c3e2d7763741ee09ef40e919",
+      "personPresent": true,
+      "indoorLamp": false,
+      "cityLights": false,
+      "status": "pending"
+    },
+    {
+      "key": "pc-night-awake-clear",
+      "source": "design-proposals/summer-weather-periods-v1/inputs/pc-night-awake-sunny-background.png",
+      "input": "inputs/pc-night-awake-clear.png",
+      "sha256": "d7e61743484acf1236edeecf35b760412aca5f03501fd3c940af9a6319e8e77c",
+      "personPresent": true,
+      "indoorLamp": true,
+      "cityLights": true,
+      "status": "pending"
+    },
+    {
+      "key": "sp-night-awake-clear",
+      "source": "design-proposals/summer-weather-periods-v1/inputs/sp-night-awake-sunny-background.png",
+      "input": "inputs/sp-night-awake-clear.png",
+      "sha256": "442d0b39200bdc5d62d7b71b3f1680f8130d561b21a9692be85900dc16268754",
+      "personPresent": true,
+      "indoorLamp": true,
+      "cityLights": true,
+      "status": "pending"
+    },
+    {
+      "key": "pc-night-awake-cloudy",
+      "source": "design-proposals/summer-weather-periods-v1/pc-night-awake-cloudy-background.png",
+      "input": "inputs/pc-night-awake-cloudy.png",
+      "sha256": "0ad671b8cbd5ea6fca30ff35ea217244ee31826bad6d6441dfae33a5b659a95b",
+      "personPresent": true,
+      "indoorLamp": true,
+      "cityLights": true,
+      "status": "pending"
+    },
+    {
+      "key": "sp-night-awake-cloudy",
+      "source": "design-proposals/summer-weather-periods-v1/sp-night-awake-cloudy-background.png",
+      "input": "inputs/sp-night-awake-cloudy.png",
+      "sha256": "a1c2d073baca7326b64cff9bb396b79e9353c2c72f96e277a9e380f29d9376a3",
+      "personPresent": true,
+      "indoorLamp": true,
+      "cityLights": true,
+      "status": "pending"
+    },
+    {
+      "key": "pc-night-awake-rain",
+      "source": "design-proposals/summer-weather-periods-v1/pc-night-awake-rain-background.png",
+      "input": "inputs/pc-night-awake-rain.png",
+      "sha256": "9189de45bc612e1809c01ba791489be17d7019a2a98279336f5bf725a2aeaf96",
+      "personPresent": true,
+      "indoorLamp": true,
+      "cityLights": true,
+      "status": "pending"
+    },
+    {
+      "key": "sp-night-awake-rain",
+      "source": "design-proposals/summer-weather-periods-v1/sp-night-awake-rain-background.png",
+      "input": "inputs/sp-night-awake-rain.png",
+      "sha256": "1bd7a4e4bebdddba30af6c5375e892d73e86c3a5b56e2350e8e34b527f334561",
+      "personPresent": true,
+      "indoorLamp": true,
+      "cityLights": true,
+      "status": "pending"
+    },
+    {
+      "key": "pc-night-asleep-clear",
+      "source": "design-proposals/summer-weather-periods-v1/inputs/pc-night-asleep-sunny-background.png",
+      "input": "inputs/pc-night-asleep-clear.png",
+      "sha256": "40b3b97ff63835fe7e73c612830cdb6f72757c9539ec83703b35dbc15a7a58ee",
+      "personPresent": false,
+      "indoorLamp": false,
+      "cityLights": false,
+      "status": "pending"
+    },
+    {
+      "key": "sp-night-asleep-clear",
+      "source": "design-proposals/summer-weather-periods-v1/inputs/sp-night-asleep-sunny-background.png",
+      "input": "inputs/sp-night-asleep-clear.png",
+      "sha256": "d54f02b38a5ba8216b433f422510705dc2658775b9eada87c7ddcd71fc3e81a9",
+      "personPresent": false,
+      "indoorLamp": false,
+      "cityLights": false,
+      "status": "pending"
+    },
+    {
+      "key": "pc-night-asleep-cloudy",
+      "source": "design-proposals/summer-weather-periods-v1/pc-night-asleep-cloudy-background.png",
+      "input": "inputs/pc-night-asleep-cloudy.png",
+      "sha256": "c9152e471f8875fe056e278f5d7543922a1b4d353780525464893047045e60d6",
+      "personPresent": false,
+      "indoorLamp": false,
+      "cityLights": false,
+      "status": "pending"
+    },
+    {
+      "key": "sp-night-asleep-cloudy",
+      "source": "design-proposals/summer-weather-periods-v1/sp-night-asleep-cloudy-background.png",
+      "input": "inputs/sp-night-asleep-cloudy.png",
+      "sha256": "286cccab04703432cc4229704967bfc63b66892aaa9e078f3624d47bb6555747",
+      "personPresent": false,
+      "indoorLamp": false,
+      "cityLights": false,
+      "status": "pending"
+    },
+    {
+      "key": "pc-night-asleep-rain",
+      "source": "design-proposals/summer-weather-periods-v1/pc-night-asleep-rain-background.png",
+      "input": "inputs/pc-night-asleep-rain.png",
+      "sha256": "50981668edd9cfe835d8df7223996e99ad7e9341cb1f447be742ba7f76b10f10",
+      "personPresent": false,
+      "indoorLamp": false,
+      "cityLights": false,
+      "status": "pending"
+    },
+    {
+      "key": "sp-night-asleep-rain",
+      "source": "design-proposals/summer-weather-periods-v1/sp-night-asleep-rain-background.png",
+      "input": "inputs/sp-night-asleep-rain.png",
+      "sha256": "94f101739aadd63e00dd75a27c0da3a09429bdb35d08f8a3d3f2f6682a44c61e",
+      "personPresent": false,
+      "indoorLamp": false,
+      "cityLights": false,
+      "status": "pending"
+    }
+  ]
+}
