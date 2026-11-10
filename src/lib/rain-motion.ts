@@ -1,3 +1,5 @@
+import winterManifest from '../assets/validation/winter-weather-v1/manifest.json';
+const winterMaskFiles=import.meta.glob<string>('../assets/validation/winter-weather-v1/*.png',{eager:true,query:'?url',import:'default'});
 import autumnManifest from '../assets/validation/autumn-weather-v1/manifest.json';
 const autumnMaskFiles=import.meta.glob<string>('../assets/validation/autumn-weather-v1/*.png',{eager:true,query:'?url',import:'default'});
 import summerPeriodManifest from '../assets/validation/summer-period-weather-v1/manifest.json';
@@ -23,7 +25,10 @@ const periodRainScenes: Record<string,{pc:Record<string,string>;sp:Record<string
 for(const [key,entry] of Object.entries(summerPeriodManifest)){if(!entry.scene.includes('-rain'))continue;const view=key.startsWith('pc-')?'pc':'sp';periodRainScenes[entry.scene]??={pc:{},sp:{}};periodRainScenes[entry.scene][view]=Object.fromEntries(Object.entries(entry.masks).map(([state,file])=>[state,periodMaskFiles[`../assets/validation/summer-period-weather-v1/${file}`]]));}
 const autumnRainScenes:Record<string,{pc:Record<string,string>;sp:Record<string,string>}>={};
 for(const[key,e]of Object.entries(autumnManifest)){if(!e.scene.includes('-rain'))continue;const view=key.startsWith('pc-')?'pc':'sp';autumnRainScenes[e.scene]??={pc:{},sp:{}};autumnRainScenes[e.scene][view]=Object.fromEntries(Object.entries(e.masks).map(([n,f])=>[n,autumnMaskFiles[`../assets/validation/autumn-weather-v1/${f}`]]));}
+const winterPrecipitationScenes:Record<string,{pc:Record<string,string>;sp:Record<string,string>}>={};
+for(const[key,e]of Object.entries(winterManifest as Record<string,{scene:string;masks:Record<string,string>}>)){if(!/-rain|-snow/.test(e.scene))continue;const view=key.startsWith('pc-')?'pc':'sp';winterPrecipitationScenes[e.scene]??={pc:{},sp:{}};winterPrecipitationScenes[e.scene][view]=Object.fromEntries(Object.entries(e.masks).map(([n,f])=>[n,winterMaskFiles[`../assets/validation/winter-weather-v1/${f}`]]));}
 const masks: Record<string, { pc: Record<string, string>; sp: Record<string, string> }> = {
+  ...winterPrecipitationScenes,
   ...autumnRainScenes,
   ...periodRainScenes,
   ...Object.fromEntries(Object.entries(periodRainScenes).map(([scene,value])=>[scene.replace('-rain','-thunderstorm'),value])),
@@ -110,17 +115,18 @@ export function setupRainMotion() {
     let currentMask = '';
     let loadedMask: HTMLCanvasElement | HTMLImageElement | undefined;
 
+    const isSnow = () => (artwork.dataset.activeScene ?? '').includes('-snow');
     const isThunder = () => (artwork.dataset.activeScene ?? '').includes('-thunderstorm');
-    const isSummerRain = () => /^(summer|autumn)-/.test(artwork.dataset.activeScene ?? '') && !!masks[artwork.dataset.activeScene ?? ''];
+    const isLayeredPrecipitation = () => /^(summer|autumn|winter)-/.test(artwork.dataset.activeScene ?? '') && !!masks[artwork.dataset.activeScene ?? ''];
     let thunderStartedAt = 0;
     let previousScene = '';
     const active = () => !!masks[artwork.dataset.activeScene ?? '']
       && (portrait.matches ? viewport === 'sp' : viewport === 'pc')
-      && !document.hidden && (!reducedMotion.matches || isSummerRain())
-      && (amount('outdoor') > 0 || amount('glass') > 0 || isThunder());
+      && !document.hidden && (!reducedMotion.matches || isLayeredPrecipitation())
+      && (amount('outdoor') > 0 || (!isSnow() && amount('glass') > 0) || isThunder());
     const maskUrl = () => {
       const scene = artwork.dataset.activeScene ?? '';
-      if(isSummerRain()){const attr=viewport==='pc'?'data-layer-toggle':'data-sp-toggle';const bits=['rin','cup','plant'].reduce((n,g,i)=>n+((document.querySelector<HTMLInputElement>(`[${attr}="${g}"]`)?.checked && !(scene.includes('-thunderstorm')&&g==='rin') && !document.querySelector<HTMLInputElement>(`[${attr}="${g}"]`)?.disabled)?1<<i:0),0);return masks[scene][viewport][bits];}
+      if(isLayeredPrecipitation()){const attr=viewport==='pc'?'data-layer-toggle':'data-sp-toggle';const bits=['rin','cup','plant'].reduce((n,g,i)=>n+((document.querySelector<HTMLInputElement>(`[${attr}="${g}"]`)?.checked && !(scene.includes('-thunderstorm')&&g==='rin') && !document.querySelector<HTMLInputElement>(`[${attr}="${g}"]`)?.disabled)?1<<i:0),0);return masks[scene][viewport][bits];}
       const personAbsent = scene.startsWith('spring-dawn-') || scene.endsWith('-asleep');
       const rin = personAbsent || document.querySelector<HTMLInputElement>(viewport === 'pc' ? '[data-layer-toggle="rin"]' : '[data-sp-toggle="rin"]')?.checked === false ? 'off' : 'on';
       const plantOff = viewport === 'sp' && document.querySelector<HTMLInputElement>('[data-sp-toggle="plant"]')?.checked === false;
@@ -137,8 +143,21 @@ export function setupRainMotion() {
       const seconds = time / 1000;
       context.clearRect(0, 0, width, height);
       const outdoor = amount('outdoor');
-      if (outdoor > 0) {
-        const summerRain=isSummerRain();
+      canvas.dataset.precipitation = isSnow() ? 'snow' : 'rain';
+      if (outdoor > 0 && isSnow()) {
+        const count = visibleCount(outdoor, viewport === 'pc' ? 250 : 270, viewport === 'pc' ? 560 : 680);
+        for (let index = 0; index < count; index++) {
+          const flake = streaks[index];
+          const radius = ((index % 5 === 0 ? 1.5 : .7) + flake.alpha * 2) * (viewport === 'pc' ? 1.15 : 1);
+          const y = (flake.y + seconds * (8 + flake.speed * .12) * (.8 + outdoor * .2)) % (height + radius * 2) - radius;
+          const x = flake.x + Math.sin(seconds * .35 + index * 2.4) * (5 + index % 9);
+          context.fillStyle = `rgba(246,249,252,${(viewport === 'pc' ? .58 : .42) + flake.alpha})`;
+          context.beginPath(); context.arc(x, y, radius, 0, Math.PI * 2); context.fill();
+          if (viewport === 'pc') { context.lineWidth = .3; context.strokeStyle = 'rgba(126,146,163,.2)'; context.stroke(); }
+        }
+      }
+      if (outdoor > 0 && !isSnow()) {
+        const summerRain=isLayeredPrecipitation();
         const count = visibleCount(outdoor, summerRain ? normalStreaks*2 : normalStreaks, maximumStreaks);
         const speed = outdoor <= 1 ? .75 + .43 * outdoor : 1.18 + 1.02 * (outdoor - 1);
         const length = outdoor <= 1 ? .8 + .2 * outdoor : 1 + .3 * (outdoor - 1);
@@ -161,7 +180,7 @@ export function setupRainMotion() {
         }
       }
       const glass = amount('glass');
-      if (glass > 0) {
+      if (glass > 0 && !isSnow()) {
         const count = visibleCount(glass, normalDrops, maximumDrops);
         const speed = glass <= 1 ? .8 + .2 * glass : 1 + .45 * (glass - 1);
         const alpha = glass <= 1 ? .65 + .35 * glass : 1 + .2 * (glass - 1);

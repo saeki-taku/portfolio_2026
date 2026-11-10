@@ -1,0 +1,329 @@
+{
+  "expected": 40,
+  "completed": 40,
+  "implementationComplete": true,
+  "assets": [
+    {
+      "file": "pc-dawn-clear-background.png",
+      "width": 1345,
+      "height": 1170,
+      "sha256": "371eb40fa7c364a989078b040a4fd6e2d6f33fac3d2a0bd1220eebd833a1a34d",
+      "status": "candidate-reviewed",
+      "objectsBaked": false
+    },
+    {
+      "file": "pc-dawn-cloudy-background.png",
+      "width": 1345,
+      "height": 1170,
+      "sha256": "f890eb5c432acf7506c38fa06a5c2efa33a1cb6d40797870018438bed49bafde",
+      "status": "candidate-reviewed",
+      "objectsBaked": false
+    },
+    {
+      "file": "pc-dawn-rain-background.png",
+      "width": 1345,
+      "height": 1170,
+      "sha256": "82a3d1138a0cc557e3613559aa6983959034766392b8357bdb288078ddcc564a",
+      "status": "candidate-reviewed",
+      "objectsBaked": false
+    },
+    {
+      "file": "pc-dawn-snow-background.png",
+      "width": 1345,
+      "height": 1170,
+      "sha256": "89d31ba4f85ccf3ab27d1d425759259afb1c3bd18fda2845e03f60e34be6a718",
+      "status": "candidate-reviewed",
+      "objectsBaked": false
+    },
+    {
+      "file": "pc-day-clear-background.png",
+      "width": 1345,
+      "height": 1170,
+      "sha256": "eca2929b732e37a1d3025ad53a3468f6940accb274d14a508c13593bc35fd9ad",
+      "status": "candidate-reviewed",
+      "objectsBaked": false
+    },
+    {
+      "file": "pc-day-cloudy-background.png",
+      "width": 1345,
+      "height": 1169,
+      "sha256": "90909a9c7d72d84c6f22394cf40082c55ae1570748baed56b6976ba83d24b95f",
+      "status": "candidate-reviewed",
+      "objectsBaked": false
+    },
+    {
+      "file": "pc-day-rain-background.png",
+      "width": 1345,
+      "height": 1170,
+      "sha256": "a0336f04789b34407dc68d4fa8f5a3138824d79c53433473e80251d4183fffd4",
+      "status": "candidate-reviewed",
+      "objectsBaked": false
+    },
+    {
+      "file": "pc-day-snow-background.png",
+      "width": 1345,
+      "height": 1169,
+      "sha256": "9827e6a33a72a23cac16c55f4631a0ae9dae3237caea5d093e516dd1ac662dd7",
+      "status": "candidate-reviewed",
+      "objectsBaked": false
+    },
+    {
+      "file": "pc-evening-clear-background.png",
+      "width": 1345,
+      "height": 1170,
+      "sha256": "1f8a6662a2bb85a8b0e86bef1d420dd9298d121a82020f4a37b29bbe5b5f45ee",
+      "status": "candidate-reviewed",
+      "objectsBaked": false
+    },
+    {
+      "file": "pc-evening-cloudy-background.png",
+      "width": 1345,
+      "height": 1170,
+      "sha256": "a03b562cfa7bcae6b9b093d3942c08169be933b1e4cc9b03cf29f9f62c5e1718",
+      "status": "candidate-reviewed",
+      "objectsBaked": false
+    },
+    {
+      "file": "pc-evening-rain-background.png",
+      "width": 1345,
+      "height": 1170,
+      "sha256": "98065878d6ac506e31a6d6611693cc97370729ae74220ac1752a4a347f880b99",
+      "status": "candidate-reviewed",
+      "objectsBaked": false
+    },
+    {
+      "file": "pc-evening-snow-background.png",
+      "width": 1345,
+      "height": 1170,
+      "sha256": "c1234c6f15fd29b99c2bd15f8d52affdfed99fa994e2eb2ee91c9f9620fadd37",
+      "status": "candidate-reviewed",
+      "objectsBaked": false
+    },
+    {
+      "file": "pc-night-asleep-clear-background.png",
+      "width": 1345,
+      "height": 1170,
+      "sha256": "0a7be31931f26a635840d5f160051bef963e61ceb936209b7cab6d92c99d22e8",
+      "status": "candidate-reviewed",
+      "objectsBaked": false
+    },
+    {
+      "file": "pc-night-asleep-cloudy-background.png",
+      "width": 1345,
+      "height": 1170,
+      "sha256": "e4f3e2b523f802a38d91bdde096955e1434af97addc3e9eeb847001d69a20a7b",
+      "status": "candidate-reviewed",
+      "objectsBaked": false
+    },
+    {
+      "file": "pc-night-asleep-rain-background.png",
+      "width": 1345,
+      "height": 1170,
+      "sha256": "45baca2177b157109eec7e90632641d4050831c148a272edec80013226eb51ce",
+      "status": "candidate-reviewed",
+      "objectsBaked": false
+    },
+    {
+      "file": "pc-night-asleep-snow-background.png",
+      "width": 1345,
+      "height": 1170,
+      "sha256": "b6a90887b0e314d5d10baabeea95f0f0ff490f54b28fd8422eac4312f3ad7a35",
+      "status": "candidate-reviewed",
+      "objectsBaked": false
+    },
+    {
+      "file": "pc-night-awake-clear-background.png",
+      "width": 1345,
+      "height": 1170,
+      "sha256": "59e3dc144a38fbd6823d1e68c01eb2186bd7b06c28c80edaa1336e0f80da1c61",
+      "status": "candidate-reviewed",
+      "objectsBaked": false
+    },
+    {
+      "file": "pc-night-awake-cloudy-background.png",
+      "width": 1345,
+      "height": 1170,
+      "sha256": "7bd452c591b2f8f73ca8829427aa2fbd2e0b3f4eb1ea670917d3f00ff3eed01a",
+      "status": "candidate-reviewed",
+      "objectsBaked": false
+    },
+    {
+      "file": "pc-night-awake-rain-background.png",
+      "width": 1345,
+      "height": 1170,
+      "sha256": "e8eff6566f9f47ac6f32a1871662f1c0fc2332f4db36821e242f91de2be18e98",
+      "status": "candidate-reviewed",
+      "objectsBaked": false
+    },
+    {
+      "file": "pc-night-awake-snow-background.png",
+      "width": 1345,
+      "height": 1170,
+      "sha256": "c0269092ee248ae3e1cef5e8b94139e3c0b107e5bab22e2fa17d4832fd6bf357",
+      "status": "candidate-reviewed",
+      "objectsBaked": false
+    },
+    {
+      "file": "sp-dawn-clear-background.png",
+      "width": 819,
+      "height": 1920,
+      "sha256": "5a509d3265311c523bcaebadf124f5b45557ae512a37dbcf92be9fa2f45bf20b",
+      "status": "candidate-reviewed",
+      "objectsBaked": false
+    },
+    {
+      "file": "sp-dawn-cloudy-background.png",
+      "width": 819,
+      "height": 1920,
+      "sha256": "15d7e6e52ca617723fe950208fe2652d0706cccf05ca98c5f4289f84cf16dd1f",
+      "status": "candidate-reviewed",
+      "objectsBaked": false
+    },
+    {
+      "file": "sp-dawn-rain-background.png",
+      "width": 819,
+      "height": 1920,
+      "sha256": "d744f82233fe05ad0b868524056995a16b7c8d3b3a456549f74f8b846c3fd991",
+      "status": "candidate-reviewed",
+      "objectsBaked": false
+    },
+    {
+      "file": "sp-dawn-snow-background.png",
+      "width": 820,
+      "height": 1919,
+      "sha256": "f10f475badb1044c0788872a36fc87e9404b22137f3797f786f16b4265452518",
+      "status": "candidate-reviewed",
+      "objectsBaked": false
+    },
+    {
+      "file": "sp-day-clear-background.png",
+      "width": 819,
+      "height": 1920,
+      "sha256": "e1e1a28a70828906d99ada136b55aa52cba5cfbeca59f59f7336683b557625cb",
+      "status": "candidate-reviewed",
+      "objectsBaked": false
+    },
+    {
+      "file": "sp-day-cloudy-background.png",
+      "width": 819,
+      "height": 1920,
+      "sha256": "6ef8ebbdba65feaf0c2c169768db65a0e5d83d895b77268232467614f5d1de31",
+      "status": "candidate-reviewed",
+      "objectsBaked": false
+    },
+    {
+      "file": "sp-day-rain-background.png",
+      "width": 819,
+      "height": 1920,
+      "sha256": "f7167caa619737ea0d445a622f93be58464e6d8492e03a192e727679a5d7328b",
+      "status": "candidate-reviewed",
+      "objectsBaked": false
+    },
+    {
+      "file": "sp-day-snow-background.png",
+      "width": 819,
+      "height": 1920,
+      "sha256": "e054d34091242a01d3ce11debb35e1e19d21b420bafada0276acc7bc0c2f4edb",
+      "status": "candidate-reviewed",
+      "objectsBaked": false
+    },
+    {
+      "file": "sp-evening-clear-background.png",
+      "width": 819,
+      "height": 1920,
+      "sha256": "b12b2fa9bc641a49900875edfa4044ff1c176a9b033331014614810315fda6be",
+      "status": "candidate-reviewed",
+      "objectsBaked": false
+    },
+    {
+      "file": "sp-evening-cloudy-background.png",
+      "width": 819,
+      "height": 1920,
+      "sha256": "31c524f364b5241f6900277c9f3b9b2337a667144a0b4bdc9c73e0c77975ca6d",
+      "status": "candidate-reviewed",
+      "objectsBaked": false
+    },
+    {
+      "file": "sp-evening-rain-background.png",
+      "width": 819,
+      "height": 1920,
+      "sha256": "96f374d525bd6f46a97e9db58bfa83b00785fb1578f49f079c681afddc031615",
+      "status": "candidate-reviewed",
+      "objectsBaked": false
+    },
+    {
+      "file": "sp-evening-snow-background.png",
+      "width": 819,
+      "height": 1920,
+      "sha256": "5c001a344b1277d2fdd0f687711fe007e0c75230fed2843e139f03b697949af5",
+      "status": "candidate-reviewed",
+      "objectsBaked": false
+    },
+    {
+      "file": "sp-night-asleep-clear-background.png",
+      "width": 819,
+      "height": 1920,
+      "sha256": "88841614a5260745b6d13843410857be460e994a6da43f9f9bfd522c52ee4ccf",
+      "status": "candidate-reviewed",
+      "objectsBaked": false
+    },
+    {
+      "file": "sp-night-asleep-cloudy-background.png",
+      "width": 819,
+      "height": 1920,
+      "sha256": "862d27bee922a590b05eee248a609c1e39c0768799e65236e2d5ee4e72091b6a",
+      "status": "candidate-reviewed",
+      "objectsBaked": false
+    },
+    {
+      "file": "sp-night-asleep-rain-background.png",
+      "width": 819,
+      "height": 1920,
+      "sha256": "3ff867aeddb184f661b58391e4143c2463257792f8e6d9d6d4105e4a6cd992de",
+      "status": "candidate-reviewed",
+      "objectsBaked": false
+    },
+    {
+      "file": "sp-night-asleep-snow-background.png",
+      "width": 819,
+      "height": 1920,
+      "sha256": "1310fbe1b51d516beca5014086079309c1584ccd3944c5faddd200cefbb448fc",
+      "status": "candidate-reviewed",
+      "objectsBaked": false
+    },
+    {
+      "file": "sp-night-awake-clear-background.png",
+      "width": 819,
+      "height": 1920,
+      "sha256": "dcd24d6550d40e758a1fb836133c9d2125b63e00bef1373ff69edef3606dee0f",
+      "status": "candidate-reviewed",
+      "objectsBaked": false
+    },
+    {
+      "file": "sp-night-awake-cloudy-background.png",
+      "width": 819,
+      "height": 1920,
+      "sha256": "087ca780b66367417a81afa8dde2a5c2fe60c61bb68012fd1f2897f4e0f4097a",
+      "status": "candidate-reviewed",
+      "objectsBaked": false
+    },
+    {
+      "file": "sp-night-awake-rain-background.png",
+      "width": 819,
+      "height": 1920,
+      "sha256": "571809d3483ae0aa36d09421396c858dcad11d7216c14ae369c933aaef9ea90e",
+      "status": "candidate-reviewed",
+      "objectsBaked": false
+    },
+    {
+      "file": "sp-night-awake-snow-background.png",
+      "width": 819,
+      "height": 1920,
+      "sha256": "47581a3b18106be4e2a8de3e6b48f3a3d1a4b3586edd6f97dcf02726b3ef9123",
+      "status": "candidate-reviewed",
+      "objectsBaked": false
+    }
+  ],
+  "implementationVerifiedOn": "2026-11-11",
+  "implementationEvidence": "e84c/docs/handoffs/2026-11-11-winter-scenes-final.md"
+}

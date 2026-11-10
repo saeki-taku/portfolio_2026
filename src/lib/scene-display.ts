@@ -1,6 +1,26 @@
 import type { PcScene } from './scene-time';
 
 const descriptions: Record<PcScene, string> = {
+  'winter-dawn-sunny': '冬の窓辺から冬枯れの街を望む油絵。',
+  'winter-dawn-cloudy': '冬の窓辺から冬枯れの街を望む油絵。',
+  'winter-dawn-rain': '冬の窓辺から冬枯れの街を望む油絵。',
+  'winter-dawn-snow': '冬の窓辺から雪の積もる街を望む油絵。',
+  'winter-day-sunny': '冬の窓辺から冬枯れの街を望む油絵。',
+  'winter-day-cloudy': '冬の窓辺から冬枯れの街を望む油絵。',
+  'winter-day-rain': '冬の窓辺から冬枯れの街を望む油絵。',
+  'winter-day-snow': '冬の窓辺から雪の積もる街を望む油絵。',
+  'winter-evening-sunny': '冬の窓辺から冬枯れの街を望む油絵。',
+  'winter-evening-cloudy': '冬の窓辺から冬枯れの街を望む油絵。',
+  'winter-evening-rain': '冬の窓辺から冬枯れの街を望む油絵。',
+  'winter-evening-snow': '冬の窓辺から雪の積もる街を望む油絵。',
+  'winter-night-sunny-awake': '冬の窓辺から冬枯れの街を望む油絵。',
+  'winter-night-cloudy-awake': '冬の窓辺から冬枯れの街を望む油絵。',
+  'winter-night-rain-awake': '冬の窓辺から冬枯れの街を望む油絵。',
+  'winter-night-snow-awake': '冬の窓辺から雪の積もる街を望む油絵。',
+  'winter-night-sunny-asleep': '冬の窓辺から冬枯れの街を望む油絵。',
+  'winter-night-cloudy-asleep': '冬の窓辺から冬枯れの街を望む油絵。',
+  'winter-night-rain-asleep': '冬の窓辺から冬枯れの街を望む油絵。',
+  'winter-night-snow-asleep': '冬の窓辺から雪の積もる街を望む油絵。',
   'autumn-dawn-sunny': '秋の窓辺から紅葉した街を望む油絵。',
   'autumn-dawn-cloudy': '秋の窓辺から紅葉した街を望む油絵。',
   'autumn-dawn-rain': '秋の窓辺から紅葉した街を望む油絵。',
@@ -66,7 +86,7 @@ export function applyScene(requestedScene: PcScene, portrait: boolean): PcScene 
     artwork.dataset.activeScene = selected;
     const rinToggle = document.querySelector<HTMLInputElement>(selector === '.pc-artwork' ? '[data-layer-toggle="rin"]' : '[data-sp-toggle="rin"]');
     artwork.setAttribute('aria-label', selected.endsWith('-asleep') || selected.includes('-dawn-') || rinToggle?.checked !== false
-      ? descriptions[selected] : `${selected.startsWith('autumn-') ? '秋' : selected.startsWith('summer-') ? '夏' : '春'}の街を見下ろす窓辺の油絵。凛は表示されていません。`);
+      ? descriptions[selected] : `${selected.startsWith('winter-') ? '冬' : selected.startsWith('autumn-') ? '秋' : selected.startsWith('summer-') ? '夏' : '春'}の街を見下ろす窓辺の油絵。凛は表示されていません。`);
     for (const image of artwork.querySelectorAll<HTMLImageElement>('img[data-scene]')) {
       if (image.dataset.rainEffect) {
         if (image.dataset.scene === selected) image.loading = 'eager';

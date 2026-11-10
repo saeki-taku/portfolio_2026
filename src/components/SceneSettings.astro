@@ -14,7 +14,7 @@
     <fieldset class="rain-controls" hidden>
       <legend>雨の確認</legend>
       <p>屋外とガラスを別々に調整できます。100%が通常、200%が大雨です。</p>
-      <label><span>屋外の雨筋<output data-rain-output="outdoor">通常 100%</output></span><input type="range" data-rain-amount="outdoor" min="0" max="200" value="100" /></label>
+      <label><span><span data-outdoor-label>屋外の雨筋</span><output data-rain-output="outdoor">通常 100%</output></span><input type="range" data-rain-amount="outdoor" min="0" max="200" value="100" /></label>
       <label><span>ガラスの滴<output data-rain-output="glass">通常 100%</output></span><input type="range" data-rain-amount="glass" min="0" max="200" value="100" /></label>
     </fieldset>
     <button type="button" data-reset-scene>春・昼・晴れに戻す</button>
@@ -65,7 +65,12 @@
             slot: state.period === 'night' ? (state.nightState === 'asleep' ? 'night-asleep' : 'night-awake') : state.period as 'dawn' | 'day' | 'evening' };
       const selection = resolveScene(request, portrait.matches ? 'sp' : 'pc');
       const activeScene = applyScene(selection.displayed, portrait.matches);
-      settings.querySelector<HTMLFieldSetElement>('.rain-controls')!.hidden = !activeScene.split('-').some(part=>part==='rain'||part==='thunderstorm');
+      settings.querySelector<HTMLFieldSetElement>('.rain-controls')!.hidden = !activeScene.split('-').some(part=>part==='rain'||part==='thunderstorm'||part==='snow');
+      const snow = activeScene.includes('-snow');
+      settings.querySelector('.rain-controls legend')!.textContent = snow ? '雪の確認' : '雨の確認';
+      settings.querySelector('.rain-controls p')!.textContent = snow ? '100%が通常、200%は多めの降雪です。' : '屋外とガラスを別々に調整できます。100%が通常、200%が大雨です。';
+      settings.querySelector('[data-outdoor-label]')!.textContent = snow ? '降雪量' : '屋外の雨筋';
+      settings.querySelector<HTMLInputElement>('[data-rain-amount="glass"]')!.closest('label')!.hidden = snow;
       settings.dataset.tokyoScene = automatic ? tokyoScene : '';
       const sceneName = request.slot === 'dawn' ? '明け方'
         : request.slot === 'day' ? '昼'
@@ -85,6 +90,7 @@
         : activeScene === 'spring-dawn-rain' ? `表示中：${portrait.matches ? 'SP' : 'PC'} 春・明け方・雨。凛と室内灯のない雨天候補です。`
         : activeScene === 'spring-day-cloudy' ? `表示中：${portrait.matches ? 'SP' : 'PC'} 春・昼・曇り。静止画の確認用候補です。`
         : activeScene === 'spring-day-rain' ? `表示中：${portrait.matches ? 'SP' : 'PC'} 春・昼・雨。雨筋とガラス滴の動きを確認できます。`
+        : activeScene.startsWith('winter-') ? `表示中：${portrait.matches ? 'SP' : 'PC'} 冬・${sceneName}・${weatherName}。`
         : activeScene.startsWith('autumn-') ? `表示中：${portrait.matches ? 'SP' : 'PC'} 秋・${sceneName}・${weatherName}。`
         : activeScene.includes('-thunderstorm') ? `表示中：${portrait.matches ? 'SP' : 'PC'} 夏・${sceneName}・雷雨。凛のいない窓辺で、遠くの雲がゆっくり光ります。`
         : activeScene.startsWith('summer-') && request.weather !== 'sunny' ? `表示中：${portrait.matches ? 'SP' : 'PC'} 夏・${sceneName}・${weatherName}。`
@@ -124,7 +130,7 @@
       settings.querySelector<HTMLButtonElement>('[data-reset-layers]')!.disabled = portrait.matches;
       settings.querySelector<HTMLInputElement>('[data-layer-toggle="rin"]')!.disabled = portrait.matches || noRin;
       const cupControl = settings.querySelector<HTMLInputElement>('[data-layer-toggle="cup"]')!;
-      const summerCup = /^(summer|autumn)-/.test(currentScene);
+      const summerCup = /^(summer|autumn|winter)-/.test(currentScene);
       const cupAvailable = currentScene === 'spring-day-sunny' || summerCup;
       cupControl.disabled = portrait.matches || !cupAvailable;
       const plantControl = settings.querySelector<HTMLInputElement>('[data-layer-toggle="plant"]')!;
@@ -160,7 +166,7 @@
     spControls.forEach(control => control.addEventListener('change', updateSpLayers));
     const updateRainReadout = (control: HTMLInputElement) => {
       const value = Number(control.value);
-      const label = value === 0 ? 'なし' : value < 75 ? '弱い雨' : value < 135 ? '通常' : value < 175 ? '強い雨' : '大雨';
+      const label = value === 0 ? 'なし' : value < 75 ? '少なめ' : value < 135 ? '通常' : value < 175 ? '多め' : '最大';
       settings.querySelector<HTMLOutputElement>(`[data-rain-output="${control.dataset.rainAmount}"]`)!.textContent = `${label} ${value}%`;
     };
     rainControls.forEach(control => {
@@ -200,7 +206,7 @@
   fieldset { border: 0; padding: 0; margin: 0; }
   .layer-controls, .sp-layer-controls { margin-top: 14px; padding-top: 12px; border-top: 1px solid #b8b1a2; }
   .rain-controls { margin-top: 14px; padding-top: 12px; border-top: 1px solid #b8b1a2; }
-  .rain-controls[hidden] { display: none; }
+  .rain-controls[hidden], .rain-controls label[hidden] { display: none; }
   .rain-controls p { margin: 4px 0 8px; font-size: 12px; }
   .rain-controls output { display: block; font-size: 12px; color: #526353; }
   .rain-controls input { width: 100%; }
